@@ -3,30 +3,47 @@ version: '3.9'
 services:
   web:
     build: .
-    command: gunicorn carshop.wsgi:application --bind 0.0.0.0:8000
+    container_name: carshop_web
+
+    command: >
+      sh -c "
+      sleep 5 &&
+      python manage.py migrate &&
+      python manage.py collectstatic --noinput &&
+      gunicorn carshop.wsgi:application --bind 0.0.0.0:8000
+      "
+
     volumes:
-      - media_volume:/app/media
-      - static_volume:/app/staticfiles
-      - logs_volume:/app/logs
+      - .:/app
+      - ./media:/app/media
+      - ./staticfiles:/app/staticfiles
+      - ./logs:/app/logs
+
     ports:
       - "8000:8000"
+
     env_file:
       - .env
+
     depends_on:
       - db
 
   db:
     image: postgres:16
+    container_name: carshop_db
+
     restart: always
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
+
     environment:
       POSTGRES_DB: carshop
       POSTGRES_USER: carshop_user
-      POSTGRES_PASSWORD: strongpassword
+      POSTGRES_PASSWORD: password
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+    ports:
+      - "5432:5432"
 
 volumes:
   postgres_data:
-  media_volume:
-  static_volume:
-  logs_volume:
