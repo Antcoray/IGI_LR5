@@ -12,7 +12,8 @@
           <tr><td class="text-muted">Email</td><td>{{ user.email|default:"—" }}</td></tr>
         </table>
         {% if employee %}
-        <div class="alert mt-3 mb-0" style="background:#1a2010;border-color:#3a5020;color:#9ede6a;">
+        <!-- <div class="alert mt-3 mb-0" style="background:#1a2010;border-color:#3a5020;color:#9ede6a;"> -->
+        <div class="alert mt-3 mb-0">
           <i class="bi bi-shield-check me-2"></i>Сотрудник: <strong>{{ employee.get_role_display }}</strong>
         </div>
         {% endif %}

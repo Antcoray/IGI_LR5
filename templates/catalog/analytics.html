@@ -105,7 +105,7 @@
   <div class="card-body p-0">
     {% for city, client_list in city_groups.items %}
     <details class="border-bottom" style="border-color:#2a2a2a !important;">
-      <summary class="px-3 py-2" style="cursor:pointer;background:#1a1a1a;list-style:none;">
+      <summary class="px-3 py-2" style="cursor:pointer;list-style:none;">
         <i class="bi bi-geo-alt text-gold me-2"></i>
         <strong>{{ city }}</strong>
         <span class="badge bg-secondary ms-2">{{ client_list|length }}</span>

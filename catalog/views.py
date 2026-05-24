@@ -290,18 +290,31 @@ def get_weather(city='Minsk'):
 
 
 def get_exchange_rates():
+    """Курсы валют через ExchangeRate-API"""
+    key = settings.EXCHANGERATE_API_KEY
+    if not key:
+        # Fallback: NBRB
+        try:
+            rates = {}
+            for code, abbr in [(431, 'USD'), (451, 'EUR'), (298, 'RUB')]:
+                url = f'https://www.nbrb.by/api/exrates/rates/{code}?parammode=1'
+                r = requests.get(url, timeout=5)
+                if r.status_code == 200:
+                    d = r.json()
+                    rates[abbr] = round(d['Cur_OfficialRate'] / d['Cur_Scale'], 4)
+            return rates
+        except Exception as e:
+            logger.warning(f'NBRB API error: {e}')
+        return None
     try:
-        rates = {}
-        for code, abbr in [(431, 'USD'), (451, 'EUR'), (298, 'RUB')]:
-            r = requests.get(
-                f'https://www.nbrb.by/api/exrates/rates/{code}?parammode=1', timeout=5
-            )
-            if r.status_code == 200:
-                d = r.json()
-                rates[abbr] = round(d['Cur_OfficialRate'] / d['Cur_Scale'], 4)
-        return rates if rates else None
+        url = f'https://v6.exchangerate-api.com/v6/{key}/latest/BYN'
+        resp = requests.get(url, timeout=5)
+        if resp.status_code == 200:
+            data = resp.json()
+            rates = data.get('conversion_rates', {})
+            return {k: rates[k] for k in ['USD', 'EUR', 'RUB'] if k in rates}
     except Exception as e:
-        logger.warning(f'NBRB API error: {e}')
+        logger.warning(f'Exchange rate API error: {e}')
     return None
 
 
@@ -318,11 +331,14 @@ def index(request):
     now_utc   = timezone.now()
     now_local = timezone.localtime(now_utc)
     cal_text  = calendar.month(now_local.year, now_local.month)
+
     return render(request, 'catalog/index.html', {
         'latest_article': latest_article,
         'featured_cars': featured_cars,
         'weather': weather,
         'rates': rates,
+        'now_utc_str': now_utc.strftime('%d.%m.%Y %H:%M'),
+        'now_local_str': now_local.strftime('%d.%m.%Y %H:%M'),
         'now_utc': now_utc,
         'now_local': now_local,
         'calendar': cal_text,

@@ -2965,3 +2965,1648 @@ INFO 2026-05-24 17:20:39,657 basehttp 236148 130293935633984 "GET /orders/ HTTP/
 INFO 2026-05-24 17:20:43,826 basehttp 236148 130293935633984 "GET /cars/ HTTP/1.1" 200 25598
 INFO 2026-05-24 17:20:48,121 basehttp 236148 130293935633984 "GET /orders/ HTTP/1.1" 200 16753
 INFO 2026-05-24 17:21:04,451 basehttp 236148 130293935633984 "GET /cars/ HTTP/1.1" 200 25598
+INFO 2026-05-24 17:38:58,165 autoreload 242407 140159090728960 Watching for file changes with StatReloader
+INFO 2026-05-24 17:39:02,826 basehttp 242407 140159033013824 "GET /cars/ HTTP/1.1" 200 25305
+INFO 2026-05-24 17:39:07,380 basehttp 242407 140159033013824 "GET /orders/?status=pending HTTP/1.1" 200 10040
+INFO 2026-05-24 17:39:27,306 views 242407 140159033013824 User logged out: admin
+INFO 2026-05-24 17:39:27,327 basehttp 242407 140159033013824 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:39:27,336 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:39:28,265 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 12655
+INFO 2026-05-24 17:39:29,776 basehttp 242407 140159033013824 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 17:39:39,239 views 242407 140159033013824 User logged in: client1
+INFO 2026-05-24 17:39:39,252 basehttp 242407 140159033013824 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:39:39,260 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:39:41,034 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 13286
+INFO 2026-05-24 17:39:48,635 basehttp 242407 140159033013824 "GET /cars/12/ HTTP/1.1" 200 10774
+INFO 2026-05-24 17:39:52,557 basehttp 242407 140159033013824 "GET /cars/12/order/ HTTP/1.1" 200 7494
+INFO 2026-05-24 17:40:00,651 views 242407 140159033013824 Client order #11 created by client1 for car Volkswagen Golf (2022)
+INFO 2026-05-24 17:40:00,652 basehttp 242407 140159033013824 "POST /cars/12/order/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:40:00,684 basehttp 242407 140159033013824 "GET /my-orders/ HTTP/1.1" 200 10509
+INFO 2026-05-24 17:40:13,082 basehttp 242407 140159033013824 "GET /cars/ HTTP/1.1" 200 21182
+INFO 2026-05-24 17:40:15,487 views 242407 140159033013824 User logged out: client1
+INFO 2026-05-24 17:40:15,503 basehttp 242407 140159033013824 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:40:15,510 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:40:16,225 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 12653
+INFO 2026-05-24 17:40:17,288 basehttp 242407 140159033013824 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 17:40:30,582 views 242407 140159033013824 User logged in: manager1
+INFO 2026-05-24 17:40:30,594 basehttp 242407 140159033013824 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:40:30,603 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:40:31,462 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 13278
+INFO 2026-05-24 17:40:38,512 basehttp 242407 140159033013824 "GET /users/profile/ HTTP/1.1" 200 9850
+INFO 2026-05-24 17:40:50,017 basehttp 242407 140159033013824 "GET /promos/ HTTP/1.1" 200 7232
+INFO 2026-05-24 17:40:50,701 basehttp 242407 140159033013824 "GET /contacts/ HTTP/1.1" 200 8416
+INFO 2026-05-24 17:40:53,723 basehttp 242407 140159033013824 "GET /users/profile/ HTTP/1.1" 200 9850
+INFO 2026-05-24 17:40:56,689 basehttp 242407 140159033013824 "GET /cars/ HTTP/1.1" 200 21176
+INFO 2026-05-24 17:41:32,283 views 242407 140159033013824 User logged out: manager1
+INFO 2026-05-24 17:41:32,303 basehttp 242407 140159033013824 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:41:32,311 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:41:33,254 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 12653
+INFO 2026-05-24 17:41:35,718 basehttp 242407 140159033013824 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 17:41:47,662 views 242407 140159033013824 User logged in: admin
+INFO 2026-05-24 17:41:47,675 basehttp 242407 140159033013824 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:41:47,684 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:41:48,692 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 14635
+INFO 2026-05-24 17:41:52,860 basehttp 242407 140159033013824 "GET /orders/ HTTP/1.1" 200 19015
+INFO 2026-05-24 17:42:02,937 basehttp 242407 140159033013824 "GET /clients/ HTTP/1.1" 200 11317
+INFO 2026-05-24 17:42:07,867 basehttp 242407 140159033013824 "GET /orders/?status=pending HTTP/1.1" 200 11032
+INFO 2026-05-24 17:42:09,799 basehttp 242407 140159033013824 "GET /orders/ HTTP/1.1" 200 19015
+INFO 2026-05-24 17:42:12,329 basehttp 242407 140159033013824 "GET /cars/ HTTP/1.1" 200 25326
+INFO 2026-05-24 17:42:28,478 basehttp 242407 140159033013824 "GET /orders/ HTTP/1.1" 200 19015
+INFO 2026-05-24 17:42:31,078 basehttp 242407 140159033013824 "GET /orders/10/edit/ HTTP/1.1" 200 18436
+INFO 2026-05-24 17:42:46,524 basehttp 242407 140159033013824 "GET /orders/ HTTP/1.1" 200 19015
+INFO 2026-05-24 17:42:55,747 basehttp 242407 140159033013824 "GET /orders/10/ HTTP/1.1" 200 10191
+INFO 2026-05-24 17:44:06,512 basehttp 242407 140159033013824 "GET /admin/ HTTP/1.1" 200 13040
+INFO 2026-05-24 17:44:09,521 basehttp 242407 140159033013824 "GET /admin/catalog/employee/ HTTP/1.1" 200 15200
+INFO 2026-05-24 17:44:09,583 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:44:12,141 basehttp 242407 140159033013824 "GET /admin/catalog/employee/1/change/ HTTP/1.1" 200 18643
+INFO 2026-05-24 17:44:12,211 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:44:12,349 basehttp 242407 140159033013824 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2026-05-24 17:44:33,590 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 18926
+INFO 2026-05-24 17:44:33,651 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:44:34,824 basehttp 242407 140159033013824 "GET /admin/auth/group/ HTTP/1.1" 200 12701
+INFO 2026-05-24 17:44:34,882 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:44:37,272 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 18926
+INFO 2026-05-24 17:44:37,348 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:44:39,335 basehttp 242407 140159033013824 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 31922
+INFO 2026-05-24 17:44:39,397 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:44:39,531 basehttp 242407 140159033013824 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2026-05-24 17:44:40,706 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 18926
+INFO 2026-05-24 17:44:44,718 basehttp 242407 140159033013824 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 31922
+INFO 2026-05-24 17:44:44,780 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:45:01,239 basehttp 242407 140159033013824 "GET /admin/ HTTP/1.1" 200 13040
+INFO 2026-05-24 17:45:02,661 basehttp 242407 140159033013824 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 31922
+INFO 2026-05-24 17:45:03,249 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 18926
+INFO 2026-05-24 17:45:04,543 basehttp 242407 140159033013824 "GET /admin/auth/group/ HTTP/1.1" 200 12701
+INFO 2026-05-24 17:45:05,203 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 18926
+INFO 2026-05-24 17:45:05,788 basehttp 242407 140159033013824 "GET /admin/catalog/employee/1/change/ HTTP/1.1" 200 18643
+INFO 2026-05-24 17:45:06,597 basehttp 242407 140159033013824 "GET /admin/catalog/employee/ HTTP/1.1" 200 15200
+INFO 2026-05-24 17:45:07,379 basehttp 242407 140159033013824 "GET /admin/ HTTP/1.1" 200 13040
+INFO 2026-05-24 17:45:13,974 views 242407 140159033013824 User logged out: admin
+INFO 2026-05-24 17:45:13,997 basehttp 242407 140159033013824 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:45:14,004 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:45:14,769 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 12653
+INFO 2026-05-24 17:45:15,827 basehttp 242407 140159033013824 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 17:45:27,699 views 242407 140159033013824 User logged in: manager1
+INFO 2026-05-24 17:45:27,713 basehttp 242407 140159033013824 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:45:27,723 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:45:28,623 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 13266
+INFO 2026-05-24 17:45:35,521 basehttp 242407 140159033013824 "GET /users/profile/ HTTP/1.1" 200 9850
+INFO 2026-05-24 17:45:41,377 views 242407 140159033013824 User logged out: manager1
+INFO 2026-05-24 17:45:41,393 basehttp 242407 140159033013824 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:45:41,401 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:45:42,403 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 12641
+INFO 2026-05-24 17:45:43,349 basehttp 242407 140159033013824 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 17:45:52,593 views 242407 140159033013824 User logged in: admin
+INFO 2026-05-24 17:45:52,607 basehttp 242407 140159033013824 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:45:52,617 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:45:53,575 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 14623
+INFO 2026-05-24 17:45:56,606 basehttp 242407 140159033013824 "GET /admin/ HTTP/1.1" 200 13040
+INFO 2026-05-24 17:45:59,067 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 18926
+INFO 2026-05-24 17:45:59,120 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:46:00,945 basehttp 242407 140159033013824 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 31922
+INFO 2026-05-24 17:46:01,012 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:46:12,501 basehttp 242407 140159033013824 "POST /admin/auth/user/2/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:46:12,536 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19150
+INFO 2026-05-24 17:46:12,671 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:46:17,286 basehttp 242407 140159033013824 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 31930
+INFO 2026-05-24 17:46:18,177 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 18926
+INFO 2026-05-24 17:46:18,950 basehttp 242407 140159033013824 "GET /admin/ HTTP/1.1" 200 13370
+INFO 2026-05-24 17:46:22,670 views 242407 140159033013824 User logged out: admin
+INFO 2026-05-24 17:46:22,686 basehttp 242407 140159033013824 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:46:22,694 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:46:23,549 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 12641
+INFO 2026-05-24 17:46:24,603 basehttp 242407 140159033013824 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 17:46:37,418 views 242407 140159033013824 User logged in: manager1
+INFO 2026-05-24 17:46:37,432 basehttp 242407 140159033013824 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:46:37,440 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:46:38,307 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 14080
+INFO 2026-05-24 17:46:43,588 basehttp 242407 140159033013824 "GET /orders/?status=pending HTTP/1.1" 200 10489
+INFO 2026-05-24 17:46:47,618 basehttp 242407 140159033013824 "GET /orders/11/confirm/ HTTP/1.1" 200 14594
+INFO 2026-05-24 17:47:24,988 basehttp 242407 140159033013824 "GET /cars/ HTTP/1.1" 200 24783
+INFO 2026-05-24 17:47:46,374 views 242407 140159033013824 User logged out: manager1
+INFO 2026-05-24 17:47:46,391 basehttp 242407 140159033013824 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:47:46,399 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:47:47,332 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 12641
+INFO 2026-05-24 17:47:48,987 basehttp 242407 140159033013824 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 17:48:00,012 views 242407 140159033013824 User logged in: admin
+INFO 2026-05-24 17:48:00,025 basehttp 242407 140159033013824 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:48:00,035 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:48:00,979 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 14623
+INFO 2026-05-24 17:48:42,147 basehttp 242407 140159033013824 "GET /admin/ HTTP/1.1" 200 13370
+INFO 2026-05-24 17:48:45,228 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 18926
+INFO 2026-05-24 17:48:45,283 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:48:47,344 basehttp 242407 140159033013824 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 31886
+INFO 2026-05-24 17:48:47,408 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:48:56,811 basehttp 242407 140159033013824 "POST /admin/auth/user/1/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:48:56,826 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:48:56,894 basehttp 242407 140159033013824 "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 4202
+INFO 2026-05-24 17:49:14,574 basehttp 242407 140159033013824 "POST /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 4248
+INFO 2026-05-24 17:49:23,954 basehttp 242407 140159033013824 "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 3981
+INFO 2026-05-24 17:49:24,149 basehttp 242407 140159033013824 "GET /admin/auth/user/1/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:49:24,168 basehttp 242407 140159033013824 "GET /admin/login/?next=/admin/auth/user/1/change/ HTTP/1.1" 200 3999
+INFO 2026-05-24 17:49:24,375 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:49:24,406 basehttp 242407 140159033013824 "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 3981
+INFO 2026-05-24 17:49:24,911 basehttp 242407 140159033013824 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:49:24,931 basehttp 242407 140159033013824 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3961
+INFO 2026-05-24 17:49:35,940 basehttp 242407 140159033013824 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:49:35,964 basehttp 242407 140159033013824 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3961
+INFO 2026-05-24 17:51:01,705 basehttp 242407 140159033013824 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3961
+INFO 2026-05-24 17:51:13,418 basehttp 242407 140159033013824 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:51:13,446 basehttp 242407 140159033013824 "GET /admin/ HTTP/1.1" 200 13036
+INFO 2026-05-24 17:51:20,453 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19312
+INFO 2026-05-24 17:51:20,514 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:51:22,870 basehttp 242407 140159033013824 "GET /admin/auth/user/8/change/ HTTP/1.1" 200 31857
+INFO 2026-05-24 17:51:22,940 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:51:54,292 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19312
+INFO 2026-05-24 17:51:54,351 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:51:55,846 basehttp 242407 140159033013824 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 31926
+INFO 2026-05-24 17:51:55,913 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:52:01,321 basehttp 242407 140159033013824 "POST /admin/auth/user/2/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:52:01,353 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19536
+INFO 2026-05-24 17:52:01,484 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:52:03,768 basehttp 242407 140159033013824 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 31926
+INFO 2026-05-24 17:52:03,823 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:52:05,994 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19312
+INFO 2026-05-24 17:52:06,047 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:52:07,827 basehttp 242407 140159033013824 "GET /admin/auth/user/8/change/ HTTP/1.1" 200 31857
+INFO 2026-05-24 17:52:07,882 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:52:14,781 basehttp 242407 140159033013824 "POST /admin/auth/user/8/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:52:14,793 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:52:14,856 basehttp 242407 140159033013824 "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 4194
+INFO 2026-05-24 17:52:18,694 basehttp 242407 140159033013824 "GET /admin/auth/user/8/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:52:18,715 basehttp 242407 140159033013824 "GET /admin/login/?next=/admin/auth/user/8/change/ HTTP/1.1" 200 3995
+INFO 2026-05-24 17:52:19,732 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:52:19,751 basehttp 242407 140159033013824 "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 3977
+INFO 2026-05-24 17:52:20,565 basehttp 242407 140159033013824 "GET /admin/auth/user/2/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:52:20,583 basehttp 242407 140159033013824 "GET /admin/login/?next=/admin/auth/user/2/change/ HTTP/1.1" 200 3995
+INFO 2026-05-24 17:52:31,440 basehttp 242407 140159033013824 "POST /admin/login/?next=/admin/auth/user/2/change/ HTTP/1.1" 200 4262
+INFO 2026-05-24 17:52:37,572 basehttp 242407 140159033013824 "POST /admin/login/?next=/admin/auth/user/2/change/ HTTP/1.1" 200 4262
+INFO 2026-05-24 17:52:57,485 basehttp 242407 140159033013824 "POST /admin/login/?next=/admin/auth/user/2/change/ HTTP/1.1" 200 4258
+INFO 2026-05-24 17:53:48,944 basehttp 242407 140159033013824 "POST /admin/login/?next=/admin/auth/user/2/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:53:49,011 basehttp 242407 140159033013824 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 31927
+INFO 2026-05-24 17:53:49,113 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:53:55,712 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19705
+INFO 2026-05-24 17:53:55,778 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:53:57,515 basehttp 242407 140159033013824 "GET /admin/auth/user/8/change/ HTTP/1.1" 200 31850
+INFO 2026-05-24 17:53:57,573 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:54:13,285 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19705
+INFO 2026-05-24 17:54:13,345 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:54:15,640 basehttp 242407 140159033013824 "GET /admin/auth/user/9/change/ HTTP/1.1" 200 31863
+INFO 2026-05-24 17:54:17,615 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:54:25,472 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19705
+INFO 2026-05-24 17:54:25,545 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:54:27,531 basehttp 242407 140159033013824 "GET /admin/auth/user/8/change/ HTTP/1.1" 200 31850
+INFO 2026-05-24 17:54:27,621 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:54:43,446 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19705
+INFO 2026-05-24 17:54:43,514 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:54:44,970 basehttp 242407 140159033013824 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 31927
+INFO 2026-05-24 17:54:45,032 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:54:57,468 basehttp 242407 140159033013824 "POST /admin/auth/user/2/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:54:57,505 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19929
+INFO 2026-05-24 17:54:57,614 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:55:00,420 basehttp 242407 140159033013824 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 31875
+INFO 2026-05-24 17:55:00,492 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:55:06,520 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19705
+INFO 2026-05-24 17:55:06,584 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:55:08,117 basehttp 242407 140159033013824 "GET /admin/auth/user/9/change/ HTTP/1.1" 200 31863
+INFO 2026-05-24 17:55:08,172 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:55:10,383 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19705
+INFO 2026-05-24 17:55:10,431 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:55:12,433 basehttp 242407 140159033013824 "GET /admin/auth/user/8/change/ HTTP/1.1" 200 31850
+INFO 2026-05-24 17:55:12,507 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:55:15,739 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19705
+INFO 2026-05-24 17:55:15,799 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:55:16,901 basehttp 242407 140159033013824 "GET /admin/auth/user/9/change/ HTTP/1.1" 200 31863
+INFO 2026-05-24 17:55:16,964 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:55:18,755 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19705
+INFO 2026-05-24 17:55:18,799 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 17:55:25,123 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:55:26,043 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 14620
+INFO 2026-05-24 17:55:52,127 views 242407 140159033013824 User logged out: a2
+INFO 2026-05-24 17:55:52,147 basehttp 242407 140159033013824 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:55:52,157 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:55:52,985 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 12653
+INFO 2026-05-24 17:55:54,089 basehttp 242407 140159033013824 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 17:56:02,706 views 242407 140159033013824 User logged in: admin
+INFO 2026-05-24 17:56:02,722 basehttp 242407 140159033013824 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:56:02,731 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 17:56:03,551 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 13821
+INFO 2026-05-24 17:56:06,011 basehttp 242407 140159033013824 "GET /contacts/ HTTP/1.1" 200 8959
+INFO 2026-05-24 17:56:08,662 basehttp 242407 140159033013824 "GET /promos/ HTTP/1.1" 200 7775
+INFO 2026-05-24 17:56:11,819 basehttp 242407 140159033013824 "GET /analytics/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:56:11,840 basehttp 242407 140159033013824 "GET /admin/login/?next=/analytics/ HTTP/1.1" 200 3969
+INFO 2026-05-24 17:56:45,302 basehttp 242407 140159033013824 "GET /analytics/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:56:45,325 basehttp 242407 140159033013824 "GET /admin/login/?next=/analytics/ HTTP/1.1" 200 3969
+INFO 2026-05-24 18:02:10,714 basehttp 242407 140159033013824 "POST /admin/login/?next=/analytics/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:02:10,729 views 242407 140159033013824 Analytics by a2, year=2026
+INFO 2026-05-24 18:02:14,885 basehttp 242407 140159033013824 "GET /analytics/ HTTP/1.1" 200 457113
+INFO 2026-05-24 18:03:07,697 views 242407 140159033013824 Analytics by a2, year=2026
+INFO 2026-05-24 18:03:09,933 basehttp 242407 140159033013824 "GET /analytics/ HTTP/1.1" 200 457125
+INFO 2026-05-24 18:03:13,210 basehttp 242407 140159033013824 "GET /orders/ HTTP/1.1" 200 19024
+INFO 2026-05-24 18:03:21,270 views 242407 140159033013824 Analytics by a2, year=2026
+INFO 2026-05-24 18:03:23,549 basehttp 242407 140159033013824 "GET /analytics/ HTTP/1.1" 200 457125
+INFO 2026-05-24 18:03:32,753 basehttp 242407 140159033013824 "GET /admin/ HTTP/1.1" 200 13367
+INFO 2026-05-24 18:03:35,955 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19705
+INFO 2026-05-24 18:03:36,030 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 18:03:37,630 basehttp 242407 140159033013824 "GET /admin/auth/user/9/change/ HTTP/1.1" 200 31863
+INFO 2026-05-24 18:03:37,695 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 18:03:40,924 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19705
+INFO 2026-05-24 18:03:40,990 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 18:03:42,721 basehttp 242407 140159033013824 "GET /admin/auth/user/8/change/ HTTP/1.1" 200 31850
+INFO 2026-05-24 18:03:42,779 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 18:03:46,605 basehttp 242407 140159033013824 "POST /admin/auth/user/8/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:03:46,646 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19922
+INFO 2026-05-24 18:03:46,763 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 18:03:48,614 basehttp 242407 140159033013824 "GET /admin/auth/user/2/change/ HTTP/1.1" 200 31927
+INFO 2026-05-24 18:03:48,678 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 18:03:52,547 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19705
+INFO 2026-05-24 18:03:52,608 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 18:03:54,868 basehttp 242407 140159033013824 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 31875
+INFO 2026-05-24 18:03:54,939 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 18:04:01,925 basehttp 242407 140159033013824 "POST /admin/auth/user/1/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:04:01,963 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19926
+INFO 2026-05-24 18:04:02,071 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 18:04:12,010 basehttp 242407 140159033013824 "GET /admin/auth/user/3/change/ HTTP/1.1" 200 31914
+INFO 2026-05-24 18:04:12,082 basehttp 242407 140159033013824 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 18:04:39,795 basehttp 242407 140159033013824 "GET /admin/auth/user/ HTTP/1.1" 200 19705
+INFO 2026-05-24 18:04:42,803 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 18:04:43,638 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 14644
+INFO 2026-05-24 18:04:48,665 views 242407 140159033013824 User logged out: a2
+INFO 2026-05-24 18:04:48,686 basehttp 242407 140159033013824 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:04:48,696 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 18:04:49,358 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 12653
+INFO 2026-05-24 18:04:50,348 basehttp 242407 140159033013824 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 18:05:02,684 views 242407 140159033013824 User logged in: client1
+INFO 2026-05-24 18:05:02,697 basehttp 242407 140159033013824 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:05:02,707 views 242407 140159033013824 Home page accessed
+INFO 2026-05-24 18:05:03,645 basehttp 242407 140159033013824 "GET / HTTP/1.1" 200 13284
+INFO 2026-05-24 18:05:07,497 basehttp 242407 140159033013824 "GET /promos/ HTTP/1.1" 200 7238
+INFO 2026-05-24 18:05:08,538 basehttp 242407 140159033013824 "GET /contacts/ HTTP/1.1" 200 8422
+ERROR 2026-05-24 18:07:18,043 log 242407 140159033013824 Internal Server Error: /users/profile/
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/views.py", line 81, in profile_view
+    return render(request, 'users/profile.html', {
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 194, in render
+    len_values = len(values)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1549, in execute_sql
+    sql, params = self.as_sql()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 736, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 84, in pre_sql_setup
+    self.setup_query(with_col_aliases=with_col_aliases)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 73, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 279, in get_select
+    related_klass_infos = self.get_related_selections(select, select_mask)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1367, in get_related_selections
+    raise FieldError(
+django.core.exceptions.FieldError: Invalid field name(s) given in select_related: 'car'. Choices are: client, employee
+ERROR 2026-05-24 18:07:18,049 basehttp 242407 140159033013824 "GET /users/profile/ HTTP/1.1" 500 208679
+INFO 2026-05-24 18:09:20,409 autoreload 242407 140159090728960 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/views.py changed, reloading.
+INFO 2026-05-24 18:09:21,428 autoreload 249547 134664642306048 Watching for file changes with StatReloader
+INFO 2026-05-24 18:09:27,464 basehttp 249547 134664584951360 "GET /users/profile/ HTTP/1.1" 200 10820
+INFO 2026-05-24 18:10:03,138 basehttp 249547 134664584951360 "POST /users/profile/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:10:03,167 basehttp 249547 134664584951360 "GET /users/profile/ HTTP/1.1" 200 11039
+INFO 2026-05-24 18:10:08,910 views 249547 134664584951360 User logged out: client1
+INFO 2026-05-24 18:10:08,929 basehttp 249547 134664584951360 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:10:08,937 views 249547 134664584951360 Home page accessed
+INFO 2026-05-24 18:10:09,825 basehttp 249547 134664584951360 "GET / HTTP/1.1" 200 12653
+INFO 2026-05-24 18:10:11,771 basehttp 249547 134664584951360 "GET /users/register/ HTTP/1.1" 200 7330
+INFO 2026-05-24 18:11:05,201 basehttp 249547 134664584951360 "POST /users/register/ HTTP/1.1" 200 7569
+INFO 2026-05-24 18:11:33,089 basehttp 249547 134664584951360 "POST /users/register/ HTTP/1.1" 200 7644
+INFO 2026-05-24 18:12:03,214 basehttp 249547 134664584951360 "POST /users/register/ HTTP/1.1" 200 7508
+INFO 2026-05-24 18:16:00,349 autoreload 249547 134664642306048 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/apps.py changed, reloading.
+INFO 2026-05-24 18:16:01,167 autoreload 251102 129103488696320 Watching for file changes with StatReloader
+INFO 2026-05-24 18:16:04,346 autoreload 251102 129103488696320 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/apps.py changed, reloading.
+INFO 2026-05-24 18:16:04,918 autoreload 251124 137561842872320 Watching for file changes with StatReloader
+INFO 2026-05-24 18:16:20,733 autoreload 251124 137561842872320 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/apps.py changed, reloading.
+INFO 2026-05-24 18:16:21,244 autoreload 251197 139039045410816 Watching for file changes with StatReloader
+INFO 2026-05-24 18:16:33,405 basehttp 251197 139038988170816 "POST /users/register/ HTTP/1.1" 200 7508
+ERROR 2026-05-24 18:16:52,638 log 251197 139038988170816 Internal Server Error: /users/register/
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: catalog_client.birth_date
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/views.py", line 21, in register_view
+    user = form.save()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/contrib/auth/forms.py", line 153, in save
+    user.save()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/contrib/auth/base_user.py", line 76, in save
+    super().save(*args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/base.py", line 892, in save_base
+    post_save.send(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/signals.py", line 9, in create_client_profile
+    Client.objects.create(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/query.py", line 1810, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: catalog_client.birth_date
+ERROR 2026-05-24 18:16:52,643 basehttp 251197 139038988170816 "POST /users/register/ HTTP/1.1" 500 194554
+INFO 2026-05-24 18:19:37,703 autoreload 251197 139039045410816 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/apps.py changed, reloading.
+INFO 2026-05-24 18:19:38,331 autoreload 251970 124057564610560 Watching for file changes with StatReloader
+INFO 2026-05-24 18:20:26,219 autoreload 251970 124057564610560 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/forms.py changed, reloading.
+INFO 2026-05-24 18:20:26,823 autoreload 252245 137716821204992 Watching for file changes with StatReloader
+INFO 2026-05-24 18:20:35,151 autoreload 252245 137716821204992 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/forms.py changed, reloading.
+INFO 2026-05-24 18:20:35,698 autoreload 252293 131235000725504 Watching for file changes with StatReloader
+INFO 2026-05-24 18:21:13,454 autoreload 252293 131235000725504 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/forms.py changed, reloading.
+INFO 2026-05-24 18:21:14,090 autoreload 252468 140579945078784 Watching for file changes with StatReloader
+INFO 2026-05-24 18:21:36,510 autoreload 252468 140579945078784 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/forms.py changed, reloading.
+INFO 2026-05-24 18:21:36,998 autoreload 252570 135331395477504 Watching for file changes with StatReloader
+INFO 2026-05-24 18:21:51,556 autoreload 252570 135331395477504 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/forms.py changed, reloading.
+INFO 2026-05-24 18:21:52,100 autoreload 252647 136852446760960 Watching for file changes with StatReloader
+INFO 2026-05-24 18:22:36,927 autoreload 252647 136852446760960 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/views.py changed, reloading.
+INFO 2026-05-24 18:22:37,456 autoreload 252843 125748483477504 Watching for file changes with StatReloader
+INFO 2026-05-24 18:22:39,864 autoreload 252843 125748483477504 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/views.py changed, reloading.
+INFO 2026-05-24 18:22:40,516 autoreload 252863 123748238413824 Watching for file changes with StatReloader
+INFO 2026-05-24 18:22:41,943 autoreload 252863 123748238413824 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/views.py changed, reloading.
+INFO 2026-05-24 18:22:42,454 autoreload 252869 136615794798592 Watching for file changes with StatReloader
+INFO 2026-05-24 18:22:43,867 autoreload 252869 136615794798592 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/views.py changed, reloading.
+INFO 2026-05-24 18:22:44,412 autoreload 252880 128940547473408 Watching for file changes with StatReloader
+INFO 2026-05-24 18:24:30,872 autoreload 252880 128940547473408 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/views.py changed, reloading.
+INFO 2026-05-24 18:24:31,406 autoreload 253332 137719519645696 Watching for file changes with StatReloader
+INFO 2026-05-24 18:25:01,059 autoreload 253332 137719519645696 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/views.py changed, reloading.
+INFO 2026-05-24 18:25:01,624 autoreload 253450 132064515567616 Watching for file changes with StatReloader
+INFO 2026-05-24 18:25:09,498 basehttp 253450 132064391198272 "POST /users/register/ HTTP/1.1" 200 10849
+INFO 2026-05-24 18:26:16,109 basehttp 253450 132064391198272 "POST /users/register/ HTTP/1.1" 200 10708
+INFO 2026-05-24 18:27:00,911 basehttp 253450 132064391198272 "POST /users/register/ HTTP/1.1" 200 10363
+INFO 2026-05-24 18:27:21,456 basehttp 253450 132064391198272 "POST /users/register/ HTTP/1.1" 200 10500
+INFO 2026-05-24 18:27:35,776 views 253450 132064391198272 New user registered: client7 with client profile
+INFO 2026-05-24 18:27:35,792 basehttp 253450 132064391198272 "POST /users/register/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:27:35,800 views 253450 132064391198272 Home page accessed
+INFO 2026-05-24 18:27:37,700 basehttp 253450 132064391198272 "GET / HTTP/1.1" 200 13552
+INFO 2026-05-24 18:27:46,295 basehttp 253450 132064391198272 "GET /users/profile/ HTTP/1.1" 200 9715
+INFO 2026-05-24 18:28:47,519 basehttp 253450 132064391198272 "GET /cars/ HTTP/1.1" 200 21167
+INFO 2026-05-24 18:28:53,801 basehttp 253450 132064391198272 "GET /cars/10/ HTTP/1.1" 200 10469
+INFO 2026-05-24 18:28:54,908 basehttp 253450 132064391198272 "GET /cars/10/order/ HTTP/1.1" 200 7471
+INFO 2026-05-24 18:28:56,608 views 253450 132064391198272 Client order #12 created by client7 for car BMW X5 (2022)
+INFO 2026-05-24 18:28:56,610 basehttp 253450 132064391198272 "POST /cars/10/order/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:28:56,637 basehttp 253450 132064391198272 "GET /my-orders/ HTTP/1.1" 200 7614
+INFO 2026-05-24 18:29:00,331 basehttp 253450 132064391198272 "GET /cars/ HTTP/1.1" 200 21188
+INFO 2026-05-24 18:29:07,315 basehttp 253450 132064391198272 "GET /my-orders/ HTTP/1.1" 200 7348
+INFO 2026-05-24 18:29:10,716 basehttp 253450 132064391198272 "GET /cars/ HTTP/1.1" 200 21188
+INFO 2026-05-24 18:29:13,870 views 253450 132064391198272 User logged out: client7
+INFO 2026-05-24 18:29:13,887 basehttp 253450 132064391198272 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:29:13,896 views 253450 132064391198272 Home page accessed
+INFO 2026-05-24 18:29:14,763 basehttp 253450 132064391198272 "GET / HTTP/1.1" 200 12662
+INFO 2026-05-24 18:29:16,186 basehttp 253450 132064391198272 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 18:29:26,448 views 253450 132064391198272 User logged in: manager1
+INFO 2026-05-24 18:29:26,462 basehttp 253450 132064391198272 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:29:26,474 views 253450 132064391198272 Home page accessed
+INFO 2026-05-24 18:29:27,478 basehttp 253450 132064391198272 "GET / HTTP/1.1" 200 14113
+INFO 2026-05-24 18:29:35,293 basehttp 253450 132064391198272 "GET /clients/ HTTP/1.1" 200 10786
+INFO 2026-05-24 18:29:40,992 basehttp 253450 132064391198272 "GET /clients/1/ HTTP/1.1" 200 10794
+INFO 2026-05-24 18:29:50,040 basehttp 253450 132064391198272 "GET /orders/ HTTP/1.1" 200 19434
+INFO 2026-05-24 18:29:52,456 basehttp 253450 132064391198272 "GET /orders/12/ HTTP/1.1" 200 9577
+INFO 2026-05-24 18:30:18,478 basehttp 253450 132064391198272 "GET /orders/12/edit/ HTTP/1.1" 200 17925
+INFO 2026-05-24 18:30:27,699 basehttp 253450 132064391198272 "GET /orders/ HTTP/1.1" 200 19434
+INFO 2026-05-24 18:30:31,637 basehttp 253450 132064391198272 "GET /orders/ HTTP/1.1" 200 19434
+INFO 2026-05-24 18:30:37,125 basehttp 253450 132064391198272 "GET /orders/11/edit/ HTTP/1.1" 200 17924
+INFO 2026-05-24 18:30:38,397 basehttp 253450 132064391198272 "GET /orders/ HTTP/1.1" 200 19434
+INFO 2026-05-24 18:30:39,809 basehttp 253450 132064391198272 "GET /orders/11/edit/ HTTP/1.1" 200 17924
+INFO 2026-05-24 18:30:51,305 basehttp 253450 132064391198272 "GET /orders/ HTTP/1.1" 200 19434
+INFO 2026-05-24 18:30:53,589 basehttp 253450 132064391198272 "GET /orders/12/edit/ HTTP/1.1" 200 17925
+INFO 2026-05-24 18:30:56,924 basehttp 253450 132064391198272 "POST /orders/12/edit/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:30:56,951 basehttp 253450 132064391198272 "GET /orders/12/ HTTP/1.1" 200 9829
+INFO 2026-05-24 18:31:07,658 basehttp 253450 132064391198272 "GET /orders/ HTTP/1.1" 200 19471
+INFO 2026-05-24 18:31:09,484 basehttp 253450 132064391198272 "GET /clients/ HTTP/1.1" 200 11241
+INFO 2026-05-24 18:31:10,713 basehttp 253450 132064391198272 "GET /clients/6/ HTTP/1.1" 200 9606
+INFO 2026-05-24 18:31:16,780 basehttp 253450 132064391198272 "GET /cars/ HTTP/1.1" 200 24816
+INFO 2026-05-24 18:31:18,646 views 253450 132064391198272 User logged out: manager1
+INFO 2026-05-24 18:31:18,663 basehttp 253450 132064391198272 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:31:18,672 views 253450 132064391198272 Home page accessed
+INFO 2026-05-24 18:31:19,472 basehttp 253450 132064391198272 "GET / HTTP/1.1" 200 12662
+INFO 2026-05-24 18:31:20,978 basehttp 253450 132064391198272 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 18:31:30,741 basehttp 253450 132064391198272 "POST /users/login/ HTTP/1.1" 200 6655
+INFO 2026-05-24 18:31:43,361 views 253450 132064391198272 User logged in: client7
+INFO 2026-05-24 18:31:43,375 basehttp 253450 132064391198272 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 18:31:43,383 views 253450 132064391198272 Home page accessed
+INFO 2026-05-24 18:31:44,263 basehttp 253450 132064391198272 "GET / HTTP/1.1" 200 13278
+INFO 2026-05-24 18:31:52,218 basehttp 253450 132064391198272 "GET /users/profile/ HTTP/1.1" 200 9917
+INFO 2026-05-24 18:39:01,432 autoreload 253450 132064515567616 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/forms.py changed, reloading.
+INFO 2026-05-24 18:39:02,032 autoreload 256681 132591600386048 Watching for file changes with StatReloader
+INFO 2026-05-24 18:39:14,463 autoreload 256681 132591600386048 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/forms.py changed, reloading.
+INFO 2026-05-24 18:39:15,001 autoreload 256738 128194309677056 Watching for file changes with StatReloader
+INFO 2026-05-24 18:39:18,509 autoreload 256738 128194309677056 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/forms.py changed, reloading.
+INFO 2026-05-24 18:39:19,034 autoreload 256757 139231377625088 Watching for file changes with StatReloader
+INFO 2026-05-24 18:39:25,322 autoreload 256757 139231377625088 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/forms.py changed, reloading.
+INFO 2026-05-24 18:39:25,841 autoreload 256794 128992253095936 Watching for file changes with StatReloader
+INFO 2026-05-24 18:39:29,814 basehttp 256794 128992195638848 "GET /users/profile/ HTTP/1.1" 200 9917
+INFO 2026-05-24 18:40:20,469 basehttp 256794 128992195638848 "GET /cars/ HTTP/1.1" 200 21188
+INFO 2026-05-24 18:42:58,428 autoreload 256794 128992253095936 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 18:42:59,065 autoreload 257635 132709938016256 Watching for file changes with StatReloader
+INFO 2026-05-24 18:43:02,972 basehttp 257635 132709880952384 "GET /cars/ HTTP/1.1" 200 21188
+INFO 2026-05-24 18:43:04,534 views 257635 132709880952384 Home page accessed
+INFO 2026-05-24 18:43:05,629 basehttp 257635 132709880952384 "GET / HTTP/1.1" 200 13914
+WARNING 2026-05-24 20:40:39,533 log 285211 128723302694912 Not Found: /cars/99999/
+INFO 2026-05-24 20:40:40,487 views 285211 128723302694912 Home page accessed
+INFO 2026-05-24 20:40:44,152 views 285211 128723302694912 Analytics by su2, year=2026
+WARNING 2026-05-24 20:40:48,505 log 285211 128723302694912 Unauthorized: /api/cars/
+INFO 2026-05-24 20:50:11,918 views 257635 132709880952384 Home page accessed
+INFO 2026-05-24 20:50:12,864 basehttp 257635 132709880952384 "GET / HTTP/1.1" 200 13912
+INFO 2026-05-24 20:54:41,362 views 257635 132709880952384 Home page accessed
+INFO 2026-05-24 20:54:42,392 basehttp 257635 132709880952384 "GET / HTTP/1.1" 200 13912
+INFO 2026-05-24 20:58:02,045 autoreload 257635 132709938016256 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 20:58:02,595 autoreload 289539 129507193139200 Watching for file changes with StatReloader
+INFO 2026-05-24 20:58:11,281 autoreload 289539 129507193139200 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 20:58:11,847 autoreload 289582 124944722001920 Watching for file changes with StatReloader
+INFO 2026-05-24 20:58:17,667 views 289582 124944665015872 Home page accessed
+INFO 2026-05-24 20:58:18,633 views 289582 124944665015872 UTC: 2026-05-24 17:58:18.632429+00:00, Local: 2026-05-24 20:58:18.632429+03:00
+INFO 2026-05-24 20:58:18,686 basehttp 289582 124944665015872 "GET / HTTP/1.1" 200 13912
+INFO 2026-05-24 21:00:28,229 views 289582 124944665015872 Home page accessed
+INFO 2026-05-24 21:00:28,981 views 289582 124944665015872 UTC: 2026-05-24 18:00:28.980501+00:00, Local: 2026-05-24 21:00:28.980501+03:00
+INFO 2026-05-24 21:00:28,999 basehttp 289582 124944665015872 "GET / HTTP/1.1" 200 14451
+INFO 2026-05-24 21:04:02,775 autoreload 289582 124944722001920 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 21:04:03,337 autoreload 291062 130137771323392 Watching for file changes with StatReloader
+INFO 2026-05-24 21:04:04,509 autoreload 291062 130137771323392 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 21:04:05,188 autoreload 291077 129102647214080 Watching for file changes with StatReloader
+INFO 2026-05-24 21:04:19,822 autoreload 291077 129102647214080 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 21:04:20,466 autoreload 291144 123463055462400 Watching for file changes with StatReloader
+INFO 2026-05-24 21:04:27,998 autoreload 291144 123463055462400 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 21:04:28,543 autoreload 291192 136606157557760 Watching for file changes with StatReloader
+INFO 2026-05-24 21:04:57,208 autoreload 291319 125536668291072 Watching for file changes with StatReloader
+INFO 2026-05-24 21:05:01,960 views 291319 125536611333696 Home page accessed
+INFO 2026-05-24 21:05:03,166 views 291319 125536611333696 UTC: 2026-05-24 18:05:03.165966+00:00, Local: 2026-05-24 21:05:03.165966+03:00
+INFO 2026-05-24 21:05:03,167 views 291319 125536611333696 ID now_utc: 125536613785568
+INFO 2026-05-24 21:05:03,167 views 291319 125536611333696 ID now_local: 125536613785040
+INFO 2026-05-24 21:05:03,167 views 291319 125536611333696 Equal? True
+INFO 2026-05-24 21:05:03,208 basehttp 291319 125536611333696 "GET / HTTP/1.1" 200 14213
+INFO 2026-05-24 21:06:09,110 views 291319 125536611333696 Home page accessed
+INFO 2026-05-24 21:06:09,697 views 291319 125536611333696 UTC: 2026-05-24 18:06:09.697156+00:00, Local: 2026-05-24 21:06:09.697156+03:00
+INFO 2026-05-24 21:06:09,698 views 291319 125536611333696 ID now_utc: 125536593709120
+INFO 2026-05-24 21:06:09,698 views 291319 125536611333696 ID now_local: 125536593710896
+INFO 2026-05-24 21:06:09,698 views 291319 125536611333696 Equal? True
+INFO 2026-05-24 21:06:09,717 basehttp 291319 125536611333696 "GET / HTTP/1.1" 200 14371
+INFO 2026-05-24 21:10:45,383 views 291319 125536611333696 Home page accessed
+INFO 2026-05-24 21:10:46,466 views 291319 125536611333696 UTC: 2026-05-24 18:10:46.465812+00:00, Local: 2026-05-24 21:10:46.465812+03:00
+INFO 2026-05-24 21:10:46,466 views 291319 125536611333696 ID now_utc: 125536614393648
+INFO 2026-05-24 21:10:46,466 views 291319 125536611333696 ID now_local: 125536614393792
+INFO 2026-05-24 21:10:46,466 views 291319 125536611333696 Equal? True
+ERROR 2026-05-24 21:10:46,566 log 291319 125536611333696 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 340, in index
+    return render(request, 'catalog/index.html', {
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/templatetags/tz.py", line 181, in localtime_tag
+    nodelist = parser.parse(("endlocaltime",))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 132: 'endblock', expected 'endlocaltime'. Did you forget to register or load this tag?
+ERROR 2026-05-24 21:10:46,571 basehttp 291319 125536611333696 "GET / HTTP/1.1" 500 203162
+INFO 2026-05-24 21:11:33,121 views 291319 125536611333696 Home page accessed
+INFO 2026-05-24 21:11:34,103 views 291319 125536611333696 UTC: 2026-05-24 18:11:34.103332+00:00, Local: 2026-05-24 21:11:34.103332+03:00
+INFO 2026-05-24 21:11:34,104 views 291319 125536611333696 ID now_utc: 125536390115616
+INFO 2026-05-24 21:11:34,104 views 291319 125536611333696 ID now_local: 125536390113120
+INFO 2026-05-24 21:11:34,104 views 291319 125536611333696 Equal? True
+ERROR 2026-05-24 21:11:34,174 log 291319 125536611333696 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 340, in index
+    return render(request, 'catalog/index.html', {
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/templatetags/tz.py", line 181, in localtime_tag
+    nodelist = parser.parse(("endlocaltime",))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 120: 'endblock', expected 'endlocaltime'. Did you forget to register or load this tag?
+ERROR 2026-05-24 21:11:34,177 basehttp 291319 125536611333696 "GET / HTTP/1.1" 500 201809
+INFO 2026-05-24 21:12:34,484 autoreload 291319 125536668291072 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 21:12:35,061 autoreload 293252 129165856563200 Watching for file changes with StatReloader
+INFO 2026-05-24 21:12:36,627 autoreload 293252 129165856563200 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 21:12:37,264 autoreload 293267 140314428358656 Watching for file changes with StatReloader
+INFO 2026-05-24 21:12:38,786 autoreload 293267 140314428358656 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 21:12:39,283 autoreload 293282 123484349665280 Watching for file changes with StatReloader
+INFO 2026-05-24 21:13:09,068 autoreload 293282 123484349665280 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 21:13:09,652 autoreload 293420 125519985737728 Watching for file changes with StatReloader
+INFO 2026-05-24 21:13:59,970 views 293420 125519928489536 Home page accessed
+INFO 2026-05-24 21:14:01,178 basehttp 293420 125519928489536 "GET / HTTP/1.1" 200 13912
+INFO 2026-05-24 21:27:56,666 views 293420 125519928489536 Home page accessed
+INFO 2026-05-24 21:27:57,913 basehttp 293420 125519928489536 "GET / HTTP/1.1" 200 13918
+INFO 2026-05-24 21:29:21,356 views 293420 125519928489536 Home page accessed
+INFO 2026-05-24 21:29:23,244 basehttp 293420 125519928489536 "GET / HTTP/1.1" 200 13294
+INFO 2026-05-24 21:29:29,550 basehttp 293420 125519928489536 "GET /cars/ HTTP/1.1" 200 23698
+INFO 2026-05-24 21:29:32,902 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=10&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 8344
+INFO 2026-05-24 21:29:36,031 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 23698
+INFO 2026-05-24 21:29:38,310 basehttp 293420 125519928489536 "GET /cars/25/ HTTP/1.1" 200 8658
+INFO 2026-05-24 21:29:44,584 basehttp 293420 125519928489536 "GET /cars/ HTTP/1.1" 200 23698
+INFO 2026-05-24 21:29:49,858 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=8&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 18497
+INFO 2026-05-24 21:29:51,179 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=8&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 18497
+INFO 2026-05-24 21:29:53,085 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=11&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 8344
+INFO 2026-05-24 21:29:54,819 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=12&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 8344
+INFO 2026-05-24 21:29:57,125 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=7&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 12251
+INFO 2026-05-24 21:30:00,402 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=9&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 9142
+INFO 2026-05-24 21:30:02,317 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=8&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 18497
+INFO 2026-05-24 21:30:04,940 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=8&fuel=petrol&sort=&price_min=&price_max= HTTP/1.1" 200 14339
+INFO 2026-05-24 21:30:06,560 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=8&fuel=diesel&sort=&price_min=&price_max= HTTP/1.1" 200 10183
+INFO 2026-05-24 21:30:08,441 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=8&fuel=hybrid&sort=&price_min=&price_max= HTTP/1.1" 200 10166
+INFO 2026-05-24 21:30:10,905 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=15&car_type=8&fuel=hybrid&sort=&price_min=&price_max= HTTP/1.1" 200 8344
+INFO 2026-05-24 21:30:12,793 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=15&car_type=&fuel=hybrid&sort=&price_min=&price_max= HTTP/1.1" 200 8344
+INFO 2026-05-24 21:30:15,565 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=15&car_type=&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 9133
+INFO 2026-05-24 21:30:18,091 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=18&car_type=&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 9141
+INFO 2026-05-24 21:30:20,133 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 23698
+INFO 2026-05-24 21:30:26,529 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=&fuel=&sort=&price_min=6&price_max= HTTP/1.1" 200 23708
+INFO 2026-05-24 21:30:29,035 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=&fuel=&sort=&price_min=6&price_max=0 HTTP/1.1" 200 23718
+INFO 2026-05-24 21:30:33,123 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=&fuel=&sort=&price_min=6&price_max=7 HTTP/1.1" 200 8364
+INFO 2026-05-24 21:30:38,046 basehttp 293420 125519928489536 "GET /cars/ HTTP/1.1" 200 23698
+INFO 2026-05-24 21:30:42,582 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=&fuel=&sort=-created_at&price_min=&price_max= HTTP/1.1" 200 23698
+INFO 2026-05-24 21:30:52,481 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=&fuel=&sort=-price&price_min=&price_max= HTTP/1.1" 200 23698
+INFO 2026-05-24 21:30:58,838 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=&fuel=&sort=year&price_min=&price_max= HTTP/1.1" 200 23698
+INFO 2026-05-24 21:31:08,189 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 23698
+INFO 2026-05-24 21:31:18,773 basehttp 293420 125519928489536 "GET /cars/?q=Ford&manufacturer=&car_type=&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 9152
+INFO 2026-05-24 21:31:24,886 basehttp 293420 125519928489536 "GET /cars/?q=&manufacturer=&car_type=&fuel=&sort=&price_min=&price_max= HTTP/1.1" 200 23698
+INFO 2026-05-24 21:31:36,470 basehttp 293420 125519928489536 "GET /users/login/ HTTP/1.1" 200 6377
+INFO 2026-05-24 21:31:50,676 views 293420 125519928489536 User logged in: admin
+INFO 2026-05-24 21:31:50,690 basehttp 293420 125519928489536 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 21:31:50,699 views 293420 125519928489536 Home page accessed
+INFO 2026-05-24 21:31:51,941 basehttp 293420 125519928489536 "GET / HTTP/1.1" 200 15288
+INFO 2026-05-24 21:31:58,127 views 293420 125519928489536 Analytics by admin, year=2026
+INFO 2026-05-24 21:32:01,984 basehttp 293420 125519928489536 "GET /analytics/ HTTP/1.1" 200 480040
+INFO 2026-05-24 21:32:36,513 views 293420 125519928489536 Analytics by admin, year=2026
+INFO 2026-05-24 21:32:38,224 basehttp 293420 125519920096832 "GET /orders/ HTTP/1.1" 200 23588
+INFO 2026-05-24 21:32:42,148 basehttp 293420 125519920096832 "GET /clients/ HTTP/1.1" 200 14570
+INFO 2026-05-24 21:32:43,489 basehttp 293420 125519920096832 "GET /clients/7/ HTTP/1.1" 200 10827
+INFO 2026-05-24 21:32:46,126 basehttp 293420 125519920096832 "GET /clients/ HTTP/1.1" 200 14570
+INFO 2026-05-24 21:32:51,630 basehttp 293420 125519920096832 "GET /orders/ HTTP/1.1" 200 23588
+INFO 2026-05-24 21:32:59,944 basehttp 293420 125519920096832 "GET /cars/ HTTP/1.1" 200 29288
+INFO 2026-05-24 21:33:04,698 basehttp 293420 125519920096832 "GET /contacts/ HTTP/1.1" 200 11673
+INFO 2026-05-24 21:33:59,447 views 293420 125519920096832 User logged out: admin
+INFO 2026-05-24 21:33:59,466 basehttp 293420 125519920096832 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 21:33:59,475 views 293420 125519920096832 Home page accessed
+INFO 2026-05-24 21:34:00,632 basehttp 293420 125519920096832 "GET / HTTP/1.1" 200 13294
+INFO 2026-05-24 21:34:07,761 basehttp 293420 125519920096832 "GET /users/login/ HTTP/1.1" 200 6377
+INFO 2026-05-24 21:34:39,613 views 293420 125519920096832 User logged in: manager1
+INFO 2026-05-24 21:34:39,625 basehttp 293420 125519920096832 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 21:34:39,633 views 293420 125519920096832 Home page accessed
+INFO 2026-05-24 21:34:41,030 basehttp 293420 125519920096832 "GET / HTTP/1.1" 200 14745
+INFO 2026-05-24 21:34:46,642 basehttp 293420 125519920096832 "GET /contacts/ HTTP/1.1" 200 11130
+INFO 2026-05-24 21:34:49,516 basehttp 293420 125519920096832 "GET /users/profile/ HTTP/1.1" 200 10729
+INFO 2026-05-24 21:35:58,998 basehttp 293420 125519920096832 "GET /users/profile/ HTTP/1.1" 200 10723
+INFO 2026-05-24 21:36:09,552 views 293420 125519920096832 User logged out: manager1
+INFO 2026-05-24 21:36:09,570 basehttp 293420 125519920096832 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 21:36:09,579 views 293420 125519920096832 Home page accessed
+INFO 2026-05-24 21:36:10,808 basehttp 293420 125519920096832 "GET / HTTP/1.1" 200 13257
+INFO 2026-05-24 21:36:12,504 basehttp 293420 125519920096832 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 21:36:35,126 views 293420 125519920096832 User logged in: client1
+INFO 2026-05-24 21:36:35,141 basehttp 293420 125519920096832 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 21:36:35,151 views 293420 125519920096832 Home page accessed
+INFO 2026-05-24 21:36:36,353 basehttp 293420 125519920096832 "GET / HTTP/1.1" 200 13888
+INFO 2026-05-24 21:36:43,455 basehttp 293420 125519920096832 "GET /users/profile/ HTTP/1.1" 200 10372
+INFO 2026-05-24 21:37:01,569 views 293420 125519920096832 User logged out: client1
+INFO 2026-05-24 21:37:01,588 basehttp 293420 125519920096832 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 21:37:01,597 views 293420 125519920096832 Home page accessed
+INFO 2026-05-24 21:37:03,747 basehttp 293420 125519920096832 "GET / HTTP/1.1" 200 13257
+INFO 2026-05-24 21:37:04,758 basehttp 293420 125519920096832 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 21:37:13,783 views 293420 125519920096832 User logged in: manager1
+INFO 2026-05-24 21:37:13,797 basehttp 293420 125519920096832 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 21:37:13,808 views 293420 125519920096832 Home page accessed
+INFO 2026-05-24 21:37:14,978 basehttp 293420 125519920096832 "GET / HTTP/1.1" 200 14708
+INFO 2026-05-24 21:37:21,003 basehttp 293420 125519920096832 "GET /orders/ HTTP/1.1" 200 23039
+INFO 2026-05-24 21:37:22,778 basehttp 293420 125519920096832 "GET /orders/28/ HTTP/1.1" 200 9989
+INFO 2026-05-24 21:42:20,617 autoreload 293420 125519985737728 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/forms.py changed, reloading.
+INFO 2026-05-24 21:42:21,681 autoreload 300616 131052244226048 Watching for file changes with StatReloader
+INFO 2026-05-24 21:42:26,259 autoreload 300616 131052244226048 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/users/forms.py changed, reloading.
+INFO 2026-05-24 21:42:26,823 autoreload 300648 136111463038976 Watching for file changes with StatReloader
+INFO 2026-05-24 21:42:36,555 basehttp 300648 136111334618688 "GET /orders/28/ HTTP/1.1" 200 9989
+INFO 2026-05-24 21:42:40,754 basehttp 300648 136111334618688 "GET /users/profile/ HTTP/1.1" 200 11151
+INFO 2026-05-24 21:42:51,453 views 300648 136111334618688 User logged out: manager1
+INFO 2026-05-24 21:42:51,470 basehttp 300648 136111334618688 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 21:42:51,478 views 300648 136111334618688 Home page accessed
+INFO 2026-05-24 21:42:52,621 basehttp 300648 136111334618688 "GET / HTTP/1.1" 200 13257
+INFO 2026-05-24 21:42:58,247 basehttp 300648 136111334618688 "GET /users/login/ HTTP/1.1" 200 6371
+INFO 2026-05-24 21:43:18,010 views 300648 136111334618688 User logged in: client1
+INFO 2026-05-24 21:43:18,024 basehttp 300648 136111334618688 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 21:43:18,035 views 300648 136111334618688 Home page accessed
+INFO 2026-05-24 21:43:19,276 basehttp 300648 136111334618688 "GET / HTTP/1.1" 200 13888
+INFO 2026-05-24 21:43:27,081 basehttp 300648 136111334618688 "GET /users/profile/ HTTP/1.1" 200 10871
+INFO 2026-05-24 21:43:32,465 basehttp 300648 136111334618688 "GET /cars/ HTTP/1.1" 200 24445
+INFO 2026-05-24 21:44:41,406 basehttp 300648 136111334618688 "GET /cars/ HTTP/1.1" 200 24451
+INFO 2026-05-24 21:44:44,027 views 300648 136111334618688 User logged out: client1
+INFO 2026-05-24 21:44:44,042 basehttp 300648 136111334618688 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 21:44:44,052 views 300648 136111334618688 Home page accessed
+INFO 2026-05-24 21:44:44,775 basehttp 300648 136111334618688 "GET / HTTP/1.1" 200 13263
+INFO 2026-05-24 21:44:45,844 basehttp 300648 136111334618688 "GET /users/login/ HTTP/1.1" 200 6377
+INFO 2026-05-24 21:44:54,660 views 300648 136111334618688 User logged in: admin
+INFO 2026-05-24 21:44:54,675 basehttp 300648 136111334618688 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 21:44:54,685 views 300648 136111334618688 Home page accessed
+INFO 2026-05-24 21:44:55,811 basehttp 300648 136111334618688 "GET / HTTP/1.1" 200 15257
+INFO 2026-05-24 21:44:59,103 views 300648 136111334618688 Analytics by admin, year=2026
+INFO 2026-05-24 21:45:02,875 basehttp 300648 136111334618688 "GET /analytics/ HTTP/1.1" 200 480040
+INFO 2026-05-24 21:45:26,796 basehttp 300648 136111334618688 "GET /orders/ HTTP/1.1" 200 23588
+INFO 2026-05-24 21:47:21,659 basehttp 300648 136111334618688 "GET /orders/ HTTP/1.1" 200 23588
+INFO 2026-05-24 21:47:22,822 views 300648 136111334618688 Home page accessed
+INFO 2026-05-24 21:47:23,693 basehttp 300648 136111334618688 "GET / HTTP/1.1" 200 15307
+INFO 2026-05-24 21:47:50,776 views 300648 136111334618688 Home page accessed
+INFO 2026-05-24 21:47:52,096 basehttp 300648 136111334618688 "GET / HTTP/1.1" 200 15257
+INFO 2026-05-24 21:48:22,096 views 300648 136111334618688 Home page accessed
+INFO 2026-05-24 21:48:22,909 basehttp 300648 136111334618688 "GET / HTTP/1.1" 200 15185
+INFO 2026-05-24 21:48:44,725 basehttp 300648 136111334618688 "GET /faq/ HTTP/1.1" 200 11870
+INFO 2026-05-24 21:48:58,541 basehttp 300648 136111334618688 "GET /faq/ HTTP/1.1" 200 11737
+INFO 2026-05-24 21:49:25,958 basehttp 300648 136111334618688 "GET /faq/ HTTP/1.1" 200 11625
+INFO 2026-05-24 21:49:32,104 basehttp 300648 136111334618688 "GET /cars/ HTTP/1.1" 200 29288
+INFO 2026-05-24 21:49:59,460 basehttp 300648 136111334618688 "GET /contacts/ HTTP/1.1" 200 11673
+INFO 2026-05-24 21:50:16,159 basehttp 300648 136111334618688 "GET /orders/ HTTP/1.1" 200 23588
+INFO 2026-05-24 21:50:18,342 basehttp 300648 136111334618688 "GET /orders/28/ HTTP/1.1" 200 10538
+INFO 2026-05-24 21:50:23,040 basehttp 300648 136111334618688 "GET /orders/ HTTP/1.1" 200 23588
+INFO 2026-05-24 21:50:25,195 basehttp 300648 136111334618688 "GET /faq/ HTTP/1.1" 200 11625
+INFO 2026-05-24 21:50:28,603 basehttp 300648 136111334618688 "GET /vacancies/ HTTP/1.1" 200 9820
+INFO 2026-05-24 21:50:32,468 basehttp 300648 136111334618688 "GET /privacy/ HTTP/1.1" 200 7965
+INFO 2026-05-24 21:50:41,227 basehttp 300648 136111334618688 "GET /orders/28/edit/ HTTP/1.1" 200 21991
+INFO 2026-05-24 21:51:08,382 basehttp 300648 136111334618688 "GET /orders/28/edit/ HTTP/1.1" 200 21991
+INFO 2026-05-24 21:52:19,696 views 300648 136111334618688 Analytics by admin, year=2026
+INFO 2026-05-24 21:52:22,050 basehttp 300648 136111334618688 "GET /analytics/ HTTP/1.1" 200 479926
+INFO 2026-05-24 21:52:33,683 views 300648 136111334618688 Analytics by admin, year=2026
+INFO 2026-05-24 21:52:35,927 basehttp 300648 136111334618688 "GET /analytics/ HTTP/1.1" 200 479907
+INFO 2026-05-24 21:53:06,625 basehttp 300648 136111334618688 "GET /orders/ HTTP/1.1" 200 23588
+INFO 2026-05-24 21:53:08,233 basehttp 300648 136111334618688 "GET /orders/28/ HTTP/1.1" 200 10538
+INFO 2026-05-24 21:53:11,757 basehttp 300648 136111334618688 "GET /orders/28/edit/ HTTP/1.1" 200 21991
+INFO 2026-05-24 21:54:06,327 basehttp 300648 136111334618688 "GET /orders/28/edit/ HTTP/1.1" 200 21963
+INFO 2026-05-24 21:54:51,222 basehttp 300648 136111334618688 "GET /cars/ HTTP/1.1" 200 29288
+INFO 2026-05-24 21:54:54,431 basehttp 300648 136111334618688 "GET /orders/ HTTP/1.1" 200 23588
+INFO 2026-05-24 21:54:57,003 basehttp 300648 136111334618688 "GET /contacts/ HTTP/1.1" 200 11673
+INFO 2026-05-24 21:55:00,074 basehttp 300648 136111334618688 "GET /cars/ HTTP/1.1" 200 29288
+INFO 2026-05-24 21:55:05,994 views 300648 136111334618688 Analytics by admin, year=2026
+INFO 2026-05-24 21:55:08,241 basehttp 300648 136111334618688 "GET /analytics/ HTTP/1.1" 200 479926
+INFO 2026-05-24 21:55:10,533 basehttp 300648 136111334618688 "GET /admin/ HTTP/1.1" 200 13040
+INFO 2026-05-24 21:55:15,468 basehttp 300648 136111334618688 "GET /admin/catalog/contact/ HTTP/1.1" 200 16470
+INFO 2026-05-24 21:55:15,533 basehttp 300648 136111334618688 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 21:55:23,598 basehttp 300648 136111334618688 "GET /admin/catalog/contact/4/change/ HTTP/1.1" 200 16812
+INFO 2026-05-24 21:55:23,658 basehttp 300648 136111334618688 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+ERROR 2026-05-24 21:56:18,418 log 300648 136111334618688 Internal Server Error: /admin/catalog/contact/4/change/
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/files/storage/handler.py", line 35, in __getitem__
+    return self._storages[alias]
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/files/storage/handler.py", line 38, in __getitem__
+    params = self.backends[alias]
+KeyError: 'default'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 689, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1890, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1748, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1799, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1228, in save_model
+    obj.save()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/base.py", line 981, in _save_table
+    values = [
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/base.py", line 985, in <listcomp>
+    (getattr(self, f.attname) if raw else f.pre_save(self, False)),
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/fields/files.py", line 317, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/fields/files.py", line 92, in save
+    name = self.field.generate_filename(self.instance, name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/db/models/fields/files.py", line 337, in generate_filename
+    return self.storage.generate_filename(filename)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/utils/functional.py", line 266, in inner
+    self._setup()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/files/storage/__init__.py", line 42, in _setup
+    self._wrapped = storages[DEFAULT_STORAGE_ALIAS]
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/files/storage/handler.py", line 40, in __getitem__
+    raise InvalidStorageError(
+django.core.files.storage.handler.InvalidStorageError: Could not find config for 'default' in settings.STORAGES.
+ERROR 2026-05-24 21:56:18,423 basehttp 300648 136111334618688 "POST /admin/catalog/contact/4/change/ HTTP/1.1" 500 167328
+INFO 2026-05-24 21:58:13,534 autoreload 300648 136111463038976 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/carshop/settings.py changed, reloading.
+INFO 2026-05-24 21:58:14,279 autoreload 304908 124138596405248 Watching for file changes with StatReloader
+INFO 2026-05-24 21:58:19,777 autoreload 304908 124138596405248 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/carshop/settings.py changed, reloading.
+INFO 2026-05-24 21:58:20,303 autoreload 304944 137379390259200 Watching for file changes with StatReloader
+INFO 2026-05-24 21:58:31,849 autoreload 304944 137379390259200 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/carshop/settings.py changed, reloading.
+INFO 2026-05-24 21:58:32,400 autoreload 305000 137462610726912 Watching for file changes with StatReloader
+INFO 2026-05-24 21:58:36,883 autoreload 305000 137462610726912 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/carshop/settings.py changed, reloading.
+INFO 2026-05-24 21:58:37,373 autoreload 305025 135542890389504 Watching for file changes with StatReloader
+INFO 2026-05-24 21:58:42,823 basehttp 305025 135542833411648 "POST /admin/catalog/contact/4/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 21:58:42,907 basehttp 305025 135542833411648 "GET /admin/catalog/contact/ HTTP/1.1" 200 16697
+INFO 2026-05-24 21:58:43,033 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 21:58:45,701 basehttp 305025 135542833411648 "GET /admin/catalog/contact/4/change/ HTTP/1.1" 200 17139
+INFO 2026-05-24 21:58:45,765 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 21:58:50,804 views 305025 135542833411648 Home page accessed
+INFO 2026-05-24 21:58:52,070 basehttp 305025 135542833411648 "GET / HTTP/1.1" 200 15185
+INFO 2026-05-24 21:58:54,257 basehttp 305025 135542833411648 "GET /contacts/ HTTP/1.1" 200 11636
+INFO 2026-05-24 21:58:54,321 basehttp 305025 135542833411648 "GET /media/contacts/photo_2025-10-04_12-24-45.jpg HTTP/1.1" 200 48608
+INFO 2026-05-24 22:03:11,629 basehttp 305025 135542833411648 "GET /news/ HTTP/1.1" 200 10536
+INFO 2026-05-24 22:03:14,893 basehttp 305025 135542833411648 "GET /contacts/ HTTP/1.1" 200 11636
+INFO 2026-05-24 22:03:14,962 basehttp 305025 135542833411648 "GET /media/contacts/photo_2025-10-04_12-24-45.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:06:04,013 basehttp 305025 135542833411648 "GET /admin/ HTTP/1.1" 200 13376
+INFO 2026-05-24 22:06:08,838 basehttp 305025 135542833411648 "GET /admin/auth/user/ HTTP/1.1" 200 23171
+INFO 2026-05-24 22:06:08,892 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:06:11,946 basehttp 305025 135542833411648 "GET /admin/catalog/contact/ HTTP/1.1" 200 16467
+INFO 2026-05-24 22:06:12,016 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:06:14,344 basehttp 305025 135542833411648 "GET /admin/catalog/contact/5/change/ HTTP/1.1" 200 16825
+INFO 2026-05-24 22:06:14,411 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:06:25,757 basehttp 305025 135542833411648 "POST /admin/catalog/contact/5/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:06:25,788 basehttp 305025 135542833411648 "GET /admin/catalog/contact/ HTTP/1.1" 200 16704
+INFO 2026-05-24 22:06:25,890 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:06:30,501 views 305025 135542833411648 Home page accessed
+INFO 2026-05-24 22:06:31,365 basehttp 305025 135542833411648 "GET / HTTP/1.1" 200 15185
+INFO 2026-05-24 22:06:34,674 basehttp 305025 135542833411648 "GET /contacts/ HTTP/1.1" 200 11602
+INFO 2026-05-24 22:06:34,723 basehttp 305025 135542833411648 "GET /media/contacts/photo_2025-10-04_12-24-45.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:06:34,727 basehttp 305025 135542825018944 "GET /media/contacts/photo_2026-05-24_22-05-48.jpg HTTP/1.1" 200 63281
+INFO 2026-05-24 22:06:56,557 basehttp 305025 135542825018944 "GET /admin/ HTTP/1.1" 200 13692
+INFO 2026-05-24 22:06:58,030 basehttp 305025 135542825018944 "GET /admin/catalog/contact/5/change/ HTTP/1.1" 200 17164
+INFO 2026-05-24 22:06:58,101 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:07:09,628 basehttp 305025 135542825018944 "POST /admin/catalog/contact/5/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:07:09,659 basehttp 305025 135542825018944 "GET /admin/catalog/contact/ HTTP/1.1" 200 16704
+INFO 2026-05-24 22:07:09,770 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:07:13,381 views 305025 135542825018944 Home page accessed
+INFO 2026-05-24 22:07:14,307 basehttp 305025 135542825018944 "GET / HTTP/1.1" 200 15185
+INFO 2026-05-24 22:07:20,105 basehttp 305025 135542825018944 "GET /contacts/ HTTP/1.1" 200 11602
+INFO 2026-05-24 22:07:20,180 basehttp 305025 135542825018944 "GET /media/contacts/photo_2026-05-24_22-06-49.jpg HTTP/1.1" 200 59258
+INFO 2026-05-24 22:09:13,346 basehttp 305025 135542833411648 "GET /admin/ HTTP/1.1" 200 14008
+INFO 2026-05-24 22:09:17,982 basehttp 305025 135542833411648 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:09:18,066 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:09:20,806 basehttp 305025 135542833411648 "GET /admin/catalog/car/27/change/ HTTP/1.1" 200 29639
+INFO 2026-05-24 22:09:20,872 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:09:34,441 basehttp 305025 135542833411648 "GET /admin/catalog/cartype/ HTTP/1.1" 200 15078
+INFO 2026-05-24 22:09:34,515 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:09:35,979 basehttp 305025 135542833411648 "GET /admin/catalog/cartype/9/change/ HTTP/1.1" 200 14198
+INFO 2026-05-24 22:09:36,046 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:09:38,639 basehttp 305025 135542833411648 "GET /admin/catalog/review/ HTTP/1.1" 200 19397
+INFO 2026-05-24 22:09:38,696 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:09:40,028 basehttp 305025 135542833411648 "GET /admin/catalog/review/7/change/ HTTP/1.1" 200 20338
+INFO 2026-05-24 22:09:40,097 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:09:42,436 basehttp 305025 135542833411648 "GET /admin/auth/user/ HTTP/1.1" 200 23171
+INFO 2026-05-24 22:09:42,495 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:09:44,260 basehttp 305025 135542833411648 "GET /admin/auth/user/20/change/ HTTP/1.1" 200 31880
+INFO 2026-05-24 22:09:44,323 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:09:48,452 basehttp 305025 135542833411648 "GET /admin/catalog/client/ HTTP/1.1" 200 20161
+INFO 2026-05-24 22:09:48,515 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:09:50,062 basehttp 305025 135542833411648 "GET /admin/catalog/order/ HTTP/1.1" 200 32163
+INFO 2026-05-24 22:09:50,136 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:09:51,283 basehttp 305025 135542833411648 "GET /admin/catalog/vacancy/ HTTP/1.1" 200 17463
+INFO 2026-05-24 22:09:51,339 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:09:52,725 basehttp 305025 135542833411648 "GET /admin/catalog/vacancy/5/change/ HTTP/1.1" 200 16034
+INFO 2026-05-24 22:09:52,780 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:09:57,059 basehttp 305025 135542833411648 "GET /admin/catalog/contact/ HTTP/1.1" 200 16467
+INFO 2026-05-24 22:09:57,125 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:12:28,279 basehttp 305025 135542833411648 "GET /admin/catalog/contact/6/change/ HTTP/1.1" 200 16827
+INFO 2026-05-24 22:12:28,338 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:12:45,301 basehttp 305025 135542833411648 "POST /admin/catalog/contact/6/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:12:45,334 basehttp 305025 135542833411648 "GET /admin/catalog/contact/ HTTP/1.1" 200 16704
+INFO 2026-05-24 22:12:45,446 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:12:47,433 basehttp 305025 135542833411648 "GET /admin/catalog/contact/7/change/ HTTP/1.1" 200 16837
+INFO 2026-05-24 22:12:47,505 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:12:57,692 basehttp 305025 135542833411648 "POST /admin/catalog/contact/7/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:12:57,725 basehttp 305025 135542833411648 "GET /admin/catalog/contact/ HTTP/1.1" 200 16702
+INFO 2026-05-24 22:12:57,846 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:12:59,744 basehttp 305025 135542833411648 "GET /admin/catalog/contact/8/change/ HTTP/1.1" 200 16850
+INFO 2026-05-24 22:12:59,798 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:14:37,036 basehttp 305025 135542833411648 "POST /admin/catalog/contact/8/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:14:37,069 basehttp 305025 135542833411648 "GET /admin/catalog/contact/ HTTP/1.1" 200 16710
+INFO 2026-05-24 22:14:37,167 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:14:38,699 basehttp 305025 135542833411648 "GET /admin/catalog/contact/9/change/ HTTP/1.1" 200 16844
+INFO 2026-05-24 22:14:38,764 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:14:55,427 basehttp 305025 135542833411648 "POST /admin/catalog/contact/9/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:14:55,459 basehttp 305025 135542833411648 "GET /admin/catalog/contact/ HTTP/1.1" 200 16708
+INFO 2026-05-24 22:14:55,567 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:15:00,423 views 305025 135542833411648 Home page accessed
+INFO 2026-05-24 22:15:01,464 basehttp 305025 135542833411648 "GET / HTTP/1.1" 200 15185
+INFO 2026-05-24 22:15:06,632 basehttp 305025 135542833411648 "GET /contacts/ HTTP/1.1" 200 11412
+INFO 2026-05-24 22:15:06,691 basehttp 305025 135542833411648 "GET /media/contacts/photo_2025-10-04_12-24-45.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:15:06,698 basehttp 305025 135542833411648 "GET /media/contacts/photo_2026-05-24_22-06-49.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:15:06,709 basehttp 305025 135542825018944 "GET /media/contacts/download_1.jpg HTTP/1.1" 200 4501
+INFO 2026-05-24 22:15:06,719 basehttp 305025 135542591190592 "GET /media/contacts/download_1_R9bzrtz.jpg HTTP/1.1" 200 4501
+INFO 2026-05-24 22:15:06,739 basehttp 305025 135542582797888 "GET /media/contacts/download.jpg HTTP/1.1" 200 105642
+INFO 2026-05-24 22:15:06,745 basehttp 305025 135542574405184 "GET /media/contacts/download_2.jpg HTTP/1.1" 200 6907
+INFO 2026-05-24 22:15:19,478 basehttp 305025 135542582797888 "GET /admin/ HTTP/1.1" 200 15280
+INFO 2026-05-24 22:15:31,758 basehttp 305025 135542582797888 "GET /admin/catalog/contact/6/change/ HTTP/1.1" 200 17136
+INFO 2026-05-24 22:15:31,826 basehttp 305025 135542582797888 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:15:33,820 basehttp 305025 135542582797888 "GET /admin/ HTTP/1.1" 200 15280
+INFO 2026-05-24 22:15:35,541 basehttp 305025 135542582797888 "GET /admin/catalog/contact/7/change/ HTTP/1.1" 200 17162
+INFO 2026-05-24 22:15:35,606 basehttp 305025 135542582797888 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:16:37,031 basehttp 305025 135542582797888 "POST /admin/catalog/contact/7/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:16:37,070 basehttp 305025 135542582797888 "GET /admin/catalog/contact/ HTTP/1.1" 200 16702
+INFO 2026-05-24 22:16:37,182 basehttp 305025 135542582797888 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:16:39,709 views 305025 135542582797888 Home page accessed
+INFO 2026-05-24 22:16:40,805 basehttp 305025 135542582797888 "GET / HTTP/1.1" 200 15185
+INFO 2026-05-24 22:16:45,777 basehttp 305025 135542582797888 "GET /contacts/ HTTP/1.1" 200 11404
+INFO 2026-05-24 22:16:45,839 basehttp 305025 135542582797888 "GET /media/contacts/photo_2025-10-04_12-24-45.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:16:45,849 basehttp 305025 135542574405184 "GET /media/contacts/photo_2026-05-24_22-06-49.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:16:45,855 basehttp 305025 135542582797888 "GET /media/contacts/download_3.jpg HTTP/1.1" 200 7607
+INFO 2026-05-24 22:16:45,866 basehttp 305025 135542825018944 "GET /media/contacts/download_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:16:45,882 basehttp 305025 135542833411648 "GET /media/contacts/download.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:16:45,884 basehttp 305025 135542591190592 "GET /media/contacts/download_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:17:13,319 basehttp 305025 135542582797888 "GET /admin/ HTTP/1.1" 200 15594
+INFO 2026-05-24 22:17:17,071 basehttp 305025 135542582797888 "GET /admin/catalog/contact/9/change/ HTTP/1.1" 200 17153
+INFO 2026-05-24 22:17:17,138 basehttp 305025 135542582797888 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:17:51,956 basehttp 305025 135542582797888 "POST /admin/catalog/contact/9/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:17:51,994 basehttp 305025 135542582797888 "GET /admin/catalog/contact/ HTTP/1.1" 200 16717
+INFO 2026-05-24 22:17:52,132 basehttp 305025 135542582797888 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:17:53,978 views 305025 135542582797888 Home page accessed
+INFO 2026-05-24 22:17:54,878 basehttp 305025 135542582797888 "GET / HTTP/1.1" 200 15185
+INFO 2026-05-24 22:17:59,614 basehttp 305025 135542582797888 "GET /contacts/ HTTP/1.1" 200 11413
+INFO 2026-05-24 22:17:59,666 basehttp 305025 135542582797888 "GET /media/contacts/photo_2026-05-24_22-06-49.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:17:59,680 basehttp 305025 135542591190592 "GET /media/contacts/download_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:17:59,684 basehttp 305025 135542582797888 "GET /media/contacts/download_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:17:59,696 basehttp 305025 135542591190592 "GET /media/contacts/download.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:17:59,697 basehttp 305025 135542833411648 "GET /media/contacts/download_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:18:30,564 basehttp 305025 135542591190592 "GET /promos/ HTTP/1.1" 200 9795
+INFO 2026-05-24 22:18:33,919 basehttp 305025 135542591190592 "GET /news/ HTTP/1.1" 200 10536
+INFO 2026-05-24 22:18:36,356 basehttp 305025 135542591190592 "GET /cars/ HTTP/1.1" 200 29288
+INFO 2026-05-24 22:21:03,405 basehttp 305025 135542591190592 "GET /contacts/ HTTP/1.1" 200 11413
+INFO 2026-05-24 22:21:03,452 basehttp 305025 135542833411648 "GET /media/contacts/photo_2026-05-24_22-06-49.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:21:03,453 basehttp 305025 135542591190592 "GET /media/contacts/photo_2025-10-04_12-24-45.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:21:03,471 basehttp 305025 135542591190592 "GET /media/contacts/download_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:21:03,478 basehttp 305025 135542833411648 "GET /media/contacts/download_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:21:03,489 basehttp 305025 135542825018944 "GET /media/contacts/download.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:21:03,497 basehttp 305025 135542582797888 "GET /media/contacts/download_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:21:09,720 basehttp 305025 135542833411648 "GET /news/ HTTP/1.1" 200 10536
+INFO 2026-05-24 22:21:18,107 basehttp 305025 135542833411648 "GET /admin/ HTTP/1.1" 200 15914
+INFO 2026-05-24 22:21:21,658 basehttp 305025 135542833411648 "GET /admin/catalog/promo/ HTTP/1.1" 200 17937
+INFO 2026-05-24 22:21:21,731 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:21:23,490 basehttp 305025 135542833411648 "GET /admin/catalog/promo/8/change/ HTTP/1.1" 200 16346
+INFO 2026-05-24 22:21:23,548 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:21:25,913 basehttp 305025 135542833411648 "GET /admin/catalog/promo/ HTTP/1.1" 200 17937
+INFO 2026-05-24 22:21:26,667 basehttp 305025 135542833411648 "GET /admin/ HTTP/1.1" 200 15914
+INFO 2026-05-24 22:21:31,100 basehttp 305025 135542833411648 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:21:31,184 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:21:35,897 basehttp 305025 135542833411648 "GET /admin/catalog/car/27/change/ HTTP/1.1" 200 29639
+INFO 2026-05-24 22:21:35,954 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:21:54,981 basehttp 305025 135542833411648 "POST /admin/catalog/car/27/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:21:55,058 basehttp 305025 135542833411648 "GET /admin/catalog/car/ HTTP/1.1" 200 31828
+INFO 2026-05-24 22:21:55,181 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:21:57,402 basehttp 305025 135542833411648 "GET /admin/catalog/car/26/change/ HTTP/1.1" 200 29682
+INFO 2026-05-24 22:21:57,456 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:22:14,443 basehttp 305025 135542833411648 "POST /admin/catalog/car/26/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:22:14,522 basehttp 305025 135542833411648 "GET /admin/catalog/car/ HTTP/1.1" 200 31834
+INFO 2026-05-24 22:22:14,645 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:22:16,292 basehttp 305025 135542833411648 "GET /admin/catalog/car/25/change/ HTTP/1.1" 200 29678
+INFO 2026-05-24 22:22:16,340 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:22:31,777 basehttp 305025 135542833411648 "POST /admin/catalog/car/25/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:22:31,852 basehttp 305025 135542833411648 "GET /admin/catalog/car/ HTTP/1.1" 200 31830
+INFO 2026-05-24 22:22:31,965 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:22:33,762 basehttp 305025 135542833411648 "GET /admin/catalog/car/24/change/ HTTP/1.1" 200 29690
+INFO 2026-05-24 22:22:33,827 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:22:44,141 basehttp 305025 135542833411648 "POST /admin/catalog/car/24/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:22:44,207 basehttp 305025 135542833411648 "GET /admin/catalog/car/ HTTP/1.1" 200 31835
+INFO 2026-05-24 22:22:44,321 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:22:46,871 basehttp 305025 135542833411648 "GET /admin/catalog/car/24/change/ HTTP/1.1" 200 29991
+INFO 2026-05-24 22:22:46,938 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:22:53,849 basehttp 305025 135542833411648 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:22:55,691 basehttp 305025 135542833411648 "GET /admin/catalog/car/23/change/ HTTP/1.1" 200 29708
+INFO 2026-05-24 22:22:55,769 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:23:06,252 basehttp 305025 135542833411648 "POST /admin/catalog/car/23/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:23:06,346 basehttp 305025 135542833411648 "GET /admin/catalog/car/ HTTP/1.1" 200 31839
+INFO 2026-05-24 22:23:06,473 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:23:08,816 views 305025 135542833411648 Home page accessed
+INFO 2026-05-24 22:23:09,821 basehttp 305025 135542833411648 "GET / HTTP/1.1" 200 14888
+INFO 2026-05-24 22:23:09,895 basehttp 305025 135542833411648 "GET /media/cars/images_4.jpg HTTP/1.1" 200 6732
+INFO 2026-05-24 22:23:09,908 basehttp 305025 135542591190592 "GET /media/cars/download_9.jpg HTTP/1.1" 200 8575
+INFO 2026-05-24 22:23:09,916 basehttp 305025 135542582797888 "GET /media/cars/images_1.jpg HTTP/1.1" 200 12390
+INFO 2026-05-24 22:23:09,917 basehttp 305025 135542825018944 "GET /media/cars/download_4.jpg HTTP/1.1" 200 8790
+INFO 2026-05-24 22:23:19,629 basehttp 305025 135542825018944 "GET /cars/ HTTP/1.1" 200 28925
+INFO 2026-05-24 22:23:19,699 basehttp 305025 135542825018944 "GET /media/cars/images_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:23:19,716 basehttp 305025 135542582797888 "GET /media/cars/download_9.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:23:19,740 basehttp 305025 135542825018944 "GET /media/cars/download_6.jpg HTTP/1.1" 200 5419
+INFO 2026-05-24 22:23:19,741 basehttp 305025 135542591190592 "GET /media/cars/images_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:23:19,741 basehttp 305025 135542833411648 "GET /media/cars/download_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:23:27,571 basehttp 305025 135542825018944 "GET /admin/ HTTP/1.1" 200 16228
+INFO 2026-05-24 22:23:32,498 basehttp 305025 135542825018944 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:23:32,574 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:23:35,187 basehttp 305025 135542825018944 "GET /admin/catalog/car/22/change/ HTTP/1.1" 200 29643
+INFO 2026-05-24 22:23:35,254 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:23:48,421 basehttp 305025 135542825018944 "POST /admin/catalog/car/22/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:23:48,510 basehttp 305025 135542825018944 "GET /admin/catalog/car/ HTTP/1.1" 200 31826
+INFO 2026-05-24 22:23:48,634 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:23:51,896 basehttp 305025 135542825018944 "GET /admin/catalog/car/21/change/ HTTP/1.1" 200 29665
+INFO 2026-05-24 22:23:51,967 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:24:20,869 basehttp 305025 135542825018944 "POST /admin/catalog/car/21/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:24:20,942 basehttp 305025 135542825018944 "GET /admin/catalog/car/ HTTP/1.1" 200 31831
+INFO 2026-05-24 22:24:21,062 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:24:23,291 views 305025 135542825018944 Home page accessed
+INFO 2026-05-24 22:24:24,295 basehttp 305025 135542825018944 "GET / HTTP/1.1" 200 14731
+INFO 2026-05-24 22:24:24,378 basehttp 305025 135542591190592 "GET /media/cars/download_9.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:24:24,390 basehttp 305025 135542833411648 "GET /media/cars/images_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:24:24,391 basehttp 305025 135542582797888 "GET /media/cars/images_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:24:24,399 basehttp 305025 135542825018944 "GET /media/cars/images_3.jpg HTTP/1.1" 200 8081
+INFO 2026-05-24 22:24:24,400 basehttp 305025 135542574405184 "GET /media/cars/download_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:24:24,404 basehttp 305025 135542566012480 "GET /media/cars/images_2.jpg HTTP/1.1" 200 9209
+INFO 2026-05-24 22:24:32,708 basehttp 305025 135542566012480 "GET /cars/ HTTP/1.1" 200 28768
+INFO 2026-05-24 22:24:32,779 basehttp 305025 135542566012480 "GET /media/cars/download_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:24:32,786 basehttp 305025 135542574405184 "GET /media/cars/images_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:24:32,789 basehttp 305025 135542825018944 "GET /media/cars/images_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:24:53,351 basehttp 305025 135542825018944 "GET /admin/ HTTP/1.1" 200 16211
+INFO 2026-05-24 22:25:00,283 basehttp 305025 135542825018944 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:25:00,360 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:25:02,985 basehttp 305025 135542825018944 "GET /admin/catalog/car/21/change/ HTTP/1.1" 200 29962
+INFO 2026-05-24 22:25:03,065 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:25:06,200 basehttp 305025 135542825018944 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:25:07,716 basehttp 305025 135542825018944 "GET /admin/catalog/car/23/change/ HTTP/1.1" 200 30009
+INFO 2026-05-24 22:25:07,779 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:25:10,121 basehttp 305025 135542825018944 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:25:13,563 basehttp 305025 135542825018944 "GET /admin/catalog/car/21/change/ HTTP/1.1" 200 29962
+INFO 2026-05-24 22:25:13,631 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:25:15,412 basehttp 305025 135542825018944 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:25:17,090 basehttp 305025 135542825018944 "GET /admin/catalog/car/20/change/ HTTP/1.1" 200 29662
+INFO 2026-05-24 22:25:17,150 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:25:27,033 basehttp 305025 135542825018944 "POST /admin/catalog/car/20/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:25:27,110 basehttp 305025 135542825018944 "GET /admin/catalog/car/ HTTP/1.1" 200 31833
+INFO 2026-05-24 22:25:27,240 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:25:30,353 basehttp 305025 135542825018944 "GET /admin/catalog/car/19/change/ HTTP/1.1" 200 29648
+INFO 2026-05-24 22:25:30,411 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:25:42,520 basehttp 305025 135542825018944 "POST /admin/catalog/car/19/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:25:42,650 basehttp 305025 135542825018944 "GET /admin/catalog/car/ HTTP/1.1" 200 31827
+INFO 2026-05-24 22:25:44,664 basehttp 305025 135542825018944 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:25:47,091 views 305025 135542825018944 Home page accessed
+INFO 2026-05-24 22:25:48,121 basehttp 305025 135542825018944 "GET / HTTP/1.1" 200 14731
+INFO 2026-05-24 22:25:48,212 basehttp 305025 135542833411648 "GET /media/cars/download_9.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:25:48,225 basehttp 305025 135542566012480 "GET /media/cars/download_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:25:48,225 basehttp 305025 135542591190592 "GET /media/cars/images_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:25:48,231 basehttp 305025 135542582797888 "GET /media/cars/images_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:25:48,232 basehttp 305025 135542825018944 "GET /media/cars/images_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:25:48,233 basehttp 305025 135542574405184 "GET /media/cars/images_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:25:50,091 basehttp 305025 135542825018944 "GET /cars/ HTTP/1.1" 200 28616
+INFO 2026-05-24 22:25:50,152 basehttp 305025 135542825018944 "GET /media/cars/download_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:25:50,174 basehttp 305025 135542825018944 "GET /media/cars/images_5.jpg HTTP/1.1" 200 10807
+INFO 2026-05-24 22:25:50,177 basehttp 305025 135542574405184 "GET /media/cars/download_5.jpg HTTP/1.1" 200 10862
+INFO 2026-05-24 22:27:12,696 basehttp 305025 135542825018944 "GET /contacts/ HTTP/1.1" 200 11413
+INFO 2026-05-24 22:27:12,754 basehttp 305025 135542574405184 "GET /media/contacts/photo_2026-05-24_22-06-49.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:27:12,755 basehttp 305025 135542825018944 "GET /media/contacts/photo_2025-10-04_12-24-45.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:27:12,768 basehttp 305025 135542825018944 "GET /media/contacts/download_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:27:12,772 basehttp 305025 135542574405184 "GET /media/contacts/download_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:27:12,789 basehttp 305025 135542566012480 "GET /media/contacts/download_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:27:12,790 basehttp 305025 135542582797888 "GET /media/contacts/download.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:28:05,022 basehttp 305025 135542574405184 "GET /admin/ HTTP/1.1" 200 16199
+INFO 2026-05-24 22:28:08,052 basehttp 305025 135542574405184 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:28:08,127 basehttp 305025 135542574405184 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:28:10,778 basehttp 305025 135542574405184 "GET /admin/catalog/car/13/change/ HTTP/1.1" 200 29648
+INFO 2026-05-24 22:28:10,849 basehttp 305025 135542574405184 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:28:26,669 basehttp 305025 135542574405184 "POST /admin/catalog/car/13/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:28:26,744 basehttp 305025 135542574405184 "GET /admin/catalog/car/ HTTP/1.1" 200 31832
+INFO 2026-05-24 22:28:26,856 basehttp 305025 135542574405184 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:28:28,974 basehttp 305025 135542574405184 "GET /admin/catalog/car/14/change/ HTTP/1.1" 200 29654
+INFO 2026-05-24 22:28:29,041 basehttp 305025 135542574405184 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:28:57,816 basehttp 305025 135542574405184 "POST /admin/catalog/car/14/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:28:57,892 basehttp 305025 135542574405184 "GET /admin/catalog/car/ HTTP/1.1" 200 31832
+INFO 2026-05-24 22:28:58,004 basehttp 305025 135542574405184 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:29:00,366 basehttp 305025 135542574405184 "GET /admin/catalog/car/15/change/ HTTP/1.1" 200 29708
+INFO 2026-05-24 22:29:00,427 basehttp 305025 135542574405184 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:29:18,653 basehttp 305025 135542574405184 "POST /admin/catalog/car/15/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:29:18,741 basehttp 305025 135542574405184 "GET /admin/catalog/car/ HTTP/1.1" 200 31842
+INFO 2026-05-24 22:29:18,855 basehttp 305025 135542574405184 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:29:22,166 basehttp 305025 135542574405184 "GET /admin/catalog/car/17/change/ HTTP/1.1" 200 29683
+INFO 2026-05-24 22:29:22,224 basehttp 305025 135542574405184 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:29:34,407 basehttp 305025 135542574405184 "POST /admin/catalog/car/17/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:29:34,484 basehttp 305025 135542574405184 "GET /admin/catalog/car/ HTTP/1.1" 200 31834
+INFO 2026-05-24 22:29:34,596 basehttp 305025 135542574405184 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:29:36,211 views 305025 135542574405184 Home page accessed
+INFO 2026-05-24 22:29:37,205 basehttp 305025 135542574405184 "GET / HTTP/1.1" 200 14731
+INFO 2026-05-24 22:29:37,283 basehttp 305025 135542574405184 "GET /media/cars/images_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:37,295 basehttp 305025 135542825018944 "GET /media/cars/download_9.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:37,301 basehttp 305025 135542591190592 "GET /media/cars/images_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:37,303 basehttp 305025 135542833411648 "GET /media/cars/images_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:37,307 basehttp 305025 135542582797888 "GET /media/cars/download_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:37,307 basehttp 305025 135542566012480 "GET /media/cars/images_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:40,749 basehttp 305025 135542566012480 "GET /cars/ HTTP/1.1" 200 28329
+INFO 2026-05-24 22:29:40,802 basehttp 305025 135542566012480 "GET /media/cars/download_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:40,816 basehttp 305025 135542582797888 "GET /media/cars/images_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:40,816 basehttp 305025 135542833411648 "GET /media/cars/download_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:40,838 basehttp 305025 135542574405184 "GET /media/cars/images_8.jpg HTTP/1.1" 200 9290
+INFO 2026-05-24 22:29:40,840 basehttp 305025 135542566012480 "GET /media/cars/images_6.jpg HTTP/1.1" 200 8173
+INFO 2026-05-24 22:29:40,844 basehttp 305025 135542825018944 "GET /media/cars/images_7.jpg HTTP/1.1" 200 7626
+INFO 2026-05-24 22:29:40,846 basehttp 305025 135542591190592 "GET /media/cars/images_10.jpg HTTP/1.1" 200 13436
+INFO 2026-05-24 22:29:53,458 basehttp 305025 135542566012480 "GET /contacts/ HTTP/1.1" 200 11413
+INFO 2026-05-24 22:29:53,545 basehttp 305025 135542825018944 "GET /media/contacts/download_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:53,547 basehttp 305025 135542566012480 "GET /media/contacts/photo_2026-05-24_22-06-49.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:53,548 basehttp 305025 135542574405184 "GET /media/contacts/download.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:53,551 basehttp 305025 135542582797888 "GET /media/contacts/download_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:53,553 basehttp 305025 135542591190592 "GET /media/contacts/download_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:29:54,683 basehttp 305025 135542591190592 "GET /promos/ HTTP/1.1" 200 9795
+INFO 2026-05-24 22:29:56,065 basehttp 305025 135542591190592 "GET /reviews/ HTTP/1.1" 200 12801
+INFO 2026-05-24 22:29:57,155 basehttp 305025 135542591190592 "GET /contacts/ HTTP/1.1" 200 11413
+INFO 2026-05-24 22:30:14,973 basehttp 305025 135542591190592 "GET /cars/ HTTP/1.1" 200 28329
+INFO 2026-05-24 22:30:15,050 basehttp 305025 135542591190592 "GET /media/cars/images_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:30:15,078 basehttp 305025 135542582797888 "GET /media/cars/images_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:30:15,079 basehttp 305025 135542591190592 "GET /media/cars/images_7.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:30:15,082 basehttp 305025 135542833411648 "GET /media/cars/images_10.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:30:15,082 basehttp 305025 135542574405184 "GET /media/cars/download_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:30:15,084 basehttp 305025 135542825018944 "GET /media/cars/images_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:30:15,086 basehttp 305025 135542566012480 "GET /media/cars/images_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:30:15,091 basehttp 305025 135542833411648 "GET /media/cars/images_8.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:30:42,595 basehttp 305025 135542833411648 "GET /admin/ HTTP/1.1" 200 16208
+INFO 2026-05-24 22:30:45,678 basehttp 305025 135542833411648 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:30:45,763 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:30:48,013 basehttp 305025 135542833411648 "GET /admin/catalog/car/18/change/ HTTP/1.1" 200 29669
+INFO 2026-05-24 22:30:48,084 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:31:00,600 basehttp 305025 135542833411648 "POST /admin/catalog/car/18/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:31:00,674 basehttp 305025 135542833411648 "GET /admin/catalog/car/ HTTP/1.1" 200 31832
+INFO 2026-05-24 22:31:00,797 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:31:03,625 basehttp 305025 135542833411648 "GET /admin/catalog/car/19/change/ HTTP/1.1" 200 29949
+INFO 2026-05-24 22:31:03,683 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:31:07,592 basehttp 305025 135542833411648 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:31:09,444 basehttp 305025 135542833411648 "GET /admin/catalog/car/20/change/ HTTP/1.1" 200 29959
+INFO 2026-05-24 22:31:09,508 basehttp 305025 135542833411648 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:31:11,760 basehttp 305025 135542833411648 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:31:14,552 views 305025 135542833411648 Home page accessed
+INFO 2026-05-24 22:31:15,257 basehttp 305025 135542833411648 "GET / HTTP/1.1" 200 14731
+INFO 2026-05-24 22:31:15,330 basehttp 305025 135542833411648 "GET /media/cars/images_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:15,350 basehttp 305025 135542566012480 "GET /media/cars/images_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:15,351 basehttp 305025 135542825018944 "GET /media/cars/download_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:15,353 basehttp 305025 135542582797888 "GET /media/cars/images_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:15,353 basehttp 305025 135542574405184 "GET /media/cars/images_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:15,355 basehttp 305025 135542591190592 "GET /media/cars/download_9.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:16,975 basehttp 305025 135542591190592 "GET /cars/ HTTP/1.1" 200 28255
+INFO 2026-05-24 22:31:17,060 basehttp 305025 135542591190592 "GET /media/cars/download_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:17,073 basehttp 305025 135542574405184 "GET /media/cars/images_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:17,112 basehttp 305025 135542591190592 "GET /media/cars/download_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:17,114 basehttp 305025 135542566012480 "GET /media/cars/images_10.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:17,116 basehttp 305025 135542825018944 "GET /media/cars/images_7.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:17,119 basehttp 305025 135542574405184 "GET /media/cars/images_11.jpg HTTP/1.1" 200 8393
+INFO 2026-05-24 22:31:17,119 basehttp 305025 135542833411648 "GET /media/cars/images_8.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:17,121 basehttp 305025 135542582797888 "GET /media/cars/images_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:21,038 basehttp 305025 135542574405184 "GET /admin/ HTTP/1.1" 200 16205
+INFO 2026-05-24 22:31:24,602 basehttp 305025 135542574405184 "GET /admin/catalog/car/ HTTP/1.1" 200 31598
+INFO 2026-05-24 22:31:24,664 basehttp 305025 135542574405184 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:31:29,473 basehttp 305025 135542574405184 "GET /admin/catalog/car/16/change/ HTTP/1.1" 200 29678
+INFO 2026-05-24 22:31:29,531 basehttp 305025 135542574405184 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:31:42,897 basehttp 305025 135542574405184 "POST /admin/catalog/car/16/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:31:42,974 basehttp 305025 135542574405184 "GET /admin/catalog/car/ HTTP/1.1" 200 31837
+INFO 2026-05-24 22:31:43,097 basehttp 305025 135542574405184 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:31:45,372 views 305025 135542574405184 Home page accessed
+INFO 2026-05-24 22:31:46,085 basehttp 305025 135542574405184 "GET / HTTP/1.1" 200 14731
+INFO 2026-05-24 22:31:48,974 basehttp 305025 135542574405184 "GET /cars/ HTTP/1.1" 200 28193
+INFO 2026-05-24 22:31:49,042 basehttp 305025 135542574405184 "GET /media/cars/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:49,057 basehttp 305025 135542833411648 "GET /media/cars/images_10.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:49,063 basehttp 305025 135542566012480 "GET /media/cars/images_8.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:49,068 basehttp 305025 135542582797888 "GET /media/cars/images_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:49,070 basehttp 305025 135542825018944 "GET /media/cars/images_7.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:31:49,072 basehttp 305025 135542591190592 "GET /media/cars/images_4_xML7y3V.jpg HTTP/1.1" 200 6732
+INFO 2026-05-24 22:32:06,261 basehttp 305025 135542591190592 "GET /contacts/ HTTP/1.1" 200 11413
+INFO 2026-05-24 22:32:06,311 basehttp 305025 135542591190592 "GET /media/contacts/photo_2025-10-04_12-24-45.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:32:06,336 basehttp 305025 135542591190592 "GET /media/contacts/download_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:32:06,343 basehttp 305025 135542825018944 "GET /media/contacts/download_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:32:06,350 basehttp 305025 135542566012480 "GET /media/contacts/download_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:32:06,351 basehttp 305025 135542582797888 "GET /media/contacts/download.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:32:09,774 basehttp 305025 135542591190592 "GET /reviews/ HTTP/1.1" 200 12801
+INFO 2026-05-24 22:32:12,181 basehttp 305025 135542591190592 "GET /promos/ HTTP/1.1" 200 9795
+INFO 2026-05-24 22:32:13,442 basehttp 305025 135542591190592 "GET /news/ HTTP/1.1" 200 10536
+INFO 2026-05-24 22:32:15,380 basehttp 305025 135542591190592 "GET /reviews/ HTTP/1.1" 200 12801
+INFO 2026-05-24 22:32:25,340 basehttp 305025 135542591190592 "GET /news/ HTTP/1.1" 200 10536
+INFO 2026-05-24 22:34:33,978 basehttp 305025 135542591190592 "GET /admin/ HTTP/1.1" 200 16203
+INFO 2026-05-24 22:34:36,972 basehttp 305025 135542591190592 "GET /admin/catalog/article/ HTTP/1.1" 200 17998
+INFO 2026-05-24 22:34:37,061 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:34:38,549 basehttp 305025 135542591190592 "GET /admin/catalog/article/9/change/ HTTP/1.1" 200 17533
+INFO 2026-05-24 22:34:38,612 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:35:09,326 basehttp 305025 135542591190592 "POST /admin/catalog/article/9/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:35:09,370 basehttp 305025 135542591190592 "GET /admin/catalog/article/ HTTP/1.1" 200 18258
+INFO 2026-05-24 22:35:09,493 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:35:12,494 basehttp 305025 135542591190592 "GET /admin/catalog/article/4/change/ HTTP/1.1" 200 17602
+INFO 2026-05-24 22:35:12,571 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:35:40,187 basehttp 305025 135542591190592 "POST /admin/catalog/article/4/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:35:40,234 basehttp 305025 135542591190592 "GET /admin/catalog/article/ HTTP/1.1" 200 18258
+INFO 2026-05-24 22:35:40,367 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:35:41,986 basehttp 305025 135542591190592 "GET /admin/catalog/article/8/change/ HTTP/1.1" 200 17548
+INFO 2026-05-24 22:35:42,055 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:35:57,882 basehttp 305025 135542591190592 "POST /admin/catalog/article/8/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:35:57,921 basehttp 305025 135542591190592 "GET /admin/catalog/article/ HTTP/1.1" 200 18244
+INFO 2026-05-24 22:35:58,041 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:35:59,372 basehttp 305025 135542591190592 "GET /admin/catalog/article/6/change/ HTTP/1.1" 200 17599
+INFO 2026-05-24 22:35:59,440 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:36:08,694 basehttp 305025 135542591190592 "POST /admin/catalog/article/6/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:36:08,734 basehttp 305025 135542591190592 "GET /admin/catalog/article/ HTTP/1.1" 200 18264
+INFO 2026-05-24 22:36:08,853 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:36:10,248 basehttp 305025 135542591190592 "GET /admin/catalog/article/9/change/ HTTP/1.1" 200 17832
+INFO 2026-05-24 22:36:10,309 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:36:13,646 basehttp 305025 135542591190592 "GET /admin/catalog/article/ HTTP/1.1" 200 17998
+INFO 2026-05-24 22:36:13,714 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:36:15,049 basehttp 305025 135542591190592 "GET /admin/catalog/article/8/change/ HTTP/1.1" 200 17847
+INFO 2026-05-24 22:36:15,109 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:36:17,019 basehttp 305025 135542591190592 "GET /admin/catalog/article/ HTTP/1.1" 200 17998
+INFO 2026-05-24 22:36:17,084 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:36:18,624 basehttp 305025 135542591190592 "GET /admin/catalog/article/7/change/ HTTP/1.1" 200 17555
+INFO 2026-05-24 22:36:18,681 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:36:29,930 basehttp 305025 135542591190592 "POST /admin/catalog/article/7/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:36:29,992 basehttp 305025 135542591190592 "GET /admin/catalog/article/ HTTP/1.1" 200 18255
+INFO 2026-05-24 22:36:30,114 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:36:32,720 views 305025 135542591190592 Home page accessed
+INFO 2026-05-24 22:36:33,557 basehttp 305025 135542591190592 "GET / HTTP/1.1" 200 14745
+INFO 2026-05-24 22:36:33,639 basehttp 305025 135542566012480 "GET /media/cars/images_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:36:33,645 basehttp 305025 135542591190592 "GET /media/cars/images_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:36:33,647 basehttp 305025 135542574405184 "GET /media/cars/images_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:36:33,648 basehttp 305025 135542582797888 "GET /media/cars/download_9.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:36:33,649 basehttp 305025 135542833411648 "GET /media/cars/images_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:36:33,650 basehttp 305025 135542825018944 "GET /media/cars/download_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:36:35,555 basehttp 305025 135542825018944 "GET /news/ HTTP/1.1" 200 11021
+INFO 2026-05-24 22:36:35,627 basehttp 305025 135542825018944 "GET /media/news/images_14.jpg HTTP/1.1" 200 12085
+INFO 2026-05-24 22:36:35,636 basehttp 305025 135542833411648 "GET /media/news/images_16.jpg HTTP/1.1" 200 14285
+INFO 2026-05-24 22:36:35,654 basehttp 305025 135542574405184 "GET /media/news/images_11.jpg HTTP/1.1" 200 8393
+INFO 2026-05-24 22:36:35,654 basehttp 305025 135542582797888 "GET /media/news/images_17.jpg HTTP/1.1" 200 6330
+INFO 2026-05-24 22:36:35,657 basehttp 305025 135542591190592 "GET /media/news/images_13.jpg HTTP/1.1" 200 9538
+INFO 2026-05-24 22:36:55,321 basehttp 305025 135542591190592 "GET /admin/ HTTP/1.1" 200 16333
+INFO 2026-05-24 22:37:17,400 basehttp 305025 135542591190592 "GET /admin/catalog/article/ HTTP/1.1" 200 17998
+INFO 2026-05-24 22:37:17,467 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:37:19,200 basehttp 305025 135542591190592 "GET /admin/catalog/article/5/change/ HTTP/1.1" 200 17606
+INFO 2026-05-24 22:37:19,282 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:37:28,506 basehttp 305025 135542591190592 "POST /admin/catalog/article/5/change/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:37:28,553 basehttp 305025 135542591190592 "GET /admin/catalog/article/ HTTP/1.1" 200 18272
+INFO 2026-05-24 22:37:28,674 basehttp 305025 135542591190592 "GET /admin/jsi18n/ HTTP/1.1" 200 16066
+INFO 2026-05-24 22:37:32,331 views 305025 135542591190592 Home page accessed
+INFO 2026-05-24 22:37:33,246 basehttp 305025 135542591190592 "GET / HTTP/1.1" 200 14775
+INFO 2026-05-24 22:37:35,602 basehttp 305025 135542591190592 "GET /news/ HTTP/1.1" 200 11118
+INFO 2026-05-24 22:37:35,674 basehttp 305025 135542591190592 "GET /media/news/images_14.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:35,692 basehttp 305025 135542825018944 "GET /media/news/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:35,692 basehttp 305025 135542574405184 "GET /media/news/images_16.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:35,692 basehttp 305025 135542833411648 "GET /media/news/images_17.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:35,695 basehttp 305025 135542566012480 "GET /media/news/images_13.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:35,696 basehttp 305025 135542582797888 "GET /media/news/images_18.jpg HTTP/1.1" 200 10331
+INFO 2026-05-24 22:37:39,863 basehttp 305025 135542566012480 "GET /news/4/ HTTP/1.1" 200 8229
+INFO 2026-05-24 22:37:42,474 basehttp 305025 135542566012480 "GET /news/ HTTP/1.1" 200 11118
+INFO 2026-05-24 22:37:42,532 basehttp 305025 135542566012480 "GET /media/news/images_18.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:42,546 basehttp 305025 135542582797888 "GET /media/news/images_17.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:48,972 basehttp 305025 135542582797888 "GET /promos/ HTTP/1.1" 200 9795
+INFO 2026-05-24 22:37:50,316 basehttp 305025 135542582797888 "GET /news/ HTTP/1.1" 200 11118
+INFO 2026-05-24 22:37:50,376 basehttp 305025 135542582797888 "GET /media/news/images_14.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:50,384 basehttp 305025 135542566012480 "GET /media/news/images_18.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:50,402 basehttp 305025 135542582797888 "GET /media/news/images_16.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:50,403 basehttp 305025 135542833411648 "GET /media/news/images_17.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:50,405 basehttp 305025 135542825018944 "GET /media/news/images_13.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:50,408 basehttp 305025 135542574405184 "GET /media/news/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:51,543 basehttp 305025 135542582797888 "GET /cars/ HTTP/1.1" 200 28193
+INFO 2026-05-24 22:37:51,607 basehttp 305025 135542582797888 "GET /media/cars/download_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:51,624 basehttp 305025 135542582797888 "GET /media/cars/images_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:51,639 basehttp 305025 135542825018944 "GET /media/cars/images_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:51,640 basehttp 305025 135542833411648 "GET /media/cars/download_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:51,652 basehttp 305025 135542825018944 "GET /media/cars/images_4_xML7y3V.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:51,654 basehttp 305025 135542574405184 "GET /media/cars/images_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:51,658 basehttp 305025 135542566012480 "GET /media/cars/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:51,659 basehttp 305025 135542591190592 "GET /media/cars/images_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:51,661 basehttp 305025 135542833411648 "GET /media/cars/images_10.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:51,673 basehttp 305025 135542574405184 "GET /media/cars/images_7.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:51,686 basehttp 305025 135542582797888 "GET /media/cars/images_8.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:54,985 basehttp 305025 135542582797888 "GET /contacts/ HTTP/1.1" 200 11413
+INFO 2026-05-24 22:37:55,061 basehttp 305025 135542582797888 "GET /media/contacts/photo_2025-10-04_12-24-45.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:55,068 basehttp 305025 135542582797888 "GET /media/contacts/photo_2026-05-24_22-06-49.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:55,083 basehttp 305025 135542574405184 "GET /media/contacts/download_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:55,084 basehttp 305025 135542833411648 "GET /media/contacts/download_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:55,084 basehttp 305025 135542825018944 "GET /media/contacts/download.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:55,087 basehttp 305025 135542591190592 "GET /media/contacts/download_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:37:58,765 basehttp 305025 135542582797888 "GET /orders/ HTTP/1.1" 200 23588
+INFO 2026-05-24 22:38:07,029 views 305025 135542582797888 User logged out: admin
+INFO 2026-05-24 22:38:07,049 basehttp 305025 135542582797888 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:38:07,058 views 305025 135542582797888 Home page accessed
+INFO 2026-05-24 22:38:07,880 basehttp 305025 135542582797888 "GET / HTTP/1.1" 200 12781
+INFO 2026-05-24 22:38:07,990 basehttp 305025 135542582797888 "GET /media/cars/images_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:38:07,995 basehttp 305025 135542825018944 "GET /media/cars/images_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:38:07,997 basehttp 305025 135542591190592 "GET /media/cars/download_9.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:38:07,998 basehttp 305025 135542833411648 "GET /media/cars/download_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:38:10,727 basehttp 305025 135542833411648 "GET /users/login/ HTTP/1.1" 200 6377
+INFO 2026-05-24 22:38:23,057 views 305025 135542833411648 User logged in: admin
+INFO 2026-05-24 22:38:23,073 basehttp 305025 135542833411648 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:38:23,083 views 305025 135542833411648 Home page accessed
+INFO 2026-05-24 22:38:24,257 basehttp 305025 135542833411648 "GET / HTTP/1.1" 200 14775
+INFO 2026-05-24 22:38:30,686 basehttp 305025 135542833411648 "GET /orders/ HTTP/1.1" 200 23588
+INFO 2026-05-24 22:38:33,351 basehttp 305025 135542833411648 "GET /cars/ HTTP/1.1" 200 28193
+INFO 2026-05-24 22:38:33,414 basehttp 305025 135542833411648 "GET /media/cars/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:38:33,427 basehttp 305025 135542825018944 "GET /media/cars/images_4_xML7y3V.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:38:35,566 views 305025 135542825018944 User logged out: admin
+INFO 2026-05-24 22:38:35,588 basehttp 305025 135542825018944 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:38:35,597 views 305025 135542825018944 Home page accessed
+INFO 2026-05-24 22:38:36,501 basehttp 305025 135542825018944 "GET / HTTP/1.1" 200 12781
+INFO 2026-05-24 22:39:03,239 basehttp 305025 135542825018944 "GET /users/register/ HTTP/1.1" 200 10035
+INFO 2026-05-24 22:40:42,881 views 305025 135542591190592 New user registered: client12 with client profile
+INFO 2026-05-24 22:40:42,897 basehttp 305025 135542591190592 "POST /users/register/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:40:42,906 views 305025 135542591190592 Home page accessed
+INFO 2026-05-24 22:40:44,201 basehttp 305025 135542591190592 "GET / HTTP/1.1" 200 13697
+INFO 2026-05-24 22:40:44,346 basehttp 305025 135542591190592 "GET /media/cars/images_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:44,358 basehttp 305025 135542833411648 "GET /media/cars/download_9.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:44,376 basehttp 305025 135542591190592 "GET /media/cars/images_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:44,392 basehttp 305025 135542833411648 "GET /media/cars/download_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:44,407 basehttp 305025 135542825018944 "GET /media/cars/images_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:44,410 basehttp 305025 135542582797888 "GET /media/cars/images_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:50,837 basehttp 305025 135542833411648 "GET /users/profile/ HTTP/1.1" 200 10232
+INFO 2026-05-24 22:40:57,180 basehttp 305025 135542833411648 "GET /cars/ HTTP/1.1" 200 23352
+INFO 2026-05-24 22:40:57,232 basehttp 305025 135542833411648 "GET /media/cars/download_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:57,244 basehttp 305025 135542591190592 "GET /media/cars/images_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:57,259 basehttp 305025 135542833411648 "GET /media/cars/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:57,262 basehttp 305025 135542591190592 "GET /media/cars/download_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:57,275 basehttp 305025 135542574405184 "GET /media/cars/images_10.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:57,276 basehttp 305025 135542582797888 "GET /media/cars/images_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:57,277 basehttp 305025 135542825018944 "GET /media/cars/images_4_xML7y3V.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:57,283 basehttp 305025 135542566012480 "GET /media/cars/images_7.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:40:57,297 basehttp 305025 135542825018944 "GET /media/cars/images_8.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:41:01,515 basehttp 305025 135542825018944 "GET /cars/14/ HTTP/1.1" 200 11057
+INFO 2026-05-24 22:41:09,852 basehttp 305025 135542825018944 "GET /cars/14/order/ HTTP/1.1" 200 7494
+INFO 2026-05-24 22:41:36,683 views 305025 135542825018944 Client order #29 created by client12 for car BMW 5 Series (2023)
+INFO 2026-05-24 22:41:36,686 basehttp 305025 135542825018944 "POST /cars/14/order/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:41:36,716 basehttp 305025 135542825018944 "GET /my-orders/ HTTP/1.1" 200 7637
+INFO 2026-05-24 22:41:43,316 basehttp 305025 135542825018944 "GET /cars/ HTTP/1.1" 200 23373
+INFO 2026-05-24 22:41:48,984 basehttp 305025 135542825018944 "GET /cars/13/ HTTP/1.1" 200 11066
+INFO 2026-05-24 22:41:51,805 basehttp 305025 135542825018944 "GET /cars/13/order/ HTTP/1.1" 200 7493
+INFO 2026-05-24 22:41:55,306 views 305025 135542825018944 Client order #30 created by client12 for car Toyota Camry (2022)
+INFO 2026-05-24 22:41:55,310 basehttp 305025 135542825018944 "POST /cars/13/order/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:41:55,342 basehttp 305025 135542825018944 "GET /my-orders/ HTTP/1.1" 200 9066
+INFO 2026-05-24 22:42:00,404 basehttp 305025 135542825018944 "GET /cars/ HTTP/1.1" 200 23394
+INFO 2026-05-24 22:42:00,458 basehttp 305025 135542825018944 "GET /media/cars/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:42:00,467 basehttp 305025 135542833411648 "GET /media/cars/images_4_xML7y3V.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:42:02,285 views 305025 135542833411648 User logged out: client12
+INFO 2026-05-24 22:42:02,302 basehttp 305025 135542833411648 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:42:02,311 views 305025 135542833411648 Home page accessed
+INFO 2026-05-24 22:42:03,107 basehttp 305025 135542833411648 "GET / HTTP/1.1" 200 12781
+INFO 2026-05-24 22:42:06,961 basehttp 305025 135542833411648 "GET /users/login/ HTTP/1.1" 200 6377
+INFO 2026-05-24 22:42:21,422 views 305025 135542833411648 User logged in: manager1
+INFO 2026-05-24 22:42:21,436 basehttp 305025 135542833411648 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:42:21,447 views 305025 135542833411648 Home page accessed
+INFO 2026-05-24 22:42:22,309 basehttp 305025 135542833411648 "GET / HTTP/1.1" 200 14232
+INFO 2026-05-24 22:42:28,442 basehttp 305025 135542833411648 "GET /orders/ HTTP/1.1" 200 25020
+INFO 2026-05-24 22:42:32,155 basehttp 305025 135542833411648 "GET /orders/30/edit/ HTTP/1.1" 200 18991
+INFO 2026-05-24 22:44:05,753 basehttp 305025 135542833411648 "GET /api/cars/ HTTP/1.1" 200 1664
+INFO 2026-05-24 22:44:25,084 basehttp 305025 135542833411648 "POST /orders/30/edit/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:44:25,120 basehttp 305025 135542833411648 "GET /orders/30/ HTTP/1.1" 200 9871
+INFO 2026-05-24 22:44:28,506 basehttp 305025 135542833411648 "GET /orders/ HTTP/1.1" 200 25057
+INFO 2026-05-24 22:44:40,387 basehttp 305025 135542833411648 "GET /orders/29/edit/ HTTP/1.1" 200 19031
+INFO 2026-05-24 22:45:00,883 basehttp 305025 135542833411648 "GET /orders/30/ HTTP/1.1" 200 9656
+INFO 2026-05-24 22:45:06,480 basehttp 305025 135542833411648 "GET /orders/28/edit/ HTTP/1.1" 200 21511
+INFO 2026-05-24 22:45:09,684 basehttp 305025 135542833411648 "GET /orders/28/edit/ HTTP/1.1" 200 21511
+INFO 2026-05-24 22:45:23,890 basehttp 305025 135542833411648 "GET /orders/30/edit/ HTTP/1.1" 200 18991
+INFO 2026-05-24 22:45:27,353 basehttp 305025 135542833411648 "GET /orders/30/edit/ HTTP/1.1" 200 18991
+INFO 2026-05-24 22:45:30,853 basehttp 305025 135542833411648 "GET /orders/30/edit/ HTTP/1.1" 200 18991
+INFO 2026-05-24 22:45:38,634 basehttp 305025 135542833411648 "GET /orders/29/edit/ HTTP/1.1" 200 19031
+INFO 2026-05-24 22:45:48,188 basehttp 305025 135542833411648 "POST /orders/29/edit/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:45:48,214 basehttp 305025 135542833411648 "GET /orders/29/ HTTP/1.1" 200 9933
+INFO 2026-05-24 22:45:50,050 basehttp 305025 135542833411648 "GET /orders/ HTTP/1.1" 200 24903
+INFO 2026-05-24 22:45:52,049 basehttp 305025 135542833411648 "GET /orders/30/edit/ HTTP/1.1" 200 18991
+INFO 2026-05-24 22:45:58,089 basehttp 305025 135542833411648 "POST /orders/30/edit/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:45:58,114 basehttp 305025 135542833411648 "GET /orders/30/ HTTP/1.1" 200 9860
+INFO 2026-05-24 22:46:00,139 basehttp 305025 135542833411648 "GET /orders/ HTTP/1.1" 200 24749
+INFO 2026-05-24 22:46:03,479 basehttp 305025 135542833411648 "GET /cars/ HTTP/1.1" 200 27692
+INFO 2026-05-24 22:46:03,540 basehttp 305025 135542833411648 "GET /media/cars/images_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,547 basehttp 305025 135542833411648 "GET /media/cars/download_9.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,559 basehttp 305025 135542566012480 "GET /media/cars/images_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,570 basehttp 305025 135542566012480 "GET /media/cars/images_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,577 basehttp 305025 135542582797888 "GET /media/cars/download_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,583 basehttp 305025 135542591190592 "GET /media/cars/download_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,586 basehttp 305025 135542825018944 "GET /media/cars/images_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,590 basehttp 305025 135542574405184 "GET /media/cars/images_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,594 basehttp 305025 135542591190592 "GET /media/cars/download_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,598 basehttp 305025 135542574405184 "GET /media/cars/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,606 basehttp 305025 135542825018944 "GET /media/cars/images_4_xML7y3V.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,610 basehttp 305025 135542582797888 "GET /media/cars/images_10.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,610 basehttp 305025 135542833411648 "GET /media/cars/images_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,637 basehttp 305025 135542566012480 "GET /media/cars/images_7.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:46:03,679 basehttp 305025 135542582797888 "GET /media/cars/images_8.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:47:07,246 basehttp 305025 135542833411648 "GET /promos/ HTTP/1.1" 200 9252
+INFO 2026-05-24 22:47:08,466 basehttp 305025 135542833411648 "GET /news/ HTTP/1.1" 200 10575
+INFO 2026-05-24 22:47:08,521 basehttp 305025 135542833411648 "GET /media/news/images_14.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:47:08,530 basehttp 305025 135542833411648 "GET /media/news/images_18.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:47:08,547 basehttp 305025 135542566012480 "GET /media/news/images_16.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:47:08,570 basehttp 305025 135542825018944 "GET /media/news/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:47:08,573 basehttp 305025 135542591190592 "GET /media/news/images_13.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:47:08,576 basehttp 305025 135542582797888 "GET /media/news/images_17.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:47:10,809 basehttp 305025 135542582797888 "GET /promos/ HTTP/1.1" 200 9252
+INFO 2026-05-24 22:47:11,626 basehttp 305025 135542582797888 "GET /reviews/ HTTP/1.1" 200 12258
+INFO 2026-05-24 22:47:13,639 basehttp 305025 135542582797888 "GET /news/ HTTP/1.1" 200 10575
+INFO 2026-05-24 22:47:18,823 basehttp 305025 135542582797888 "GET /cars/ HTTP/1.1" 200 27692
+INFO 2026-05-24 22:47:21,693 basehttp 305025 135542582797888 "GET /cars/24/ HTTP/1.1" 200 11732
+INFO 2026-05-24 22:48:09,345 basehttp 305025 135542582797888 "POST /reviews/add/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:48:09,375 basehttp 305025 135542582797888 "GET /users/profile/ HTTP/1.1" 200 11393
+INFO 2026-05-24 22:49:13,167 basehttp 305025 135542582797888 "POST /users/profile/ HTTP/1.1" 200 11157
+INFO 2026-05-24 22:49:19,142 basehttp 305025 135542582797888 "GET /reviews/ HTTP/1.1" 200 12258
+INFO 2026-05-24 22:49:20,199 basehttp 305025 135542582797888 "GET /cars/ HTTP/1.1" 200 27692
+INFO 2026-05-24 22:49:20,252 basehttp 305025 135542582797888 "GET /media/cars/images_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,260 basehttp 305025 135542825018944 "GET /media/cars/download_9.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,273 basehttp 305025 135542582797888 "GET /media/cars/images_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,285 basehttp 305025 135542566012480 "GET /media/cars/download_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,285 basehttp 305025 135542825018944 "GET /media/cars/images_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,287 basehttp 305025 135542591190592 "GET /media/cars/download_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,301 basehttp 305025 135542591190592 "GET /media/cars/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,302 basehttp 305025 135542566012480 "GET /media/cars/download_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,304 basehttp 305025 135542833411648 "GET /media/cars/images_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,314 basehttp 305025 135542574405184 "GET /media/cars/images_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,314 basehttp 305025 135542833411648 "GET /media/cars/images_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,326 basehttp 305025 135542574405184 "GET /media/cars/images_4_xML7y3V.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,347 basehttp 305025 135542825018944 "GET /media/cars/images_10.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,349 basehttp 305025 135542582797888 "GET /media/cars/images_7.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:20,367 basehttp 305025 135542591190592 "GET /media/cars/images_8.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:49:23,076 basehttp 305025 135542591190592 "GET /cars/13/ HTTP/1.1" 200 11860
+INFO 2026-05-24 22:49:43,933 basehttp 305025 135542591190592 "POST /reviews/add/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:49:43,956 basehttp 305025 135542591190592 "GET /users/profile/ HTTP/1.1" 200 11393
+INFO 2026-05-24 22:50:42,646 basehttp 305025 135542591190592 "POST /users/profile/ HTTP/1.1" 200 11157
+INFO 2026-05-24 22:50:51,620 basehttp 305025 135542591190592 "GET /cars/ HTTP/1.1" 200 27692
+INFO 2026-05-24 22:50:59,037 views 305025 135542591190592 User logged out: manager1
+INFO 2026-05-24 22:50:59,058 basehttp 305025 135542591190592 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:50:59,067 views 305025 135542591190592 Home page accessed
+INFO 2026-05-24 22:51:00,154 basehttp 305025 135542591190592 "GET / HTTP/1.1" 200 12781
+INFO 2026-05-24 22:51:01,796 basehttp 305025 135542591190592 "GET /users/login/ HTTP/1.1" 200 6377
+INFO 2026-05-24 22:51:16,400 views 305025 135542591190592 User logged in: client12
+INFO 2026-05-24 22:51:16,413 basehttp 305025 135542591190592 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:51:16,423 views 305025 135542591190592 Home page accessed
+INFO 2026-05-24 22:51:17,200 basehttp 305025 135542591190592 "GET / HTTP/1.1" 200 13408
+INFO 2026-05-24 22:51:25,262 basehttp 305025 135542591190592 "GET /cars/21/ HTTP/1.1" 200 11230
+INFO 2026-05-24 22:51:38,141 basehttp 305025 135542591190592 "POST /reviews/add/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:51:38,195 basehttp 305025 135542591190592 "GET /cars/21/ HTTP/1.1" 200 11909
+INFO 2026-05-24 22:51:45,545 basehttp 305025 135542591190592 "GET /cars/21/ HTTP/1.1" 200 11694
+INFO 2026-05-24 22:51:52,437 basehttp 305025 135542591190592 "GET /cars/ HTTP/1.1" 200 23394
+INFO 2026-05-24 22:51:52,487 basehttp 305025 135542591190592 "GET /media/cars/images_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:51:52,497 basehttp 305025 135542582797888 "GET /media/cars/images_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:51:52,506 basehttp 305025 135542825018944 "GET /media/cars/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:51:52,507 basehttp 305025 135542591190592 "GET /media/cars/download_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:51:52,523 basehttp 305025 135542582797888 "GET /media/cars/images_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:51:52,528 basehttp 305025 135542825018944 "GET /media/cars/images_8.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:51:52,528 basehttp 305025 135542833411648 "GET /media/cars/images_10.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:51:52,529 basehttp 305025 135542566012480 "GET /media/cars/images_7.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:51:52,532 basehttp 305025 135542574405184 "GET /media/cars/images_4_xML7y3V.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:52:12,393 basehttp 305025 135542825018944 "GET /reviews/ HTTP/1.1" 200 14095
+INFO 2026-05-24 22:52:26,804 basehttp 305025 135542825018944 "GET /users/profile/ HTTP/1.1" 200 10857
+INFO 2026-05-24 22:52:32,074 basehttp 305025 135542825018944 "GET /my-orders/ HTTP/1.1" 200 8778
+INFO 2026-05-24 22:52:33,803 basehttp 305025 135542825018944 "GET /cars/ HTTP/1.1" 200 23394
+INFO 2026-05-24 22:52:33,850 basehttp 305025 135542825018944 "GET /media/cars/images_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:52:33,864 basehttp 305025 135542582797888 "GET /media/cars/download_9.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:52:33,872 basehttp 305025 135542825018944 "GET /media/cars/images_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:52:33,884 basehttp 305025 135542833411648 "GET /media/cars/images_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:52:33,885 basehttp 305025 135542591190592 "GET /media/cars/download_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:52:33,886 basehttp 305025 135542574405184 "GET /media/cars/download_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:52:36,561 basehttp 305025 135542825018944 "GET /cars/13/ HTTP/1.1" 200 11036
+INFO 2026-05-24 22:52:49,746 views 305025 135542825018944 User logged out: client12
+INFO 2026-05-24 22:52:49,764 basehttp 305025 135542825018944 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:52:49,771 views 305025 135542825018944 Home page accessed
+INFO 2026-05-24 22:52:50,752 basehttp 305025 135542825018944 "GET / HTTP/1.1" 200 12781
+INFO 2026-05-24 22:52:53,467 basehttp 305025 135542825018944 "GET /users/login/ HTTP/1.1" 200 6377
+INFO 2026-05-24 22:53:04,182 views 305025 135542825018944 User logged in: manager1
+INFO 2026-05-24 22:53:04,195 basehttp 305025 135542825018944 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:53:04,206 views 305025 135542825018944 Home page accessed
+INFO 2026-05-24 22:53:05,380 basehttp 305025 135542825018944 "GET / HTTP/1.1" 200 14232
+INFO 2026-05-24 22:53:07,655 basehttp 305025 135542825018944 "GET /users/profile/ HTTP/1.1" 200 11157
+INFO 2026-05-24 22:53:20,168 basehttp 305025 135542825018944 "GET /orders/ HTTP/1.1" 200 24749
+INFO 2026-05-24 22:53:22,574 basehttp 305025 135542825018944 "GET /orders/30/edit/ HTTP/1.1" 200 18991
+INFO 2026-05-24 22:53:24,690 basehttp 305025 135542825018944 "GET /cars/ HTTP/1.1" 200 27692
+INFO 2026-05-24 22:53:29,120 basehttp 305025 135542825018944 "GET /cars/14/edit/ HTTP/1.1" 200 14534
+INFO 2026-05-24 22:53:43,449 basehttp 305025 135542825018944 "POST /cars/14/edit/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:53:43,496 basehttp 305025 135542825018944 "GET /cars/14/ HTTP/1.1" 200 12106
+INFO 2026-05-24 22:53:45,484 basehttp 305025 135542825018944 "GET /cars/ HTTP/1.1" 200 27671
+INFO 2026-05-24 22:53:56,507 basehttp 305025 135542825018944 "GET /cars/13/ HTTP/1.1" 200 11860
+INFO 2026-05-24 22:54:02,946 basehttp 305025 135542825018944 "GET /cars/ HTTP/1.1" 200 27671
+INFO 2026-05-24 22:54:03,009 basehttp 305025 135542825018944 "GET /media/cars/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:54:03,023 basehttp 305025 135542574405184 "GET /media/cars/images_4_xML7y3V.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:54:04,476 basehttp 305025 135542574405184 "GET /cars/13/edit/ HTTP/1.1" 200 14528
+INFO 2026-05-24 22:54:11,661 basehttp 305025 135542574405184 "POST /cars/13/edit/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:54:11,708 basehttp 305025 135542574405184 "GET /cars/13/ HTTP/1.1" 200 12115
+INFO 2026-05-24 22:54:13,735 basehttp 305025 135542574405184 "GET /cars/ HTTP/1.1" 200 27650
+INFO 2026-05-24 22:54:13,808 basehttp 305025 135542574405184 "GET /media/cars/images_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:54:13,819 basehttp 305025 135542825018944 "GET /media/cars/images_10.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:54:13,820 basehttp 305025 135542591190592 "GET /media/cars/images_7.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:54:13,822 basehttp 305025 135542833411648 "GET /media/cars/images_8.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:54:20,323 basehttp 305025 135542833411648 "GET /orders/ HTTP/1.1" 200 24749
+INFO 2026-05-24 22:54:26,595 views 305025 135542833411648 User logged out: manager1
+INFO 2026-05-24 22:54:26,611 basehttp 305025 135542833411648 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:54:26,619 views 305025 135542833411648 Home page accessed
+INFO 2026-05-24 22:54:27,357 basehttp 305025 135542833411648 "GET / HTTP/1.1" 200 12781
+INFO 2026-05-24 22:54:28,579 basehttp 305025 135542833411648 "GET /users/login/ HTTP/1.1" 200 6377
+INFO 2026-05-24 22:54:36,445 views 305025 135542833411648 User logged in: admin
+INFO 2026-05-24 22:54:36,458 basehttp 305025 135542833411648 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:54:36,469 views 305025 135542833411648 Home page accessed
+INFO 2026-05-24 22:54:37,367 basehttp 305025 135542833411648 "GET / HTTP/1.1" 200 14775
+INFO 2026-05-24 22:54:37,475 basehttp 305025 135542833411648 "GET /media/cars/images_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:54:41,619 basehttp 305025 135542833411648 "GET /cars/ HTTP/1.1" 200 28193
+INFO 2026-05-24 22:54:41,687 basehttp 305025 135542833411648 "GET /media/cars/images_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:54:41,701 basehttp 305025 135542591190592 "GET /media/cars/download_5.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:54:46,809 views 305025 135542591190592 Analytics by admin, year=2026
+INFO 2026-05-24 22:54:49,430 views 305025 135542833411648 Analytics by admin, year=2026
+INFO 2026-05-24 22:54:54,332 basehttp 305025 135542833411648 "GET /analytics/ HTTP/1.1" 200 483300
+INFO 2026-05-24 22:55:37,905 basehttp 305025 135542833411648 "GET /cars/ HTTP/1.1" 200 28193
+INFO 2026-05-24 22:55:37,965 basehttp 305025 135542833411648 "GET /media/cars/images_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:55:37,966 basehttp 305025 135542825018944 "GET /media/cars/download_9.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:55:37,980 basehttp 305025 135542825018944 "GET /media/cars/images_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:55:37,988 basehttp 305025 135542833411648 "GET /media/cars/download_4.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:55:38,002 basehttp 305025 135542582797888 "GET /media/cars/images_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:55:38,002 basehttp 305025 135542574405184 "GET /media/cars/download_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:55:42,338 views 305025 135542833411648 User logged out: admin
+INFO 2026-05-24 22:55:42,355 basehttp 305025 135542833411648 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 22:55:42,363 views 305025 135542833411648 Home page accessed
+INFO 2026-05-24 22:55:43,522 basehttp 305025 135542833411648 "GET / HTTP/1.1" 200 12781
+INFO 2026-05-24 22:56:00,163 basehttp 305025 135542833411648 "GET /about/ HTTP/1.1" 200 5789
+INFO 2026-05-24 22:56:23,547 basehttp 305025 135542833411648 "GET /vacancies/ HTTP/1.1" 200 7704
+INFO 2026-05-24 22:56:56,725 basehttp 305025 135542833411648 "GET /cars/ HTTP/1.1" 200 22603
+INFO 2026-05-24 22:56:56,774 basehttp 305025 135542833411648 "GET /media/cars/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:56:56,802 basehttp 305025 135542833411648 "GET /media/cars/images_6.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:56:56,811 basehttp 305025 135542825018944 "GET /media/cars/images_4_xML7y3V.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:56:56,817 basehttp 305025 135542574405184 "GET /media/cars/images_10.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:56:56,819 basehttp 305025 135542582797888 "GET /media/cars/images_7.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:56:56,824 basehttp 305025 135542566012480 "GET /media/cars/images_8.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:56:57,826 basehttp 305025 135542833411648 "GET /news/ HTTP/1.1" 200 9002
+INFO 2026-05-24 22:56:57,885 basehttp 305025 135542833411648 "GET /media/news/images_14.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:56:57,899 basehttp 305025 135542833411648 "GET /media/news/images_18.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:56:57,915 basehttp 305025 135542825018944 "GET /media/news/images_13.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:56:57,915 basehttp 305025 135542574405184 "GET /media/news/images_11.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:56:57,921 basehttp 305025 135542582797888 "GET /media/news/images_17.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:56:57,922 basehttp 305025 135542566012480 "GET /media/news/images_16.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:57:00,685 basehttp 305025 135542833411648 "GET /reviews/ HTTP/1.1" 200 11286
+INFO 2026-05-24 22:57:01,254 basehttp 305025 135542833411648 "GET /promos/ HTTP/1.1" 200 7679
+INFO 2026-05-24 22:57:01,919 basehttp 305025 135542833411648 "GET /contacts/ HTTP/1.1" 200 9297
+INFO 2026-05-24 22:57:01,989 basehttp 305025 135542833411648 "GET /media/contacts/photo_2025-10-04_12-24-45.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:57:02,001 basehttp 305025 135542833411648 "GET /media/contacts/photo_2026-05-24_22-06-49.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:57:02,016 basehttp 305025 135542582797888 "GET /media/contacts/download_3.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:57:02,016 basehttp 305025 135542825018944 "GET /media/contacts/download_2.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:57:02,017 basehttp 305025 135542566012480 "GET /media/contacts/download_1.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:57:02,018 basehttp 305025 135542574405184 "GET /media/contacts/download.jpg HTTP/1.1" 304 0
+INFO 2026-05-24 22:57:03,161 basehttp 305025 135542833411648 "GET /cars/ HTTP/1.1" 200 22603

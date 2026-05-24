@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- Hero -->
-<div class="p-5 mb-4 rounded-3" style="background: linear-gradient(135deg, #111 0%, #1a1a1a 50%, #0d1117 100%); border: 1px solid #2a2a2a;">
+<div class="p-5 mb-4 rounded-3" style=" border: 1px solid #2a2a2a;">
   <div class="row align-items-center">
     <div class="col-md-8">
       <h1 class="display-4 fw-bold text-gold mb-3">
@@ -34,13 +34,13 @@
   <div class="col-md-3">
     <div class="card text-center p-3">
       <div class="text-gold fs-5">🕐 Время (UTC)</div>
-      <div class="fw-bold">{{ now_utc|date:"d/m/Y H:i" }}</div>
+      <div class="fw-bold">{{ now_utc_str }}</div>
     </div>
   </div>
   <div class="col-md-3">
     <div class="card text-center p-3">
       <div class="text-gold fs-5">🕐 Местное время</div>
-      <div class="fw-bold">{{ now_local|date:"d/m/Y H:i" }}</div>
+      <div class="fw-bold">{{ now_local_str }}</div>
     </div>
   </div>
   {% if rates %}

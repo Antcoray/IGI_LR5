@@ -2,10 +2,10 @@
 <h2 class="text-gold mb-4"><i class="bi bi-question-circle me-2"></i>Словарь терминов и FAQ</h2>
 <div class="accordion" id="faqAccordion">
 {% for item in faqs %}
-<div class="accordion-item" style="background:#141414;border-color:#2a2a2a;">
+<div class="accordion-item" style="border-color:#2a2a2a;">
   <h2 class="accordion-header">
     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq{{ item.pk }}"
-      style="background:#1a1a1a;color:#ddd;">
+      style="color:#000000;">
       {{ item.question }}
       <small class="text-muted ms-2">({{ item.added_at|date:"d/m/Y" }})</small>
     </button>
