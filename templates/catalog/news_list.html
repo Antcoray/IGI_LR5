@@ -1,0 +1,19 @@
+{% extends 'base.html' %}{% block title %}Новости — АвтоПремиум{% endblock %}{% block content %}
+<h2 class="text-gold mb-4"><i class="bi bi-newspaper me-2"></i>Новости</h2>
+<div class="row g-3">
+{% for article in articles %}
+<div class="col-md-6">
+  <div class="card h-100">
+    {% if article.image %}<img src="{{ article.image.url }}" class="card-img-top" style="height:200px;object-fit:cover;">{% endif %}
+    <div class="card-body">
+      <h5 class="card-title text-gold">{{ article.title }}</h5>
+      <p class="text-muted">{{ article.summary }}</p>
+    </div>
+    <div class="card-footer d-flex justify-content-between align-items-center">
+      <small class="text-muted">{{ article.published_at|date:"d/m/Y" }}</small>
+      <a href="{% url 'news_detail' article.pk %}" class="btn btn-gold btn-sm">Читать далее →</a>
+    </div>
+  </div>
+</div>
+{% empty %}<div class="col-12 text-muted">Новостей пока нет.</div>{% endfor %}
+</div>{% endblock %}

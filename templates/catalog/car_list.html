@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block title %}Каталог автомобилей — АвтоПремиум{% endblock %}
+{% block content %}
+
+<h2 class="text-gold mb-4"><i class="bi bi-grid me-2"></i>Каталог автомобилей</h2>
+
+<!-- Search/filter form -->
+<div class="card mb-4">
+  <div class="card-body">
+    <form method="get" action="{% url 'car_list' %}">
+      <div class="row g-2">
+        <div class="col-md-4">{{ form.q }}</div>
+        <div class="col-md-2">{{ form.manufacturer }}</div>
+        <div class="col-md-2">{{ form.car_type }}</div>
+        <div class="col-md-2">{{ form.fuel }}</div>
+        <div class="col-md-2">{{ form.sort }}</div>
+        <div class="col-md-3">{{ form.price_min }}</div>
+        <div class="col-md-3">{{ form.price_max }}</div>
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-gold w-100"><i class="bi bi-search me-1"></i>Найти</button>
+        </div>
+        <div class="col-md-3">
+          <a href="{% url 'car_list' %}" class="btn btn-outline-secondary w-100">Сбросить</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% if user.is_staff %}
+<div class="mb-3">
+  <a href="{% url 'car_create' %}" class="btn btn-gold">
+    <i class="bi bi-plus-circle me-1"></i>Добавить автомобиль
+  </a>
+</div>
+{% endif %}
+
+<!-- Results -->
+<div class="row g-3">
+  {% for car in cars %}
+  <div class="col-md-4 col-lg-3">
+    <div class="card h-100">
+      {% if car.photo %}
+      <img src="{{ car.photo.url }}" class="card-img-top" style="height:180px;object-fit:cover;" alt="{{ car }}">
+      {% else %}
+      <div class="card-img-top bg-dark d-flex align-items-center justify-content-center" style="height:180px;">
+        <i class="bi bi-car-front text-secondary" style="font-size:3rem;"></i>
+      </div>
+      {% endif %}
+      <div class="card-body p-3">
+        <h6 class="card-title mb-1">{{ car.manufacturer.name }} {{ car.name }}</h6>
+        <div class="text-gold fw-bold mb-1">{{ car.price|floatformat:0 }} BYN</div>
+        <div class="d-flex flex-wrap gap-1 mb-2">
+          <span class="badge bg-secondary">{{ car.year }}</span>
+          <span class="badge bg-secondary">{{ car.get_fuel_display }}</span>
+          <span class="badge bg-secondary">{{ car.get_transmission_display }}</span>
+          <span class="badge {% if car.status == 'available' %}bg-success{% elif car.status == 'reserved' %}bg-warning text-dark{% else %}bg-danger{% endif %}">
+            {{ car.get_status_display }}
+          </span>
+        </div>
+        <small class="text-muted">{{ car.engine_volume }}л · {{ car.horsepower }} л.с. · {{ car.mileage }} км</small>
+      </div>
+      <div class="card-footer d-flex gap-2 p-2">
+        <a href="{% url 'car_detail' car.pk %}" class="btn btn-gold btn-sm flex-grow-1">Подробнее</a>
+        {% if user.is_staff %}
+        <a href="{% url 'car_update' car.pk %}" class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil"></i></a>
+        <a href="{% url 'car_delete' car.pk %}" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <div class="col-12">
+    <div class="alert alert-warning text-center">
+      <i class="bi bi-search me-2"></i>Автомобили не найдены. Попробуйте изменить параметры поиска.
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<p class="text-muted mt-3">Найдено: <strong>{{ cars|length }}</strong> автомобилей</p>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}{% block title %}Контакты — АвтоПремиум{% endblock %}{% block content %}
+<h2 class="text-gold mb-4"><i class="bi bi-telephone me-2"></i>Контакты</h2>
+{% if company %}
+<div class="card mb-4">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="text-gold">{{ company.name }}</h5>
+        <p><i class="bi bi-geo-alt me-2 text-gold"></i>{{ company.address }}</p>
+        <p><i class="bi bi-telephone me-2 text-gold"></i>{{ company.phone }}</p>
+        <p><i class="bi bi-envelope me-2 text-gold"></i>{{ company.email }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+<h4 class="text-gold mb-3">Наша команда</h4>
+<div class="row g-3">
+{% for c in contacts %}
+<div class="col-md-4">
+  <div class="card text-center p-3">
+    {% if c.photo %}<img src="{{ c.photo.url }}" class="rounded-circle mb-3" style="width:80px;height:80px;object-fit:cover;">
+    {% else %}<div class="rounded-circle bg-secondary d-inline-flex align-items-center justify-content-center mb-3" style="width:80px;height:80px;"><i class="bi bi-person fs-2"></i></div>{% endif %}
+    <h6 class="text-gold">{{ c.name }}</h6>
+    <div class="text-muted small mb-2">{{ c.position }}</div>
+    <div class="small"><i class="bi bi-telephone me-1"></i>{{ c.phone }}</div>
+    <div class="small"><i class="bi bi-envelope me-1"></i>{{ c.email }}</div>
+    {% if c.description %}<p class="small text-muted mt-2">{{ c.description }}</p>{% endif %}
+  </div>
+</div>
+{% empty %}<div class="col-12 text-muted">Контакты скоро будут добавлены.</div>{% endfor %}
+</div>{% endblock %}

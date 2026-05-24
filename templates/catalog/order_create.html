@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Оформить заказ — АвтоПремиум{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header text-gold"><i class="bi bi-cart-plus me-2"></i>Оформление заказа</div>
+      <div class="card-body">
+        <div class="mb-4 p-3 rounded" style="background:#1a1a1a;">
+          <h6 class="text-gold">{{ car.manufacturer.name }} {{ car.name }} ({{ car.year }})</h6>
+          <div class="fw-bold fs-5">{{ car.price|floatformat:0 }} BYN</div>
+          <small class="text-muted">{{ car.get_fuel_display }} · {{ car.engine_volume }}л · {{ car.horsepower }} л.с.</small>
+        </div>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.car }}
+          <div class="mb-3">
+            <label class="form-label">Комментарий к заказу</label>
+            {{ form.comment }}
+          </div>
+          <button type="submit" class="btn btn-gold w-100">
+            <i class="bi bi-check-circle me-1"></i>Подтвердить заказ
+          </button>
+        </form>
+        <a href="{% url 'car_detail' car.pk %}" class="btn btn-outline-secondary w-100 mt-2">Отмена</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

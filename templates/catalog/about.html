@@ -1,0 +1,17 @@
+{% extends 'base.html' %}{% block title %}О компании — АвтоПремиум{% endblock %}{% block content %}
+<h2 class="text-gold mb-4"><i class="bi bi-building me-2"></i>О компании</h2>
+{% if company %}
+<div class="card mb-4">
+  <div class="card-body">
+    <h4>{{ company.name }}</h4>
+    <p>{{ company.description }}</p>
+    <table class="table table-sm">
+      <tr><td class="text-muted">Адрес</td><td>{{ company.address }}</td></tr>
+      <tr><td class="text-muted">Телефон</td><td>{{ company.phone }}</td></tr>
+      <tr><td class="text-muted">Email</td><td>{{ company.email }}</td></tr>
+      {% if company.founded_year %}<tr><td class="text-muted">Основан</td><td>{{ company.founded_year }}</td></tr>{% endif %}
+    </table>
+  </div>
+</div>
+{% else %}<p class="text-muted">Информация о компании скоро будет добавлена.</p>{% endif %}
+{% endblock %}

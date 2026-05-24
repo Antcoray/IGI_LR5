@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block title %}АвтоПремиум — Главная{% endblock %}
+{% block content %}
+
+<!-- Hero -->
+<div class="p-5 mb-4 rounded-3" style="background: linear-gradient(135deg, #111 0%, #1a1a1a 50%, #0d1117 100%); border: 1px solid #2a2a2a;">
+  <div class="row align-items-center">
+    <div class="col-md-8">
+      <h1 class="display-4 fw-bold text-gold mb-3">
+        <i class="bi bi-car-front-fill me-2"></i>АвтоПремиум
+      </h1>
+      <p class="lead text-muted">Официальный автосалон. Широкий выбор новых и проверенных автомобилей. Гарантия качества.</p>
+      <a href="{% url 'car_list' %}" class="btn btn-gold btn-lg me-2">
+        <i class="bi bi-grid me-1"></i> Каталог автомобилей
+      </a>
+      {% if not user.is_authenticated %}
+      <a href="{% url 'register' %}" class="btn btn-outline-secondary btn-lg">Зарегистрироваться</a>
+      {% endif %}
+    </div>
+    <div class="col-md-4 text-end">
+      {% if weather %}
+      <div class="card p-3">
+        <div class="text-gold fs-4 fw-bold">{{ weather.temp }}°C</div>
+        <div class="text-muted">{{ weather.description }}</div>
+        <small class="text-muted">📍 {{ weather.city }}</small>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- Info bar -->
+<div class="row g-3 mb-4">
+  <div class="col-md-3">
+    <div class="card text-center p-3">
+      <div class="text-gold fs-5">🕐 Время (UTC)</div>
+      <div class="fw-bold">{{ now_utc|date:"d/m/Y H:i" }}</div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card text-center p-3">
+      <div class="text-gold fs-5">🕐 Местное время</div>
+      <div class="fw-bold">{{ now_local|date:"d/m/Y H:i" }}</div>
+    </div>
+  </div>
+  {% if rates %}
+  <div class="col-md-6">
+    <div class="card p-3">
+      <div class="text-gold mb-2">💱 Курсы НБРБ (BYN)</div>
+      <div class="row text-center">
+        {% for currency, rate in rates.items %}
+        <div class="col">
+          <div class="fw-bold">{{ currency }}</div>
+          <div class="text-muted small">{{ rate }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Latest news -->
+{% if latest_article %}
+<div class="card mb-4">
+  <div class="card-header">
+    <i class="bi bi-newspaper text-gold me-2"></i><span class="text-gold fw-bold">Последняя новость</span>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ latest_article.title }}</h5>
+    <p class="text-muted">{{ latest_article.summary }}</p>
+    <a href="{% url 'news_detail' latest_article.pk %}" class="btn btn-gold btn-sm">Читать далее →</a>
+    <small class="text-muted ms-3">{{ latest_article.published_at|date:"d/m/Y" }}</small>
+  </div>
+</div>
+{% endif %}
+
+<!-- Featured cars -->
+<h4 class="text-gold mb-3"><i class="bi bi-star-fill me-2"></i>Автомобили в наличии</h4>
+<div class="row g-3">
+  {% for car in featured_cars %}
+  <div class="col-md-4">
+    <div class="card h-100">
+      {% if car.photo %}
+      <img src="{{ car.photo.url }}" class="card-img-top" style="height:200px;object-fit:cover;" alt="{{ car }}">
+      {% else %}
+      <div class="card-img-top bg-dark d-flex align-items-center justify-content-center" style="height:200px;">
+        <i class="bi bi-car-front text-secondary" style="font-size:4rem;"></i>
+      </div>
+      {% endif %}
+      <div class="card-body">
+        <h6 class="card-title">{{ car.manufacturer.name }} {{ car.name }}</h6>
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="text-gold fw-bold fs-5">{{ car.price|floatformat:0 }} BYN</span>
+          <span class="badge bg-secondary">{{ car.year }}</span>
+        </div>
+        <small class="text-muted">{{ car.get_fuel_display }} · {{ car.engine_volume }}л · {{ car.horsepower }} л.с.</small>
+      </div>
+      <div class="card-footer">
+        <a href="{% url 'car_detail' car.pk %}" class="btn btn-gold btn-sm w-100">Подробнее</a>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <div class="col-12 text-center text-muted">Нет автомобилей в наличии</div>
+  {% endfor %}
+</div>
+
+<!-- Calendar -->
+<div class="card mt-4">
+  <div class="card-header"><i class="bi bi-calendar3 text-gold me-2"></i><span class="text-gold">Календарь</span></div>
+  <div class="card-body">
+    <pre class="text-muted mb-0" style="font-size:0.9rem;">{{ calendar }}</pre>
+  </div>
+</div>
+
+{% endblock %}

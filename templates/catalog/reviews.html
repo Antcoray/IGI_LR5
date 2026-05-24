@@ -1,0 +1,43 @@
+{% extends 'base.html' %}{% block title %}Отзывы — АвтоПремиум{% endblock %}{% block content %}
+<h2 class="text-gold mb-4"><i class="bi bi-star me-2"></i>Отзывы клиентов</h2>
+{% if review_form %}
+<div class="card mb-4">
+  <div class="card-header text-gold">Оставить отзыв</div>
+  <div class="card-body">
+    <form method="post" action="{% url 'review_create' %}">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ request.path }}">
+      {% for field in review_form %}
+      <div class="mb-2">
+        <label class="form-label text-muted small">{{ field.label }}</label>
+        {{ field }}
+        {% if field.errors %}<div class="text-danger small">{{ field.errors }}</div>{% endif %}
+      </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-gold">Отправить</button>
+    </form>
+  </div>
+</div>
+{% elif not user.is_authenticated %}
+<div class="alert alert-warning mb-4">
+  <a href="{% url 'login' %}">Войдите</a>, чтобы оставить отзыв.
+</div>
+{% endif %}
+
+<div class="row g-3">
+{% for review in reviews %}
+<div class="col-md-6">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between mb-2">
+        <strong>{{ review.client.user.get_full_name|default:review.client.user.username }}</strong>
+        <span>{% for i in "12345" %}{% if forloop.counter <= review.rating %}⭐{% else %}☆{% endif %}{% endfor %}</span>
+      </div>
+      {% if review.car %}<div class="text-muted small mb-2"><i class="bi bi-car-front me-1"></i>{{ review.car }}</div>{% endif %}
+      <p class="mb-1">{{ review.text }}</p>
+      <small class="text-muted">{{ review.created_at|date:"d/m/Y" }}</small>
+    </div>
+  </div>
+</div>
+{% empty %}<div class="col-12 text-muted">Отзывов пока нет.</div>{% endfor %}
+</div>{% endblock %}
