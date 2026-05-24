@@ -2280,3 +2280,688 @@ INFO 2026-05-23 22:09:02,649 views 160798 125851527018048 Home page accessed
 INFO 2026-05-23 22:09:03,750 basehttp 160798 125851527018048 "GET / HTTP/1.1" 200 15178
 INFO 2026-05-23 22:09:07,194 views 160798 125851527018048 Statistics accessed by admin
 INFO 2026-05-23 22:09:07,236 basehttp 160798 125851527018048 "GET /statistics/ HTTP/1.1" 200 13457
+INFO 2026-05-24 16:15:53,686 autoreload 223049 124818636931072 Watching for file changes with StatReloader
+INFO 2026-05-24 16:15:59,331 views 223049 124818571650624 Home page accessed
+INFO 2026-05-24 16:16:00,170 basehttp 223049 124818571650624 "GET / HTTP/1.1" 200 12663
+INFO 2026-05-24 16:18:10,643 autoreload 223049 124818636931072 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 16:18:11,344 autoreload 223606 132058206388224 Watching for file changes with StatReloader
+INFO 2026-05-24 16:18:14,959 autoreload 223606 132058206388224 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 16:18:15,487 autoreload 223631 125606668910592 Watching for file changes with StatReloader
+INFO 2026-05-24 16:18:31,647 autoreload 223699 123718504689664 Watching for file changes with StatReloader
+INFO 2026-05-24 16:18:34,545 views 223699 123718447658560 Home page accessed
+INFO 2026-05-24 16:18:35,118 basehttp 223699 123718447658560 "GET / HTTP/1.1" 200 13299
+INFO 2026-05-24 16:19:17,502 basehttp 223699 123718447658560 "GET /users/login/ HTTP/1.1" 200 6379
+INFO 2026-05-24 16:19:56,061 views 223699 123718447658560 User logged in: admin
+INFO 2026-05-24 16:19:56,074 basehttp 223699 123718447658560 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 16:19:56,083 views 223699 123718447658560 Home page accessed
+INFO 2026-05-24 16:19:56,967 basehttp 223699 123718447658560 "GET / HTTP/1.1" 200 15554
+INFO 2026-05-24 16:20:06,956 views 223699 123718447658560 Analytics accessed by admin, year=2026
+ERROR 2026-05-24 16:20:10,859 log 223699 123718447658560 Internal Server Error: /analytics/
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 867, in analytics_dashboard
+    return render(request, 'catalog/analytics.html', {
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 852, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'enumerate'
+ERROR 2026-05-24 16:20:10,864 basehttp 223699 123718447658560 "GET /analytics/ HTTP/1.1" 500 315815
+INFO 2026-05-24 16:20:32,145 basehttp 223699 123718447658560 "GET /statistics/ HTTP/1.1" 200 9824
+INFO 2026-05-24 16:20:36,208 views 223699 123718447658560 Analytics accessed by admin, year=2026
+ERROR 2026-05-24 16:20:38,324 log 223699 123718447658560 Internal Server Error: /analytics/
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 867, in analytics_dashboard
+    return render(request, 'catalog/analytics.html', {
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 852, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'enumerate'
+ERROR 2026-05-24 16:20:38,325 basehttp 223699 123718447658560 "GET /analytics/ HTTP/1.1" 500 315826
+INFO 2026-05-24 16:20:44,580 views 223699 123718447658560 Analytics accessed by admin, year=2026
+ERROR 2026-05-24 16:20:46,836 log 223699 123718447658560 Internal Server Error: /analytics/
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 867, in analytics_dashboard
+    return render(request, 'catalog/analytics.html', {
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 852, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'enumerate'
+ERROR 2026-05-24 16:20:46,837 basehttp 223699 123718447658560 "GET /analytics/ HTTP/1.1" 500 315826
+INFO 2026-05-24 16:32:18,204 autoreload 227052 124121674248192 Watching for file changes with StatReloader
+INFO 2026-05-24 16:32:21,420 views 227052 124121616741952 Analytics accessed by admin, year=2026
+INFO 2026-05-24 16:32:25,175 basehttp 227052 124121616741952 "GET /analytics/ HTTP/1.1" 200 457725
+INFO 2026-05-24 16:34:51,962 basehttp 227052 124121616741952 "GET /orders/ HTTP/1.1" 200 16753
+INFO 2026-05-24 16:35:12,568 basehttp 227052 124121616741952 "GET /statistics/ HTTP/1.1" 200 9824
+INFO 2026-05-24 16:35:21,156 views 227052 124121616741952 Analytics accessed by admin, year=2026
+INFO 2026-05-24 16:35:23,288 basehttp 227052 124121616741952 "GET /analytics/ HTTP/1.1" 200 457725
+INFO 2026-05-24 16:36:19,027 views 227052 124121616741952 User logged out: admin
+INFO 2026-05-24 16:36:19,043 basehttp 227052 124121616741952 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 16:36:19,050 views 227052 124121616741952 Home page accessed
+INFO 2026-05-24 16:36:19,832 basehttp 227052 124121616741952 "GET / HTTP/1.1" 200 13299
+INFO 2026-05-24 16:36:21,311 basehttp 227052 124121616741952 "GET /users/login/ HTTP/1.1" 200 6379
+INFO 2026-05-24 16:36:38,737 views 227052 124121616741952 User logged in: manager1
+INFO 2026-05-24 16:36:38,750 basehttp 227052 124121616741952 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 16:36:38,760 views 227052 124121616741952 Home page accessed
+INFO 2026-05-24 16:36:39,631 basehttp 227052 124121616741952 "GET / HTTP/1.1" 200 13924
+INFO 2026-05-24 16:36:46,483 basehttp 227052 124121616741952 "GET /news/3/ HTTP/1.1" 200 6704
+INFO 2026-05-24 16:37:06,995 basehttp 227052 124121616741952 "GET /reviews/ HTTP/1.1" 200 7418
+INFO 2026-05-24 16:37:07,662 basehttp 227052 124121616741952 "GET /promos/ HTTP/1.1" 200 7240
+INFO 2026-05-24 16:37:08,381 basehttp 227052 124121616741952 "GET /contacts/ HTTP/1.1" 200 8424
+INFO 2026-05-24 16:37:08,871 basehttp 227052 124121616741952 "GET /promos/ HTTP/1.1" 200 7240
+INFO 2026-05-24 16:37:09,522 basehttp 227052 124121616741952 "GET /news/ HTTP/1.1" 200 7558
+INFO 2026-05-24 16:37:10,292 basehttp 227052 124121616741952 "GET /reviews/ HTTP/1.1" 200 7418
+INFO 2026-05-24 16:37:10,936 basehttp 227052 124121616741952 "GET /cars/ HTTP/1.1" 200 21163
+INFO 2026-05-24 16:37:11,818 basehttp 227052 124121616741952 "GET /news/ HTTP/1.1" 200 7558
+INFO 2026-05-24 16:37:13,259 basehttp 227052 124121616741952 "GET /cars/ HTTP/1.1" 200 21163
+INFO 2026-05-24 16:37:16,300 basehttp 227052 124121616741952 "GET /users/profile/ HTTP/1.1" 200 9858
+INFO 2026-05-24 16:37:28,768 basehttp 227052 124121616741952 "GET /cars/ HTTP/1.1" 200 21163
+INFO 2026-05-24 16:39:47,398 views 227052 124121616741952 User logged out: manager1
+INFO 2026-05-24 16:39:47,413 basehttp 227052 124121616741952 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 16:39:47,421 views 227052 124121616741952 Home page accessed
+INFO 2026-05-24 16:39:48,773 basehttp 227052 124121616741952 "GET / HTTP/1.1" 200 13299
+INFO 2026-05-24 16:39:51,596 basehttp 227052 124121616741952 "GET /users/login/ HTTP/1.1" 200 6379
+INFO 2026-05-24 16:40:07,871 views 227052 124121616741952 User logged in: client1
+INFO 2026-05-24 16:40:07,888 basehttp 227052 124121616741952 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 16:40:07,898 views 227052 124121616741952 Home page accessed
+INFO 2026-05-24 16:40:08,654 basehttp 227052 124121616741952 "GET / HTTP/1.1" 200 13930
+ERROR 2026-05-24 16:40:16,508 log 227052 124121616741952 Internal Server Error: /cars/12/
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 387, in car_detail
+    return render(request, 'catalog/car_detail.html', {
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order_create' with arguments '(12,)' not found. 1 pattern(s) tried: ['orders/new/\\Z']
+ERROR 2026-05-24 16:40:16,513 basehttp 227052 124121616741952 "GET /cars/12/ HTTP/1.1" 500 210120
+ERROR 2026-05-24 16:40:52,157 log 227052 124121616741952 Internal Server Error: /cars/10/
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 387, in car_detail
+    return render(request, 'catalog/car_detail.html', {
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order_create' with arguments '(10,)' not found. 1 pattern(s) tried: ['orders/new/\\Z']
+ERROR 2026-05-24 16:40:52,159 basehttp 227052 124121616741952 "GET /cars/10/ HTTP/1.1" 500 209877
+ERROR 2026-05-24 16:40:55,264 log 227052 124121616741952 Internal Server Error: /cars/8/
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 387, in car_detail
+    return render(request, 'catalog/car_detail.html', {
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order_create' with arguments '(8,)' not found. 1 pattern(s) tried: ['orders/new/\\Z']
+ERROR 2026-05-24 16:40:55,266 basehttp 227052 124121616741952 "GET /cars/8/ HTTP/1.1" 500 210040
+ERROR 2026-05-24 16:43:05,884 log 227052 124121616741952 Internal Server Error: /cars/12/
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 387, in car_detail
+    return render(request, 'catalog/car_detail.html', {
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order_create' with arguments '(12,)' not found. 1 pattern(s) tried: ['orders/new/\\Z']
+ERROR 2026-05-24 16:43:05,888 basehttp 227052 124121616741952 "GET /cars/12/ HTTP/1.1" 500 210120
+INFO 2026-05-24 16:46:50,688 autoreload 227052 124121674248192 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 16:46:51,767 autoreload 230372 126967166054400 Watching for file changes with StatReloader
+INFO 2026-05-24 16:46:56,695 autoreload 230372 126967166054400 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 16:46:57,222 autoreload 230405 138184492400640 Watching for file changes with StatReloader
+INFO 2026-05-24 16:46:59,701 autoreload 230405 138184492400640 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 16:47:00,279 autoreload 230423 132560515768320 Watching for file changes with StatReloader
+INFO 2026-05-24 16:47:17,873 autoreload 230423 132560515768320 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 16:47:18,436 autoreload 230504 128037996167168 Watching for file changes with StatReloader
+INFO 2026-05-24 16:47:19,897 autoreload 230504 128037996167168 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 16:47:20,479 autoreload 230515 135304341192704 Watching for file changes with StatReloader
+INFO 2026-05-24 16:47:25,965 autoreload 230515 135304341192704 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 16:47:26,532 autoreload 230545 124304066207744 Watching for file changes with StatReloader
+INFO 2026-05-24 16:48:10,371 autoreload 230545 124304066207744 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 16:48:10,943 autoreload 230729 129858511769600 Watching for file changes with StatReloader
+INFO 2026-05-24 16:48:17,062 autoreload 230756 127094259785728 Watching for file changes with StatReloader
+ERROR 2026-05-24 16:48:22,934 log 230756 127094202824256 Internal Server Error: /cars/12/
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 387, in car_detail
+    return render(request, 'catalog/car_detail.html', {
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order_create' with arguments '(12,)' not found. 1 pattern(s) tried: ['orders/new/\\Z']
+ERROR 2026-05-24 16:48:22,938 basehttp 230756 127094202824256 "GET /cars/12/ HTTP/1.1" 500 210257
+ERROR 2026-05-24 16:48:25,447 log 230756 127094202824256 Internal Server Error: /cars/12/
+Traceback (most recent call last):
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 387, in car_detail
+    return render(request, 'catalog/car_detail.html', {
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/anton/4_sem_vsakoe/IGI_LR5_v2/.venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order_create' with arguments '(12,)' not found. 1 pattern(s) tried: ['orders/new/\\Z']
+ERROR 2026-05-24 16:48:25,449 basehttp 230756 127094202824256 "GET /cars/12/ HTTP/1.1" 500 210120
+INFO 2026-05-24 16:48:43,802 autoreload 230756 127094259785728 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 16:48:44,382 autoreload 230878 123415711621120 Watching for file changes with StatReloader
+INFO 2026-05-24 17:08:02,387 autoreload 230878 123415711621120 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 17:08:03,381 autoreload 235296 140312677896192 Watching for file changes with StatReloader
+INFO 2026-05-24 17:08:04,527 autoreload 235296 140312677896192 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 17:08:05,094 autoreload 235311 133867965411328 Watching for file changes with StatReloader
+INFO 2026-05-24 17:08:27,868 autoreload 235311 133867965411328 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 17:08:28,428 autoreload 235361 124642622509056 Watching for file changes with StatReloader
+INFO 2026-05-24 17:08:33,704 autoreload 235361 124642622509056 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 17:08:34,243 autoreload 235393 125563984240640 Watching for file changes with StatReloader
+INFO 2026-05-24 17:08:39,716 autoreload 235393 125563984240640 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/urls.py changed, reloading.
+INFO 2026-05-24 17:08:40,258 autoreload 235416 138286008262656 Watching for file changes with StatReloader
+INFO 2026-05-24 17:09:52,042 autoreload 235416 138286008262656 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/forms.py changed, reloading.
+INFO 2026-05-24 17:09:52,754 autoreload 235570 131013587734528 Watching for file changes with StatReloader
+INFO 2026-05-24 17:10:02,196 autoreload 235570 131013587734528 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/forms.py changed, reloading.
+INFO 2026-05-24 17:10:02,856 autoreload 235596 125817370677248 Watching for file changes with StatReloader
+INFO 2026-05-24 17:10:08,131 autoreload 235596 125817370677248 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/forms.py changed, reloading.
+INFO 2026-05-24 17:10:08,702 autoreload 235614 135294854029312 Watching for file changes with StatReloader
+INFO 2026-05-24 17:10:18,075 autoreload 235614 135294854029312 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/forms.py changed, reloading.
+INFO 2026-05-24 17:10:18,603 autoreload 235640 136788351348736 Watching for file changes with StatReloader
+INFO 2026-05-24 17:11:24,662 autoreload 235640 136788351348736 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 17:11:25,378 autoreload 235901 125464549244928 Watching for file changes with StatReloader
+INFO 2026-05-24 17:11:34,706 autoreload 235901 125464549244928 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 17:11:35,290 autoreload 235948 124434107871232 Watching for file changes with StatReloader
+INFO 2026-05-24 17:12:24,921 autoreload 235948 124434107871232 /home/anton/4_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py changed, reloading.
+INFO 2026-05-24 17:12:25,513 autoreload 236148 130294063628288 Watching for file changes with StatReloader
+INFO 2026-05-24 17:17:29,342 views 236148 130293935633984 User logged out: client1
+INFO 2026-05-24 17:17:29,377 basehttp 236148 130293935633984 "POST /users/logout/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:17:29,386 views 236148 130293935633984 Home page accessed
+INFO 2026-05-24 17:17:30,275 basehttp 236148 130293935633984 "GET / HTTP/1.1" 200 12663
+INFO 2026-05-24 17:17:31,697 basehttp 236148 130293935633984 "GET /users/login/ HTTP/1.1" 200 6379
+INFO 2026-05-24 17:17:43,129 basehttp 236148 130293935633984 "POST /users/login/ HTTP/1.1" 200 6667
+INFO 2026-05-24 17:18:00,330 views 236148 130293935633984 User logged in: admin
+INFO 2026-05-24 17:18:00,347 basehttp 236148 130293935633984 "POST /users/login/ HTTP/1.1" 302 0
+INFO 2026-05-24 17:18:00,355 views 236148 130293935633984 Home page accessed
+INFO 2026-05-24 17:18:01,315 basehttp 236148 130293935633984 "GET / HTTP/1.1" 200 14930
+INFO 2026-05-24 17:18:05,248 views 236148 130293935633984 Analytics by admin, year=2026
+INFO 2026-05-24 17:18:09,107 basehttp 236148 130293935633984 "GET /analytics/ HTTP/1.1" 200 457725
+WARNING 2026-05-24 17:18:45,315 log 236148 130293935633984 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-05-24 17:18:45,316 basehttp 236148 130293935633984 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8072
+INFO 2026-05-24 17:18:48,553 views 236148 130293935633984 Analytics by admin, year=2026
+INFO 2026-05-24 17:18:50,729 basehttp 236148 130293935633984 "GET /analytics/ HTTP/1.1" 200 457725
+WARNING 2026-05-24 17:18:50,806 log 236148 130293935633984 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-05-24 17:18:50,807 basehttp 236148 130293935633984 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8072
+INFO 2026-05-24 17:20:27,517 basehttp 236148 130293935633984 "GET /orders/ HTTP/1.1" 200 16753
+INFO 2026-05-24 17:20:31,846 basehttp 236148 130293935633984 "GET /orders/10/edit/ HTTP/1.1" 200 18729
+INFO 2026-05-24 17:20:39,657 basehttp 236148 130293935633984 "GET /orders/ HTTP/1.1" 200 16753
+INFO 2026-05-24 17:20:43,826 basehttp 236148 130293935633984 "GET /cars/ HTTP/1.1" 200 25598
+INFO 2026-05-24 17:20:48,121 basehttp 236148 130293935633984 "GET /orders/ HTTP/1.1" 200 16753
+INFO 2026-05-24 17:21:04,451 basehttp 236148 130293935633984 "GET /cars/ HTTP/1.1" 200 25598

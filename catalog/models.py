@@ -1,24 +1,33 @@
-from django.db import models
 import re
+from django.db import models
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 from django.utils import timezone
+
+
+# ────────────────────────────────────────────────
+# Validators
+# ────────────────────────────────────────────────
 
 def validate_phone(value):
     """Телефон в формате +375 (XX) XXX-XX-XX"""
     pattern = r'^\+375 \(\d{2}\) \d{3}-\d{2}-\d{2}$'
     if not re.match(pattern, value):
-        raise ValidationError(
-            'Телефон должен быть в формате +375 (XX) XXX-XX-XX'
-        )
-    
+        raise ValidationError('Телефон должен быть в формате +375 (XX) XXX-XX-XX')
+
+
 def validate_adult(value):
-    """Возрастное ограничение """
+    """Возрастное ограничение 18+"""
     if value:
         today = timezone.now().date()
         age = (today - value).days // 365
         if age < 18:
             raise ValidationError('Возраст должен быть 18+')
+
+
+# ────────────────────────────────────────────────
+# Reference / Directory models
+# ────────────────────────────────────────────────
 
 class Manufacturer(models.Model):
     """Изготовитель / Производитель автомобиля"""
@@ -34,9 +43,10 @@ class Manufacturer(models.Model):
 
     def __str__(self):
         return f'{self.name} ({self.country})'
-    
+
+
 class CarType(models.Model):
-    """Тип товара / Класс автомобиля"""
+    """Тип кузова автомобиля"""
     name = models.CharField('Название', max_length=100)
     description = models.TextField('Описание', blank=True)
 
@@ -47,7 +57,8 @@ class CarType(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+
 class Feature(models.Model):
     """Опция/характеристика (M2M с автомобилем)"""
     name = models.CharField('Опция', max_length=100)
@@ -58,20 +69,20 @@ class Feature(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+
+# ────────────────────────────────────────────────
+# Main product model
+# ────────────────────────────────────────────────
+
 class Car(models.Model):
-    """Автомобиль — основной товар автосалона"""
     TRANSMISSION_CHOICES = [
-        ('MT', 'Механика'),
-        ('AT', 'Автомат'),
-        ('CVT', 'Вариатор'),
-        ('DCT', 'Робот'),
+        ('MT', 'Механика'), ('AT', 'Автомат'),
+        ('CVT', 'Вариатор'), ('DCT', 'Робот'),
     ]
     FUEL_CHOICES = [
-        ('petrol', 'Бензин'),
-        ('diesel', 'Дизель'),
-        ('electric', 'Электро'),
-        ('hybrid', 'Гибрид'),
+        ('petrol', 'Бензин'), ('diesel', 'Дизель'),
+        ('electric', 'Электро'), ('hybrid', 'Гибрид'),
     ]
     STATUS_CHOICES = [
         ('available', 'В наличии'),
@@ -101,8 +112,7 @@ class Car(models.Model):
     photo = models.ImageField('Фото', upload_to='cars/', blank=True, null=True)
     status = models.CharField('Статус', max_length=10, choices=STATUS_CHOICES, default='available')
     features = models.ManyToManyField(
-        Feature, blank=True,
-        related_name='cars', verbose_name='Опции'
+        Feature, blank=True, related_name='cars', verbose_name='Опции'
     )
     created_at = models.DateTimeField('Добавлен', auto_now_add=True)
     updated_at = models.DateTimeField('Изменён', auto_now=True)
@@ -114,9 +124,13 @@ class Car(models.Model):
 
     def __str__(self):
         return f'{self.manufacturer.name} {self.name} ({self.year})'
-    
+
+
+# ────────────────────────────────────────────────
+# People
+# ────────────────────────────────────────────────
+
 class Employee(models.Model):
-    """Сотрудник автосалона"""
     ROLE_CHOICES = [
         ('manager', 'Менеджер'),
         ('director', 'Директор'),
@@ -138,65 +152,126 @@ class Employee(models.Model):
 
     def __str__(self):
         return f'{self.user.get_full_name()} ({self.get_role_display()})'
-    
+
+
 class Client(models.Model):
-    """Клиент автосалона"""
+    """Клиент автосалона — анкетные данные"""
     user = models.OneToOneField(
         User, on_delete=models.CASCADE,
         related_name='client_profile', verbose_name='Пользователь'
     )
+    # Стандартные анкетные данные
+    last_name = models.CharField('Фамилия', max_length=100, blank=True)
+    first_name = models.CharField('Имя', max_length=100, blank=True)
+    patronymic = models.CharField('Отчество', max_length=100, blank=True)
     phone = models.CharField('Телефон', max_length=20, validators=[validate_phone])
+    email = models.EmailField('Email')
     address = models.CharField('Адрес', max_length=255, blank=True)
-    birth_date = models.DateField('Дата рождения', validators=[validate_adult])
     city = models.CharField('Город', max_length=100, blank=True)
-    email = models.EmailField('Email', blank=True)
+    birth_date = models.DateField('Дата рождения', validators=[validate_adult])
+    passport_series = models.CharField('Серия паспорта', max_length=10, blank=True)
+    passport_number = models.CharField('Номер паспорта', max_length=20, blank=True)
     created_at = models.DateTimeField('Зарегистрирован', auto_now_add=True)
 
     class Meta:
         verbose_name = 'Клиент'
         verbose_name_plural = 'Клиенты'
-        ordering = ['user__last_name', 'user__first_name']
+        ordering = ['last_name', 'first_name']
+
+    def full_name(self):
+        parts = [self.last_name, self.first_name, self.patronymic]
+        return ' '.join(p for p in parts if p) or self.user.get_full_name() or self.user.username
 
     def __str__(self):
-        return f'{self.user.get_full_name()} — {self.city}'
-    
+        return f'{self.full_name()} — {self.city}'
+
+
+# ────────────────────────────────────────────────
+# Orders / Sales (расширенные)
+# ────────────────────────────────────────────────
+
 class Order(models.Model):
-    """Заказ / Продажа"""
+    """Заказ / Продажа — фиксируется сотрудником"""
     STATUS_CHOICES = [
         ('pending', 'Ожидает'),
         ('approved', 'Одобрен'),
         ('completed', 'Завершён'),
         ('cancelled', 'Отменён'),
     ]
+    # Клиент — стандартные анкетные данные
     client = models.ForeignKey(
         Client, on_delete=models.PROTECT,
         related_name='orders', verbose_name='Клиент'
     )
-    car = models.ForeignKey(
-        Car, on_delete=models.PROTECT,
-        related_name='orders', verbose_name='Автомобиль'
-    )
+    # Сотрудник, фиксирующий продажу
     employee = models.ForeignKey(
         Employee, on_delete=models.SET_NULL, null=True, blank=True,
-        related_name='orders', verbose_name='Менеджер'
+        related_name='orders', verbose_name='Сотрудник'
     )
     status = models.CharField('Статус', max_length=15, choices=STATUS_CHOICES, default='pending')
-    sale_price = models.DecimalField('Цена продажи (BYN)', max_digits=12, decimal_places=2)
+
+    # Даты, которые фиксирует сотрудник
     sale_date = models.DateField('Дата продажи', null=True, blank=True)
     delivery_date = models.DateField('Дата доставки', null=True, blank=True)
+
+    # Итог
+    total_amount = models.DecimalField(
+        'Итоговая сумма (BYN)', max_digits=14, decimal_places=2, default=0
+    )
     comment = models.TextField('Комментарий', blank=True)
     created_at = models.DateTimeField('Создан', auto_now_add=True)
+    updated_at = models.DateTimeField('Изменён', auto_now=True)
 
     class Meta:
         verbose_name = 'Заказ'
         verbose_name_plural = 'Заказы'
         ordering = ['-created_at']
 
+    def recalculate_total(self):
+        """Пересчитать итоговую сумму по позициям"""
+        total = sum(
+            item.quantity * item.unit_price
+            for item in self.items.all()
+        )
+        self.total_amount = total
+        self.save(update_fields=['total_amount'])
+
     def __str__(self):
-        return f'Заказ #{self.pk} — {self.car} ({self.get_status_display()})'
-    
+        return f'Заказ #{self.pk} — {self.client} ({self.get_status_display()})'
+
+
+class OrderItem(models.Model):
+    """Позиция заказа: конкретный автомобиль + количество + цена"""
+    order = models.ForeignKey(
+        Order, on_delete=models.CASCADE,
+        related_name='items', verbose_name='Заказ'
+    )
+    car = models.ForeignKey(
+        Car, on_delete=models.PROTECT,
+        related_name='order_items', verbose_name='Автомобиль'
+    )
+    quantity = models.PositiveSmallIntegerField('Количество', default=1)
+    unit_price = models.DecimalField(
+        'Цена за единицу (BYN)', max_digits=12, decimal_places=2
+    )
+
+    class Meta:
+        verbose_name = 'Позиция заказа'
+        verbose_name_plural = 'Позиции заказа'
+
+    @property
+    def subtotal(self):
+        return self.quantity * self.unit_price
+
+    def __str__(self):
+        return f'{self.car} × {self.quantity} = {self.subtotal} BYN'
+
+
+# ────────────────────────────────────────────────
+# Site content models
+# ────────────────────────────────────────────────
+
 class Article(models.Model):
-    """Новости"""
     title = models.CharField('Заголовок', max_length=255)
     summary = models.CharField('Краткое содержание', max_length=500)
     content = models.TextField('Полный текст')
@@ -212,8 +287,8 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
+
 class FAQ(models.Model):
-    """Словарь терминов / FAQ"""
     question = models.CharField('Вопрос', max_length=255)
     answer = models.TextField('Ответ')
     added_at = models.DateField('Дата добавления', auto_now_add=True)
@@ -226,8 +301,8 @@ class FAQ(models.Model):
     def __str__(self):
         return self.question
 
+
 class Review(models.Model):
-    """Отзыв"""
     RATING_CHOICES = [(i, str(i)) for i in range(1, 6)]
     client = models.ForeignKey(
         Client, on_delete=models.CASCADE,
@@ -248,9 +323,9 @@ class Review(models.Model):
 
     def __str__(self):
         return f'Отзыв от {self.client} ({self.rating}★)'
-    
+
+
 class Vacancy(models.Model):
-    """Вакансии"""
     title = models.CharField('Должность', max_length=200)
     description = models.TextField('Описание')
     salary_from = models.DecimalField('Зарплата от', max_digits=10, decimal_places=2, null=True, blank=True)
@@ -265,9 +340,9 @@ class Vacancy(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+
 class Promo(models.Model):
-    """Промокоды и купоны"""
     STATUS_CHOICES = [('active', 'Активен'), ('archived', 'Архив')]
     code = models.CharField('Код', max_length=50, unique=True)
     discount_percent = models.PositiveSmallIntegerField('Скидка (%)')
@@ -281,9 +356,9 @@ class Promo(models.Model):
 
     def __str__(self):
         return f'{self.code} (-{self.discount_percent}%)'
-    
+
+
 class CompanyInfo(models.Model):
-    """О компании"""
     name = models.CharField('Название компании', max_length=200)
     description = models.TextField('Описание')
     address = models.CharField('Адрес', max_length=255)
@@ -298,9 +373,9 @@ class CompanyInfo(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+
 class Contact(models.Model):
-    """Контакты сотрудников (отдельно от Employee — для публичной страницы)"""
     name = models.CharField('ФИО', max_length=200)
     position = models.CharField('Должность', max_length=200)
     phone = models.CharField('Телефон', max_length=20, validators=[validate_phone])

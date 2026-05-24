@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}Заказы — АвтоПремиум{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2 class="text-gold mb-0"><i class="bi bi-list-check me-2"></i>Заказы</h2>
+  <a href="{% url 'order_create' %}" class="btn btn-gold">
+    <i class="bi bi-plus-circle me-1"></i>Новый заказ
+  </a>
+</div>
+
+<!-- Фильтры -->
+<form method="get" class="card mb-3">
+  <div class="card-body py-2">
+    <div class="row g-2 align-items-center">
+      <div class="col-md-5">
+        <input type="text" name="q" value="{{ q }}" class="form-control"
+               placeholder="Поиск по ФИО, телефону клиента…">
+      </div>
+      <div class="col-md-3">
+        <select name="status" class="form-select">
+          <option value="">Все статусы</option>
+          {% for val, label in status_choices %}
+          <option value="{{ val }}" {% if val == current_status %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-gold w-100">Найти</button>
+      </div>
+      <div class="col-md-2">
+        <a href="{% url 'order_list' %}" class="btn btn-outline-secondary w-100">Сброс</a>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th><th>Клиент</th><th>Телефон</th><th>Товары</th>
+        <th>Сумма</th><th>Статус</th><th>Дата продажи</th><th>Дата доставки</th><th>Менеджер</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+      <tr>
+        <td><a href="{% url 'order_detail' order.pk %}">#{{ order.pk }}</a></td>
+        <td>{{ order.client.full_name }}</td>
+        <td>{{ order.client.phone }}</td>
+        <td>
+          {% for item in order.items.all %}
+          <small class="d-block">{{ item.car.manufacturer.name }} {{ item.car.name }} × {{ item.quantity }}</small>
+          {% empty %}<small class="text-muted">—</small>{% endfor %}
+        </td>
+        <td class="text-gold fw-bold">{{ order.total_amount|floatformat:0 }} BYN</td>
+        <td>
+          <span class="badge {% if order.status == 'completed' %}bg-success{% elif order.status == 'approved' %}bg-primary{% elif order.status == 'cancelled' %}bg-danger{% else %}bg-warning text-dark{% endif %}">
+            {{ order.get_status_display }}
+          </span>
+        </td>
+        <td>{{ order.sale_date|date:"d/m/Y"|default:"—" }}</td>
+        <td>{{ order.delivery_date|date:"d/m/Y"|default:"—" }}</td>
+        <td><small>{{ order.employee|default:"—" }}</small></td>
+        <td>
+          <a href="{% url 'order_update' order.pk %}" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-pencil"></i>
+          </a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="10" class="text-center text-muted py-4">Заказов нет</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}{{ client.full_name }} — АвтоПремиум{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between mb-4">
+  <h2 class="text-gold">{{ client.full_name }}</h2>
+  <a href="{% url 'client_update' client.pk %}" class="btn btn-gold">
+    <i class="bi bi-pencil me-1"></i>Редактировать
+  </a>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header text-gold">Анкетные данные</div>
+      <div class="card-body">
+        <table class="table table-sm mb-0">
+          <tr><td class="text-muted">ФИО</td><td><strong>{{ client.full_name }}</strong></td></tr>
+          <tr><td class="text-muted">Телефон</td><td>{{ client.phone }}</td></tr>
+          <tr><td class="text-muted">Email</td><td>{{ client.email }}</td></tr>
+          <tr><td class="text-muted">Адрес</td><td>{{ client.address|default:"—" }}</td></tr>
+          <tr><td class="text-muted">Город</td><td>{{ client.city|default:"—" }}</td></tr>
+          <tr><td class="text-muted">Дата рождения</td><td>{{ client.birth_date|date:"d/m/Y"|default:"—" }}</td></tr>
+          <tr><td class="text-muted">Паспорт</td>
+            <td>{{ client.passport_series }} {{ client.passport_number }}</td>
+          </tr>
+          <tr><td class="text-muted">Зарегистрирован</td>
+            <td>{{ client.created_at|date:"d/m/Y H:i" }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <span class="text-gold">История заказов ({{ orders|length }})</span>
+        <a href="{% url 'order_create' %}?client={{ client.pk }}" class="btn btn-outline-secondary btn-sm">
+          <i class="bi bi-plus me-1"></i>Новый заказ
+        </a>
+      </div>
+      <div class="card-body p-0">
+        <table class="table table-sm mb-0">
+          <thead>
+            <tr><th>#</th><th>Товары</th><th>Сумма</th><th>Статус</th><th>Дата продажи</th><th>Дата доставки</th></tr>
+          </thead>
+          <tbody>
+            {% for order in orders %}
+            <tr>
+              <td><a href="{% url 'order_detail' order.pk %}">#{{ order.pk }}</a></td>
+              <td>
+                {% for item in order.items.all %}
+                <small class="d-block">{{ item.car.manufacturer.name }} {{ item.car.name }} × {{ item.quantity }}</small>
+                {% empty %}<small class="text-muted">—</small>{% endfor %}
+              </td>
+              <td class="text-gold fw-bold">{{ order.total_amount|floatformat:0 }} BYN</td>
+              <td>
+                <span class="badge {% if order.status == 'completed' %}bg-success{% elif order.status == 'approved' %}bg-primary{% elif order.status == 'cancelled' %}bg-danger{% else %}bg-warning text-dark{% endif %}">
+                  {{ order.get_status_display }}
+                </span>
+              </td>
+              <td>{{ order.sale_date|date:"d/m/Y"|default:"—" }}</td>
+              <td>{{ order.delivery_date|date:"d/m/Y"|default:"—" }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="6" class="text-center text-muted py-3">Заказов нет</td></tr>
+            {% endfor %}
+          </tbody>
+          {% if orders %}
+          <tfoot style="background:#1a1a1a;">
+            <tr>
+              <td colspan="2"><strong>Итого потрачено:</strong></td>
+              <td class="text-gold fw-bold">
+                {% with total=0 %}
+                  {% for o in orders %}{% if o.status == 'completed' %}
+                    {{ o.total_amount|add:total }}
+                  {% endif %}{% endfor %}
+                {% endwith %}
+              </td>
+              <td colspan="3"></td>
+            </tr>
+          </tfoot>
+          {% endif %}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="{% url 'client_list' %}" class="btn btn-outline-secondary mt-3">← Все клиенты</a>
+{% endblock %}

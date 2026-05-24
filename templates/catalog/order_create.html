@@ -1,30 +1,146 @@
 {% extends 'base.html' %}
-{% block title %}Оформить заказ — АвтоПремиум{% endblock %}
+{% block title %}{% if editing %}Редактировать заказ{% else %}Новый заказ{% endif %} — АвтоПремиум{% endblock %}
 {% block content %}
-<div class="row justify-content-center">
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-header text-gold"><i class="bi bi-cart-plus me-2"></i>Оформление заказа</div>
-      <div class="card-body">
-        <div class="mb-4 p-3 rounded" style="background:#1a1a1a;">
-          <h6 class="text-gold">{{ car.manufacturer.name }} {{ car.name }} ({{ car.year }})</h6>
-          <div class="fw-bold fs-5">{{ car.price|floatformat:0 }} BYN</div>
-          <small class="text-muted">{{ car.get_fuel_display }} · {{ car.engine_volume }}л · {{ car.horsepower }} л.с.</small>
-        </div>
-        <form method="post">
-          {% csrf_token %}
-          {{ form.car }}
+
+<h2 class="text-gold mb-4">
+  <i class="bi bi-cart-plus me-2"></i>
+  {% if editing %}Редактировать заказ #{{ order.pk }}{% else %}Оформить заказ{% endif %}
+</h2>
+
+<form method="post" id="orderForm">
+  {% csrf_token %}
+
+  <div class="row g-4">
+    <!-- Данные заказа -->
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-header text-gold">Данные заказа</div>
+        <div class="card-body">
+          {% for field in order_form %}
           <div class="mb-3">
-            <label class="form-label">Комментарий к заказу</label>
-            {{ form.comment }}
+            <label class="form-label text-muted small">{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}<div class="text-danger small">{{ field.errors }}</div>{% endif %}
           </div>
-          <button type="submit" class="btn btn-gold w-100">
-            <i class="bi bi-check-circle me-1"></i>Подтвердить заказ
+          {% endfor %}
+          {% if order_form.non_field_errors %}
+          <div class="alert alert-danger small">{{ order_form.non_field_errors }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Позиции заказа -->
+    <div class="col-md-7">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <span class="text-gold">Позиции заказа (товары)</span>
+          <button type="button" class="btn btn-outline-secondary btn-sm" id="addItem">
+            <i class="bi bi-plus-circle me-1"></i>Добавить строку
           </button>
-        </form>
-        <a href="{% url 'car_detail' car.pk %}" class="btn btn-outline-secondary w-100 mt-2">Отмена</a>
+        </div>
+        <div class="card-body">
+          {{ item_formset.management_form }}
+          <div id="formset-container">
+            {% for item_form in item_formset %}
+            <div class="formset-row border rounded p-3 mb-3" style="border-color:#2a2a2a !important;">
+              <div class="row g-2 align-items-end">
+                <div class="col-md-5">
+                  <label class="form-label text-muted small">Автомобиль</label>
+                  {{ item_form.car }}
+                  {% if item_form.car.errors %}<div class="text-danger small">{{ item_form.car.errors }}</div>{% endif %}
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label text-muted small">Кол-во</label>
+                  {{ item_form.quantity }}
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label text-muted small">Цена / ед. (BYN)</label>
+                  {{ item_form.unit_price }}
+                </div>
+                <div class="col-md-2 text-end">
+                  {% if item_form.DELETE %}
+                  <label class="form-check-label text-danger small d-block mb-1">Удалить</label>
+                  {{ item_form.DELETE }}
+                  {% endif %}
+                  {% for hidden in item_form.hidden_fields %}{{ hidden }}{% endfor %}
+                </div>
+              </div>
+              <div class="mt-2 text-end">
+                <small class="text-muted">Сумма: <span class="text-gold subtotal">—</span></small>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+          <div class="text-end mt-3 p-2 rounded" style="background:#1a1a1a;">
+            <strong>Итого: <span class="text-gold fs-5" id="grand-total">0</span> BYN</strong>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <div class="d-flex gap-2 mt-4">
+    <button type="submit" class="btn btn-gold btn-lg">
+      <i class="bi bi-check-circle me-1"></i>
+      {% if editing %}Сохранить изменения{% else %}Создать заказ{% endif %}
+    </button>
+    <a href="{% url 'order_list' %}" class="btn btn-outline-secondary btn-lg">Отмена</a>
+  </div>
+</form>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Автоподсчёт сумм
+function recalculate() {
+  let grand = 0;
+  document.querySelectorAll('.formset-row').forEach(row => {
+    const del = row.querySelector('input[name$="-DELETE"]');
+    if (del && del.checked) return;
+    const qty = parseFloat(row.querySelector('input[name$="-quantity"]')?.value) || 0;
+    const price = parseFloat(row.querySelector('input[name$="-unit_price"]')?.value) || 0;
+    const sub = qty * price;
+    grand += sub;
+    row.querySelector('.subtotal').textContent = sub > 0 ? sub.toLocaleString('ru') + ' BYN' : '—';
+  });
+  document.getElementById('grand-total').textContent = grand.toLocaleString('ru');
+}
+document.addEventListener('input', recalculate);
+recalculate();
+
+// Автозаполнение цены при выборе авто
+document.addEventListener('change', function(e) {
+  if (e.target && e.target.name && e.target.name.endsWith('-car')) {
+    const carId = e.target.value;
+    const priceInput = e.target.closest('.formset-row').querySelector('input[name$="-unit_price"]');
+    if (carId && priceInput) {
+      fetch(`/api/cars/`)
+        .then(r => r.json())
+        .then(data => {
+          const car = data.cars.find(c => c.id == carId);
+          if (car) { priceInput.value = car.price; recalculate(); }
+        }).catch(() => {});
+    }
+  }
+});
+
+// Добавление строки формсета
+document.getElementById('addItem').addEventListener('click', function() {
+  const container = document.getElementById('formset-container');
+  const totalForms = document.getElementById('id_items-TOTAL_FORMS');
+  const idx = parseInt(totalForms.value);
+  const firstRow = container.querySelector('.formset-row');
+  if (!firstRow) return;
+  const newRow = firstRow.cloneNode(true);
+  newRow.innerHTML = newRow.innerHTML.replace(/items-\d+-/g, `items-${idx}-`).replace(/id_items-\d+-/g, `id_items-${idx}-`);
+  newRow.querySelectorAll('input:not([type=hidden]):not([type=checkbox]), select').forEach(el => {
+    if (!el.name.endsWith('-DELETE')) el.value = '';
+  });
+  newRow.querySelector('.subtotal').textContent = '—';
+  container.appendChild(newRow);
+  totalForms.value = idx + 1;
+});
+</script>
 {% endblock %}

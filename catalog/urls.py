@@ -2,7 +2,7 @@ from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
-    # Main pages
+    # Public
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
     path('contacts/', views.contacts, name='contacts'),
@@ -11,7 +11,7 @@ urlpatterns = [
     path('promos/', views.promos, name='promos'),
     path('faq/', views.faq, name='faq'),
 
-    # News — re_path with regex
+    # News
     path('news/', views.news_list, name='news_list'),
     re_path(r'^news/(?P<pk>\d+)/$', views.news_detail, name='news_detail'),
 
@@ -22,19 +22,32 @@ urlpatterns = [
     re_path(r'^cars/(?P<pk>\d+)/edit/$', views.car_update, name='car_update'),
     re_path(r'^cars/(?P<pk>\d+)/delete/$', views.car_delete, name='car_delete'),
 
-    # Orders
-    re_path(r'^cars/(?P<car_pk>\d+)/order/$', views.order_create, name='order_create'),
+    # Orders — клиент создаёт, менеджер подтверждает
+    # car_pk передаётся при создании заказа клиентом
+    re_path(r'^cars/(?P<car_pk>\d+)/order/$', views.client_order_create, name='client_order_create'),
+    path('orders/', views.order_list, name='order_list'),
+    path('orders/new/', views.order_create, name='order_create'),
+    re_path(r'^orders/(?P<pk>\d+)/$', views.order_detail, name='order_detail'),
+    re_path(r'^orders/(?P<pk>\d+)/confirm/$', views.order_confirm, name='order_confirm'),
+    re_path(r'^orders/(?P<pk>\d+)/edit/$', views.order_update, name='order_update'),
     path('my-orders/', views.my_orders, name='my_orders'),
-    path('employee/orders/', views.employee_orders, name='employee_orders'),
+
+    # Clients (staff)
+    path('clients/', views.client_list, name='client_list'),
+    path('clients/new/', views.client_create, name='client_create'),
+    re_path(r'^clients/(?P<pk>\d+)/$', views.client_detail, name='client_detail'),
+    re_path(r'^clients/(?P<pk>\d+)/edit/$', views.client_update, name='client_update'),
 
     # Reviews
     path('reviews/', views.reviews_list, name='reviews_list'),
     path('reviews/add/', views.review_create, name='review_create'),
 
-    # Statistics
+    # Analytics (superuser) / Statistics (staff)
+    path('analytics/', views.analytics_dashboard, name='analytics'),
     path('statistics/', views.statistics_view, name='statistics'),
 
     # JSON API
     path('api/cars/', views.api_cars, name='api_cars'),
     path('api/stats/', views.api_stats, name='api_stats'),
 ]
+

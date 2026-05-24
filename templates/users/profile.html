@@ -1,45 +1,71 @@
-{% extends 'base.html' %}{% block title %}Профиль — АвтоПремиум{% endblock %}{% block content %}
+{% extends 'base.html' %}
+{% block title %}Профиль — АвтоПремиум{% endblock %}
+{% block content %}
 <h2 class="text-gold mb-4"><i class="bi bi-person-circle me-2"></i>Личный кабинет</h2>
 <div class="row g-4">
   <div class="col-md-5">
-    <div class="card">
-      <div class="card-header text-gold">Ваши данные</div>
+    <div class="card mb-3">
+      <div class="card-header text-gold">Данные аккаунта</div>
       <div class="card-body">
-        <div class="mb-3">
-          <div class="text-muted small">Имя пользователя</div>
-          <div>{{ user.username }}</div>
-        </div>
-        <div class="mb-3">
-          <div class="text-muted small">ФИО</div>
-          <div>{{ user.get_full_name|default:"—" }}</div>
-        </div>
-        <div class="mb-3">
-          <div class="text-muted small">Email</div>
-          <div>{{ user.email|default:"—" }}</div>
-        </div>
+        <table class="table table-sm mb-0">
+          <tr><td class="text-muted">Логин</td><td>{{ user.username }}</td></tr>
+          <tr><td class="text-muted">Email</td><td>{{ user.email|default:"—" }}</td></tr>
+        </table>
         {% if employee %}
-        <div class="alert alert-warning">
-          <i class="bi bi-shield-check me-2"></i>Вы — сотрудник: <strong>{{ employee.get_role_display }}</strong>
+        <div class="alert mt-3 mb-0" style="background:#1a2010;border-color:#3a5020;color:#9ede6a;">
+          <i class="bi bi-shield-check me-2"></i>Сотрудник: <strong>{{ employee.get_role_display }}</strong>
         </div>
         {% endif %}
-        <div class="text-muted small">🕐 UTC: {{ now_utc|date:"d/m/Y H:i" }}</div>
-        <div class="text-muted small">🕐 Местное: {{ now_local|date:"d/m/Y H:i" }}</div>
+        <div class="mt-3 text-muted small">
+          <div>🕐 UTC: {{ now_utc|date:"d/m/Y H:i" }}</div>
+          <div>🕐 Местное: {{ now_local|date:"d/m/Y H:i" }}</div>
+        </div>
       </div>
     </div>
 
-    <div class="card mt-3">
-      <div class="card-header text-gold">Профиль клиента</div>
+    <div class="card">
+      <div class="card-header text-gold">Анкетные данные</div>
       <div class="card-body">
         <form method="post" novalidate>
           {% csrf_token %}
-          {% for field in form %}
-          <div class="mb-2">
-            <label class="form-label small">{{ field.label }}</label>
-            {{ field }}
-            {% if field.errors %}<div class="text-danger small">{{ field.errors }}</div>{% endif %}
+          <div class="row g-2">
+            <div class="col-6">
+              <label class="form-label small text-muted">Фамилия</label>
+              {{ form.last_name }}
+              {% if form.last_name.errors %}<div class="text-danger small">{{ form.last_name.errors }}</div>{% endif %}
+            </div>
+            <div class="col-6">
+              <label class="form-label small text-muted">Имя</label>
+              {{ form.first_name }}
+            </div>
+            <div class="col-12">
+              <label class="form-label small text-muted">Отчество</label>
+              {{ form.patronymic }}
+            </div>
+            <div class="col-12">
+              <label class="form-label small text-muted">Телефон (+375 (XX) XXX-XX-XX)</label>
+              {{ form.phone }}
+              {% if form.phone.errors %}<div class="text-danger small">{{ form.phone.errors }}</div>{% endif %}
+            </div>
+            <div class="col-12">
+              <label class="form-label small text-muted">Email</label>
+              {{ form.email }}
+            </div>
+            <div class="col-12">
+              <label class="form-label small text-muted">Адрес</label>
+              {{ form.address }}
+            </div>
+            <div class="col-6">
+              <label class="form-label small text-muted">Город</label>
+              {{ form.city }}
+            </div>
+            <div class="col-6">
+              <label class="form-label small text-muted">Дата рождения</label>
+              {{ form.birth_date }}
+              {% if form.birth_date.errors %}<div class="text-danger small">{{ form.birth_date.errors }}</div>{% endif %}
+            </div>
           </div>
-          {% endfor %}
-          <button type="submit" class="btn btn-gold w-100 mt-2">
+          <button type="submit" class="btn btn-gold w-100 mt-3">
             <i class="bi bi-save me-1"></i>Сохранить
           </button>
         </form>
@@ -55,13 +81,17 @@
       </div>
       <div class="card-body p-0">
         <table class="table mb-0">
-          <thead><tr><th>#</th><th>Автомобиль</th><th>Сумма</th><th>Статус</th></tr></thead>
+          <thead><tr><th>#</th><th>Товары</th><th>Сумма</th><th>Статус</th></tr></thead>
           <tbody>
             {% for order in orders %}
             <tr>
-              <td>{{ order.pk }}</td>
-              <td>{{ order.car.manufacturer.name }} {{ order.car.name }}</td>
-              <td class="text-gold">{{ order.sale_price|floatformat:0 }} BYN</td>
+              <td><a href="{% url 'order_detail' order.pk %}">#{{ order.pk }}</a></td>
+              <td>
+                {% for item in order.items.all %}
+                <small class="d-block">{{ item.car.manufacturer.name }} {{ item.car.name }}</small>
+                {% endfor %}
+              </td>
+              <td class="text-gold">{{ order.total_amount|floatformat:0 }} BYN</td>
               <td>
                 <span class="badge {% if order.status == 'completed' %}bg-success{% elif order.status == 'approved' %}bg-primary{% elif order.status == 'cancelled' %}bg-danger{% else %}bg-warning text-dark{% endif %}">
                   {{ order.get_status_display }}
@@ -69,11 +99,16 @@
               </td>
             </tr>
             {% empty %}
-            <tr><td colspan="4" class="text-center text-muted py-3">Заказов нет. <a href="{% url 'car_list' %}">Перейти в каталог</a></td></tr>
+            <tr>
+              <td colspan="4" class="text-center text-muted py-3">
+                Заказов нет. <a href="{% url 'car_list' %}">Перейти в каталог →</a>
+              </td>
+            </tr>
             {% endfor %}
           </tbody>
         </table>
       </div>
     </div>
   </div>
-</div>{% endblock %}
+</div>
+{% endblock %}
