@@ -18,6 +18,8 @@ services:
       - ./media:/app/media
       - ./staticfiles:/app/staticfiles
       - ./logs:/app/logs
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
 
     ports:
       - "8000:8000"
@@ -41,6 +43,8 @@ services:
 
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
 
     ports:
       - "5432:5432"

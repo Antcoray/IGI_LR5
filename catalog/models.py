@@ -187,7 +187,7 @@ class Client(models.Model):
 
 
 # ────────────────────────────────────────────────
-# Orders / Sales (расширенные)
+# Orders / Sales
 # ────────────────────────────────────────────────
 
 class Order(models.Model):

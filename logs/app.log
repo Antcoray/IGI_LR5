@@ -4626,3 +4626,63 @@ INFO 2026-05-25 00:46:13,280 views 27 130646195516224 Home page accessed
 INFO 2026-05-25 00:46:38,868 views 27 130646195516224 User logged in: admin
 INFO 2026-05-25 00:46:38,888 views 27 130646195516224 Home page accessed
 INFO 2026-05-25 00:46:43,300 views 27 130646195516224 Analytics by admin, year=2026
+INFO 2026-05-25 01:05:40,697 views 48 130646195516224 User logged out: admin
+INFO 2026-05-25 01:05:40,719 views 48 130646195516224 Home page accessed
+INFO 2026-05-25 12:27:01,778 views 27 125877559997248 Home page accessed
+INFO 2026-05-25 12:27:04,470 views 27 125877559997248 Home page accessed
+INFO 2026-05-25 12:28:05,113 views 27 125877559997248 Home page accessed
+INFO 2026-05-25 12:28:21,677 views 27 125877559997248 Home page accessed
+WARNING 2026-05-25 12:28:23,095 log 27 125877559997248 Not Found: /favicon.ico
+INFO 2026-05-25 12:44:57,295 views 27 127829377819456 User logged in: manager1
+INFO 2026-05-25 12:44:57,312 views 27 127829377819456 Home page accessed
+WARNING 2026-05-25 12:45:01,339 views 27 127829377819456 Weather API error: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Minsk&appid=2b000c1c4a7637092bf9a5ab7d2050d3&units=metric&lang=ru (Caused by NameResolutionError("HTTPSConnection(host='api.openweathermap.org', port=443): Failed to resolve 'api.openweathermap.org' ([Errno -5] No address associated with hostname)"))
+WARNING 2026-05-25 12:45:05,345 views 27 127829377819456 Exchange rate API error: HTTPSConnectionPool(host='v6.exchangerate-api.com', port=443): Max retries exceeded with url: /v6/2c084ab8905b3372ee00d1ea/latest/BYN (Caused by NameResolutionError("HTTPSConnection(host='v6.exchangerate-api.com', port=443): Failed to resolve 'v6.exchangerate-api.com' ([Errno -5] No address associated with hostname)"))
+INFO 2026-05-25 12:49:54,266 views 28 139045186540352 Home page accessed
+INFO 2026-05-25 12:52:00,670 views 30 139045186540352 Car created: Audi 123 (2009)
+INFO 2026-05-25 12:52:51,235 views 30 139045186540352 User logged out: manager1
+INFO 2026-05-25 12:52:51,253 views 30 139045186540352 Home page accessed
+INFO 2026-05-25 12:53:14,935 views 30 139045186540352 User logged in: admin
+INFO 2026-05-25 12:53:14,953 views 30 139045186540352 Home page accessed
+INFO 2026-05-25 12:53:23,019 views 30 139045186540352 Analytics by admin, year=2026
+INFO 2026-05-25 12:54:01,933 views 45 139045186540352 User logged out: admin
+INFO 2026-05-25 12:54:01,969 views 45 139045186540352 Home page accessed
+INFO 2026-05-25 12:55:38,081 views 47 139045186540352 New user registered: NewUser with client profile
+INFO 2026-05-25 12:55:38,122 views 47 139045186540352 Home page accessed
+INFO 2026-05-25 13:31:15,527 views 51 139045186540352 Home page accessed
+INFO 2026-05-25 10:44:19,438 views 27 126490788553536 Home page accessed
+INFO 2026-05-25 10:52:32,019 views 27 127932456108864 Home page accessed
+INFO 2026-05-25 10:52:39,966 views 27 127932456108864 Home page accessed
+INFO 2026-05-25 14:00:34,699 autoreload 68318 133081668276224 Watching for file changes with StatReloader
+INFO 2026-05-25 14:05:21,745 views 28 131933317411648 Home page accessed
+WARNING 2026-05-25 14:23:44,500 log 71575 133083111907328 Not Found: /cars/99999/
+INFO 2026-05-25 14:23:45,455 views 71575 133083111907328 Home page accessed
+INFO 2026-05-25 14:23:49,326 views 71575 133083111907328 Analytics by su2, year=2026
+WARNING 2026-05-25 14:23:53,636 log 71575 133083111907328 Unauthorized: /api/cars/
+INFO 2026-05-25 14:26:29,659 views 28 131933317411648 Home page accessed
+INFO 2026-05-25 14:50:24,043 views 32 131933317411648 User logged out: NewUser
+INFO 2026-05-25 14:50:24,086 views 32 131933317411648 Home page accessed
+WARNING 2026-05-25 14:50:24,154 views 32 131933317411648 Weather API error: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Minsk&appid=2b000c1c4a7637092bf9a5ab7d2050d3&units=metric&lang=ru (Caused by NameResolutionError("HTTPSConnection(host='api.openweathermap.org', port=443): Failed to resolve 'api.openweathermap.org' ([Errno -2] Name or service not known)"))
+WARNING 2026-05-25 14:50:24,162 views 32 131933317411648 Exchange rate API error: HTTPSConnectionPool(host='v6.exchangerate-api.com', port=443): Max retries exceeded with url: /v6/2c084ab8905b3372ee00d1ea/latest/BYN (Caused by NameResolutionError("HTTPSConnection(host='v6.exchangerate-api.com', port=443): Failed to resolve 'v6.exchangerate-api.com' ([Errno -2] Name or service not known)"))
+INFO 2026-05-25 14:50:49,002 views 32 131933317411648 User logged in: admin
+INFO 2026-05-25 14:50:49,019 views 32 131933317411648 Home page accessed
+WARNING 2026-05-25 14:50:49,081 views 32 131933317411648 Weather API error: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Minsk&appid=2b000c1c4a7637092bf9a5ab7d2050d3&units=metric&lang=ru (Caused by NameResolutionError("HTTPSConnection(host='api.openweathermap.org', port=443): Failed to resolve 'api.openweathermap.org' ([Errno -2] Name or service not known)"))
+WARNING 2026-05-25 14:50:49,089 views 32 131933317411648 Exchange rate API error: HTTPSConnectionPool(host='v6.exchangerate-api.com', port=443): Max retries exceeded with url: /v6/2c084ab8905b3372ee00d1ea/latest/BYN (Caused by NameResolutionError("HTTPSConnection(host='v6.exchangerate-api.com', port=443): Failed to resolve 'v6.exchangerate-api.com' ([Errno -2] Name or service not known)"))
+INFO 2026-05-25 15:24:46,263 views 38 131933317411648 User logged out: admin
+INFO 2026-05-25 15:24:46,297 views 38 131933317411648 Home page accessed
+WARNING 2026-05-25 15:24:46,366 views 38 131933317411648 Weather API error: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Minsk&appid=2b000c1c4a7637092bf9a5ab7d2050d3&units=metric&lang=ru (Caused by NameResolutionError("HTTPSConnection(host='api.openweathermap.org', port=443): Failed to resolve 'api.openweathermap.org' ([Errno -2] Name or service not known)"))
+WARNING 2026-05-25 15:24:46,376 views 38 131933317411648 Exchange rate API error: HTTPSConnectionPool(host='v6.exchangerate-api.com', port=443): Max retries exceeded with url: /v6/2c084ab8905b3372ee00d1ea/latest/BYN (Caused by NameResolutionError("HTTPSConnection(host='v6.exchangerate-api.com', port=443): Failed to resolve 'v6.exchangerate-api.com' ([Errno -2] Name or service not known)"))
+INFO 2026-05-25 15:34:28,170 views 38 131933317411648 Home page accessed
+WARNING 2026-05-25 15:34:32,236 views 38 131933317411648 Weather API error: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Minsk&appid=2b000c1c4a7637092bf9a5ab7d2050d3&units=metric&lang=ru (Caused by NameResolutionError("HTTPSConnection(host='api.openweathermap.org', port=443): Failed to resolve 'api.openweathermap.org' ([Errno -5] No address associated with hostname)"))
+WARNING 2026-05-25 15:34:32,280 views 38 131933317411648 Exchange rate API error: HTTPSConnectionPool(host='v6.exchangerate-api.com', port=443): Max retries exceeded with url: /v6/2c084ab8905b3372ee00d1ea/latest/BYN (Caused by NameResolutionError("HTTPSConnection(host='v6.exchangerate-api.com', port=443): Failed to resolve 'v6.exchangerate-api.com' ([Errno -2] Name or service not known)"))
+INFO 2026-05-25 15:36:13,374 views 40 131933317411648 Home page accessed
+WARNING 2026-05-25 15:36:13,491 views 40 131933317411648 Weather API error: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Minsk&appid=2b000c1c4a7637092bf9a5ab7d2050d3&units=metric&lang=ru (Caused by NameResolutionError("HTTPSConnection(host='api.openweathermap.org', port=443): Failed to resolve 'api.openweathermap.org' ([Errno -2] Name or service not known)"))
+WARNING 2026-05-25 15:36:13,500 views 40 131933317411648 Exchange rate API error: HTTPSConnectionPool(host='v6.exchangerate-api.com', port=443): Max retries exceeded with url: /v6/2c084ab8905b3372ee00d1ea/latest/BYN (Caused by NameResolutionError("HTTPSConnection(host='v6.exchangerate-api.com', port=443): Failed to resolve 'v6.exchangerate-api.com' ([Errno -2] Name or service not known)"))
+INFO 2026-05-25 15:38:54,711 views 42 131933317411648 Home page accessed
+WARNING 2026-05-25 15:38:58,784 views 42 131933317411648 Weather API error: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Minsk&appid=2b000c1c4a7637092bf9a5ab7d2050d3&units=metric&lang=ru (Caused by NameResolutionError("HTTPSConnection(host='api.openweathermap.org', port=443): Failed to resolve 'api.openweathermap.org' ([Errno -5] No address associated with hostname)"))
+WARNING 2026-05-25 15:38:58,828 views 42 131933317411648 Exchange rate API error: HTTPSConnectionPool(host='v6.exchangerate-api.com', port=443): Max retries exceeded with url: /v6/2c084ab8905b3372ee00d1ea/latest/BYN (Caused by NameResolutionError("HTTPSConnection(host='v6.exchangerate-api.com', port=443): Failed to resolve 'v6.exchangerate-api.com' ([Errno -2] Name or service not known)"))
+INFO 2026-09-01 21:58:04,709 autoreload 6698 128857674117120 Watching for file changes with StatReloader
+INFO 2026-09-01 23:05:59,509 views 27 137839748895552 Home page accessed
+WARNING 2026-09-01 23:06:01,115 log 27 137839748895552 Not Found: /favicon.ico
+INFO 2026-09-01 23:06:52,038 views 27 137839748895552 User logged in: admin
+INFO 2026-09-01 23:06:52,055 views 27 137839748895552 Home page accessed
+INFO 2026-09-01 23:06:59,857 views 27 137839748895552 Analytics by admin, year=2026
