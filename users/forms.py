@@ -27,16 +27,16 @@ class RegisterForm(UserCreationForm):
     first_name = forms.CharField(
         max_length=50, 
         label='Имя',
-        widget=forms.TextInput(attrs={'class': 'form-control'})
+        widget=forms.TextInput(attrs={'class': 'input'})
     )
     last_name = forms.CharField(
         max_length=50, 
         label='Фамилия',
-        widget=forms.TextInput(attrs={'class': 'form-control'})
+        widget=forms.TextInput(attrs={'class': 'input'})
     )
     email = forms.EmailField(
         label='Email',
-        widget=forms.EmailInput(attrs={'class': 'form-control'})
+        widget=forms.EmailInput(attrs={'class': 'input'})
     )
     
     # Дополнительные поля для профиля клиента
@@ -44,40 +44,40 @@ class RegisterForm(UserCreationForm):
         max_length=100, 
         label='Отчество', 
         required=False,
-        widget=forms.TextInput(attrs={'class': 'form-control'})
+        widget=forms.TextInput(attrs={'class': 'input'})
     )
     phone = forms.CharField(
         label='Телефон',
         validators=[validate_phone],
         widget=forms.TextInput(attrs={
-            'class': 'form-control', 
+            'class': 'input', 
             'placeholder': '+375 (29) 123-45-67'
         })
     )
     birth_date = forms.DateField(
         label='Дата рождения',
         validators=[validate_adult],
-        widget=forms.DateInput(attrs={'class': 'form-control', 'type': 'date'})
+        widget=forms.DateInput(attrs={'class': 'input', 'type': 'date'})
     )
     address = forms.CharField(
         label='Адрес', 
         required=False,
-        widget=forms.TextInput(attrs={'class': 'form-control'})
+        widget=forms.TextInput(attrs={'class': 'input'})
     )
     city = forms.CharField(
         label='Город', 
         required=False,
-        widget=forms.TextInput(attrs={'class': 'form-control'})
+        widget=forms.TextInput(attrs={'class': 'input'})
     )
     passport_series = forms.CharField(
         label='Серия паспорта', 
         required=False,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'HB'})
+        widget=forms.TextInput(attrs={'class': 'input', 'placeholder': 'HB'})
     )
     passport_number = forms.CharField(
         label='Номер паспорта', 
         required=False,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '1234567'})
+        widget=forms.TextInput(attrs={'class': 'input', 'placeholder': '1234567'})
     )
 
     class Meta:
@@ -89,20 +89,20 @@ class RegisterForm(UserCreationForm):
             'city', 'passport_series', 'passport_number'
         ]
         widgets = {
-            'username': forms.TextInput(attrs={'class': 'form-control'}),
+            'username': forms.TextInput(attrs={'class': 'input'}),
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['password1'].widget.attrs['class'] = 'form-control'
-        self.fields['password2'].widget.attrs['class'] = 'form-control'
+        self.fields['password1'].widget.attrs['class'] = 'input'
+        self.fields['password2'].widget.attrs['class'] = 'input'
 
 
 class LoginForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs['class'] = 'form-control'
-        self.fields['password'].widget.attrs['class'] = 'form-control'
+        self.fields['username'].widget.attrs['class'] = 'input'
+        self.fields['password'].widget.attrs['class'] = 'input'
 
 
 class ClientProfileForm(forms.ModelForm):
@@ -114,28 +114,28 @@ class ClientProfileForm(forms.ModelForm):
         ]
         widgets = {
             'last_name': forms.TextInput(attrs={
-                'class': 'form-control',
+                'class': 'input',
                 'placeholder': 'Фамилия'
             }),
             'first_name': forms.TextInput(attrs={
-                'class': 'form-control',
+                'class': 'input',
                 'placeholder': 'Имя'
             }),
             'patronymic': forms.TextInput(attrs={
-                'class': 'form-control',
+                'class': 'input',
                 'placeholder': 'Отчество'
             }),
             'phone': forms.TextInput(attrs={
-                'class': 'form-control',
+                'class': 'input',
                 'placeholder': '+375 (29) XXX-XX-XX'
             }),
-            'address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Адрес'}),
+            'address': forms.TextInput(attrs={'class': 'input', 'placeholder': 'Адрес'}),
             'birth_date': forms.DateInput(
-                attrs={'class': 'form-control', 'type': 'date'},
+                attrs={'class': 'input', 'type': 'date'},
                 format='%Y-%m-%d'
             ),
-            'city': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Город'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}),
+            'city': forms.TextInput(attrs={'class': 'input', 'placeholder': 'Город'}),
+            'email': forms.EmailInput(attrs={'class': 'input', 'placeholder': 'Email'}),
         }
 
     def clean_phone(self):

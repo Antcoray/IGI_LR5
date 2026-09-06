@@ -366,10 +366,46 @@ class CompanyInfo(models.Model):
     email = models.EmailField('Email')
     founded_year = models.PositiveSmallIntegerField('Год основания', null=True, blank=True)
     logo = models.ImageField('Логотип', upload_to='company/', blank=True, null=True)
+    video_url = models.URLField('Видео о компании (ссылка)', blank=True)
+    requisites = models.TextField('Реквизиты', blank=True)
+    certificate_text = models.TextField('Текст сертификата', blank=True)
 
     class Meta:
         verbose_name = 'О компании'
         verbose_name_plural = 'О компании'
+
+    def __str__(self):
+        return self.name
+
+
+class CompanyHistoryEvent(models.Model):
+    """Событие истории компании по годам"""
+    company = models.ForeignKey(
+        CompanyInfo, on_delete=models.CASCADE,
+        related_name='history_events', verbose_name='Компания'
+    )
+    year = models.PositiveSmallIntegerField('Год')
+    description = models.TextField('Описание события')
+
+    class Meta:
+        verbose_name = 'Событие истории'
+        verbose_name_plural = 'История компании'
+        ordering = ['year']
+
+    def __str__(self):
+        return f'{self.year}: {self.description[:50]}'
+
+
+class Partner(models.Model):
+    """Партнёр автосалона"""
+    name = models.CharField('Название', max_length=200)
+    logo = models.ImageField('Логотип', upload_to='partners/', blank=True, null=True)
+    website = models.URLField('Сайт', blank=True)
+
+    class Meta:
+        verbose_name = 'Партнёр'
+        verbose_name_plural = 'Партнёры'
+        ordering = ['name']
 
     def __str__(self):
         return self.name

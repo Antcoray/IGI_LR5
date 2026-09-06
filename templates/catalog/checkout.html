@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Оплата — АвтоПремиум{% endblock %}
+{% block content %}
+<h1>Оформление и оплата</h1>
+
+<section class="card mb-2">
+  <h2>Ваш заказ</h2>
+  <ul>
+    {% for i in items %}
+    <li>{{ i.car }} × {{ i.quantity }} — {{ i.car.price|floatformat:0 }} BYN</li>
+    {% endfor %}
+  </ul>
+  <p><strong>Итого: {{ total|floatformat:0 }} BYN</strong></p>
+</section>
+
+<form method="post" class="card" novalidate>
+  {% csrf_token %}
+  <fieldset>
+    <legend>Данные оплаты (имитация)</legend>
+    <div class="field">
+      <label for="card_number">Номер карты</label>
+      <input type="text" id="card_number" name="card_number" class="input"
+             pattern="\d{4} \d{4} \d{4} \d{4}" placeholder="0000 0000 0000 0000"
+             maxlength="19" required>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="card_expiry">Срок действия</label>
+        <input type="text" id="card_expiry" name="card_expiry" class="input"
+               pattern="(0[1-9]|1[0-2])\/\d{2}" placeholder="MM/YY" required>
+      </div>
+      <div class="field">
+        <label for="card_cvc">CVC</label>
+        <input type="text" id="card_cvc" name="card_cvc" class="input"
+               pattern="\d{3}" maxlength="3" placeholder="123" required>
+      </div>
+    </div>
+    <div class="field">
+      <label for="card_holder">Владелец карты</label>
+      <input type="text" id="card_holder" name="card_holder" class="input" minlength="3" required>
+    </div>
+  </fieldset>
+  <button type="submit" class="btn btn-gold">Оплатить {{ total|floatformat:0 }} BYN</button>
+</form>
+{% endblock %}

@@ -1,43 +1,35 @@
 {% extends 'base.html' %}{% block title %}Отзывы — АвтоПремиум{% endblock %}{% block content %}
-<h2 class="text-gold mb-4"><i class="bi bi-star me-2"></i>Отзывы клиентов</h2>
+<h1>Отзывы клиентов</h1>
 {% if review_form %}
-<div class="card mb-4">
-  <div class="card-header text-gold">Оставить отзыв</div>
-  <div class="card-body">
-    <form method="post" action="{% url 'review_create' %}">
-      {% csrf_token %}
-      <input type="hidden" name="next" value="{{ request.path }}">
-      {% for field in review_form %}
-      <div class="mb-2">
-        <label class="form-label text-muted small">{{ field.label }}</label>
-        {{ field }}
-        {% if field.errors %}<div class="text-danger small">{{ field.errors }}</div>{% endif %}
-      </div>
-      {% endfor %}
-      <button type="submit" class="btn btn-gold">Отправить</button>
-    </form>
-  </div>
-</div>
+<section class="card mb-2">
+  <h2>Оставить отзыв</h2>
+  <form method="post" action="{% url 'review_create' %}">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.path }}">
+    {% for field in review_form %}
+    <div class="field">
+      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+      {{ field }}
+      {% if field.errors %}<ul class="errorlist">{{ field.errors }}</ul>{% endif %}
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-gold">Отправить</button>
+  </form>
+</section>
 {% elif not user.is_authenticated %}
-<div class="alert alert-warning mb-4">
-  <a href="{% url 'login' %}">Войдите</a>, чтобы оставить отзыв.
-</div>
+<p class="alert alert-warning"><a href="{% url 'login' %}">Войдите</a>, чтобы оставить отзыв.</p>
 {% endif %}
 
-<div class="row g-3">
+<div class="grid grid-2">
 {% for review in reviews %}
-<div class="col-md-6">
-  <div class="card">
-    <div class="card-body">
-      <div class="d-flex justify-content-between mb-2">
-        <strong>{{ review.client.user.get_full_name|default:review.client.user.username }}</strong>
-        <span>{% for i in "12345" %}{% if forloop.counter <= review.rating %}⭐{% else %}☆{% endif %}{% endfor %}</span>
-      </div>
-      {% if review.car %}<div class="text-muted small mb-2"><i class="bi bi-car-front me-1"></i>{{ review.car }}</div>{% endif %}
-      <p class="mb-1">{{ review.text }}</p>
-      <small class="text-muted">{{ review.created_at|date:"d/m/Y" }}</small>
-    </div>
-  </div>
-</div>
-{% empty %}<div class="col-12 text-muted">Отзывов пока нет.</div>{% endfor %}
+<blockquote class="card">
+  <p>{{ review.text }}</p>
+  <cite>
+    {{ review.client.user.get_full_name|default:review.client.user.username }} —
+    {% for i in "12345" %}{% if forloop.counter <= review.rating %}⭐{% else %}☆{% endif %}{% endfor %}
+    {% if review.car %}· {{ review.car }}{% endif %}
+    · <time datetime="{{ review.created_at|date:'c' }}">{{ review.created_at|date:"d.m.Y" }}</time>
+  </cite>
+</blockquote>
+{% empty %}<p class="muted">Отзывов пока нет.</p>{% endfor %}
 </div>{% endblock %}

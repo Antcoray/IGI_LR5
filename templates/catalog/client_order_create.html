@@ -1,45 +1,28 @@
 {% extends 'base.html' %}
 {% block title %}Оформление заказа — АвтоПремиум{% endblock %}
-
 {% block content %}
-<div class="row justify-content-center">
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-header text-gold">
-        <i class="bi bi-cart-plus me-2"></i>Оформление заказа
-      </div>
-      <div class="card-body">
-        <div class="mb-4">
-          <h5 class="text-gold">{{ car.manufacturer.name }} {{ car.name }}</h5>
-          <div class="fs-3 fw-bold">{{ car.price|floatformat:0 }} BYN</div>
-          <div class="text-muted small">VIN: {{ car.vin }} | {{ car.year }} г.</div>
-        </div>
-
-        <form method="post">
-          {% csrf_token %}
-          
-          <div class="mb-3">
-            <label class="form-label">Комментарий к заказу (необязательно)</label>
-            {{ form.comment }}
-            {% if form.comment.errors %}
-              <div class="text-danger small">{{ form.comment.errors }}</div>
-            {% endif %}
-          </div>
-
-          <div class="alert alert-info">
-            <i class="bi bi-info-circle me-2"></i>
-            После оформления заявки с вами свяжется менеджер для подтверждения.
-          </div>
-
-          <div class="d-flex gap-2">
-            <button type="submit" class="btn btn-gold">
-              <i class="bi bi-check-circle me-1"></i>Оформить заявку
-            </button>
-            <a href="{% url 'car_detail' car.pk %}" class="btn btn-outline-secondary">Отмена</a>
-          </div>
-        </form>
-      </div>
-    </div>
+<section class="card">
+  <h1>Оформление заказа</h1>
+  <div class="mb-2">
+    <h2>{{ car.manufacturer.name }} {{ car.name }}</h2>
+    <p class="price">{{ car.price|floatformat:0 }} BYN</p>
+    <p class="muted">VIN: <abbr title="Vehicle Identification Number">{{ car.vin }}</abbr> | {{ car.year }} г.</p>
   </div>
-</div>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="field">
+      <label for="{{ form.comment.id_for_label }}">Комментарий к заказу (необязательно)</label>
+      {{ form.comment }}
+      {% if form.comment.errors %}<ul class="errorlist">{{ form.comment.errors }}</ul>{% endif %}
+    </div>
+
+    <p class="alert alert-info">После оформления заявки с вами свяжется менеджер для подтверждения.</p>
+
+    <div class="flex">
+      <button type="submit" class="btn btn-gold">Оформить заявку</button>
+      <a href="{% url 'car_detail' car.pk %}" class="btn">Отмена</a>
+    </div>
+  </form>
+</section>
 {% endblock %}

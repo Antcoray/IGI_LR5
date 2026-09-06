@@ -3,7 +3,8 @@ from django.utils.html import format_html
 from .models import (
     Manufacturer, CarType, Feature, Car,
     Employee, Client, Order, OrderItem,
-    Article, FAQ, Review, Vacancy, Promo, CompanyInfo, Contact
+    Article, FAQ, Review, Vacancy, Promo, CompanyInfo, Contact,
+    Partner, CompanyHistoryEvent,
 )
 
 
@@ -111,9 +112,21 @@ class PromoAdmin(admin.ModelAdmin):
     list_editable = ['status']
 
 
+class CompanyHistoryEventInline(admin.TabularInline):
+    model = CompanyHistoryEvent
+    extra = 1
+
+
 @admin.register(CompanyInfo)
 class CompanyInfoAdmin(admin.ModelAdmin):
     list_display = ['name', 'phone', 'email']
+    inlines = [CompanyHistoryEventInline]
+
+
+@admin.register(Partner)
+class PartnerAdmin(admin.ModelAdmin):
+    list_display = ['name', 'website']
+    search_fields = ['name']
 
 
 @admin.register(Contact)

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Корзина — АвтоПремиум{% endblock %}
+{% block content %}
+<h1>Корзина</h1>
+
+{% if items %}
+<div class="table-wrap">
+<table>
+  <caption>Товары в корзине</caption>
+  <thead>
+    <tr>
+      <th id="c-car" scope="col">Автомобиль</th>
+      <th id="c-qty" scope="col">Кол-во</th>
+      <th id="c-price" scope="col">Цена</th>
+      <th id="c-sub" scope="col">Сумма</th>
+      <th id="c-act" scope="col">Действия</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+    <tr>
+      <td headers="c-car"><a href="{% url 'car_detail' item.car.pk %}">{{ item.car }}</a></td>
+      <td headers="c-qty">
+        <form method="post" action="{% url 'cart_update' item.car.pk %}" style="display:inline;">
+          {% csrf_token %}
+          <button class="btn btn-sm" name="action" value="dec" type="submit">−</button>
+          {{ item.quantity }}
+          <button class="btn btn-sm" name="action" value="inc" type="submit">+</button>
+        </form>
+      </td>
+      <td headers="c-price">{{ item.car.price|floatformat:0 }} BYN</td>
+      <td headers="c-sub">{{ item.subtotal|floatformat:0 }} BYN</td>
+      <td headers="c-act">
+        <form method="post" action="{% url 'cart_remove' item.car.pk %}">
+          {% csrf_token %}
+          <button class="btn btn-danger btn-sm" type="submit">Удалить</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <tr><td colspan="3">Итого</td><td colspan="2"><strong>{{ total|floatformat:0 }} BYN</strong></td></tr>
+  </tfoot>
+</table>
+</div>
+<p><a href="{% url 'checkout' %}" class="btn btn-gold">Оплатить</a></p>
+{% else %}
+<p class="muted">Корзина пуста. <a href="{% url 'car_list' %}">Перейти в каталог</a></p>
+{% endif %}
+{% endblock %}

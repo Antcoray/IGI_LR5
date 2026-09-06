@@ -2,98 +2,77 @@
 {% block title %}{% if editing %}Редактировать заказ{% else %}Новый заказ{% endif %} — АвтоПремиум{% endblock %}
 {% block content %}
 
-<h2 class="text-gold mb-4">
-  <i class="bi bi-cart-plus me-2"></i>
-  {% if editing %}Редактировать заказ #{{ order.pk }}{% else %}Оформить заказ{% endif %}
-</h2>
+<h1>{% if editing %}Редактировать заказ #{{ order.pk }}{% else %}Оформить заказ{% endif %}</h1>
 
 <form method="post" id="orderForm">
   {% csrf_token %}
 
-  <div class="row g-4">
-    <!-- Данные заказа -->
-    <div class="col-md-5">
-      <div class="card">
-        <div class="card-header text-gold">Данные заказа</div>
-        <div class="card-body">
-          {% for field in order_form %}
-          <div class="mb-3">
-            <label class="form-label text-muted small">{{ field.label }}</label>
-            {{ field }}
-            {% if field.errors %}<div class="text-danger small">{{ field.errors }}</div>{% endif %}
-          </div>
-          {% endfor %}
-          {% if order_form.non_field_errors %}
-          <div class="alert alert-danger small">{{ order_form.non_field_errors }}</div>
-          {% endif %}
-        </div>
+  <div class="grid grid-2">
+    <section class="card">
+      <h2>Данные заказа</h2>
+      {% for field in order_form %}
+      <div class="field">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% if field.errors %}<ul class="errorlist">{{ field.errors }}</ul>{% endif %}
       </div>
-    </div>
+      {% endfor %}
+      {% if order_form.non_field_errors %}
+      <p class="alert alert-danger">{{ order_form.non_field_errors }}</p>
+      {% endif %}
+    </section>
 
-    <!-- Позиции заказа -->
-    <div class="col-md-7">
-      <div class="card">
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <span class="text-gold">Позиции заказа (товары)</span>
-          <button type="button" class="btn btn-outline-secondary btn-sm" id="addItem">
-            <i class="bi bi-plus-circle me-1"></i>Добавить строку
-          </button>
-        </div>
-        <div class="card-body">
-          {{ item_formset.management_form }}
-          <div id="formset-container">
-            {% for item_form in item_formset %}
-            <div class="formset-row border rounded p-3 mb-3" style="border-color:#2a2a2a !important;">
-              <div class="row g-2 align-items-end">
-                <div class="col-md-5">
-                  <label class="form-label text-muted small">Автомобиль</label>
-                  {{ item_form.car }}
-                  {% if item_form.car.errors %}<div class="text-danger small">{{ item_form.car.errors }}</div>{% endif %}
-                </div>
-                <div class="col-md-2">
-                  <label class="form-label text-muted small">Кол-во</label>
-                  {{ item_form.quantity }}
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label text-muted small">Цена / ед. (BYN)</label>
-                  {{ item_form.unit_price }}
-                </div>
-                <div class="col-md-2 text-end">
-                  {% if item_form.DELETE %}
-                  <label class="form-check-label text-danger small d-block mb-1">Удалить</label>
-                  {{ item_form.DELETE }}
-                  {% endif %}
-                  {% for hidden in item_form.hidden_fields %}{{ hidden }}{% endfor %}
-                </div>
-              </div>
-              <div class="mt-2 text-end">
-                <small class="text-muted">Сумма: <span class="text-gold subtotal">—</span></small>
-              </div>
+    <section class="card">
+      <div class="flex-between">
+        <h2>Позиции заказа (товары)</h2>
+        <button type="button" class="btn btn-sm" id="addItem">Добавить строку</button>
+      </div>
+      {{ item_formset.management_form }}
+      <div id="formset-container">
+        {% for item_form in item_formset %}
+        <div class="formset-row card mb-2">
+          <div class="form-row">
+            <div class="field">
+              <label>Автомобиль</label>
+              {{ item_form.car }}
+              {% if item_form.car.errors %}<ul class="errorlist">{{ item_form.car.errors }}</ul>{% endif %}
             </div>
-            {% endfor %}
+            <div class="field">
+              <label>Кол-во</label>
+              {{ item_form.quantity }}
+            </div>
+            <div class="field">
+              <label>Цена / ед. (BYN)</label>
+              {{ item_form.unit_price }}
+            </div>
+            {% if item_form.DELETE %}
+            <div class="field checkline">
+              <label>Удалить</label>
+              {{ item_form.DELETE }}
+            </div>
+            {% endif %}
+            {% for hidden in item_form.hidden_fields %}{{ hidden }}{% endfor %}
           </div>
-
-          <div class="text-end mt-3 p-2 rounded">
-            <strong>Итого: <span class="text-gold fs-5" id="grand-total">0</span> BYN</strong>
-          </div>
+          <p class="muted text-right">Сумма: <span class="subtotal">—</span></p>
         </div>
+        {% endfor %}
       </div>
-    </div>
+
+      <p class="text-right"><strong>Итого: <span id="grand-total">0</span> BYN</strong></p>
+    </section>
   </div>
 
-  <div class="d-flex gap-2 mt-4">
-    <button type="submit" class="btn btn-gold btn-lg">
-      <i class="bi bi-check-circle me-1"></i>
+  <div class="flex mt-2">
+    <button type="submit" class="btn btn-gold">
       {% if editing %}Сохранить изменения{% else %}Создать заказ{% endif %}
     </button>
-    <a href="{% url 'order_list' %}" class="btn btn-outline-secondary btn-lg">Отмена</a>
+    <a href="{% url 'order_list' %}" class="btn">Отмена</a>
   </div>
 </form>
 {% endblock %}
 
 {% block extra_js %}
 <script>
-// Автоподсчёт сумм
 function recalculate() {
   let grand = 0;
   document.querySelectorAll('.formset-row').forEach(row => {
@@ -110,7 +89,6 @@ function recalculate() {
 document.addEventListener('input', recalculate);
 recalculate();
 
-// Автозаполнение цены при выборе авто
 document.addEventListener('change', function(e) {
   if (e.target && e.target.name && e.target.name.endsWith('-car')) {
     const carId = e.target.value;
@@ -126,7 +104,6 @@ document.addEventListener('change', function(e) {
   }
 });
 
-// Добавление строки формсета
 document.getElementById('addItem').addEventListener('click', function() {
   const container = document.getElementById('formset-container');
   const totalForms = document.getElementById('id_items-TOTAL_FORMS');

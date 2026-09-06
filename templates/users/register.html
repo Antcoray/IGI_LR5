@@ -1,140 +1,38 @@
 {% extends 'base.html' %}
 {% block title %}Регистрация — АвтоПремиум{% endblock %}
-
 {% block content %}
-<div class="row justify-content-center">
-  <div class="col-md-8">
-    <div class="card">
-      <div class="card-header text-gold">
-        <i class="bi bi-person-plus me-2"></i>Регистрация
-      </div>
-      <div class="card-body">
-        <form method="post" novalidate>
-          {% csrf_token %}
-          
-          <div class="row">
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label">{{ form.username.label }}</label>
-                {{ form.username }}
-                {% if form.username.errors %}
-                  <div class="text-danger small">{{ form.username.errors }}</div>
-                {% endif %}
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label">{{ form.email.label }}</label>
-                {{ form.email }}
-                {% if form.email.errors %}
-                  <div class="text-danger small">{{ form.email.errors }}</div>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-4">
-              <div class="mb-3">
-                <label class="form-label">{{ form.last_name.label }}</label>
-                {{ form.last_name }}
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="mb-3">
-                <label class="form-label">{{ form.first_name.label }}</label>
-                {{ form.first_name }}
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="mb-3">
-                <label class="form-label">{{ form.patronymic.label }}</label>
-                {{ form.patronymic }}
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label">{{ form.phone.label }}</label>
-                {{ form.phone }}
-                {% if form.phone.errors %}
-                  <div class="text-danger small">{{ form.phone.errors }}</div>
-                {% endif %}
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label">{{ form.birth_date.label }}</label>
-                {{ form.birth_date }}
-                {% if form.birth_date.errors %}
-                  <div class="text-danger small">{{ form.birth_date.errors }}</div>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label">{{ form.city.label }}</label>
-                {{ form.city }}
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label">{{ form.address.label }}</label>
-                {{ form.address }}
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label">{{ form.passport_series.label }}</label>
-                {{ form.passport_series }}
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label">{{ form.passport_number.label }}</label>
-                {{ form.passport_number }}
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label">{{ form.password1.label }}</label>
-                {{ form.password1 }}
-                {% if form.password1.errors %}
-                  <div class="text-danger small">{{ form.password1.errors }}</div>
-                {% endif %}
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="mb-3">
-                <label class="form-label">{{ form.password2.label }}</label>
-                {{ form.password2 }}
-                {% if form.password2.errors %}
-                  <div class="text-danger small">{{ form.password2.errors }}</div>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-
-          <button type="submit" class="btn btn-gold w-100">Зарегистрироваться</button>
-        </form>
-        
-        <hr>
-        <p class="text-center text-muted small">
-          Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a>
-        </p>
-      </div>
+<section class="card" style="max-width:760px;margin:0 auto;">
+  <h1>Регистрация</h1>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="field"><label>{{ form.username.label }}</label>{{ form.username }}{% if form.username.errors %}<ul class="errorlist">{{ form.username.errors }}</ul>{% endif %}</div>
+      <div class="field"><label>{{ form.email.label }}</label>{{ form.email }}{% if form.email.errors %}<ul class="errorlist">{{ form.email.errors }}</ul>{% endif %}</div>
     </div>
-  </div>
-</div>
+    <div class="form-row">
+      <div class="field"><label>{{ form.last_name.label }}</label>{{ form.last_name }}</div>
+      <div class="field"><label>{{ form.first_name.label }}</label>{{ form.first_name }}</div>
+      <div class="field"><label>{{ form.patronymic.label }}</label>{{ form.patronymic }}</div>
+    </div>
+    <div class="form-row">
+      <div class="field"><label>{{ form.phone.label }}</label>{{ form.phone }}{% if form.phone.errors %}<ul class="errorlist">{{ form.phone.errors }}</ul>{% endif %}</div>
+      <div class="field"><label>{{ form.birth_date.label }}</label>{{ form.birth_date }}{% if form.birth_date.errors %}<ul class="errorlist">{{ form.birth_date.errors }}</ul>{% endif %}</div>
+    </div>
+    <div class="form-row">
+      <div class="field"><label>{{ form.city.label }}</label>{{ form.city }}</div>
+      <div class="field"><label>{{ form.address.label }}</label>{{ form.address }}</div>
+    </div>
+    <div class="form-row">
+      <div class="field"><label>{{ form.passport_series.label }}</label>{{ form.passport_series }}</div>
+      <div class="field"><label>{{ form.passport_number.label }}</label>{{ form.passport_number }}</div>
+    </div>
+    <div class="form-row">
+      <div class="field"><label>{{ form.password1.label }}</label>{{ form.password1 }}{% if form.password1.errors %}<ul class="errorlist">{{ form.password1.errors }}</ul>{% endif %}</div>
+      <div class="field"><label>{{ form.password2.label }}</label>{{ form.password2 }}{% if form.password2.errors %}<ul class="errorlist">{{ form.password2.errors }}</ul>{% endif %}</div>
+    </div>
+    <button type="submit" class="btn btn-gold" style="width:100%;">Зарегистрироваться</button>
+  </form>
+  <hr>
+  <p class="text-center muted">Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+</section>
 {% endblock %}

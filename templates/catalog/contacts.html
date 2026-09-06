@@ -1,32 +1,28 @@
-{% extends 'base.html' %}{% block title %}Контакты — АвтоПремиум{% endblock %}{% block content %}
-<h2 class="text-gold mb-4"><i class="bi bi-telephone me-2"></i>Контакты</h2>
+{% extends 'base.html' %}
+{% block title %}Контакты — АвтоПремиум{% endblock %}
+{% block content %}
+<h1>Контакты</h1>
 {% if company %}
-<div class="card mb-4">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-md-6">
-        <h5 class="text-gold">{{ company.name }}</h5>
-        <p><i class="bi bi-geo-alt me-2 text-gold"></i>{{ company.address }}</p>
-        <p><i class="bi bi-telephone me-2 text-gold"></i>{{ company.phone }}</p>
-        <p><i class="bi bi-envelope me-2 text-gold"></i>{{ company.email }}</p>
-      </div>
-    </div>
-  </div>
-</div>
+<address class="card mb-2">
+  <h2>{{ company.name }}</h2>
+  <p>📍 {{ company.address }}</p>
+  <p>☎ <a href="tel:{{ company.phone }}">{{ company.phone }}</a></p>
+  <p>✉ <a href="mailto:{{ company.email }}">{{ company.email }}</a></p>
+</address>
 {% endif %}
-<h4 class="text-gold mb-3">Наша команда</h4>
-<div class="row g-3">
+
+<h2>Наша команда</h2>
+<div class="grid grid-3">
 {% for c in contacts %}
-<div class="col-md-4">
-  <div class="card text-center p-3">
-    {% if c.photo %}<img src="{{ c.photo.url }}" class="rounded-circle mb-3" style="width:80px;height:80px;object-fit:cover;">
-    {% else %}<div class="rounded-circle bg-secondary d-inline-flex align-items-center justify-content-center mb-3" style="width:80px;height:80px;"><i class="bi bi-person fs-2"></i></div>{% endif %}
-    <h6 class="text-gold">{{ c.name }}</h6>
-    <div class="text-muted small mb-2">{{ c.position }}</div>
-    <div class="small"><i class="bi bi-telephone me-1"></i>{{ c.phone }}</div>
-    <div class="small"><i class="bi bi-envelope me-1"></i>{{ c.email }}</div>
-    {% if c.description %}<p class="small text-muted mt-2">{{ c.description }}</p>{% endif %}
-  </div>
+<article class="card text-center" itemscope itemtype="https://schema.org/Person">
+  {% if c.photo %}<img src="{{ c.photo.url }}" alt="{{ c.name }}" itemprop="image" style="border-radius:50%;width:80px;height:80px;object-fit:cover;margin:0 auto;">
+  {% else %}<img src="https://placehold.co/80x80/e9ecef/6c757d?text=%F0%9F%91%A4" alt="Фото отсутствует" style="border-radius:50%;margin:0 auto;">{% endif %}
+  <h3 itemprop="name">{{ c.name }}</h3>
+  <p class="muted" itemprop="jobTitle">{{ c.position }}</p>
+  <p itemprop="telephone">☎ {{ c.phone }}</p>
+  <p itemprop="email">✉ {{ c.email }}</p>
+  {% if c.description %}<p class="muted">{{ c.description }}</p>{% endif %}
+</article>
+{% empty %}<p class="muted">Контакты скоро будут добавлены.</p>{% endfor %}
 </div>
-{% empty %}<div class="col-12 text-muted">Контакты скоро будут добавлены.</div>{% endfor %}
-</div>{% endblock %}
+{% endblock %}

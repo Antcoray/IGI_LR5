@@ -1,52 +1,39 @@
 {% extends 'base.html' %}
 {% block title %}Мои заказы — АвтоПремиум{% endblock %}
 {% block content %}
-<h2 class="text-gold mb-4"><i class="bi bi-bag me-2"></i>Мои заказы</h2>
+<h1>Мои заказы</h1>
 {% for order in orders %}
-<div class="card mb-3">
-  <div class="card-header d-flex justify-content-between align-items-center">
-    <span class="text-gold fw-bold">Заказ #{{ order.pk }}</span>
-    <div class="d-flex gap-2 align-items-center">
-      <span class="badge {% if order.status == 'completed' %}bg-success{% elif order.status == 'approved' %}bg-primary{% elif order.status == 'cancelled' %}bg-danger{% else %}bg-warning text-dark{% endif %}">
-        {{ order.get_status_display }}
-      </span>
-      <small class="text-muted">{{ order.created_at|date:"d/m/Y" }}</small>
-    </div>
+<article class="card mb-2">
+  <div class="flex-between">
+    <strong>Заказ #{{ order.pk }}</strong>
+    <span><span class="badge">{{ order.get_status_display }}</span> <time class="muted" datetime="{{ order.created_at|date:'c' }}">{{ order.created_at|date:"d.m.Y" }}</time></span>
   </div>
-  <div class="card-body">
-    <div class="row">
-      <div class="col-md-8">
-        <table class="table table-sm mb-0">
-          <thead><tr><th>Автомобиль</th><th class="text-end">Кол-во</th><th class="text-end">Цена</th><th class="text-end text-gold">Сумма</th></tr></thead>
-          <tbody>
-            {% for item in order.items.all %}
-            <tr>
-              <td>{{ item.car.manufacturer.name }} {{ item.car.name }} ({{ item.car.year }})</td>
-              <td class="text-end">{{ item.quantity }}</td>
-              <td class="text-end">{{ item.unit_price|floatformat:0 }} BYN</td>
-              <td class="text-end text-gold">{{ item.subtotal|floatformat:0 }} BYN</td>
-            </tr>
-            {% empty %}
-            <tr><td colspan="4" class="text-muted">Позиций нет</td></tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-      <div class="col-md-4">
-        <table class="table table-sm mb-0">
-          <tr><td class="text-muted">Дата продажи</td><td>{{ order.sale_date|date:"d/m/Y"|default:"—" }}</td></tr>
-          <tr><td class="text-muted">Дата доставки</td><td>{{ order.delivery_date|date:"d/m/Y"|default:"—" }}</td></tr>
-          <tr><td class="text-muted fw-bold">Итого</td>
-            <td class="text-gold fw-bold fs-5">{{ order.total_amount|floatformat:0 }} BYN</td>
+  <div class="grid grid-2">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Автомобиль</th><th scope="col">Кол-во</th><th scope="col">Цена</th><th scope="col">Сумма</th></tr></thead>
+        <tbody>
+          {% for item in order.items.all %}
+          <tr>
+            <td>{{ item.car.manufacturer.name }} {{ item.car.name }} ({{ item.car.year }})</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.unit_price|floatformat:0 }} BYN</td>
+            <td class="price">{{ item.subtotal|floatformat:0 }} BYN</td>
           </tr>
-        </table>
-      </div>
+          {% empty %}
+          <tr><td colspan="4" class="muted">Позиций нет</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
+    <dl>
+      <dt>Дата продажи</dt><dd>{{ order.sale_date|date:"d.m.Y"|default:"—" }}</dd>
+      <dt>Дата доставки</dt><dd>{{ order.delivery_date|date:"d.m.Y"|default:"—" }}</dd>
+      <dt>Итого</dt><dd class="price">{{ order.total_amount|floatformat:0 }} BYN</dd>
+    </dl>
   </div>
-</div>
+</article>
 {% empty %}
-<div class="alert alert-warning text-center">
-  У вас пока нет заказов. <a href="{% url 'car_list' %}">Перейти в каталог</a>
-</div>
+<p class="alert alert-warning text-center">У вас пока нет заказов. <a href="{% url 'car_list' %}">Перейти в каталог</a></p>
 {% endfor %}
 {% endblock %}

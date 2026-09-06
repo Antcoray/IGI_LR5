@@ -1,20 +1,16 @@
 {% extends 'base.html' %}{% block title %}Вакансии — АвтоПремиум{% endblock %}{% block content %}
-<h2 class="text-gold mb-4"><i class="bi bi-briefcase me-2"></i>Вакансии</h2>
+<h1>Вакансии</h1>
 {% for job in jobs %}
-<div class="card mb-3">
-  <div class="card-body">
-    <h5 class="text-gold">{{ job.title }}</h5>
-    {% if job.salary_from or job.salary_to %}
-    <div class="mb-2">
-      <span class="badge badge-gold">
-        {% if job.salary_from %}от {{ job.salary_from|floatformat:0 }}{% endif %}
-        {% if job.salary_to %} до {{ job.salary_to|floatformat:0 }}{% endif %} BYN
-      </span>
-    </div>
-    {% endif %}
-    <p class="text-muted">{{ job.description }}</p>
-    <small class="text-muted">Добавлено: {{ job.created_at|date:"d/m/Y" }}</small>
-  </div>
-</div>
-{% empty %}<div class="alert alert-warning">Вакансий пока нет.</div>{% endfor %}
+<article class="card mb-2">
+  <h2>{{ job.title }}</h2>
+  {% if job.salary_from or job.salary_to %}
+  <p><mark>
+    {% if job.salary_from %}от {{ job.salary_from|floatformat:0 }}{% endif %}
+    {% if job.salary_to %} до {{ job.salary_to|floatformat:0 }}{% endif %} BYN
+  </mark></p>
+  {% endif %}
+  <p class="muted">{{ job.description }}</p>
+  <p class="muted">Добавлено: <time datetime="{{ job.created_at|date:'c' }}">{{ job.created_at|date:"d.m.Y" }}</time></p>
+</article>
+{% empty %}<p class="alert alert-warning">Вакансий пока нет.</p>{% endfor %}
 {% endblock %}

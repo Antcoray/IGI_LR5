@@ -1,77 +1,62 @@
 {% extends 'base.html' %}
 {% block title %}Заказ #{{ order.pk }} — АвтоПремиум{% endblock %}
 {% block content %}
-<div class="d-flex justify-content-between mb-4">
-  <h2 class="text-gold">Заказ #{{ order.pk }}</h2>
+<div class="flex-between mb-2">
+  <h1>Заказ #{{ order.pk }}</h1>
   {% if user.is_staff %}
-  <a href="{% url 'order_update' order.pk %}" class="btn btn-gold">
-    <i class="bi bi-pencil me-1"></i>Редактировать
-  </a>
+  <a href="{% url 'order_update' order.pk %}" class="btn btn-gold">Редактировать</a>
   {% endif %}
 </div>
 
-<div class="row g-4">
-  <div class="col-md-5">
-    <div class="card">
-      <div class="card-header text-gold">Данные клиента</div>
-      <div class="card-body">
-        <table class="table table-sm mb-0">
-          <tr><td class="text-muted">ФИО</td><td><strong>{{ order.client.full_name }}</strong></td></tr>
-          <tr><td class="text-muted">Телефон</td><td>{{ order.client.phone }}</td></tr>
-          <tr><td class="text-muted">Email</td><td>{{ order.client.email }}</td></tr>
-          <tr><td class="text-muted">Адрес</td><td>{{ order.client.address|default:"—" }}</td></tr>
-          <tr><td class="text-muted">Город</td><td>{{ order.client.city|default:"—" }}</td></tr>
-          <tr><td class="text-muted">Паспорт</td><td>{{ order.client.passport_series }} {{ order.client.passport_number }}</td></tr>
-        </table>
-      </div>
-    </div>
-    <div class="card mt-3">
-      <div class="card-header text-gold">Данные заказа</div>
-      <div class="card-body">
-        <table class="table table-sm mb-0">
-          <tr><td class="text-muted">Статус</td><td>
-            <span class="badge {% if order.status == 'completed' %}bg-success{% elif order.status == 'approved' %}bg-primary{% elif order.status == 'cancelled' %}bg-danger{% else %}bg-warning text-dark{% endif %}">
-              {{ order.get_status_display }}
-            </span>
-          </td></tr>
-          <tr><td class="text-muted">Дата продажи</td><td>{{ order.sale_date|date:"d/m/Y"|default:"—" }}</td></tr>
-          <tr><td class="text-muted">Дата доставки</td><td>{{ order.delivery_date|date:"d/m/Y"|default:"—" }}</td></tr>
-          <tr><td class="text-muted">Менеджер</td><td>{{ order.employee|default:"—" }}</td></tr>
-          <tr><td class="text-muted">Создан</td><td>{{ order.created_at|date:"d/m/Y H:i" }}</td></tr>
-          {% if order.comment %}<tr><td class="text-muted">Комментарий</td><td>{{ order.comment }}</td></tr>{% endif %}
-        </table>
-      </div>
-    </div>
+<div class="grid grid-2">
+  <div>
+    <section class="card mb-2">
+      <h2>Данные клиента</h2>
+      <dl>
+        <dt>ФИО</dt><dd><strong>{{ order.client.full_name }}</strong></dd>
+        <dt>Телефон</dt><dd>{{ order.client.phone }}</dd>
+        <dt>Email</dt><dd>{{ order.client.email }}</dd>
+        <dt>Адрес</dt><dd>{{ order.client.address|default:"—" }}</dd>
+        <dt>Город</dt><dd>{{ order.client.city|default:"—" }}</dd>
+        <dt>Паспорт</dt><dd>{{ order.client.passport_series }} {{ order.client.passport_number }}</dd>
+      </dl>
+    </section>
+    <section class="card">
+      <h2>Данные заказа</h2>
+      <dl>
+        <dt>Статус</dt><dd><span class="badge">{{ order.get_status_display }}</span></dd>
+        <dt>Дата продажи</dt><dd>{{ order.sale_date|date:"d.m.Y"|default:"—" }}</dd>
+        <dt>Дата доставки</dt><dd>{{ order.delivery_date|date:"d.m.Y"|default:"—" }}</dd>
+        <dt>Менеджер</dt><dd>{{ order.employee|default:"—" }}</dd>
+        <dt>Создан</dt><dd><time datetime="{{ order.created_at|date:'c' }}">{{ order.created_at|date:"d.m.Y H:i" }}</time></dd>
+        {% if order.comment %}<dt>Комментарий</dt><dd>{{ order.comment }}</dd>{% endif %}
+      </dl>
+    </section>
   </div>
-  <div class="col-md-7">
-    <div class="card">
-      <div class="card-header text-gold">Позиции заказа</div>
-      <div class="card-body p-0">
-        <table class="table mb-0">
-          <thead><tr><th>Автомобиль</th><th>VIN</th><th class="text-end">Кол-во</th><th class="text-end">Цена</th><th class="text-end text-gold">Сумма</th></tr></thead>
-          <tbody>
-            {% for item in order.items.all %}
-            <tr>
-              <td>{{ item.car.manufacturer.name }} {{ item.car.name }} ({{ item.car.year }})</td>
-              <td><small class="text-muted">{{ item.car.vin }}</small></td>
-              <td class="text-end">{{ item.quantity }}</td>
-              <td class="text-end">{{ item.unit_price|floatformat:0 }} BYN</td>
-              <td class="text-end text-gold fw-bold">{{ item.subtotal|floatformat:0 }} BYN</td>
-            </tr>
-            {% empty %}
-            <tr><td colspan="5" class="text-muted text-center">Нет позиций</td></tr>
-            {% endfor %}
-          </tbody>
-          <tfoot style="background:#1a1a1a;">
-            <tr>
-              <td colspan="4" class="text-end"><strong>Итого:</strong></td>
-              <td class="text-end"><strong class="text-gold fs-5">{{ order.total_amount|floatformat:0 }} BYN</strong></td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
+  <section class="card">
+    <h2>Позиции заказа</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Автомобиль</th><th scope="col">VIN</th><th scope="col">Кол-во</th><th scope="col">Цена</th><th scope="col">Сумма</th></tr></thead>
+        <tbody>
+          {% for item in order.items.all %}
+          <tr>
+            <td>{{ item.car.manufacturer.name }} {{ item.car.name }} ({{ item.car.year }})</td>
+            <td class="muted">{{ item.car.vin }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.unit_price|floatformat:0 }} BYN</td>
+            <td class="price">{{ item.subtotal|floatformat:0 }} BYN</td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="5" class="muted text-center">Нет позиций</td></tr>
+          {% endfor %}
+        </tbody>
+        <tfoot>
+          <tr><td colspan="4">Итого:</td><td class="price">{{ order.total_amount|floatformat:0 }} BYN</td></tr>
+        </tfoot>
+      </table>
     </div>
-  </div>
+  </section>
 </div>
-<a href="{% url 'order_list' %}" class="btn btn-outline-secondary mt-3">← Все заказы</a>
+<p><a href="{% url 'order_list' %}" class="btn mt-2">← Все заказы</a></p>
 {% endblock %}

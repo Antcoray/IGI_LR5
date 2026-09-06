@@ -1,18 +1,10 @@
 {% extends 'base.html' %}{% block title %}FAQ — АвтоПремиум{% endblock %}{% block content %}
-<h2 class="text-gold mb-4"><i class="bi bi-question-circle me-2"></i>Словарь терминов и FAQ</h2>
-<div class="accordion" id="faqAccordion">
+<h1>Словарь терминов и часто задаваемые вопросы</h1>
+<p><dfn>FAQ (Frequently Asked Questions)</dfn> — раздел с ответами на часто задаваемые вопросы клиентов автосалона.</p>
 {% for item in faqs %}
-<div class="accordion-item" style="border-color:#2a2a2a;">
-  <h2 class="accordion-header">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq{{ item.pk }}"
-      style="color:#000000;">
-      {{ item.question }}
-      <small class="text-muted ms-2">({{ item.added_at|date:"d/m/Y" }})</small>
-    </button>
-  </h2>
-  <div id="faq{{ item.pk }}" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-    <div class="accordion-body text-muted">{{ item.answer }}</div>
-  </div>
-</div>
-{% empty %}<p class="text-muted">FAQ пока не заполнен.</p>{% endfor %}
-</div>{% endblock %}
+<details class="faq-item">
+  <summary>{{ item.question }} <small class="muted">({{ item.added_at|date:"d.m.Y" }})</small></summary>
+  <p>{{ item.answer }}</p>
+</details>
+{% empty %}<p class="muted">FAQ пока не заполнен.</p>{% endfor %}
+{% endblock %}

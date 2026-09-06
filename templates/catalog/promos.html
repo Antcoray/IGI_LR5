@@ -1,31 +1,23 @@
 {% extends 'base.html' %}{% block title %}Акции и промокоды — АвтоПремиум{% endblock %}{% block content %}
-<h2 class="text-gold mb-4"><i class="bi bi-ticket-perforated me-2"></i>Промокоды и акции</h2>
-<h5 class="text-gold mb-3">Активные промокоды</h5>
-<div class="row g-3 mb-4">
+<h1>Промокоды и акции</h1>
+<h2>Активные промокоды</h2>
+<div class="grid grid-3 mb-2">
 {% for promo in active %}
-<div class="col-md-4">
-  <div class="card border" style="border-color:var(--primary) !important;">
-    <div class="card-body text-center">
-      <div class="fs-2 fw-bold text-gold">{{ promo.code }}</div>
-      <div class="fs-4">-{{ promo.discount_percent }}%</div>
-      <p class="text-muted small">{{ promo.description }}</p>
-      {% if promo.valid_until %}<small class="text-muted">До: {{ promo.valid_until|date:"d/m/Y" }}</small>{% endif %}
-    </div>
-  </div>
+<article class="card text-center">
+  <p style="font-size:1.5rem;color:var(--gold);font-weight:700;">{{ promo.code }}</p>
+  <p><mark>-{{ promo.discount_percent }}%</mark></p>
+  <p class="muted">{{ promo.description }}</p>
+  {% if promo.valid_until %}<p class="muted">До: <time datetime="{{ promo.valid_until|date:'c' }}">{{ promo.valid_until|date:"d.m.Y" }}</time></p>{% endif %}
+</article>
+{% empty %}<p class="muted">Активных промокодов нет.</p>{% endfor %}
 </div>
-{% empty %}<div class="col-12 text-muted">Активных промокодов нет.</div>{% endfor %}
-</div>
-<h5 class="text-muted mb-3">Архив промокодов</h5>
-<div class="row g-3">
+<h2 class="muted">Архив промокодов</h2>
+<div class="grid grid-3">
 {% for promo in archived %}
-<div class="col-md-4">
-  <div class="card opacity-50">
-    <div class="card-body text-center">
-      <div class="fs-4 fw-bold text-muted">{{ promo.code }}</div>
-      <div>-{{ promo.discount_percent }}%</div>
-      <span class="badge bg-secondary">Архив</span>
-    </div>
-  </div>
-</div>
-{% empty %}<div class="col-12 text-muted">Архив пуст.</div>{% endfor %}
+<article class="card text-center muted">
+  <p style="font-size:1.2rem;font-weight:700;">{{ promo.code }}</p>
+  <p>-{{ promo.discount_percent }}%</p>
+  <p class="badge">Архив</p>
+</article>
+{% empty %}<p class="muted">Архив пуст.</p>{% endfor %}
 </div>{% endblock %}

@@ -14,16 +14,16 @@ class ClientQuickForm(forms.ModelForm):
             'birth_date', 'passport_series', 'passport_number',
         ]
         widgets = {
-            'last_name':       forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Фамилия'}),
-            'first_name':      forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Имя'}),
-            'patronymic':      forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Отчество'}),
-            'phone':           forms.TextInput(attrs={'class': 'form-control', 'placeholder': '+375 (29) XXX-XX-XX'}),
-            'email':           forms.EmailInput(attrs={'class': 'form-control'}),
-            'address':         forms.TextInput(attrs={'class': 'form-control'}),
-            'city':            forms.TextInput(attrs={'class': 'form-control'}),
-            'birth_date':      forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-            'passport_series': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'HB'}),
-            'passport_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '1234567'}),
+            'last_name':       forms.TextInput(attrs={'class': 'input', 'placeholder': 'Фамилия'}),
+            'first_name':      forms.TextInput(attrs={'class': 'input', 'placeholder': 'Имя'}),
+            'patronymic':      forms.TextInput(attrs={'class': 'input', 'placeholder': 'Отчество'}),
+            'phone':           forms.TextInput(attrs={'class': 'input', 'placeholder': '+375 (29) XXX-XX-XX'}),
+            'email':           forms.EmailInput(attrs={'class': 'input'}),
+            'address':         forms.TextInput(attrs={'class': 'input'}),
+            'city':            forms.TextInput(attrs={'class': 'input'}),
+            'birth_date':      forms.DateInput(attrs={'class': 'input', 'type': 'date'}),
+            'passport_series': forms.TextInput(attrs={'class': 'input', 'placeholder': 'HB'}),
+            'passport_number': forms.TextInput(attrs={'class': 'input', 'placeholder': '1234567'}),
         }
 
 
@@ -34,7 +34,7 @@ class ClientOrderForm(forms.Form):
         required=False,
         label='Комментарий к заказу',
         widget=forms.Textarea(attrs={
-            'class': 'form-control', 'rows': 3,
+            'class': 'input', 'rows': 3,
             'placeholder': 'Пожелания, вопросы, удобное время звонка…',
         })
     )
@@ -46,10 +46,10 @@ class OrderConfirmForm(forms.ModelForm):
         model = Order
         fields = ['status', 'sale_date', 'delivery_date', 'comment']
         widgets = {
-            'status':        forms.Select(attrs={'class': 'form-select'}),
-            'sale_date':     forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-            'delivery_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-            'comment':       forms.Textarea(attrs={'class': 'form-control', 'rows': 2}),
+            'status':        forms.Select(attrs={'class': 'input'}),
+            'sale_date':     forms.DateInput(attrs={'class': 'input', 'type': 'date'}),
+            'delivery_date': forms.DateInput(attrs={'class': 'input', 'type': 'date'}),
+            'comment':       forms.Textarea(attrs={'class': 'input', 'rows': 2}),
         }
 
     def clean(self):
@@ -67,12 +67,12 @@ class OrderForm(forms.ModelForm):
         model = Order
         fields = ['client', 'employee', 'status', 'sale_date', 'delivery_date', 'comment']
         widgets = {
-            'client':        forms.Select(attrs={'class': 'form-select'}),
-            'employee':      forms.Select(attrs={'class': 'form-select'}),
-            'status':        forms.Select(attrs={'class': 'form-select'}),
-            'sale_date':     forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-            'delivery_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-            'comment':       forms.Textarea(attrs={'class': 'form-control', 'rows': 2}),
+            'client':        forms.Select(attrs={'class': 'input'}),
+            'employee':      forms.Select(attrs={'class': 'input'}),
+            'status':        forms.Select(attrs={'class': 'input'}),
+            'sale_date':     forms.DateInput(attrs={'class': 'input', 'type': 'date'}),
+            'delivery_date': forms.DateInput(attrs={'class': 'input', 'type': 'date'}),
+            'comment':       forms.Textarea(attrs={'class': 'input', 'rows': 2}),
         }
 
     def clean(self):
@@ -89,9 +89,9 @@ class OrderItemForm(forms.ModelForm):
         model = OrderItem
         fields = ['car', 'quantity', 'unit_price']
         widgets = {
-            'car':        forms.Select(attrs={'class': 'form-select'}),
-            'quantity':   forms.NumberInput(attrs={'class': 'form-control', 'min': 1}),
-            'unit_price': forms.NumberInput(attrs={'class': 'form-control', 'step': '0.01'}),
+            'car':        forms.Select(attrs={'class': 'input'}),
+            'quantity':   forms.NumberInput(attrs={'class': 'input', 'min': 1}),
+            'unit_price': forms.NumberInput(attrs={'class': 'input', 'step': '0.01'}),
         }
 
 
@@ -107,10 +107,10 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ['rating', 'text', 'car']
         widgets = {
-            'rating': forms.Select(attrs={'class': 'form-select'}),
-            'text':   forms.Textarea(attrs={'rows': 4, 'class': 'form-control',
+            'rating': forms.Select(attrs={'class': 'input'}),
+            'text':   forms.Textarea(attrs={'rows': 4, 'class': 'input',
                                             'placeholder': 'Ваш отзыв…'}),
-            'car':    forms.Select(attrs={'class': 'form-select'}),
+            'car':    forms.Select(attrs={'class': 'input'}),
         }
 
     def clean_text(self):
@@ -123,36 +123,36 @@ class ReviewForm(forms.ModelForm):
 class CarSearchForm(forms.Form):
     q = forms.CharField(
         required=False,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Поиск…'})
+        widget=forms.TextInput(attrs={'class': 'input', 'placeholder': 'Поиск…'})
     )
     car_type = forms.CharField(
         required=False,
-        widget=forms.Select(attrs={'class': 'form-select'})
+        widget=forms.Select(attrs={'class': 'input'})
     )
     manufacturer = forms.CharField(
         required=False,
-        widget=forms.Select(attrs={'class': 'form-select'})
+        widget=forms.Select(attrs={'class': 'input'})
     )
     fuel = forms.ChoiceField(
         required=False,
         choices=[('', 'Любое'), ('petrol', 'Бензин'), ('diesel', 'Дизель'),
                  ('electric', 'Электро'), ('hybrid', 'Гибрид')],
-        widget=forms.Select(attrs={'class': 'form-select'})
+        widget=forms.Select(attrs={'class': 'input'})
     )
     price_min = forms.DecimalField(
         required=False, min_value=0,
-        widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Цена от'})
+        widget=forms.NumberInput(attrs={'class': 'input', 'placeholder': 'Цена от'})
     )
     price_max = forms.DecimalField(
         required=False, min_value=0,
-        widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Цена до'})
+        widget=forms.NumberInput(attrs={'class': 'input', 'placeholder': 'Цена до'})
     )
     sort = forms.ChoiceField(
         required=False,
         choices=[('', 'По умолчанию'), ('-created_at', 'Сначала новые'),
                  ('price', 'Цена ↑'), ('-price', 'Цена ↓'),
                  ('year', 'Год ↑'), ('-year', 'Год ↓')],
-        widget=forms.Select(attrs={'class': 'form-select'})
+        widget=forms.Select(attrs={'class': 'input'})
     )
 
 

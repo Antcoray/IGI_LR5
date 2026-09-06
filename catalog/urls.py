@@ -46,6 +46,13 @@ urlpatterns = [
     path('analytics/', views.analytics_dashboard, name='analytics'),
     path('statistics/', views.statistics_view, name='statistics'),
 
+    # Cart / Checkout
+    path('cart/', views.cart_detail, name='cart_detail'),
+    re_path(r'^cart/add/(?P<pk>\d+)/$', views.cart_add, name='cart_add'),
+    re_path(r'^cart/remove/(?P<pk>\d+)/$', views.cart_remove, name='cart_remove'),
+    re_path(r'^cart/update/(?P<pk>\d+)/$', views.cart_update, name='cart_update'),
+    path('checkout/', views.checkout, name='checkout'),
+
     # JSON API
     path('api/cars/', views.api_cars, name='api_cars'),
     path('api/stats/', views.api_stats, name='api_stats'),

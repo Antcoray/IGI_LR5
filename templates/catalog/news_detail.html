@@ -1,22 +1,18 @@
 {% extends 'base.html' %}
 {% block title %}{{ article.title }} — АвтоПремиум{% endblock %}
 {% block content %}
-<nav aria-label="breadcrumb" class="mb-3">
+<nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{% url 'news_list' %}">Новости</a></li>
-    <li class="breadcrumb-item active">{{ article.title }}</li>
+    <li><a href="{% url 'news_list' %}">Новости</a></li>
+    <li>{{ article.title }}</li>
   </ol>
 </nav>
-<div class="card">
-  {% if article.image %}
-  <img src="{{ article.image.url }}" class="card-img-top" style="max-height:400px;object-fit:cover;" alt="{{ article.title }}">
-  {% endif %}
-  <div class="card-body">
-    <h2 class="text-gold mb-2">{{ article.title }}</h2>
-    <small class="text-muted">Опубликовано: {{ article.published_at|date:"d/m/Y H:i" }}</small>
-    <hr>
-    <div>{{ article.content|linebreaks }}</div>
-  </div>
-</div>
-<a href="{% url 'news_list' %}" class="btn btn-outline-secondary mt-3">← Все новости</a>
+<article class="card">
+  {% if article.image %}<figure class="card-figure"><img src="{{ article.image.url }}" alt="{{ article.title }}"></figure>{% endif %}
+  <h1>{{ article.title }}</h1>
+  <p class="muted">Опубликовано: <time datetime="{{ article.published_at|date:'c' }}">{{ article.published_at|date:"d.m.Y H:i" }}</time></p>
+  <hr>
+  <div>{{ article.content|linebreaks }}</div>
+</article>
+<p><a href="{% url 'news_list' %}" class="btn mt-2">← Все новости</a></p>
 {% endblock %}

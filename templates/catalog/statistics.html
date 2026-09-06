@@ -1,67 +1,43 @@
 {% extends 'base.html' %}
 {% block title %}Статистика — АвтоПремиум{% endblock %}
 {% block content %}
-<h2 class="text-gold mb-4"><i class="bi bi-bar-chart me-2"></i>Быстрая статистика</h2>
+<h1>Быстрая статистика</h1>
 
-<div class="row g-3 mb-4">
-  <div class="col-md-3">
-    <div class="card text-center p-3">
-      <div class="text-gold fs-2 fw-bold">{{ orders_count }}</div>
-      <div class="text-muted">Завершённых продаж</div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card text-center p-3">
-      <div class="text-gold fs-2 fw-bold">{{ total_sales|floatformat:0 }}</div>
-      <div class="text-muted">Выручка (BYN)</div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card text-center p-3">
-      <div class="text-gold fs-2 fw-bold">{{ avg_price|floatformat:0 }}</div>
-      <div class="text-muted">Средний чек (BYN)</div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card text-center p-3">
-      <div class="text-gold fs-2 fw-bold">{{ median_price|floatformat:0 }}</div>
-      <div class="text-muted">Медиана цены (BYN)</div>
-    </div>
-  </div>
+<div class="grid grid-4 mb-2">
+  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ orders_count }}</p><p class="muted">Завершённых продаж</p></div>
+  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ total_sales|floatformat:0 }}</p><p class="muted">Выручка (BYN)</p></div>
+  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ avg_price|floatformat:0 }}</p><p class="muted">Средний чек (BYN)</p></div>
+  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ median_price|floatformat:0 }}</p><p class="muted">Медиана цены (BYN)</p></div>
 </div>
 
-<div class="row g-3 mb-4">
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-header text-gold">Автомобили по типу кузова</div>
-      <div class="card-body p-0">
-        <table class="table table-sm mb-0">
-          <thead><tr><th>Тип кузова</th><th class="text-end">Авто</th></tr></thead>
-          <tbody>
-            {% for r in by_type %}
-            <tr><td>{{ r.car_type__name }}</td><td class="text-end">{{ r.count }}</td></tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
+<div class="grid grid-2 mb-2">
+  <section class="card">
+    <h2>Автомобили по типу кузова</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th id="st-type" scope="col" rowspan="2">Тип кузова</th>
+            <th id="st-info" scope="col" colspan="1">Кол-во</th>
+          </tr>
+          <tr><th id="st-count" scope="col">Авто</th></tr>
+        </thead>
+        <tbody>
+          {% for r in by_type %}
+          <tr><td headers="st-type">{{ r.car_type__name }}</td><td headers="st-info st-count">{{ r.count }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-header text-gold">Время сервера</div>
-      <div class="card-body">
-        <div class="mb-2"><span class="text-muted">UTC:</span> <strong>{{ now_utc|date:"d/m/Y H:i" }}</strong></div>
-        <div><span class="text-muted">Локальное:</span> <strong>{{ now_local|date:"d/m/Y H:i" }}</strong></div>
-      </div>
-    </div>
-  </div>
+  </section>
+  <section class="card">
+    <h2>Время сервера</h2>
+    <p class="muted">UTC: <strong><time datetime="{{ now_utc|date:'c' }}">{{ now_utc|date:"d.m.Y H:i" }}</time></strong></p>
+    <p class="muted">Локальное: <strong><time datetime="{{ now_local|date:'c' }}">{{ now_local|date:"d.m.Y H:i" }}</time></strong></p>
+  </section>
 </div>
 
 {% if user.is_superuser %}
-<div class="alert" style="background:#1a2010;border-color:#3a5020;color:#9ede6a;">
-  <i class="bi bi-info-circle me-2"></i>
-  Для полной аналитики с графиками перейдите в
-  <a href="{% url 'analytics' %}" style="color:#9ede6a;">Аналитику</a>.
-</div>
+<p class="alert alert-success">Для полной аналитики с графиками перейдите в <a href="{% url 'analytics' %}">Аналитику</a>.</p>
 {% endif %}
 {% endblock %}

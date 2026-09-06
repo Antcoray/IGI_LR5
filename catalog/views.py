@@ -24,7 +24,7 @@ from .forms import (
 from .models import (
     Article, Car, CarType, Client, CompanyInfo,
     Contact, FAQ, Feature, Manufacturer,
-    Order, OrderItem, Promo, Review, Vacancy
+    Order, OrderItem, Promo, Review, Vacancy, Partner
 )
 
 logger = logging.getLogger('catalog')
@@ -342,7 +342,101 @@ def index(request):
         'now_utc': now_utc,
         'now_local': now_local,
         'calendar': cal_text,
+        'company': CompanyInfo.objects.first(),
+        'partners': Partner.objects.all(),
     })
+
+
+# ─────────────────────────────────────
+# Cart (session-based)
+# ─────────────────────────────────────
+
+def _get_cart(request):
+    return request.session.setdefault('cart', {})
+
+
+def cart_detail(request):
+    cart = _get_cart(request)
+    items = []
+    total = Decimal('0')
+    if cart:
+        cars = Car.objects.filter(pk__in=[int(k) for k in cart.keys()]).select_related('manufacturer')
+        cars_by_id = {c.pk: c for c in cars}
+        for car_id, qty in cart.items():
+            car = cars_by_id.get(int(car_id))
+            if not car:
+                continue
+            subtotal = car.price * qty
+            total += subtotal
+            items.append({'car': car, 'quantity': qty, 'subtotal': subtotal})
+    return render(request, 'catalog/cart_detail.html', {'items': items, 'total': total})
+
+
+@require_POST
+def cart_add(request, pk):
+    car = get_object_or_404(Car, pk=pk)
+    cart = _get_cart(request)
+    key = str(pk)
+    cart[key] = cart.get(key, 0) + 1
+    request.session.modified = True
+    messages.success(request, f'«{car}» добавлен в корзину.')
+    return redirect(request.POST.get('next') or 'cart_detail')
+
+
+@require_POST
+def cart_remove(request, pk):
+    cart = _get_cart(request)
+    cart.pop(str(pk), None)
+    request.session.modified = True
+    return redirect('cart_detail')
+
+
+@require_POST
+def cart_update(request, pk):
+    cart = _get_cart(request)
+    key = str(pk)
+    action = request.POST.get('action')
+    if key in cart:
+        if action == 'inc':
+            cart[key] += 1
+        elif action == 'dec':
+            cart[key] -= 1
+            if cart[key] <= 0:
+                del cart[key]
+    request.session.modified = True
+    return redirect('cart_detail')
+
+
+@login_required
+def checkout(request):
+    cart = _get_cart(request)
+    if not cart:
+        messages.warning(request, 'Корзина пуста.')
+        return redirect('cart_detail')
+    if not hasattr(request.user, 'client_profile'):
+        messages.warning(request, 'Заполните профиль клиента перед оплатой.')
+        return redirect('profile')
+
+    cars = Car.objects.filter(pk__in=[int(k) for k in cart.keys()])
+    cars_by_id = {c.pk: c for c in cars}
+    items = [{'car': cars_by_id[int(cid)], 'quantity': qty}
+              for cid, qty in cart.items() if int(cid) in cars_by_id]
+    total = sum(i['car'].price * i['quantity'] for i in items)
+
+    if request.method == 'POST':
+        client = request.user.client_profile
+        order = Order.objects.create(client=client, status='pending', total_amount=total)
+        for i in items:
+            OrderItem.objects.create(order=order, car=i['car'], quantity=i['quantity'], unit_price=i['car'].price)
+            i['car'].status = 'reserved'
+            i['car'].save(update_fields=['status'])
+        request.session['cart'] = {}
+        request.session.modified = True
+        logger.info(f'Checkout: order #{order.pk} created by {request.user}')
+        messages.success(request, f'Оплата прошла успешно! Заказ #{order.pk} оформлен.')
+        return redirect('order_detail', pk=order.pk)
+
+    return render(request, 'catalog/checkout.html', {'items': items, 'total': total})
 
 
 def car_list(request):

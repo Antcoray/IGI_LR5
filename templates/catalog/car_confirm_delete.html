@@ -1,24 +1,16 @@
 {% extends 'base.html' %}
 {% block title %}Удалить автомобиль{% endblock %}
 {% block content %}
-<div class="row justify-content-center">
-  <div class="col-md-6">
-    <div class="card border-danger">
-      <div class="card-header text-danger"><i class="bi bi-exclamation-triangle me-2"></i>Подтверждение удаления</div>
-      <div class="card-body text-center">
-        <p class="fs-5">Вы уверены, что хотите удалить автомобиль?</p>
-        <p class="text-gold fw-bold">{{ car }}</p>
-        <div class="d-flex justify-content-center gap-3 mt-3">
-          <form method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger">
-              <i class="bi bi-trash me-1"></i>Да, удалить
-            </button>
-          </form>
-          <a href="{% url 'car_detail' car.pk %}" class="btn btn-outline-secondary">Отмена</a>
-        </div>
-      </div>
-    </div>
+<section class="card text-center">
+  <h1 style="color:var(--danger);">Подтверждение удаления</h1>
+  <p>Вы уверены, что хотите удалить автомобиль?</p>
+  <p><strong>{{ car }}</strong></p>
+  <div class="flex" style="justify-content:center;">
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Да, удалить</button>
+    </form>
+    <a href="{% url 'car_detail' car.pk %}" class="btn">Отмена</a>
   </div>
-</div>
+</section>
 {% endblock %}

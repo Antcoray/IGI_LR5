@@ -2,152 +2,111 @@
 {% block title %}Аналитика {{ year }} — АвтоПремиум{% endblock %}
 {% block content %}
 
-<div class="d-flex justify-content-between align-items-center mb-4">
-  <h2 class="text-gold mb-0"><i class="bi bi-graph-up me-2"></i>Аналитика продаж</h2>
-  <form method="get" class="d-flex gap-2 align-items-center">
-    <select name="year" class="form-select" style="width:120px;" onchange="this.form.submit()">
+<div class="flex-between mb-2">
+  <h1>Аналитика продаж</h1>
+  <form method="get" class="flex">
+    <select name="year" onchange="this.form.submit()">
       {% for y in available_years %}
       <option value="{{ y }}" {% if y == year %}selected{% endif %}>{{ y }}</option>
       {% endfor %}
     </select>
-    <span class="text-muted">год</span>
+    <span class="muted">год</span>
   </form>
 </div>
 
-<!-- Навигация по секциям -->
-<div class="d-flex flex-wrap gap-2 mb-4">
-  <a href="#kpi"         class="btn btn-outline-secondary btn-sm">KPI</a>
-  <a href="#price-list"  class="btn btn-outline-secondary btn-sm">Прайс-лист</a>
-  <a href="#clients"     class="btn btn-outline-secondary btn-sm">Клиенты по городам</a>
-  <a href="#top"         class="btn btn-outline-secondary btn-sm">Топ товаров</a>
-  <a href="#monthly"     class="btn btn-outline-secondary btn-sm">По месяцам</a>
-  <a href="#pivot"       class="btn btn-outline-secondary btn-sm">Сводные таблицы</a>
-  <a href="#charts"      class="btn btn-outline-secondary btn-sm">Графики</a>
-  <a href="#forecast"    class="btn btn-outline-secondary btn-sm">Прогноз</a>
-</div>
+<nav class="flex mb-2" aria-label="Разделы аналитики">
+  <a href="#kpi" class="btn btn-sm">KPI</a>
+  <a href="#price-list" class="btn btn-sm">Прайс-лист</a>
+  <a href="#clients" class="btn btn-sm">Клиенты по городам</a>
+  <a href="#top" class="btn btn-sm">Топ товаров</a>
+  <a href="#monthly" class="btn btn-sm">По месяцам</a>
+  <a href="#pivot" class="btn btn-sm">Сводные таблицы</a>
+  <a href="#charts" class="btn btn-sm">Графики</a>
+  <a href="#forecast" class="btn btn-sm">Прогноз</a>
+</nav>
 
-<!-- ── KPI ── -->
-<div id="kpi" class="row g-3 mb-4">
-  <div class="col-md-3">
-    <div class="card text-center p-3">
-      <div class="text-gold fs-2 fw-bold">{{ annual.total_orders }}</div>
-      <div class="text-muted small">Завершённых заказов</div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card text-center p-3">
-      <div class="text-gold fs-2 fw-bold">{{ annual.total_revenue|floatformat:0 }}</div>
-      <div class="text-muted small">Общая выручка (BYN)</div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card text-center p-3">
-      <div class="text-gold fs-2 fw-bold">{{ annual.avg_order|floatformat:0 }}</div>
-      <div class="text-muted small">Средний чек (BYN)</div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card text-center p-3">
-      <div class="text-gold fs-2 fw-bold">{{ annual.max_order|floatformat:0 }}</div>
-      <div class="text-muted small">Макс. заказ (BYN)</div>
-    </div>
-  </div>
-</div>
+<section id="kpi" class="grid grid-4 mb-2">
+  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ annual.total_orders }}</p><p class="muted">Завершённых заказов</p></div>
+  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ annual.total_revenue|floatformat:0 }}</p><p class="muted">Общая выручка (BYN)</p></div>
+  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ annual.avg_order|floatformat:0 }}</p><p class="muted">Средний чек (BYN)</p></div>
+  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ annual.max_order|floatformat:0 }}</p><p class="muted">Макс. заказ (BYN)</p></div>
+</section>
 
 {% if most_popular %}
-<div class="alert" style="background:#1a2010;border-color:#3a5020;color:#9ede6a;">
-  <i class="bi bi-trophy-fill me-2"></i>
+<p class="alert alert-success">
   <strong>Самый популярный товар:</strong>
   {{ most_popular.car__manufacturer__name }} {{ most_popular.car__name }}
   — продано {{ most_popular.total_qty }} шт., выручка {{ most_popular.total_rev|floatformat:0 }} BYN
-</div>
+</p>
 {% endif %}
 
-<!-- ── Прайс-лист ── -->
-<div id="price-list" class="card mb-4">
-  <div class="card-header text-gold fw-bold">
-    <i class="bi bi-tags me-2"></i>Прайс-лист по типам кузова (в наличии)
+<section id="price-list" class="card mb-2">
+  <h2>Прайс-лист по типам кузова (в наличии)</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Тип</th><th scope="col">Марка</th><th scope="col">Модель</th><th scope="col">Год</th>
+          <th scope="col">Топливо</th><th scope="col">КПП</th><th scope="col">Цена (BYN)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in price_list %}
+        <tr>
+          <td><span class="badge">{{ row.car_type__name }}</span></td>
+          <td>{{ row.manufacturer__name }}</td>
+          <td>{{ row.name }}</td>
+          <td>{{ row.year }}</td>
+          <td>{{ row.fuel }}</td>
+          <td>{{ row.transmission }}</td>
+          <td class="price">{{ row.price|floatformat:0 }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="7" class="text-center muted">Нет данных</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
-  <div class="card-body p-0">
-    <div class="table-responsive">
-      <table class="table table-sm mb-0">
+</section>
+
+<section id="clients" class="card mb-2">
+  <h2>Список заказчиков с группировкой по городам</h2>
+  {% for city, client_list in city_groups.items %}
+  <details class="faq-item">
+    <summary>{{ city }} <span class="badge">{{ client_list|length }}</span></summary>
+    <div class="table-wrap">
+      <table>
         <thead>
-          <tr>
-            <th>Тип</th><th>Марка</th><th>Модель</th><th>Год</th>
-            <th>Топливо</th><th>КПП</th><th class="text-end text-gold">Цена (BYN)</th>
-          </tr>
+          <tr><th scope="col">ФИО</th><th scope="col">Телефон</th><th scope="col">Email</th><th scope="col">Адрес</th><th scope="col">Дата рег.</th></tr>
         </thead>
         <tbody>
-          {% for row in price_list %}
+          {% for c in client_list %}
           <tr>
-            <td><span class="badge bg-secondary">{{ row.car_type__name }}</span></td>
-            <td>{{ row.manufacturer__name }}</td>
-            <td>{{ row.name }}</td>
-            <td>{{ row.year }}</td>
-            <td>{{ row.fuel }}</td>
-            <td>{{ row.transmission }}</td>
-            <td class="text-end text-gold fw-bold">{{ row.price|floatformat:0 }}</td>
+            <td><a href="{% url 'client_detail' c.pk %}">{{ c.full_name }}</a></td>
+            <td>{{ c.phone }}</td>
+            <td>{{ c.email }}</td>
+            <td>{{ c.address|default:'—' }}</td>
+            <td>{{ c.created_at|date:"d.m.Y" }}</td>
           </tr>
-          {% empty %}
-          <tr><td colspan="7" class="text-center text-muted">Нет данных</td></tr>
           {% endfor %}
         </tbody>
       </table>
     </div>
-  </div>
-</div>
+  </details>
+  {% empty %}
+  <p class="muted">Клиентов нет.</p>
+  {% endfor %}
+</section>
 
-<!-- ── Клиенты по городам ── -->
-<div id="clients" class="card mb-4">
-  <div class="card-header text-gold fw-bold">
-    <i class="bi bi-people me-2"></i>Список заказчиков с группировкой по городам
-  </div>
-  <div class="card-body p-0">
-    {% for city, client_list in city_groups.items %}
-    <details class="border-bottom" style="border-color:#2a2a2a !important;">
-      <summary class="px-3 py-2" style="cursor:pointer;list-style:none;">
-        <i class="bi bi-geo-alt text-gold me-2"></i>
-        <strong>{{ city }}</strong>
-        <span class="badge bg-secondary ms-2">{{ client_list|length }}</span>
-      </summary>
-      <div class="table-responsive">
-        <table class="table table-sm mb-0">
-          <thead>
-            <tr><th>ФИО</th><th>Телефон</th><th>Email</th><th>Адрес</th><th>Дата рег.</th></tr>
-          </thead>
-          <tbody>
-            {% for c in client_list %}
-            <tr>
-              <td><a href="{% url 'client_detail' c.pk %}">{{ c.full_name }}</a></td>
-              <td>{{ c.phone }}</td>
-              <td>{{ c.email }}</td>
-              <td>{{ c.address|default:'—' }}</td>
-              <td>{{ c.created_at|date:"d/m/Y" }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </details>
-    {% empty %}
-    <p class="text-muted p-3">Клиентов нет.</p>
-    {% endfor %}
-  </div>
-</div>
-
-<!-- ── Топ товаров ── -->
-<div id="top" class="card mb-4">
-  <div class="card-header text-gold fw-bold">
-    <i class="bi bi-bar-chart-steps me-2"></i>Топ товаров по количеству продаж (все периоды)
-  </div>
-  <div class="card-body p-0">
-    <div class="table-responsive">
-      <table class="table table-sm mb-0">
-        <thead>
-          <tr><th>#</th><th>Марка</th><th>Модель</th><th>Тип</th>
-            <th class="text-end">Продано, шт.</th><th class="text-end text-gold">Выручка (BYN)</th></tr>
-        </thead>
-        <tbody>
+<section id="top" class="card mb-2">
+  <h2>Топ товаров по количеству продаж (все периоды)</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th scope="col">#</th><th scope="col">Марка</th><th scope="col">Модель</th><th scope="col">Тип</th>
+          <th scope="col">Продано, шт.</th><th scope="col">Выручка (BYN)</th></tr>
+      </thead>
+      <tbody>
 {% for row in top_cars %}
 <tr>
   <td>
@@ -159,215 +118,162 @@
   <td>{{ row.car__manufacturer__name }}</td>
   <td>{{ row.car__name }}</td>
   <td>{{ row.car__car_type__name }}</td>
-  <td class="text-end">{{ row.total_qty }}</td>
-  <td class="text-end text-gold fw-bold">{{ row.total_rev|floatformat:0 }}</td>
+  <td>{{ row.total_qty }}</td>
+  <td class="price">{{ row.total_rev|floatformat:0 }}</td>
 </tr>
 {% endfor %}
-        </tbody>
-      </table>
-    </div>
+      </tbody>
+    </table>
   </div>
-</div>
+</section>
 
-<!-- ── Ежемесячные продажи ── -->
-<div id="monthly" class="card mb-4">
-  <div class="card-header text-gold fw-bold">
-    <i class="bi bi-calendar3 me-2"></i>Ежемесячный объём продаж {{ year }}
+<section id="monthly" class="card mb-2">
+  <h2>Ежемесячный объём продаж {{ year }}</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th scope="col">Месяц</th><th scope="col">Заказов</th>
+          <th scope="col">Выручка (BYN)</th><th scope="col">Виды продукции</th></tr>
+      </thead>
+      <tbody>
+        {% for m in monthly_data %}
+        <tr>
+          <td>{{ m.month }}</td>
+          <td>{{ m.count }}</td>
+          <td class="price">{{ m.revenue|floatformat:0 }}</td>
+          <td>
+            {% for t in m.by_type %}
+            <span class="badge">{{ t.car__car_type__name }}: {{ t.qty }} шт.</span>
+            {% endfor %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><strong>Итого {{ year }}</strong></td>
+          <td><strong>{{ annual.total_orders }}</strong></td>
+          <td class="price"><strong>{{ annual.total_revenue|floatformat:0 }}</strong></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
   </div>
-  <div class="card-body p-0">
-    <div class="table-responsive">
-      <table class="table table-sm mb-0">
-        <thead>
-          <tr><th>Месяц</th><th class="text-end">Заказов</th>
-            <th class="text-end text-gold">Выручка (BYN)</th><th>Виды продукции</th></tr>
-        </thead>
-        <tbody>
-          {% for m in monthly_data %}
-          <tr>
-            <td>{{ m.month }}</td>
-            <td class="text-end">{{ m.count }}</td>
-            <td class="text-end text-gold fw-bold">{{ m.revenue|floatformat:0 }}</td>
-            <td>
-              {% for t in m.by_type %}
-              <small class="badge bg-secondary me-1">{{ t.car__car_type__name }}: {{ t.qty }} шт.</small>
-              {% endfor %}
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-        <tfoot style="background:#1a1a1a;">
-          <tr>
-            <td><strong>Итого {{ year }}</strong></td>
-            <td class="text-end"><strong>{{ annual.total_orders }}</strong></td>
-            <td class="text-end text-gold"><strong>{{ annual.total_revenue|floatformat:0 }}</strong></td>
-            <td></td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-  </div>
-</div>
+</section>
 
-<!-- ── Сводные таблицы ── -->
-<div id="pivot" class="row g-3 mb-4">
-  <div class="col-md-4">
-    <div class="card h-100">
-      <div class="card-header text-gold">По типу кузова ({{ year }})</div>
-      <div class="card-body p-0">
-        <table class="table table-sm mb-0">
-          <thead><tr><th>Тип</th><th>Шт.</th><th class="text-gold">BYN</th></tr></thead>
-          <tbody>
-            {% for r in pivot_by_type %}
-            <tr>
-              <td>{{ r.car__car_type__name }}</td>
-              <td>{{ r.qty }}</td>
-              <td class="text-gold">{{ r.revenue|floatformat:0 }}</td>
-            </tr>
-            {% empty %}<tr><td colspan="3" class="text-muted text-center">—</td></tr>{% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </div>
+<section id="pivot" class="grid grid-3 mb-2">
+  <div class="card">
+    <h3>По типу кузова ({{ year }})</h3>
+    <table>
+      <thead><tr><th scope="col">Тип</th><th scope="col">Шт.</th><th scope="col">BYN</th></tr></thead>
+      <tbody>
+        {% for r in pivot_by_type %}
+        <tr>
+          <td>{{ r.car__car_type__name }}</td>
+          <td>{{ r.qty }}</td>
+          <td class="price">{{ r.revenue|floatformat:0 }}</td>
+        </tr>
+        {% empty %}<tr><td colspan="3" class="text-center muted">—</td></tr>{% endfor %}
+      </tbody>
+    </table>
   </div>
-  <div class="col-md-4">
-    <div class="card h-100">
-      <div class="card-header text-gold">По производителям ({{ year }})</div>
-      <div class="card-body p-0">
-        <table class="table table-sm mb-0">
-          <thead><tr><th>Марка</th><th>Шт.</th><th class="text-gold">BYN</th></tr></thead>
-          <tbody>
-            {% for r in pivot_by_mfr %}
-            <tr>
-              <td>{{ r.car__manufacturer__name }}</td>
-              <td>{{ r.qty }}</td>
-              <td class="text-gold">{{ r.revenue|floatformat:0 }}</td>
-            </tr>
-            {% empty %}<tr><td colspan="3" class="text-muted text-center">—</td></tr>{% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </div>
+  <div class="card">
+    <h3>По производителям ({{ year }})</h3>
+    <table>
+      <thead><tr><th scope="col">Марка</th><th scope="col">Шт.</th><th scope="col">BYN</th></tr></thead>
+      <tbody>
+        {% for r in pivot_by_mfr %}
+        <tr>
+          <td>{{ r.car__manufacturer__name }}</td>
+          <td>{{ r.qty }}</td>
+          <td class="price">{{ r.revenue|floatformat:0 }}</td>
+        </tr>
+        {% empty %}<tr><td colspan="3" class="text-center muted">—</td></tr>{% endfor %}
+      </tbody>
+    </table>
   </div>
-  <div class="col-md-4">
-    <div class="card h-100">
-      <div class="card-header text-gold">Топ клиентов ({{ year }})</div>
-      <div class="card-body p-0">
-        <table class="table table-sm mb-0">
-          <thead><tr><th>Клиент</th><th>Зак.</th><th class="text-gold">BYN</th></tr></thead>
-          <tbody>
-            {% for r in pivot_by_client %}
-            <tr>
-              <td>{{ r.client__last_name }} {{ r.client__first_name|first }}.</td>
-              <td>{{ r.orders_count }}</td>
-              <td class="text-gold">{{ r.total_spent|floatformat:0 }}</td>
-            </tr>
-            {% empty %}<tr><td colspan="3" class="text-muted text-center">—</td></tr>{% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </div>
+  <div class="card">
+    <h3>Топ клиентов ({{ year }})</h3>
+    <table>
+      <thead><tr><th scope="col">Клиент</th><th scope="col">Зак.</th><th scope="col">BYN</th></tr></thead>
+      <tbody>
+        {% for r in pivot_by_client %}
+        <tr>
+          <td>{{ r.client__last_name }} {{ r.client__first_name|first }}.</td>
+          <td>{{ r.orders_count }}</td>
+          <td class="price">{{ r.total_spent|floatformat:0 }}</td>
+        </tr>
+        {% empty %}<tr><td colspan="3" class="text-center muted">—</td></tr>{% endfor %}
+      </tbody>
+    </table>
   </div>
-</div>
+</section>
 
-<!-- ── Matplotlib-графики ── -->
-<div id="charts">
-  <h4 class="text-gold mb-3"><i class="bi bi-bar-chart me-2"></i>Графики (matplotlib, Python)</h4>
-  <div class="row g-4">
+<section id="charts">
+  <h2>Графики (matplotlib, Python)</h2>
+  <div class="grid grid-2">
 
     {% if charts.monthly_revenue %}
-    <div class="col-12">
-      <div class="card">
-        <div class="card-header text-gold">Ежемесячная выручка {{ year }}</div>
-        <div class="card-body text-center">
-          <img src="data:image/png;base64,{{ charts.monthly_revenue }}" class="img-fluid rounded" alt="Ежемесячная выручка">
-        </div>
-      </div>
-    </div>
+    <figure class="card" style="grid-column:1/-1;">
+      <figcaption>Ежемесячная выручка {{ year }}</figcaption>
+      <img src="data:image/png;base64,{{ charts.monthly_revenue }}" alt="Ежемесячная выручка">
+    </figure>
     {% endif %}
 
     {% if charts.quarterly %}
-    <div class="col-md-7">
-      <div class="card">
-        <div class="card-header text-gold">Сводная диаграмма по кварталам</div>
-        <div class="card-body text-center">
-          <img src="data:image/png;base64,{{ charts.quarterly }}" class="img-fluid rounded" alt="Квартальная диаграмма">
-        </div>
-      </div>
-    </div>
+    <figure class="card">
+      <figcaption>Сводная диаграмма по кварталам</figcaption>
+      <img src="data:image/png;base64,{{ charts.quarterly }}" alt="Квартальная диаграмма">
+    </figure>
     {% endif %}
 
     {% if charts.by_manufacturer %}
-    <div class="col-md-5">
-      <div class="card">
-        <div class="card-header text-gold">Доля выручки по производителям</div>
-        <div class="card-body text-center">
-          <img src="data:image/png;base64,{{ charts.by_manufacturer }}" class="img-fluid rounded" alt="По производителям">
-        </div>
-      </div>
-    </div>
+    <figure class="card">
+      <figcaption>Доля выручки по производителям</figcaption>
+      <img src="data:image/png;base64,{{ charts.by_manufacturer }}" alt="По производителям">
+    </figure>
     {% endif %}
 
     {% if charts.by_type %}
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-header text-gold">Объём продаж по типу кузова</div>
-        <div class="card-body text-center">
-          <img src="data:image/png;base64,{{ charts.by_type }}" class="img-fluid rounded" alt="По типу кузова">
-        </div>
-      </div>
-    </div>
+    <figure class="card">
+      <figcaption>Объём продаж по типу кузова</figcaption>
+      <img src="data:image/png;base64,{{ charts.by_type }}" alt="По типу кузова">
+    </figure>
     {% endif %}
 
     {% if charts.by_city %}
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-header text-gold">Клиенты по городам</div>
-        <div class="card-body text-center">
-          <img src="data:image/png;base64,{{ charts.by_city }}" class="img-fluid rounded" alt="По городам">
-        </div>
-      </div>
-    </div>
+    <figure class="card">
+      <figcaption>Клиенты по городам</figcaption>
+      <img src="data:image/png;base64,{{ charts.by_city }}" alt="По городам">
+    </figure>
     {% endif %}
 
     {% if charts.top_cars %}
-    <div class="col-12">
-      <div class="card">
-        <div class="card-header text-gold">Топ моделей по продажам</div>
-        <div class="card-body text-center">
-          <img src="data:image/png;base64,{{ charts.top_cars }}" class="img-fluid rounded" alt="Топ моделей">
-        </div>
-      </div>
-    </div>
+    <figure class="card" style="grid-column:1/-1;">
+      <figcaption>Топ моделей по продажам</figcaption>
+      <img src="data:image/png;base64,{{ charts.top_cars }}" alt="Топ моделей">
+    </figure>
     {% endif %}
 
   </div>
-</div>
+</section>
 
-<!-- ── Тренд и прогноз ── -->
-<div id="forecast" class="row g-4 mt-2">
+<section id="forecast" class="grid grid-2 mt-2">
   {% if charts.trend %}
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-header text-gold"><i class="bi bi-graph-up-arrow me-2"></i>Линейный тренд продаж {{ year }}</div>
-      <div class="card-body text-center">
-        <img src="data:image/png;base64,{{ charts.trend }}" class="img-fluid rounded" alt="Тренд">
-        <p class="text-muted small mt-2">Синяя пунктирная линия — линейный тренд, построенный методом наименьших квадратов (numpy.polyfit)</p>
-      </div>
-    </div>
-  </div>
+  <figure class="card">
+    <figcaption>Линейный тренд продаж {{ year }}</figcaption>
+    <img src="data:image/png;base64,{{ charts.trend }}" alt="Тренд">
+    <p class="muted">Синяя пунктирная линия — линейный тренд, построенный методом наименьших квадратов (numpy.polyfit)</p>
+  </figure>
   {% endif %}
 
   {% if charts.forecast %}
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-header text-gold"><i class="bi bi-magic me-2"></i>Прогноз продаж (М+1, М+2, М+3)</div>
-      <div class="card-body text-center">
-        <img src="data:image/png;base64,{{ charts.forecast }}" class="img-fluid rounded" alt="Прогноз">
-        <p class="text-muted small mt-2">Зелёные точки — прогноз на 3 месяца на основе линейного тренда</p>
-      </div>
-    </div>
-  </div>
+  <figure class="card">
+    <figcaption>Прогноз продаж (М+1, М+2, М+3)</figcaption>
+    <img src="data:image/png;base64,{{ charts.forecast }}" alt="Прогноз">
+    <p class="muted">Зелёные точки — прогноз на 3 месяца на основе линейного тренда</p>
+  </figure>
   {% endif %}
-</div>
+</section>
 
 {% endblock %}

@@ -1,7 +1,9 @@
-{% extends 'base.html' %}{% block title %}Политика конфиденциальности{% endblock %}{% block content %}
-<h2 class="text-gold mb-4">Политика конфиденциальности</h2>
-<div class="card"><div class="card-body text-muted">
+{% extends 'base.html' %}{% load static %}{% block title %}Политика конфиденциальности{% endblock %}{% block content %}
+<h1>Политика конфиденциальности</h1>
+<article class="card">
   <p>Настоящая политика конфиденциальности (далее — Политика) разработана в соответствии с требованиями законодательства Республики Беларусь.</p>
   <p>АвтоПремиум обязуется соблюдать конфиденциальность персональных данных пользователей сайта.</p>
   <p>Страница находится в разработке. Содержание будет добавлено позже.</p>
-</div></div>{% endblock %}
+  <p><a href="{% static 'docs/privacy.pdf' %}" download class="btn">Скачать PDF</a></p>
+</article>
+{% endblock %}
