@@ -10,13 +10,19 @@
       <img src="{{ company.logo.url }}" alt="Логотип {{ company.name }}" itemprop="logo" style="max-width:120px;">
       {% endif %}
       <h1 itemprop="name">🚗 АвтоПремиум</h1>
-      <p class="muted">Официальный автосалон. Широкий выбор новых и проверенных автомобилей. <strong>Гарантия качества.</strong></p>
+      <p class="muted">Официальный автосалон. Широкий выбор новых и <em>эксклюзивных</em> автомобилей. <strong>Гарантия
+          качества.</strong></p>
       <blockquote>
         <p>Дорога зовёт — мы провожаем,<br>
-        Ключи вручаем — с добрым словом,<br>
-        Мечту на колёсах исполняем,<br>
-        Чтоб путь домой был вечно новым.</p>
+          Ключи вручаем — с добрым словом,<br>
+          Мечту на колёсах исполняем,<br>
+          Чтоб путь домой был вечно новым.</p>
       </blockquote>
+      <p class="muted" style="font-size:.85rem;">
+        Перенос строк: фиксированный — как в четверостишии выше (<code>&lt;br&gt;</code>);
+        потенциальный — например, в слове «автомобиле<wbr>строение» браузер перенесёт его
+        сам только при нехватке места в строке (<code>&lt;wbr&gt;</code>).
+      </p>
       <p>
         <a href="{% url 'car_list' %}" class="btn btn-gold">Каталог автомобилей</a>
         {% if not user.is_authenticated %}
@@ -26,11 +32,11 @@
     </div>
     <div>
       {% if weather %}
-      <div class="card">
+      <aside class="card" aria-label="Погода — сопутствующая информация">
         <p style="font-size:1.5rem;color:var(--gold);">{{ weather.temp }}°C</p>
         <p class="muted">{{ weather.description }}</p>
         <p class="muted">📍 {{ weather.city }}</p>
-      </div>
+      </aside>
       {% endif %}
     </div>
   </div>
@@ -41,17 +47,24 @@
   <div class="banner-strip">
     <figure>
       <picture>
-        <source srcset="https://placehold.co/560x280/f5f5f5/34495e?text=Trade-in" media="(min-width:600px)">
-        <img src="https://placehold.co/280x140/f5f5f5/34495e?text=Trade-in" alt="Trade-in акция" loading="lazy">
+        <source srcset="{% static 'img/banners/trade-in-lg.png' %}" media="(min-width:600px)">
+        <img src="{% static 'img/banners/trade-in-sm.png' %}" alt="Trade-in — ваш автомобиль в зачёт нового"
+          loading="lazy">
       </picture>
       <figcaption>Выгодный Trade-in на новые модели</figcaption>
     </figure>
     <figure>
-      <img src="https://placehold.co/280x140/f5f5f5/34495e?text=Кредит+0%25" alt="Кредит 0%" loading="lazy">
+      <picture>
+        <source srcset="{% static 'img/banners/credit-lg.png' %}" media="(min-width:600px)">
+        <img src="{% static 'img/banners/credit-sm.png' %}" alt="Кредит 0% на первый взнос" loading="lazy">
+      </picture>
       <figcaption>Кредит 0% на первый взнос</figcaption>
     </figure>
     <figure>
-      <img src="https://placehold.co/280x140/f5f5f5/34495e?text=Сервис" alt="Сервисное обслуживание" loading="lazy">
+      <picture>
+        <source srcset="{% static 'img/banners/service-lg.png' %}" media="(min-width:600px)">
+        <img src="{% static 'img/banners/service-sm.png' %}" alt="Сервисное обслуживание в подарок" loading="lazy">
+      </picture>
       <figcaption>Сервисное обслуживание в подарок</figcaption>
     </figure>
   </div>
@@ -65,14 +78,17 @@
     <p><time datetime="{{ now_local|date:'c' }}">{{ now_local_str }}</time></p>
   </div>
   {% if rates %}
-  <div class="card">
+  <aside class="card" aria-label="Курсы валют — сопутствующая информация">
     <p class="muted">Курсы НБРБ (BYN)</p>
     <dl class="flex">
       {% for currency, rate in rates.items %}
-      <div><dt>{{ currency }}</dt><dd>{{ rate }}</dd></div>
+      <div>
+        <dt>{{ currency }}</dt>
+        <dd>{{ rate }}</dd>
+      </div>
       {% endfor %}
     </dl>
-  </div>
+  </aside>
   {% endif %}
 </section>
 
@@ -120,7 +136,8 @@
     <figure class="card text-center">
       {% if p.logo %}<img src="{{ p.logo.url }}" alt="{{ p.name }}">{% else %}<p>{{ p.name }}</p>{% endif %}
       <figcaption>
-        {% if p.website %}<a href="{{ p.website }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}
+        {% if p.website %}<a href="{{ p.website }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}{{ p.name
+        }}{% endif %}
       </figcaption>
     </figure>
     {% endfor %}
@@ -132,5 +149,79 @@
   <h2>Календарь</h2>
   <pre class="muted">{{ calendar }}</pre>
 </section>
+
+<section>
+  <h2>EXPERIMENT & PRACTICE AREA</h2>
+  <i>Italic
+    <b>Italic bold</b>
+    &elsdot;
+  </i>
+  <p id="uniqueIdDiv">
+    Id attribute paragraph
+  </p>
+  <p class="p" style="background-color: aquamarine;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular',
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+    Verdana, sans-serif;">
+    Class & inline
+    <span style="font-size: x-large;">css</span>
+  </p>
+  <img src="/media/contacts/photo_2025-10-04_12-24-45.jpg" style="width: 80px; height: 80px;" title="Мэксич.jpg">
+  <input type="checkbox" accesskey="q" tabindex="-1" id="TestCheck1" />
+  <label for="TestCheck1">Alt+Q to check/uncheck, tabindex = -1</label>
+  <p dir="rtl" style="color: blue;">Right to Left text display</p>
+  <p dir="ltr">Left to Right text display</p>
+  <q lang="en">Lang = en</q>
+  <q lang="code">Lang = code</q>
+  <p hidden>Invisible text 2</p>
+  <p contenteditable="true" spellcheck="true">It is raining (ctdtable, spellcheck)</p>
+  <p contenteditable="false" translate="yes">It is raining (ctdtable=false, translate)</p>
+  <q draggable="true">Draggale text</q>
+  <p dropzone="true">Dropzone text (obsolete attribute, removed from the HTML living standard — kept here only as a talking point)</p>
+  <p itemscope itemtype="https://schema.org/Product" itemid="urn:vin:DEMO12345678901">
+    <span itemprop="name">Microdata text</span> — itemid — глобальный идентификатор
+    конкретного экземпляра (например, VIN конкретного автомобиля), в отличие от itemtype,
+    который указывает тип/схему (schema.org/Product). По спецификации itemid обязан стоять
+    вместе с itemscope и itemtype на одном элементе.
+  </p>
+
+  <p>Семантическое выделение шрифта без общего смысла: H<sub>2</sub>O (подстрочный),
+    см<sup>2</sup> (надстрочный).</p>
+  <p><del>Старая цена: 45 000 BYN</del> <ins>Новая цена: 39 000 BYN</ins> —
+    <s>39 000 BYN</s> уже не актуальна (акция закончилась).</p>
+  <p>Нажмите <kbd>Ctrl</kbd>+<kbd>S</kbd>, программа выведет <samp>Сохранено успешно</samp>,
+    где <var>x</var> — произвольная переменная.</p>
+  <p>Пример листинга кода (<code>&lt;pre&gt;&lt;code&gt;</code>) — серверная валидация телефона:</p>
+  <pre><code>def validate_phone(value):
+    pattern = r'^\+375 \(\d{2}\) \d{3}-\d{2}-\d{2}$'
+    if not re.match(pattern, value):
+        raise ValidationError('Телефон должен быть в формате +375 (XX) XXX-XX-XX')</code></pre>
+
+  <h3>Адаптивные изображения — 3 разные техники</h3>
+
+  <p class="muted">1) Просто сжатие под ширину окна (CSS <code>img{max-width:100%}</code>) —
+    картинка одна и та же, меняется только её размер:</p>
+  <img src="{% static 'img/banners/trade-in-lg.png' %}" style="max-width:260px;"
+    alt="Одна и та же картинка, уменьшается вместе с шириной окна браузера">
+
+  <p class="muted">2) <code>srcset</code> с дескрипторами плотности — браузер сам выбирает файл
+    под плотность экрана (обычный/Retina), содержимое то же, отличается только разрешение файла:</p>
+  <img src="{% static 'img/banners/trade-in-sm.png' %}"
+    srcset="{% static 'img/banners/trade-in-sm.png' %} 1x, {% static 'img/banners/trade-in-lg.png' %} 2x"
+    style="max-width:260px;" alt="Пример srcset с дескрипторами плотности 1x и 2x">
+
+  <p class="muted">3) <code>&lt;picture&gt;</code> + <code>&lt;source media&gt;</code>
+    («art direction») — при изменении ширины окна подставляется
+    <strong>совершенно другое изображение</strong>, а не масштабированная копия той же картинки.
+    Измените ширину окна браузера относительно 700px, чтобы увидеть подмену:</p>
+  <picture>
+    <source srcset="{% static 'img/adaptive-demo-desktop.svg' %}" media="(min-width:701px)">
+    <img src="{% static 'img/adaptive-demo-mobile.svg' %}" style="width:100%;max-width:500px;"
+      alt="Один автомобиль крупным планом на узком экране, витрина из трёх автомобилей — на широком (замена, а не масштабирование)">
+  </picture>
+
+</section>
+
+
 
 {% endblock %}

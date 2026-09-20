@@ -7,6 +7,10 @@ from catalog.models import Client, Employee
 from django.utils import timezone
 
 
+class TelInput(forms.TextInput):
+    """input type=tel — телефонная клавиатура на мобильных, но не блокирует ввод формата"""
+    input_type = 'tel'
+
 
 def validate_phone(value):
     pattern = r'^\+375 \(\d{2}\) \d{3}-\d{2}-\d{2}$'
@@ -49,9 +53,11 @@ class RegisterForm(UserCreationForm):
     phone = forms.CharField(
         label='Телефон',
         validators=[validate_phone],
-        widget=forms.TextInput(attrs={
-            'class': 'input', 
-            'placeholder': '+375 (29) 123-45-67'
+        widget=TelInput(attrs={
+            'class': 'input',
+            'placeholder': '+375 (29) 123-45-67',
+            'pattern': r'\+375 \(\d{2}\) \d{3}-\d{2}-\d{2}',
+            'title': 'Формат: +375 (XX) XXX-XX-XX',
         })
     )
     birth_date = forms.DateField(
@@ -65,9 +71,9 @@ class RegisterForm(UserCreationForm):
         widget=forms.TextInput(attrs={'class': 'input'})
     )
     city = forms.CharField(
-        label='Город', 
+        label='Город',
         required=False,
-        widget=forms.TextInput(attrs={'class': 'input'})
+        widget=forms.TextInput(attrs={'class': 'input', 'list': 'city-datalist'})
     )
     passport_series = forms.CharField(
         label='Серия паспорта', 
@@ -125,16 +131,18 @@ class ClientProfileForm(forms.ModelForm):
                 'class': 'input',
                 'placeholder': 'Отчество'
             }),
-            'phone': forms.TextInput(attrs={
+            'phone': TelInput(attrs={
                 'class': 'input',
-                'placeholder': '+375 (29) XXX-XX-XX'
+                'placeholder': '+375 (29) XXX-XX-XX',
+                'pattern': r'\+375 \(\d{2}\) \d{3}-\d{2}-\d{2}',
+                'title': 'Формат: +375 (XX) XXX-XX-XX',
             }),
             'address': forms.TextInput(attrs={'class': 'input', 'placeholder': 'Адрес'}),
             'birth_date': forms.DateInput(
                 attrs={'class': 'input', 'type': 'date'},
                 format='%Y-%m-%d'
             ),
-            'city': forms.TextInput(attrs={'class': 'input', 'placeholder': 'Город'}),
+            'city': forms.TextInput(attrs={'class': 'input', 'placeholder': 'Город', 'list': 'city-datalist'}),
             'email': forms.EmailInput(attrs={'class': 'input', 'placeholder': 'Email'}),
         }
 

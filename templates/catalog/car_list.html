@@ -15,6 +15,10 @@
     <div class="field">{{ form.price_min.label_tag }}{{ form.price_min }}</div>
     <div class="field">{{ form.price_max.label_tag }}{{ form.price_max }}</div>
     <div class="field">{{ form.sort.label_tag }}{{ form.sort }}</div>
+    <div class="field checkline">
+      {{ form.only_available }}
+      <label for="{{ form.only_available.id_for_label }}">{{ form.only_available.label }}</label>
+    </div>
   </div>
   <button type="submit" class="btn btn-gold">Найти</button>
   <a href="{% url 'car_list' %}" class="btn">Сбросить</a>

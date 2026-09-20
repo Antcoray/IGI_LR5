@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" width="300" height="400" role="img" aria-labelledby="mob-title mob-desc">
+  <title id="mob-title">Мобильная версия баннера</title>
+  <desc id="mob-desc">Один автомобиль крупным планом — узкое вертикальное изображение для маленьких экранов</desc>
+  <rect width="300" height="400" fill="#34495e"/>
+  <g transform="translate(60,150)">
+    <rect x="0" y="40" width="180" height="60" rx="12" fill="#f4d35e"/>
+    <rect x="25" y="10" width="130" height="45" rx="10" fill="#f4d35e"/>
+    <circle cx="35" cy="105" r="20" fill="#212529"/>
+    <circle cx="145" cy="105" r="20" fill="#212529"/>
+  </g>
+  <text x="150" y="60" fill="#ffffff" font-family="sans-serif" font-size="20" font-weight="700" text-anchor="middle">📱 Мобильная версия</text>
+  <text x="150" y="330" fill="#ffffff" font-family="sans-serif" font-size="14" text-anchor="middle">окно ≤ 700px — показан один автомобиль</text>
+</svg>

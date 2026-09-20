@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}{{ car }} — АвтоПремиум{% endblock %}
 {% block content %}
 
@@ -18,8 +19,17 @@
     {% endif %}
     <video controls poster="{% if car.photo %}{{ car.photo.url }}{% endif %}" style="margin-top:1rem;width:100%;">
       <source src="#" type="video/mp4">
+      <source src="#" type="video/webm">
+      <track kind="subtitles" src="{% static 'video/engine-demo.vtt' %}" srclang="ru" label="Русские субтитры" default>
       Ваш браузер не поддерживает видео.
     </video>
+    <figure style="margin-top:1rem;">
+      <figcaption class="muted">🔊 Демо-звук двигателя</figcaption>
+      <audio controls style="width:100%;">
+        <source src="{% static 'audio/engine-demo.wav' %}" type="audio/wav">
+        Ваш браузер не поддерживает аудио.
+      </audio>
+    </figure>
   </div>
 
   <div>

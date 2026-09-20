@@ -4,6 +4,11 @@ from django.forms import inlineformset_factory
 from .models import Order, OrderItem, Review, Car, Client
 
 
+class TelInput(forms.TextInput):
+    """input type=tel — телефонная клавиатура на мобильных, но не блокирует ввод формата"""
+    input_type = 'tel'
+
+
 class ClientQuickForm(forms.ModelForm):
     """Форма быстрой фиксации / редактирования клиента сотрудником"""
     class Meta:
@@ -17,10 +22,14 @@ class ClientQuickForm(forms.ModelForm):
             'last_name':       forms.TextInput(attrs={'class': 'input', 'placeholder': 'Фамилия'}),
             'first_name':      forms.TextInput(attrs={'class': 'input', 'placeholder': 'Имя'}),
             'patronymic':      forms.TextInput(attrs={'class': 'input', 'placeholder': 'Отчество'}),
-            'phone':           forms.TextInput(attrs={'class': 'input', 'placeholder': '+375 (29) XXX-XX-XX'}),
+            'phone':           TelInput(attrs={
+                'class': 'input', 'placeholder': '+375 (29) XXX-XX-XX',
+                'pattern': r'\+375 \(\d{2}\) \d{3}-\d{2}-\d{2}',
+                'title': 'Формат: +375 (XX) XXX-XX-XX',
+            }),
             'email':           forms.EmailInput(attrs={'class': 'input'}),
             'address':         forms.TextInput(attrs={'class': 'input'}),
-            'city':            forms.TextInput(attrs={'class': 'input'}),
+            'city':            forms.TextInput(attrs={'class': 'input', 'list': 'city-datalist'}),
             'birth_date':      forms.DateInput(attrs={'class': 'input', 'type': 'date'}),
             'passport_series': forms.TextInput(attrs={'class': 'input', 'placeholder': 'HB'}),
             'passport_number': forms.TextInput(attrs={'class': 'input', 'placeholder': '1234567'}),
@@ -103,14 +112,18 @@ OrderItemFormSet = inlineformset_factory(
 
 
 class ReviewForm(forms.ModelForm):
+    rating = forms.ChoiceField(
+        choices=Review.RATING_CHOICES, widget=forms.RadioSelect,
+        initial=5, label='Оценка',
+    )
+
     class Meta:
         model = Review
         fields = ['rating', 'text', 'car']
         widgets = {
-            'rating': forms.Select(attrs={'class': 'input'}),
-            'text':   forms.Textarea(attrs={'rows': 4, 'class': 'input',
-                                            'placeholder': 'Ваш отзыв…'}),
-            'car':    forms.Select(attrs={'class': 'input'}),
+            'text': forms.Textarea(attrs={'rows': 4, 'class': 'input',
+                                          'placeholder': 'Ваш отзыв…'}),
+            'car':  forms.Select(attrs={'class': 'input'}),
         }
 
     def clean_text(self):
@@ -146,6 +159,10 @@ class CarSearchForm(forms.Form):
     price_max = forms.DecimalField(
         required=False, min_value=0,
         widget=forms.NumberInput(attrs={'class': 'input', 'placeholder': 'Цена до'})
+    )
+    only_available = forms.BooleanField(
+        required=False, label='Только в наличии',
+        widget=forms.CheckboxInput(attrs={'class': 'checkbox'})
     )
     sort = forms.ChoiceField(
         required=False,

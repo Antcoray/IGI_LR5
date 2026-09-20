@@ -12,7 +12,7 @@
   <h1>{{ article.title }}</h1>
   <p class="muted">Опубликовано: <time datetime="{{ article.published_at|date:'c' }}">{{ article.published_at|date:"d.m.Y H:i" }}</time></p>
   <hr>
-  <div>{{ article.content|linebreaks }}</div>
+  {{ article.content|linebreaks }}
 </article>
 <p><a href="{% url 'news_list' %}" class="btn mt-2">← Все новости</a></p>
 {% endblock %}

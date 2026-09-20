@@ -455,17 +455,19 @@ def car_list(request):
         fuel      = form.cleaned_data.get('fuel')
         price_min = form.cleaned_data.get('price_min')
         price_max = form.cleaned_data.get('price_max')
+        only_available = form.cleaned_data.get('only_available')
         sort      = form.cleaned_data.get('sort')
         if q:
             cars = cars.filter(
                 Q(name__icontains=q) | Q(manufacturer__name__icontains=q) | Q(vin__icontains=q)
             )
-        if ct:        cars = cars.filter(car_type_id=ct)
-        if mfr:       cars = cars.filter(manufacturer_id=mfr)
-        if fuel:      cars = cars.filter(fuel=fuel)
-        if price_min: cars = cars.filter(price__gte=price_min)
-        if price_max: cars = cars.filter(price__lte=price_max)
-        if sort:      cars = cars.order_by(sort)
+        if ct:             cars = cars.filter(car_type_id=ct)
+        if mfr:            cars = cars.filter(manufacturer_id=mfr)
+        if fuel:           cars = cars.filter(fuel=fuel)
+        if price_min:      cars = cars.filter(price__gte=price_min)
+        if price_max:      cars = cars.filter(price__lte=price_max)
+        if only_available: cars = cars.filter(status='available')
+        if sort:           cars = cars.order_by(sort)
     return render(request, 'catalog/car_list.html', {'form': form, 'cars': cars})
 
 

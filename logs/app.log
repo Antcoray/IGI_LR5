@@ -4749,3 +4749,357 @@ WARNING 2026-09-04 16:33:47,517 views 27 131268418933568 Weather API error: HTTP
 INFO 2026-09-04 16:35:56,050 views 27 131268418933568 Home page accessed
 INFO 2026-09-04 16:37:25,079 views 27 131268418933568 Home page accessed
 INFO 2026-09-04 16:39:26,953 views 27 131268418933568 Home page accessed
+INFO 2026-09-06 19:11:21,771 views 28 138414884438848 Home page accessed
+INFO 2026-09-06 19:11:53,108 views 28 138414884438848 Home page accessed
+WARNING 2026-09-06 19:12:10,205 log 42 130016939778880 Not Found: /cars/99999/
+INFO 2026-09-06 19:12:11,233 views 42 130016939778880 Home page accessed
+INFO 2026-09-06 19:12:14,406 views 42 130016939778880 Analytics by su2, year=2026
+WARNING 2026-09-06 19:12:20,189 log 42 130016939778880 Unauthorized: /api/cars/
+WARNING 2026-09-06 19:24:22,774 log 35 138859474776896 Not Found: /cars/99999/
+INFO 2026-09-06 19:24:23,803 views 35 138859474776896 Home page accessed
+INFO 2026-09-06 19:24:27,815 views 35 138859474776896 Analytics by su2, year=2026
+WARNING 2026-09-06 19:24:33,144 log 35 138859474776896 Unauthorized: /api/cars/
+INFO 2026-09-06 19:24:56,455 views 27 126306054906688 Home page accessed
+INFO 2026-09-06 19:25:07,491 views 27 126306054906688 Home page accessed
+INFO 2026-09-06 19:42:35,734 views 27 126306054906688 Home page accessed
+WARNING 2026-09-06 19:46:10,180 log 47 129661256717120 Not Found: /cars/99999/
+INFO 2026-09-06 19:46:11,448 views 47 129661256717120 Home page accessed
+INFO 2026-09-06 19:46:14,917 views 47 129661256717120 Analytics by su2, year=2026
+WARNING 2026-09-06 19:46:20,910 log 47 129661256717120 Unauthorized: /api/cars/
+ERROR 2026-09-06 19:46:56,553 log 66 128537061647168 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-09-06 19:46:56,590 log 66 128537061647168 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+INFO 2026-09-06 19:50:43,816 views 27 126305198777152 Home page accessed
+WARNING 2026-09-06 19:51:09,982 log 108 128202222277440 Not Found: /cars/99999/
+INFO 2026-09-06 19:51:11,353 views 108 128202222277440 Home page accessed
+INFO 2026-09-06 19:51:14,555 views 108 128202222277440 Analytics by su2, year=2026
+WARNING 2026-09-06 19:51:20,353 log 108 128202222277440 Unauthorized: /api/cars/
+INFO 2026-09-06 19:53:08,837 views 27 126305198777152 Home page accessed
+INFO 2026-09-06 19:55:10,937 views 27 126305198777152 Home page accessed
+INFO 2026-09-06 20:02:07,102 views 27 126305198777152 Home page accessed
+WARNING 2026-09-06 20:07:46,882 log 27 137378443670336 Not Found: /api/...
+WARNING 2026-09-06 20:07:48,589 log 27 137378443670336 Not Found: /cars/<!DOCTYPE
+INFO 2026-09-06 20:10:02,437 views 27 137378443670336 Home page accessed
+INFO 2026-09-06 20:10:12,746 views 27 137378443670336 Home page accessed
+WARNING 2026-09-06 20:10:34,412 log 40 132669313422144 Not Found: /cars/99999/
+INFO 2026-09-06 20:10:35,655 views 40 132669313422144 Home page accessed
+INFO 2026-09-06 20:10:38,893 views 40 132669313422144 Analytics by su2, year=2026
+WARNING 2026-09-06 20:10:44,552 log 40 132669313422144 Unauthorized: /api/cars/
+INFO 2026-09-10 14:01:05,911 views 27 139564532298560 Home page accessed
+WARNING 2026-09-10 14:01:06,006 views 27 139564532298560 Weather API error: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Minsk&appid=2b000c1c4a7637092bf9a5ab7d2050d3&units=metric&lang=ru (Caused by NameResolutionError("HTTPSConnection(host='api.openweathermap.org', port=443): Failed to resolve 'api.openweathermap.org' ([Errno -2] Name or service not known)"))
+WARNING 2026-09-10 14:01:06,021 views 27 139564532298560 Exchange rate API error: HTTPSConnectionPool(host='v6.exchangerate-api.com', port=443): Max retries exceeded with url: /v6/2c084ab8905b3372ee00d1ea/latest/BYN (Caused by NameResolutionError("HTTPSConnection(host='v6.exchangerate-api.com', port=443): Failed to resolve 'v6.exchangerate-api.com' ([Errno -2] Name or service not known)"))
+WARNING 2026-09-10 14:01:23,552 log 27 139564532298560 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-10 14:48:28,728 log 27 139564532298560 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-10 14:50:30,807 log 27 139564532298560 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-10 14:50:31,214 log 27 139564532298560 Not Found: /favicon.ico
+INFO 2026-09-12 21:59:57,882 views 27 135466577322816 Home page accessed
+INFO 2026-09-12 22:05:25,605 views 27 135466577322816 Home page accessed
+INFO 2026-09-12 22:06:13,411 views 27 127172129579840 Home page accessed
+INFO 2026-09-12 22:06:36,695 views 27 127172129579840 Home page accessed
+WARNING 2026-09-12 22:07:06,483 log 27 127172129579840 Not Found: /favicon.ico
+INFO 2026-09-12 22:11:52,051 views 27 127172129579840 Home page accessed
+INFO 2026-09-12 22:27:14,943 views 26 140555490513728 Home page accessed
+INFO 2026-09-12 22:38:06,312 views 27 132862340936512 Home page accessed
+INFO 2026-09-12 22:39:28,339 views 27 129786115666752 Home page accessed
+INFO 2026-09-15 15:08:31,573 autoreload 24791 123311276138496 Watching for file changes with StatReloader
+INFO 2026-09-15 15:12:57,859 views 27 123855146300224 Home page accessed
+WARNING 2026-09-15 15:13:08,825 log 27 123855146300224 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:15:38,450 views 27 127491064234816 Home page accessed
+WARNING 2026-09-15 15:15:39,301 log 27 127491064234816 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:25:40,187 views 27 131659970175808 Home page accessed
+WARNING 2026-09-15 15:25:41,458 log 27 131659970175808 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:36:21,500 views 27 140357176247104 Home page accessed
+WARNING 2026-09-15 15:36:23,107 log 27 140357176247104 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:36:50,439 views 27 127820020081472 Home page accessed
+WARNING 2026-09-15 15:36:51,954 log 27 127820020081472 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:39:52,831 views 27 123926477288256 Home page accessed
+WARNING 2026-09-15 15:39:54,317 log 27 123926477288256 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:44:46,199 views 27 125178041377600 Home page accessed
+WARNING 2026-09-15 15:44:48,299 log 27 125178041377600 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:46:44,645 views 27 125834318795584 Home page accessed
+WARNING 2026-09-15 15:46:46,366 log 27 125834318795584 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:46:59,566 views 27 125834318795584 Home page accessed
+WARNING 2026-09-15 15:47:01,132 log 27 125834318795584 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-15 15:47:05,836 log 27 125834318795584 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-15 15:47:11,445 log 27 125834318795584 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-15 15:47:11,549 log 27 125834318795584 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:48:17,092 views 27 123813961450304 Home page accessed
+WARNING 2026-09-15 15:48:18,756 log 27 123813961450304 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:48:33,901 views 27 123813961450304 Home page accessed
+WARNING 2026-09-15 15:48:35,046 log 27 123813961450304 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-15 15:48:45,054 log 27 123813961450304 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-15 15:50:52,614 log 27 139186867430208 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-15 15:51:03,640 log 27 139186867430208 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:51:13,184 views 27 139186867430208 Home page accessed
+WARNING 2026-09-15 15:51:14,664 log 27 139186867430208 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:53:43,378 views 27 135877977191232 Home page accessed
+WARNING 2026-09-15 15:53:45,080 log 27 135877977191232 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:53:58,701 views 27 135877977191232 Home page accessed
+WARNING 2026-09-15 15:54:00,258 log 27 135877977191232 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 15:57:52,205 views 27 127572003406656 Home page accessed
+WARNING 2026-09-15 15:57:54,113 log 27 127572003406656 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:01:46,671 views 29 136557131154240 Home page accessed
+WARNING 2026-09-15 16:01:48,201 log 29 136557131154240 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:07:35,930 views 27 140478128640832 Home page accessed
+WARNING 2026-09-15 16:07:37,176 log 27 140478128640832 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:09:52,013 views 27 128384030909248 Home page accessed
+WARNING 2026-09-15 16:09:53,674 log 27 128384030909248 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:13:16,754 views 27 130414246126400 Home page accessed
+WARNING 2026-09-15 16:13:18,052 log 27 130414246126400 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:14:02,735 views 27 134905187357504 Home page accessed
+WARNING 2026-09-15 16:14:03,630 log 27 134905187357504 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:17:19,199 views 27 133348637754176 Home page accessed
+WARNING 2026-09-15 16:17:20,993 log 27 133348637754176 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-15 16:19:15,383 log 27 125776697291584 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-15 16:19:15,406 log 27 125776697291584 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:19:22,072 views 27 125776697291584 Home page accessed
+WARNING 2026-09-15 16:19:23,788 log 27 125776697291584 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-15 16:19:29,080 log 27 125776697291584 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-15 16:19:32,333 log 27 125776697291584 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-09-15 16:19:32,417 log 27 125776697291584 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:21:58,842 views 27 123380995199808 Home page accessed
+WARNING 2026-09-15 16:21:59,999 log 27 123380995199808 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:23:43,438 views 27 124453567730496 Home page accessed
+WARNING 2026-09-15 16:23:45,262 log 27 124453567730496 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:28:07,872 views 27 136852045857600 Home page accessed
+WARNING 2026-09-15 16:28:09,558 log 27 136852045857600 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:28:17,176 views 27 136852045857600 Home page accessed
+WARNING 2026-09-15 16:28:18,481 log 27 136852045857600 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:29:43,199 views 27 124433977938752 Home page accessed
+WARNING 2026-09-15 16:29:44,389 log 27 124433977938752 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:30:53,909 views 27 124676922344256 Home page accessed
+WARNING 2026-09-15 16:30:55,140 log 27 124676922344256 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:33:22,425 views 27 139912434488128 Home page accessed
+WARNING 2026-09-15 16:33:23,996 log 27 139912434488128 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:36:27,280 views 27 134097073132352 Home page accessed
+WARNING 2026-09-15 16:36:34,033 log 27 134097073132352 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+INFO 2026-09-15 16:37:59,509 views 27 134097073132352 Home page accessed
+INFO 2026-09-17 15:52:18,331 views 27 137855609475904 Home page accessed
+INFO 2026-09-17 16:13:45,058 views 27 140520282342208 Home page accessed
+INFO 2026-09-17 16:14:10,113 views 27 140520282342208 Home page accessed
+INFO 2026-09-17 16:19:47,296 views 27 126175244469056 Home page accessed
+INFO 2026-09-17 16:20:11,378 views 27 126175244469056 Home page accessed
+INFO 2026-09-17 16:22:55,166 views 27 126175244469056 Home page accessed
+INFO 2026-09-17 16:23:16,454 views 27 140315279831872 Home page accessed
+INFO 2026-09-17 16:23:42,588 views 27 140315279831872 Home page accessed
+INFO 2026-09-17 16:25:04,188 views 27 128333798638400 Home page accessed
+INFO 2026-09-17 16:25:25,519 views 27 128333798638400 Home page accessed
+INFO 2026-09-17 16:30:27,491 views 27 127582059688768 Home page accessed
+INFO 2026-09-17 16:34:02,497 views 27 133517869470528 Home page accessed
+INFO 2026-09-17 16:34:19,372 views 27 133517869470528 Home page accessed
+INFO 2026-09-17 21:41:40,255 views 27 131585559331648 Home page accessed
+INFO 2026-09-17 22:16:42,374 views 27 131585559331648 Home page accessed
+INFO 2026-09-20 22:11:20,647 views 13042 124025684620864 Home page accessed
+ERROR 2026-09-20 22:11:21,480 log 13042 124025684620864 Internal Server Error: /
+Traceback (most recent call last):
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: catalog_companyinfo.video_url
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/5_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 345, in index
+    'company': CompanyInfo.objects.first(),
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1059, in first
+    for obj in queryset[:1]:
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/query.py", line 400, in __iter__
+    self._fetch_all()
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: catalog_companyinfo.video_url
+ERROR 2026-09-20 22:11:21,484 basehttp 13042 124025684620864 "GET / HTTP/1.1" 500 145938
+INFO 2026-09-20 22:11:21,558 basehttp 13042 124025684620864 "GET /cars/ HTTP/1.1" 200 15503
+INFO 2026-09-20 22:11:21,581 basehttp 13042 124025684620864 "GET /news/ HTTP/1.1" 200 6181
+WARNING 2026-09-20 22:11:21,602 log 13042 124025684620864 Not Found: /register/
+WARNING 2026-09-20 22:11:21,602 basehttp 13042 124025684620864 "GET /register/ HTTP/1.1" 404 8891
+WARNING 2026-09-20 22:11:21,623 log 13042 124025684620864 Not Found: /login/
+WARNING 2026-09-20 22:11:21,624 basehttp 13042 124025684620864 "GET /login/ HTTP/1.1" 404 8882
+INFO 2026-09-20 22:11:21,642 basehttp 13042 124025684620864 "GET /faq/ HTTP/1.1" 200 5004
+ERROR 2026-09-20 22:11:21,700 log 13042 124025684620864 Internal Server Error: /about/
+Traceback (most recent call last):
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: catalog_companyinfo.video_url
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/5_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 902, in about
+    return render(request, 'catalog/about.html', {'company': CompanyInfo.objects.first()})
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1059, in first
+    for obj in queryset[:1]:
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/query.py", line 400, in __iter__
+    self._fetch_all()
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: catalog_companyinfo.video_url
+ERROR 2026-09-20 22:11:21,702 basehttp 13042 124025684620864 "GET /about/ HTTP/1.1" 500 144005
+ERROR 2026-09-20 22:11:21,760 log 13042 124025684620864 Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: catalog_companyinfo.video_url
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/anton/5_sem_vsakoe/IGI_LR5_v2/carshop/catalog/views.py", line 918, in contacts
+    'company':  CompanyInfo.objects.first(),
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1059, in first
+    for obj in queryset[:1]:
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/query.py", line 400, in __iter__
+    self._fetch_all()
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1886, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: catalog_companyinfo.video_url
+ERROR 2026-09-20 22:11:21,762 basehttp 13042 124025684620864 "GET /contacts/ HTTP/1.1" 500 143843
+INFO 2026-09-20 22:11:21,787 basehttp 13042 124025684620864 "GET /vacancies/ HTTP/1.1" 200 4900
+INFO 2026-09-20 22:11:21,808 basehttp 13042 124025684620864 "GET /promos/ HTTP/1.1" 200 4859
+INFO 2026-09-20 22:11:21,850 basehttp 13042 124025684620864 "GET /reviews/ HTTP/1.1" 200 6792
+INFO 2026-09-20 22:11:21,866 basehttp 13042 124025684620864 "GET /privacy/ HTTP/1.1" 200 3774
+INFO 2026-09-20 22:11:21,905 basehttp 13042 124025684620864 "GET /cars/ HTTP/1.1" 200 15503
+INFO 2026-09-20 22:11:21,939 basehttp 13042 124025684620864 "GET /cars/27/ HTTP/1.1" 200 6726
+INFO 2026-09-20 22:11:21,959 basehttp 13042 124025684620864 "GET /news/ HTTP/1.1" 200 6181
+INFO 2026-09-20 22:11:21,978 basehttp 13042 124025684620864 "GET /news/4/ HTTP/1.1" 200 3856
+INFO 2026-09-20 22:11:50,057 views 13169 135679295092288 Home page accessed
+INFO 2026-09-20 22:11:51,092 basehttp 13169 135679295092288 "GET / HTTP/1.1" 200 12760
+INFO 2026-09-20 22:11:51,114 basehttp 13169 135679295092288 "GET /about/ HTTP/1.1" 200 3714
+INFO 2026-09-20 22:11:51,133 basehttp 13169 135679295092288 "GET /contacts/ HTTP/1.1" 200 6788
+INFO 2026-09-20 22:11:51,172 basehttp 13169 135679295092288 "GET /users/register/ HTTP/1.1" 200 6231
+INFO 2026-09-20 22:11:51,191 basehttp 13169 135679295092288 "GET /users/login/ HTTP/1.1" 200 3970
+INFO 2026-09-20 22:11:57,761 views 13169 135679295092288 Home page accessed
+INFO 2026-09-20 22:11:58,658 basehttp 13169 135679295092288 "GET / HTTP/1.1" 200 12760
+INFO 2026-09-20 22:11:58,704 basehttp 13169 135679295092288 "GET /cars/ HTTP/1.1" 200 15503
+INFO 2026-09-20 22:11:58,735 basehttp 13169 135679295092288 "GET /cars/27/ HTTP/1.1" 200 6726
+INFO 2026-09-20 22:11:58,757 basehttp 13169 135679295092288 "GET /users/register/ HTTP/1.1" 200 6231
+INFO 2026-09-20 22:11:58,777 basehttp 13169 135679295092288 "GET /users/register/ HTTP/1.1" 200 6231
+INFO 2026-09-20 22:11:58,797 basehttp 13169 135679295092288 "GET /users/register/ HTTP/1.1" 200 6231
+ERROR 2026-09-20 22:12:07,703 log 13283 135469796524032 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/tmp/claude-1000/-home-anton-5-sem-vsakoe-IGI-LR5-v2-carshop/767e2812-ad51-4d32-8609-78f0ce6e823c/scratchpad/venv/lib/python3.10/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2026-09-20 22:12:15,094 log 13304 123617566650368 Not Found: /cars/create/
+INFO 2026-09-20 22:21:15,341 views 14690 136592998004288 Home page accessed
+INFO 2026-09-20 22:21:16,258 basehttp 14690 136592998004288 "GET / HTTP/1.1" 200 14764
+INFO 2026-09-20 22:21:16,290 basehttp 14690 136592998004288 "GET /static/img/adaptive-demo-mobile.svg HTTP/1.1" 200 1094
+INFO 2026-09-20 22:21:16,302 basehttp 14690 136592998004288 "GET /static/img/adaptive-demo-desktop.svg HTTP/1.1" 200 1826
+INFO 2026-09-20 22:28:03,088 views 15914 135394247046720 Home page accessed
+INFO 2026-09-20 22:28:04,329 basehttp 15914 135394247046720 "GET / HTTP/1.1" 200 15276
+INFO 2026-09-20 22:44:40,648 views 27 132280167437120 Home page accessed
+INFO 2026-09-20 22:44:46,002 views 27 132280167437120 Home page accessed
+INFO 2026-09-20 22:51:38,840 views 27 132280167437120 Home page accessed
+INFO 2026-09-20 23:04:21,077 views 24914 128077015283264 Home page accessed
+INFO 2026-09-20 23:04:22,139 basehttp 24914 128077015283264 "GET / HTTP/1.1" 200 15250
+INFO 2026-09-20 23:04:48,946 views 25010 125151389677120 Home page accessed
+INFO 2026-09-20 23:04:49,857 basehttp 25010 125151389677120 "GET / HTTP/1.1" 200 15206
