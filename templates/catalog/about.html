@@ -4,22 +4,29 @@
 <h1>О компании</h1>
 {% if company %}
 <section class="card mb-2" itemscope itemtype="https://schema.org/Organization">
-  {% if company.logo %}<img src="{{ company.logo.url }}" alt="{{ company.name }}" itemprop="logo" style="max-width:140px;">{% endif %}
+  {% if company.logo %}<img src="{{ company.logo.url }}" alt="{{ company.name }}" itemprop="logo"
+    style="max-width:140px;">{% endif %}
   <h2 itemprop="name">{{ company.name }}</h2>
   <p itemprop="description">{{ company.description }}</p>
   <dl>
-    <dt>Адрес</dt><dd itemprop="address">{{ company.address }}</dd>
-    <dt>Телефон</dt><dd itemprop="telephone">{{ company.phone }}</dd>
-    <dt>Email</dt><dd itemprop="email">{{ company.email }}</dd>
-    {% if company.founded_year %}<dt>Основан</dt><dd>{{ company.founded_year }}</dd>{% endif %}
+    <dt>Адрес</dt>
+    <dd itemprop="address">{{ company.address }}</dd>
+    <dt>Телефон</dt>
+    <dd itemprop="telephone">{{ company.phone }}</dd>
+    <dt>Email</dt>
+    <dd itemprop="email">{{ company.email }}</dd>
+    {% if company.founded_year %}<dt>Основан</dt>
+    <dd>{{ company.founded_year }}</dd>{% endif %}
   </dl>
 </section>
 
 {% if company.video_url %}
 <section class="card mb-2">
   <h2>Видео о компании</h2>
-  <iframe width="100%" height="360" src="{{ company.video_url }}" title="Видео о компании"
-          frameborder="0" allowfullscreen></iframe>
+  <iframe width="100%" height="360" src="{{ company.video_url }}" title="Видео о компании" frameborder="0"
+    allowfullscreen
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </section>
 {% endif %}
 
