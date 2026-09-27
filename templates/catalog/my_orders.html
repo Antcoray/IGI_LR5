@@ -3,35 +3,33 @@
 {% block content %}
 <h1>Мои заказы</h1>
 {% for order in orders %}
-<article class="card mb-2">
-  <div class="flex-between">
+<article class="card mb-2 grid grid-2">
+  <header class="flex-between col-span-all">
     <strong>Заказ #{{ order.pk }}</strong>
     <span><span class="badge">{{ order.get_status_display }}</span> <time class="muted" datetime="{{ order.created_at|date:'c' }}">{{ order.created_at|date:"d.m.Y" }}</time></span>
-  </div>
-  <div class="grid grid-2">
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th scope="col">Автомобиль</th><th scope="col">Кол-во</th><th scope="col">Цена</th><th scope="col">Сумма</th></tr></thead>
-        <tbody>
-          {% for item in order.items.all %}
-          <tr>
-            <td>{{ item.car.manufacturer.name }} {{ item.car.name }} ({{ item.car.year }})</td>
-            <td>{{ item.quantity }}</td>
-            <td>{{ item.unit_price|floatformat:0 }} BYN</td>
-            <td class="price">{{ item.subtotal|floatformat:0 }} BYN</td>
-          </tr>
-          {% empty %}
-          <tr><td colspan="4" class="muted">Позиций нет</td></tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-    <dl>
-      <dt>Дата продажи</dt><dd>{{ order.sale_date|date:"d.m.Y"|default:"—" }}</dd>
-      <dt>Дата доставки</dt><dd>{{ order.delivery_date|date:"d.m.Y"|default:"—" }}</dd>
-      <dt>Итого</dt><dd class="price">{{ order.total_amount|floatformat:0 }} BYN</dd>
-    </dl>
-  </div>
+  </header>
+  <figure class="table-wrap">
+    <table>
+      <thead><tr><th scope="col">Автомобиль</th><th scope="col">Кол-во</th><th scope="col">Цена</th><th scope="col">Сумма</th></tr></thead>
+      <tbody>
+        {% for item in order.items.all %}
+        <tr>
+          <td>{{ item.car.manufacturer.name }} {{ item.car.name }} ({{ item.car.year }})</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.unit_price|floatformat:0 }} BYN</td>
+          <td class="price">{{ item.subtotal|floatformat:0 }} BYN</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4" class="muted">Позиций нет</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </figure>
+  <dl>
+    <dt>Дата продажи</dt><dd>{{ order.sale_date|date:"d.m.Y"|default:"—" }}</dd>
+    <dt>Дата доставки</dt><dd>{{ order.delivery_date|date:"d.m.Y"|default:"—" }}</dd>
+    <dt>Итого</dt><dd class="price">{{ order.total_amount|floatformat:0 }} BYN</dd>
+  </dl>
 </article>
 {% empty %}
 <p class="alert alert-warning text-center">У вас пока нет заказов. <a href="{% url 'car_list' %}">Перейти в каталог</a></p>

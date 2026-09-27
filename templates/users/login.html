@@ -4,11 +4,10 @@
   <form method="post" novalidate>
     {% csrf_token %}
     {% for field in form %}
-    <div class="field">
-      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+    <label class="field"><span class="field-label">{{ field.label }}</span>
       {{ field }}
-      {% if field.errors %}<ul class="errorlist">{{ field.errors }}</ul>{% endif %}
-    </div>
+      {% for e in field.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}
+    </label>
     {% endfor %}
     {% if form.non_field_errors %}<p class="alert alert-danger">{{ form.non_field_errors }}</p>{% endif %}
     <button type="submit" class="btn btn-gold" style="width:100%;">Войти</button>

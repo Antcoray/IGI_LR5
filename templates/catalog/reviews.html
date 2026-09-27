@@ -7,11 +7,10 @@
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ request.path }}">
     {% for field in review_form %}
-    <div class="field">
-      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+    <label class="field"><span class="field-label">{{ field.label }}</span>
       {{ field }}
-      {% if field.errors %}<ul class="errorlist">{{ field.errors }}</ul>{% endif %}
-    </div>
+      {% for e in field.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}
+    </label>
     {% endfor %}
     <button type="submit" class="btn btn-gold">Отправить</button>
   </form>
@@ -20,7 +19,7 @@
 <p class="alert alert-warning"><a href="{% url 'login' %}">Войдите</a>, чтобы оставить отзыв.</p>
 {% endif %}
 
-<div class="grid grid-2">
+<section class="grid grid-2" aria-label="Список отзывов">
 {% for review in reviews %}
 <blockquote class="card">
   <p>{{ review.text }}</p>
@@ -32,4 +31,4 @@
   </cite>
 </blockquote>
 {% empty %}<p class="muted">Отзывов пока нет.</p>{% endfor %}
-</div>{% endblock %}
+</section>{% endblock %}

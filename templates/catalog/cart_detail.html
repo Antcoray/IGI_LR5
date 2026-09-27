@@ -4,7 +4,7 @@
 <h1>Корзина</h1>
 
 {% if items %}
-<div class="table-wrap">
+<figure class="table-wrap">
 <table>
   <caption>Товары в корзине</caption>
   <thead>
@@ -43,7 +43,7 @@
     <tr><td colspan="3">Итого</td><td colspan="2"><strong>{{ total|floatformat:0 }} BYN</strong></td></tr>
   </tfoot>
 </table>
-</div>
+</figure>
 <p><a href="{% url 'checkout' %}" class="btn btn-gold">Оплатить</a></p>
 {% else %}
 <p class="muted">Корзина пуста. <a href="{% url 'car_list' %}">Перейти в каталог</a></p>

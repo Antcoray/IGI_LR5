@@ -1,28 +1,28 @@
 {% extends 'base.html' %}
 {% block title %}Клиенты — АвтоПремиум{% endblock %}
 {% block content %}
-<div class="flex-between mb-2">
+<header class="flex-between mb-2">
   <h1>Клиенты</h1>
   <a href="{% url 'client_create' %}" class="btn btn-gold">Добавить клиента</a>
-</div>
+</header>
 
-<form method="get" role="search" class="card mb-2">
-  <div class="form-row">
-    <div class="field">
-      <input type="search" name="q" value="{{ q }}" class="input" placeholder="Поиск по ФИО, телефону, email…">
-    </div>
-    <div class="field">
-      <select name="city">
-        <option value="">Все города</option>
-        {% for c in cities %}<option value="{{ c }}" {% if c == city %}selected{% endif %}>{{ c }}</option>{% endfor %}
-      </select>
-    </div>
+<form method="get" role="search" class="card mb-2 field-row">
+  <label class="field"><span class="field-label">Поиск</span>
+    <input type="search" name="q" value="{{ q }}" class="input" placeholder="Поиск по ФИО, телефону, email…">
+  </label>
+  <label class="field"><span class="field-label">Город</span>
+    <select name="city">
+      <option value="">Все города</option>
+      {% for c in cities %}<option value="{{ c }}" {% if c == city %}selected{% endif %}>{{ c }}</option>{% endfor %}
+    </select>
+  </label>
+  <span class="basis-full">
     <button type="submit" class="btn btn-gold">Найти</button>
     <a href="{% url 'client_list' %}" class="btn">Сброс</a>
-  </div>
+  </span>
 </form>
 
-<div class="table-wrap">
+<figure class="table-wrap">
   <table>
     <thead>
       <tr><th scope="col">ФИО</th><th scope="col">Телефон</th><th scope="col">Email</th><th scope="col">Город</th><th scope="col">Адрес</th><th scope="col">Зарег.</th><th scope="col"></th></tr>
@@ -43,6 +43,6 @@
       {% endfor %}
     </tbody>
   </table>
-</div>
+</figure>
 <p class="muted">Всего: <strong>{{ clients|length }}</strong></p>
 {% endblock %}

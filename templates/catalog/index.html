@@ -3,48 +3,44 @@
 {% block title %}АвтоПремиум — Главная{% endblock %}
 {% block content %}
 
-<section class="section card" aria-label="О компании" itemscope itemtype="https://schema.org/Organization">
-  <div class="grid grid-2">
-    <div>
-      {% if company.logo %}
-      <img src="{{ company.logo.url }}" alt="Логотип {{ company.name }}" itemprop="logo" style="max-width:120px;">
+<section class="section card grid grid-2" aria-label="О компании" itemscope itemtype="https://schema.org/Organization">
+  <header>
+    {% if company.logo %}
+    <img src="{{ company.logo.url }}" alt="Логотип {{ company.name }}" itemprop="logo" style="max-width:120px;">
+    {% endif %}
+    <h1 itemprop="name">🚗 АвтоПремиум</h1>
+    <p class="muted">Официальный автосалон. Широкий выбор новых и <em>эксклюзивных</em> автомобилей. <strong>Гарантия
+        качества.</strong></p>
+    <blockquote>
+      <p>Дорога зовёт — мы провожаем,<br>
+        Ключи вручаем — с добрым словом,<br>
+        Мечту на колёсах исполняем,<br>
+        Чтоб путь домой был вечно новым.</p>
+    </blockquote>
+    <p class="muted" style="font-size:.85rem;">
+      Перенос строк: фиксированный — как в четверостишии выше (<code>&lt;br&gt;</code>);
+      потенциальный — например, в слове «автомобиле<wbr>строение» браузер перенесёт его
+      сам только при нехватке места в строке (<code>&lt;wbr&gt;</code>).
+    </p>
+    <p>
+      <a href="{% url 'car_list' %}" class="btn btn-gold">Каталог автомобилей</a>
+      {% if not user.is_authenticated %}
+      <a href="{% url 'register' %}" class="btn">Зарегистрироваться</a>
       {% endif %}
-      <h1 itemprop="name">🚗 АвтоПремиум</h1>
-      <p class="muted">Официальный автосалон. Широкий выбор новых и <em>эксклюзивных</em> автомобилей. <strong>Гарантия
-          качества.</strong></p>
-      <blockquote>
-        <p>Дорога зовёт — мы провожаем,<br>
-          Ключи вручаем — с добрым словом,<br>
-          Мечту на колёсах исполняем,<br>
-          Чтоб путь домой был вечно новым.</p>
-      </blockquote>
-      <p class="muted" style="font-size:.85rem;">
-        Перенос строк: фиксированный — как в четверостишии выше (<code>&lt;br&gt;</code>);
-        потенциальный — например, в слове «автомобиле<wbr>строение» браузер перенесёт его
-        сам только при нехватке места в строке (<code>&lt;wbr&gt;</code>).
-      </p>
-      <p>
-        <a href="{% url 'car_list' %}" class="btn btn-gold">Каталог автомобилей</a>
-        {% if not user.is_authenticated %}
-        <a href="{% url 'register' %}" class="btn">Зарегистрироваться</a>
-        {% endif %}
-      </p>
-    </div>
-    <div>
-      {% if weather %}
-      <aside class="card" aria-label="Погода — сопутствующая информация">
-        <p style="font-size:1.5rem;color:var(--gold);">{{ weather.temp }}°C</p>
-        <p class="muted">{{ weather.description }}</p>
-        <p class="muted">📍 {{ weather.city }}</p>
-      </aside>
-      {% endif %}
-    </div>
-  </div>
+    </p>
+  </header>
+  {% if weather %}
+  <aside class="card" aria-label="Погода — сопутствующая информация">
+    <p style="font-size:1.5rem;color:var(--gold);">{{ weather.temp }}°C</p>
+    <p class="muted">{{ weather.description }}</p>
+    <p class="muted">📍 {{ weather.city }}</p>
+  </aside>
+  {% endif %}
 </section>
 
 <section class="section" aria-label="Реклама">
   <h2 class="section-title">Специальные предложения</h2>
-  <div class="banner-strip">
+  <figure class="banner-strip">
     <figure>
       <picture>
         <source srcset="{% static 'img/banners/trade-in-lg.png' %}" media="(min-width:600px)">
@@ -67,25 +63,23 @@
       </picture>
       <figcaption>Сервисное обслуживание в подарок</figcaption>
     </figure>
-  </div>
+  </figure>
 </section>
 
 <section class="section grid grid-2" aria-label="Время и курсы валют">
-  <div class="card">
+  <article class="card">
     <p class="muted">Время (UTC)</p>
     <p><time datetime="{{ now_utc|date:'c' }}">{{ now_utc_str }}</time></p>
     <p class="muted">Местное время</p>
     <p><time datetime="{{ now_local|date:'c' }}">{{ now_local_str }}</time></p>
-  </div>
+  </article>
   {% if rates %}
   <aside class="card" aria-label="Курсы валют — сопутствующая информация">
     <p class="muted">Курсы НБРБ (BYN)</p>
-    <dl class="flex">
+    <dl class="dl-grid">
       {% for currency, rate in rates.items %}
-      <div>
-        <dt>{{ currency }}</dt>
-        <dd>{{ rate }}</dd>
-      </div>
+      <dt>{{ currency }}</dt>
+      <dd>{{ rate }}</dd>
       {% endfor %}
     </dl>
   </aside>
@@ -105,43 +99,39 @@
 </section>
 {% endif %}
 
-<section class="section" aria-label="Каталог">
-  <h2 class="section-title">Автомобили в наличии</h2>
-  <div class="grid grid-3">
-    {% for car in featured_cars %}
-    <article class="card">
-      <figure class="card-figure">
-        {% if car.photo %}
-        <img src="{{ car.photo.url }}" alt="{{ car }}">
-        {% else %}
-        <img src="https://placehold.co/400x200/e9ecef/6c757d?text=Фото+нет" alt="Фото отсутствует">
-        {% endif %}
-      </figure>
-      <h3>{{ car.manufacturer.name }} {{ car.name }}</h3>
-      <p><mark>{{ car.price|floatformat:0 }} BYN</mark> · <span class="badge">{{ car.year }}</span></p>
-      <p class="muted">{{ car.get_fuel_display }} · {{ car.engine_volume }} л · {{ car.horsepower }} л.с.</p>
-      <p><a href="{% url 'car_detail' car.pk %}" class="btn btn-gold btn-sm">Подробнее</a></p>
-    </article>
-    {% empty %}
-    <p class="muted">Нет автомобилей в наличии</p>
-    {% endfor %}
-  </div>
+<section class="section grid grid-3" aria-label="Каталог">
+  <h2 class="section-title col-span-all">Автомобили в наличии</h2>
+  {% for car in featured_cars %}
+  <article class="card">
+    <figure class="card-figure">
+      {% if car.photo %}
+      <img src="{{ car.photo.url }}" alt="{{ car }}">
+      {% else %}
+      <img src="https://placehold.co/400x200/e9ecef/6c757d?text=Фото+нет" alt="Фото отсутствует">
+      {% endif %}
+    </figure>
+    <h3>{{ car.manufacturer.name }} {{ car.name }}</h3>
+    <p><mark>{{ car.price|floatformat:0 }} BYN</mark> · <span class="badge">{{ car.year }}</span></p>
+    <p class="muted">{{ car.get_fuel_display }} · {{ car.engine_volume }} л · {{ car.horsepower }} л.с.</p>
+    <p><a href="{% url 'car_detail' car.pk %}" class="btn btn-gold btn-sm">Подробнее</a></p>
+  </article>
+  {% empty %}
+  <p class="muted">Нет автомобилей в наличии</p>
+  {% endfor %}
 </section>
 
 {% if partners %}
-<section class="section" aria-label="Партнёры">
-  <h2 class="section-title">Наши партнёры</h2>
-  <div class="grid grid-4">
-    {% for p in partners %}
-    <figure class="card text-center">
-      {% if p.logo %}<img src="{{ p.logo.url }}" alt="{{ p.name }}">{% else %}<p>{{ p.name }}</p>{% endif %}
-      <figcaption>
-        {% if p.website %}<a href="{{ p.website }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}{{ p.name
-        }}{% endif %}
-      </figcaption>
-    </figure>
-    {% endfor %}
-  </div>
+<section class="section grid grid-4" aria-label="Партнёры">
+  <h2 class="section-title col-span-all">Наши партнёры</h2>
+  {% for p in partners %}
+  <figure class="card text-center">
+    {% if p.logo %}<img src="{{ p.logo.url }}" alt="{{ p.name }}">{% else %}<p>{{ p.name }}</p>{% endif %}
+    <figcaption>
+      {% if p.website %}<a href="{{ p.website }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}{{ p.name
+      }}{% endif %}
+    </figcaption>
+  </figure>
+  {% endfor %}
 </section>
 {% endif %}
 

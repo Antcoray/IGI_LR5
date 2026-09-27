@@ -5,12 +5,14 @@
   <h1 style="color:var(--danger);">Подтверждение удаления</h1>
   <p>Вы уверены, что хотите удалить автомобиль?</p>
   <p><strong>{{ car }}</strong></p>
-  <div class="flex" style="justify-content:center;">
-    <form method="post">
-      {% csrf_token %}
-      <button type="submit" class="btn btn-danger">Да, удалить</button>
-    </form>
-    <a href="{% url 'car_detail' car.pk %}" class="btn">Отмена</a>
-  </div>
+  <menu class="flex" style="justify-content:center;">
+    <li>
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Да, удалить</button>
+      </form>
+    </li>
+    <li><a href="{% url 'car_detail' car.pk %}" class="btn">Отмена</a></li>
+  </menu>
 </section>
 {% endblock %}

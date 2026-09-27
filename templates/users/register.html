@@ -5,42 +5,30 @@
   <h1>Регистрация</h1>
   <form method="post" novalidate>
     {% csrf_token %}
-    <fieldset>
+    <fieldset class="field-row">
       <legend>Учётные данные</legend>
-      <div class="form-row">
-        <div class="field"><label>{{ form.username.label }}</label>{{ form.username }}{% if form.username.errors %}<ul class="errorlist">{{ form.username.errors }}</ul>{% endif %}</div>
-        <div class="field"><label>{{ form.email.label }}</label>{{ form.email }}{% if form.email.errors %}<ul class="errorlist">{{ form.email.errors }}</ul>{% endif %}</div>
-      </div>
-      <div class="form-row">
-        <div class="field"><label>{{ form.password1.label }}</label>{{ form.password1 }}{% if form.password1.errors %}<ul class="errorlist">{{ form.password1.errors }}</ul>{% endif %}</div>
-        <div class="field"><label>{{ form.password2.label }}</label>{{ form.password2 }}{% if form.password2.errors %}<ul class="errorlist">{{ form.password2.errors }}</ul>{% endif %}</div>
-      </div>
+      <label class="field"><span class="field-label">{{ form.username.label }}</span>{{ form.username }}{% for e in form.username.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+      <label class="field"><span class="field-label">{{ form.email.label }}</span>{{ form.email }}{% for e in form.email.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+      <label class="field"><span class="field-label">{{ form.password1.label }}</span>{{ form.password1 }}{% for e in form.password1.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+      <label class="field"><span class="field-label">{{ form.password2.label }}</span>{{ form.password2 }}{% for e in form.password2.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
     </fieldset>
-    <fieldset>
+    <fieldset class="field-row">
       <legend>ФИО</legend>
-      <div class="form-row">
-        <div class="field"><label>{{ form.last_name.label }}</label>{{ form.last_name }}</div>
-        <div class="field"><label>{{ form.first_name.label }}</label>{{ form.first_name }}</div>
-        <div class="field"><label>{{ form.patronymic.label }}</label>{{ form.patronymic }}</div>
-      </div>
+      <label class="field"><span class="field-label">{{ form.last_name.label }}</span>{{ form.last_name }}</label>
+      <label class="field"><span class="field-label">{{ form.first_name.label }}</span>{{ form.first_name }}</label>
+      <label class="field"><span class="field-label">{{ form.patronymic.label }}</span>{{ form.patronymic }}</label>
     </fieldset>
-    <fieldset>
+    <fieldset class="field-row">
       <legend>Контакты и адрес</legend>
-      <div class="form-row">
-        <div class="field"><label>{{ form.phone.label }}</label>{{ form.phone }}{% if form.phone.errors %}<ul class="errorlist">{{ form.phone.errors }}</ul>{% endif %}</div>
-        <div class="field"><label>{{ form.birth_date.label }}</label>{{ form.birth_date }}{% if form.birth_date.errors %}<ul class="errorlist">{{ form.birth_date.errors }}</ul>{% endif %}</div>
-      </div>
-      <div class="form-row">
-        <div class="field"><label>{{ form.city.label }}</label>{{ form.city }}</div>
-        <div class="field"><label>{{ form.address.label }}</label>{{ form.address }}</div>
-      </div>
+      <label class="field"><span class="field-label">{{ form.phone.label }}</span>{{ form.phone }}{% for e in form.phone.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+      <label class="field"><span class="field-label">{{ form.birth_date.label }}</span>{{ form.birth_date }}{% for e in form.birth_date.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+      <label class="field"><span class="field-label">{{ form.city.label }}</span>{{ form.city }}</label>
+      <label class="field"><span class="field-label">{{ form.address.label }}</span>{{ form.address }}</label>
     </fieldset>
-    <fieldset>
+    <fieldset class="field-row">
       <legend>Паспортные данные</legend>
-      <div class="form-row">
-        <div class="field"><label>{{ form.passport_series.label }}</label>{{ form.passport_series }}</div>
-        <div class="field"><label>{{ form.passport_number.label }}</label>{{ form.passport_number }}</div>
-      </div>
+      <label class="field"><span class="field-label">{{ form.passport_series.label }}</span>{{ form.passport_series }}</label>
+      <label class="field"><span class="field-label">{{ form.passport_number.label }}</span>{{ form.passport_number }}</label>
     </fieldset>
     <button type="submit" class="btn btn-gold" style="width:100%;">Зарегистрироваться</button>
   </form>

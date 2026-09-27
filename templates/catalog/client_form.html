@@ -5,37 +5,29 @@
   <h1>{{ title }}</h1>
   <form method="post" novalidate>
     {% csrf_token %}
-    <fieldset>
+    <fieldset class="field-row">
       <legend>ФИО</legend>
-      <div class="form-row">
-        <div class="field"><label>Фамилия</label>{{ form.last_name }}{% if form.last_name.errors %}<ul class="errorlist">{{ form.last_name.errors }}</ul>{% endif %}</div>
-        <div class="field"><label>Имя</label>{{ form.first_name }}{% if form.first_name.errors %}<ul class="errorlist">{{ form.first_name.errors }}</ul>{% endif %}</div>
-        <div class="field"><label>Отчество</label>{{ form.patronymic }}</div>
-      </div>
+      <label class="field"><span class="field-label">Фамилия</span>{{ form.last_name }}{% for e in form.last_name.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+      <label class="field"><span class="field-label">Имя</span>{{ form.first_name }}{% for e in form.first_name.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+      <label class="field"><span class="field-label">Отчество</span>{{ form.patronymic }}</label>
     </fieldset>
-    <fieldset>
+    <fieldset class="field-row">
       <legend>Контакты и адрес</legend>
-      <div class="form-row">
-        <div class="field"><label>Телефон (+375 (XX) XXX-XX-XX)</label>{{ form.phone }}{% if form.phone.errors %}<ul class="errorlist">{{ form.phone.errors }}</ul>{% endif %}</div>
-        <div class="field"><label>Email</label>{{ form.email }}{% if form.email.errors %}<ul class="errorlist">{{ form.email.errors }}</ul>{% endif %}</div>
-      </div>
-      <div class="form-row">
-        <div class="field"><label>Адрес</label>{{ form.address }}</div>
-        <div class="field"><label>Город</label>{{ form.city }}</div>
-      </div>
+      <label class="field"><span class="field-label">Телефон (+375 (XX) XXX-XX-XX)</span>{{ form.phone }}{% for e in form.phone.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+      <label class="field"><span class="field-label">Email</span>{{ form.email }}{% for e in form.email.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+      <label class="field"><span class="field-label">Адрес</span>{{ form.address }}</label>
+      <label class="field"><span class="field-label">Город</span>{{ form.city }}</label>
     </fieldset>
-    <fieldset>
+    <fieldset class="field-row">
       <legend>Паспортные данные</legend>
-      <div class="form-row">
-        <div class="field"><label>Дата рождения (18+)</label>{{ form.birth_date }}{% if form.birth_date.errors %}<ul class="errorlist">{{ form.birth_date.errors }}</ul>{% endif %}</div>
-        <div class="field"><label>Серия паспорта</label>{{ form.passport_series }}</div>
-        <div class="field"><label>Номер паспорта</label>{{ form.passport_number }}</div>
-      </div>
+      <label class="field"><span class="field-label">Дата рождения (18+)</span>{{ form.birth_date }}{% for e in form.birth_date.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+      <label class="field"><span class="field-label">Серия паспорта</span>{{ form.passport_series }}</label>
+      <label class="field"><span class="field-label">Номер паспорта</span>{{ form.passport_number }}</label>
     </fieldset>
-    <div class="flex">
-      <button type="submit" class="btn btn-gold">Сохранить</button>
-      <a href="{% url 'client_list' %}" class="btn">Отмена</a>
-    </div>
+    <menu class="flex">
+      <li><button type="submit" class="btn btn-gold">Сохранить</button></li>
+      <li><a href="{% url 'client_list' %}" class="btn">Отмена</a></li>
+    </menu>
   </form>
 </section>
 {% endblock %}

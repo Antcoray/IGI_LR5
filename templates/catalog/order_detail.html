@@ -1,41 +1,38 @@
 {% extends 'base.html' %}
 {% block title %}Заказ #{{ order.pk }} — АвтоПремиум{% endblock %}
 {% block content %}
-<div class="flex-between mb-2">
+<header class="flex-between mb-2">
   <h1>Заказ #{{ order.pk }}</h1>
   {% if user.is_staff %}
   <a href="{% url 'order_update' order.pk %}" class="btn btn-gold">Редактировать</a>
   {% endif %}
-</div>
+</header>
 
-<div class="grid grid-2">
-  <div>
-    <section class="card mb-2">
-      <h2>Данные клиента</h2>
-      <dl>
-        <dt>ФИО</dt><dd><strong>{{ order.client.full_name }}</strong></dd>
-        <dt>Телефон</dt><dd>{{ order.client.phone }}</dd>
-        <dt>Email</dt><dd>{{ order.client.email }}</dd>
-        <dt>Адрес</dt><dd>{{ order.client.address|default:"—" }}</dd>
-        <dt>Город</dt><dd>{{ order.client.city|default:"—" }}</dd>
-        <dt>Паспорт</dt><dd>{{ order.client.passport_series }} {{ order.client.passport_number }}</dd>
-      </dl>
-    </section>
-    <section class="card">
-      <h2>Данные заказа</h2>
-      <dl>
-        <dt>Статус</dt><dd><span class="badge">{{ order.get_status_display }}</span></dd>
-        <dt>Дата продажи</dt><dd>{{ order.sale_date|date:"d.m.Y"|default:"—" }}</dd>
-        <dt>Дата доставки</dt><dd>{{ order.delivery_date|date:"d.m.Y"|default:"—" }}</dd>
-        <dt>Менеджер</dt><dd>{{ order.employee|default:"—" }}</dd>
-        <dt>Создан</dt><dd><time datetime="{{ order.created_at|date:'c' }}">{{ order.created_at|date:"d.m.Y H:i" }}</time></dd>
-        {% if order.comment %}<dt>Комментарий</dt><dd>{{ order.comment }}</dd>{% endif %}
-      </dl>
-    </section>
-  </div>
+<section class="grid grid-2">
+  <section class="card">
+    <h2>Данные клиента</h2>
+    <dl>
+      <dt>ФИО</dt><dd><strong>{{ order.client.full_name }}</strong></dd>
+      <dt>Телефон</dt><dd>{{ order.client.phone }}</dd>
+      <dt>Email</dt><dd>{{ order.client.email }}</dd>
+      <dt>Адрес</dt><dd>{{ order.client.address|default:"—" }}</dd>
+      <dt>Город</dt><dd>{{ order.client.city|default:"—" }}</dd>
+      <dt>Паспорт</dt><dd>{{ order.client.passport_series }} {{ order.client.passport_number }}</dd>
+    </dl>
+    <hr>
+    <h2>Данные заказа</h2>
+    <dl>
+      <dt>Статус</dt><dd><span class="badge">{{ order.get_status_display }}</span></dd>
+      <dt>Дата продажи</dt><dd>{{ order.sale_date|date:"d.m.Y"|default:"—" }}</dd>
+      <dt>Дата доставки</dt><dd>{{ order.delivery_date|date:"d.m.Y"|default:"—" }}</dd>
+      <dt>Менеджер</dt><dd>{{ order.employee|default:"—" }}</dd>
+      <dt>Создан</dt><dd><time datetime="{{ order.created_at|date:'c' }}">{{ order.created_at|date:"d.m.Y H:i" }}</time></dd>
+      {% if order.comment %}<dt>Комментарий</dt><dd>{{ order.comment }}</dd>{% endif %}
+    </dl>
+  </section>
   <section class="card">
     <h2>Позиции заказа</h2>
-    <div class="table-wrap">
+    <figure class="table-wrap">
       <table>
         <thead><tr><th scope="col">Автомобиль</th><th scope="col">VIN</th><th scope="col">Кол-во</th><th scope="col">Цена</th><th scope="col">Сумма</th></tr></thead>
         <tbody>
@@ -55,8 +52,8 @@
           <tr><td colspan="4">Итого:</td><td class="price">{{ order.total_amount|floatformat:0 }} BYN</td></tr>
         </tfoot>
       </table>
-    </div>
+    </figure>
   </section>
-</div>
+</section>
 <p><a href="{% url 'order_list' %}" class="btn mt-2">← Все заказы</a></p>
 {% endblock %}

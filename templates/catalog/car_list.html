@@ -4,24 +4,19 @@
 
 <h1>Каталог автомобилей</h1>
 
-<form method="get" action="{% url 'car_list' %}" class="card mb-2" role="search">
-  <div class="form-row">
-    <div class="field">{{ form.q.label_tag }}{{ form.q }}</div>
-    <div class="field">{{ form.manufacturer.label_tag }}{{ form.manufacturer }}</div>
-    <div class="field">{{ form.car_type.label_tag }}{{ form.car_type }}</div>
-    <div class="field">{{ form.fuel.label_tag }}{{ form.fuel }}</div>
-  </div>
-  <div class="form-row">
-    <div class="field">{{ form.price_min.label_tag }}{{ form.price_min }}</div>
-    <div class="field">{{ form.price_max.label_tag }}{{ form.price_max }}</div>
-    <div class="field">{{ form.sort.label_tag }}{{ form.sort }}</div>
-    <div class="field checkline">
-      {{ form.only_available }}
-      <label for="{{ form.only_available.id_for_label }}">{{ form.only_available.label }}</label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-gold">Найти</button>
-  <a href="{% url 'car_list' %}" class="btn">Сбросить</a>
+<form method="get" action="{% url 'car_list' %}" class="card mb-2 field-row" role="search">
+  <label class="field"><span class="field-label">{{ form.q.label }}</span>{{ form.q }}</label>
+  <label class="field"><span class="field-label">{{ form.manufacturer.label }}</span>{{ form.manufacturer }}</label>
+  <label class="field"><span class="field-label">{{ form.car_type.label }}</span>{{ form.car_type }}</label>
+  <label class="field"><span class="field-label">{{ form.fuel.label }}</span>{{ form.fuel }}</label>
+  <label class="field"><span class="field-label">{{ form.price_min.label }}</span>{{ form.price_min }}</label>
+  <label class="field"><span class="field-label">{{ form.price_max.label }}</span>{{ form.price_max }}</label>
+  <label class="field"><span class="field-label">{{ form.sort.label }}</span>{{ form.sort }}</label>
+  <label class="field checkline">{{ form.only_available }} {{ form.only_available.label }}</label>
+  <span class="basis-full">
+    <button type="submit" class="btn btn-gold">Найти</button>
+    <a href="{% url 'car_list' %}" class="btn">Сбросить</a>
+  </span>
 </form>
 
 {% if user.is_staff %}
@@ -47,13 +42,13 @@
       <span class="badge badge-{{ car.status }}">{{ car.get_status_display }}</span>
     </p>
     <p class="muted">{{ car.engine_volume }} л · {{ car.horsepower }} л.с. · {{ car.mileage }} км</p>
-    <div class="flex">
-      <a href="{% url 'car_detail' car.pk %}" class="btn btn-gold btn-sm">Подробнее</a>
+    <menu class="flex">
+      <li><a href="{% url 'car_detail' car.pk %}" class="btn btn-gold btn-sm">Подробнее</a></li>
       {% if user.is_staff %}
-      <a href="{% url 'car_update' car.pk %}" class="btn btn-sm">Изм.</a>
-      <a href="{% url 'car_delete' car.pk %}" class="btn btn-danger btn-sm">Удалить</a>
+      <li><a href="{% url 'car_update' car.pk %}" class="btn btn-sm">Изм.</a></li>
+      <li><a href="{% url 'car_delete' car.pk %}" class="btn btn-danger btn-sm">Удалить</a></li>
       {% endif %}
-    </div>
+    </menu>
   </article>
   {% empty %}
   <p class="alert alert-warning">Автомобили не найдены. Попробуйте изменить параметры поиска.</p>

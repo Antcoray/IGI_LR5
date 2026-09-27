@@ -3,33 +3,27 @@
 {% block content %}
 <h1>Подтверждение заказа #{{ order.pk }}</h1>
 
-<form method="post">
+<form method="post" class="grid grid-2">
   {% csrf_token %}
-  <div class="grid grid-2">
-    <section class="card">
-      <h2>Данные клиента</h2>
-      {{ client_form.as_p }}
-    </section>
+  <section class="card">
+    <h2>Данные клиента</h2>
+    {{ client_form.as_p }}
+  </section>
 
-    <div>
-      <section class="card mb-2">
-        <h2>Данные заказа</h2>
-        {{ confirm_form.as_p }}
-      </section>
+  <section class="card">
+    <h2>Данные заказа</h2>
+    {{ confirm_form.as_p }}
+    <hr>
+    <h2>Позиции заказа</h2>
+    {{ item_formset.management_form }}
+    {% for form in item_formset %}
+    <fieldset class="card mb-2">{{ form.as_p }}</fieldset>
+    {% endfor %}
+  </section>
 
-      <section class="card">
-        <h2>Позиции заказа</h2>
-        {{ item_formset.management_form }}
-        {% for form in item_formset %}
-        <div class="card mb-2">{{ form.as_p }}</div>
-        {% endfor %}
-      </section>
-    </div>
-  </div>
-
-  <div class="flex mt-2">
-    <button type="submit" class="btn btn-gold">Сохранить и подтвердить</button>
-    <a href="{% url 'order_list' %}" class="btn">Отмена</a>
-  </div>
+  <menu class="flex mt-2 col-span-all">
+    <li><button type="submit" class="btn btn-gold">Сохранить и подтвердить</button></li>
+    <li><a href="{% url 'order_list' %}" class="btn">Отмена</a></li>
+  </menu>
 </form>
 {% endblock %}

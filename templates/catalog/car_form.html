@@ -6,20 +6,19 @@
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {% for field in form %}
-    <div class="field">
-      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+    <label class="field"><span class="field-label">{{ field.label }}</span>
       {{ field }}
-      {% if field.errors %}<ul class="errorlist">{{ field.errors }}</ul>{% endif %}
-    </div>
+      {% for e in field.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}
+    </label>
     {% endfor %}
-    <div class="flex">
-      <button type="submit" class="btn btn-gold">Сохранить</button>
+    <menu class="flex">
+      <li><button type="submit" class="btn btn-gold">Сохранить</button></li>
       {% if car %}
-      <a href="{% url 'car_detail' car.pk %}" class="btn">Отмена</a>
+      <li><a href="{% url 'car_detail' car.pk %}" class="btn">Отмена</a></li>
       {% else %}
-      <a href="{% url 'car_list' %}" class="btn">Отмена</a>
+      <li><a href="{% url 'car_list' %}" class="btn">Отмена</a></li>
       {% endif %}
-    </div>
+    </menu>
   </form>
 </section>
 {% endblock %}

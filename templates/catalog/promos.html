@@ -1,7 +1,7 @@
 {% extends 'base.html' %}{% block title %}Акции и промокоды — АвтоПремиум{% endblock %}{% block content %}
 <h1>Промокоды и акции</h1>
 <h2>Активные промокоды</h2>
-<div class="grid grid-3 mb-2">
+<section class="grid grid-3 mb-2" aria-label="Активные промокоды">
 {% for promo in active %}
 <article class="card text-center">
   <p style="font-size:1.5rem;color:var(--gold);font-weight:700;">{{ promo.code }}</p>
@@ -10,9 +10,9 @@
   {% if promo.valid_until %}<p class="muted">До: <time datetime="{{ promo.valid_until|date:'c' }}">{{ promo.valid_until|date:"d.m.Y" }}</time></p>{% endif %}
 </article>
 {% empty %}<p class="muted">Активных промокодов нет.</p>{% endfor %}
-</div>
+</section>
 <h2 class="muted">Архив промокодов</h2>
-<div class="grid grid-3">
+<section class="grid grid-3" aria-label="Архив промокодов">
 {% for promo in archived %}
 <article class="card text-center muted">
   <p style="font-size:1.2rem;font-weight:700;">{{ promo.code }}</p>
@@ -20,4 +20,4 @@
   <p class="badge">Архив</p>
 </article>
 {% empty %}<p class="muted">Архив пуст.</p>{% endfor %}
-</div>{% endblock %}
+</section>{% endblock %}

@@ -1,15 +1,15 @@
 {% extends 'base.html' %}{% block title %}Новости — АвтоПремиум{% endblock %}{% block content %}
 <h1>Новости</h1>
-<div class="grid grid-2">
+<section class="grid grid-2" aria-label="Список новостей">
 {% for article in articles %}
 <article class="card">
   {% if article.image %}<figure class="card-figure"><img src="{{ article.image.url }}" alt="{{ article.title }}"></figure>{% endif %}
   <h2>{{ article.title }}</h2>
   <p class="muted">{{ article.summary }}</p>
-  <div class="flex-between">
+  <footer class="flex-between">
     <time class="muted" datetime="{{ article.published_at|date:'c' }}">{{ article.published_at|date:"d.m.Y" }}</time>
     <a href="{% url 'news_detail' article.pk %}" class="btn btn-gold btn-sm">Читать далее →</a>
-  </div>
+  </footer>
 </article>
 {% empty %}<p class="muted">Новостей пока нет.</p>{% endfor %}
-</div>{% endblock %}
+</section>{% endblock %}

@@ -4,70 +4,55 @@
 
 <h1>{% if editing %}Редактировать заказ #{{ order.pk }}{% else %}Оформить заказ{% endif %}</h1>
 
-<form method="post" id="orderForm">
+<form method="post" id="orderForm" class="grid grid-2">
   {% csrf_token %}
 
-  <div class="grid grid-2">
-    <section class="card">
-      <h2>Данные заказа</h2>
-      {% for field in order_form %}
-      <div class="field">
-        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-        {{ field }}
-        {% if field.errors %}<ul class="errorlist">{{ field.errors }}</ul>{% endif %}
-      </div>
+  <section class="card">
+    <h2>Данные заказа</h2>
+    {% for field in order_form %}
+    <label class="field"><span class="field-label">{{ field.label }}</span>
+      {{ field }}
+      {% for e in field.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}
+    </label>
+    {% endfor %}
+    {% if order_form.non_field_errors %}
+    <p class="alert alert-danger">{{ order_form.non_field_errors }}</p>
+    {% endif %}
+  </section>
+
+  <section class="card">
+    <header class="flex-between">
+      <h2>Позиции заказа (товары)</h2>
+      <button type="button" class="btn btn-sm" id="addItem">Добавить строку</button>
+    </header>
+    {{ item_formset.management_form }}
+    <fieldset id="formset-container">
+      {% for item_form in item_formset %}
+      <fieldset class="formset-row card mb-2 field-row">
+        <label class="field"><span class="field-label">Автомобиль</span>
+          {{ item_form.car }}
+          {% for e in item_form.car.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}
+        </label>
+        <label class="field"><span class="field-label">Кол-во</span>{{ item_form.quantity }}</label>
+        <label class="field"><span class="field-label">Цена / ед. (BYN)</span>{{ item_form.unit_price }}</label>
+        {% if item_form.DELETE %}
+        <label class="field checkline"><span class="field-label">Удалить</span>{{ item_form.DELETE }}</label>
+        {% endif %}
+        {% for hidden in item_form.hidden_fields %}{{ hidden }}{% endfor %}
+        <p class="muted text-right basis-full">Сумма: <span class="subtotal">—</span></p>
+      </fieldset>
       {% endfor %}
-      {% if order_form.non_field_errors %}
-      <p class="alert alert-danger">{{ order_form.non_field_errors }}</p>
-      {% endif %}
-    </section>
+    </fieldset>
 
-    <section class="card">
-      <div class="flex-between">
-        <h2>Позиции заказа (товары)</h2>
-        <button type="button" class="btn btn-sm" id="addItem">Добавить строку</button>
-      </div>
-      {{ item_formset.management_form }}
-      <div id="formset-container">
-        {% for item_form in item_formset %}
-        <div class="formset-row card mb-2">
-          <div class="form-row">
-            <div class="field">
-              <label>Автомобиль</label>
-              {{ item_form.car }}
-              {% if item_form.car.errors %}<ul class="errorlist">{{ item_form.car.errors }}</ul>{% endif %}
-            </div>
-            <div class="field">
-              <label>Кол-во</label>
-              {{ item_form.quantity }}
-            </div>
-            <div class="field">
-              <label>Цена / ед. (BYN)</label>
-              {{ item_form.unit_price }}
-            </div>
-            {% if item_form.DELETE %}
-            <div class="field checkline">
-              <label>Удалить</label>
-              {{ item_form.DELETE }}
-            </div>
-            {% endif %}
-            {% for hidden in item_form.hidden_fields %}{{ hidden }}{% endfor %}
-          </div>
-          <p class="muted text-right">Сумма: <span class="subtotal">—</span></p>
-        </div>
-        {% endfor %}
-      </div>
+    <p class="text-right"><strong>Итого: <span id="grand-total">0</span> BYN</strong></p>
+  </section>
 
-      <p class="text-right"><strong>Итого: <span id="grand-total">0</span> BYN</strong></p>
-    </section>
-  </div>
-
-  <div class="flex mt-2">
-    <button type="submit" class="btn btn-gold">
+  <menu class="flex mt-2 col-span-all">
+    <li><button type="submit" class="btn btn-gold">
       {% if editing %}Сохранить изменения{% else %}Создать заказ{% endif %}
-    </button>
-    <a href="{% url 'order_list' %}" class="btn">Отмена</a>
-  </div>
+    </button></li>
+    <li><a href="{% url 'order_list' %}" class="btn">Отмена</a></li>
+  </menu>
 </form>
 {% endblock %}
 

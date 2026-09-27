@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}{{ client.full_name }} — АвтоПремиум{% endblock %}
 {% block content %}
-<div class="flex-between mb-2">
+<header class="flex-between mb-2">
   <h1>{{ client.full_name }}</h1>
   <a href="{% url 'client_update' client.pk %}" class="btn btn-gold">Редактировать</a>
-</div>
+</header>
 
-<div class="grid grid-2">
+<section class="grid grid-2">
   <section class="card">
     <h2>Анкетные данные</h2>
     <dl>
@@ -22,11 +22,11 @@
   </section>
 
   <section class="card">
-    <div class="flex-between">
+    <header class="flex-between">
       <h2>История заказов ({{ orders|length }})</h2>
       <a href="{% url 'order_create' %}?client={{ client.pk }}" class="btn btn-sm">Новый заказ</a>
-    </div>
-    <div class="table-wrap">
+    </header>
+    <figure class="table-wrap">
       <table>
         <thead>
           <tr>
@@ -54,8 +54,8 @@
           {% endfor %}
         </tbody>
       </table>
-    </div>
+    </figure>
   </section>
-</div>
+</section>
 <p><a href="{% url 'client_list' %}" class="btn mt-2">← Все клиенты</a></p>
 {% endblock %}

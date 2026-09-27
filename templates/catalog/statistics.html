@@ -3,17 +3,17 @@
 {% block content %}
 <h1>Быстрая статистика</h1>
 
-<div class="grid grid-4 mb-2">
-  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ orders_count }}</p><p class="muted">Завершённых продаж</p></div>
-  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ total_sales|floatformat:0 }}</p><p class="muted">Выручка (BYN)</p></div>
-  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ avg_price|floatformat:0 }}</p><p class="muted">Средний чек (BYN)</p></div>
-  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ median_price|floatformat:0 }}</p><p class="muted">Медиана цены (BYN)</p></div>
-</div>
+<section class="grid grid-4 mb-2" aria-label="Ключевые показатели">
+  <article class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ orders_count }}</p><p class="muted">Завершённых продаж</p></article>
+  <article class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ total_sales|floatformat:0 }}</p><p class="muted">Выручка (BYN)</p></article>
+  <article class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ avg_price|floatformat:0 }}</p><p class="muted">Средний чек (BYN)</p></article>
+  <article class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ median_price|floatformat:0 }}</p><p class="muted">Медиана цены (BYN)</p></article>
+</section>
 
-<div class="grid grid-2 mb-2">
+<section class="grid grid-2 mb-2" aria-label="Автомобили и время сервера">
   <section class="card">
     <h2>Автомобили по типу кузова</h2>
-    <div class="table-wrap">
+    <figure class="table-wrap">
       <table>
         <thead>
           <tr>
@@ -28,14 +28,14 @@
           {% endfor %}
         </tbody>
       </table>
-    </div>
+    </figure>
   </section>
   <section class="card">
     <h2>Время сервера</h2>
     <p class="muted">UTC: <strong><time datetime="{{ now_utc|date:'c' }}">{{ now_utc|date:"d.m.Y H:i" }}</time></strong></p>
     <p class="muted">Локальное: <strong><time datetime="{{ now_local|date:'c' }}">{{ now_local|date:"d.m.Y H:i" }}</time></strong></p>
   </section>
-</div>
+</section>
 
 {% if user.is_superuser %}
 <p class="alert alert-success">Для полной аналитики с графиками перейдите в <a href="{% url 'analytics' %}">Аналитику</a>.</p>

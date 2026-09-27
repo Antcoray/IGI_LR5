@@ -11,8 +11,8 @@
 </address>
 {% endif %}
 
-<h2>Наша команда</h2>
-<div class="grid grid-3">
+<section class="grid grid-3" aria-label="Наша команда">
+<h2 class="col-span-all">Наша команда</h2>
 {% for c in contacts %}
 <article class="card text-center" itemscope itemtype="https://schema.org/Person">
   {% if c.photo %}<img src="{{ c.photo.url }}" alt="{{ c.name }}" itemprop="image" style="border-radius:50%;width:80px;height:80px;object-fit:cover;margin:0 auto;">
@@ -24,5 +24,5 @@
   {% if c.description %}<p class="muted">{{ c.description }}</p>{% endif %}
 </article>
 {% empty %}<p class="muted">Контакты скоро будут добавлены.</p>{% endfor %}
-</div>
+</section>
 {% endblock %}

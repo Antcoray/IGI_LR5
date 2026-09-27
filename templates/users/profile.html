@@ -2,50 +2,44 @@
 {% block title %}Профиль — АвтоПремиум{% endblock %}
 {% block content %}
 <h1>Личный кабинет</h1>
-<div class="grid grid-2">
-  <div>
-    <section class="card mb-2">
-      <h2>Данные аккаунта</h2>
-      <dl>
-        <dt>Логин</dt><dd>{{ user.username }}</dd>
-        <dt>Email</dt><dd>{{ user.email|default:"—" }}</dd>
-      </dl>
-      {% if employee %}
-      <p class="alert alert-success">Сотрудник: <strong>{{ employee.get_role_display }}</strong></p>
-      {% endif %}
-      <p class="muted">
-        <time datetime="{{ now_utc|date:'c' }}">UTC: {{ now_utc|date:"d.m.Y H:i" }}</time><br>
-        <time datetime="{{ now_local|date:'c' }}">Местное: {{ now_local|date:"d.m.Y H:i" }}</time>
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Анкетные данные</h2>
-      <form method="post" novalidate>
-        {% csrf_token %}
-        <div class="form-row">
-          <div class="field"><label>Фамилия</label>{{ form.last_name }}{% if form.last_name.errors %}<ul class="errorlist">{{ form.last_name.errors }}</ul>{% endif %}</div>
-          <div class="field"><label>Имя</label>{{ form.first_name }}</div>
-        </div>
-        <div class="field"><label>Отчество</label>{{ form.patronymic }}</div>
-        <div class="field"><label>Телефон (+375 (XX) XXX-XX-XX)</label>{{ form.phone }}{% if form.phone.errors %}<ul class="errorlist">{{ form.phone.errors }}</ul>{% endif %}</div>
-        <div class="field"><label>Email</label>{{ form.email }}</div>
-        <div class="field"><label>Адрес</label>{{ form.address }}</div>
-        <div class="form-row">
-          <div class="field"><label>Город</label>{{ form.city }}</div>
-          <div class="field"><label>Дата рождения</label>{{ form.birth_date }}{% if form.birth_date.errors %}<ul class="errorlist">{{ form.birth_date.errors }}</ul>{% endif %}</div>
-        </div>
-        <button type="submit" class="btn btn-gold" style="width:100%;">Сохранить</button>
-      </form>
-    </section>
-  </div>
+<section class="grid grid-2">
+  <section class="card">
+    <h2>Данные аккаунта</h2>
+    <dl>
+      <dt>Логин</dt><dd>{{ user.username }}</dd>
+      <dt>Email</dt><dd>{{ user.email|default:"—" }}</dd>
+    </dl>
+    {% if employee %}
+    <p class="alert alert-success">Сотрудник: <strong>{{ employee.get_role_display }}</strong></p>
+    {% endif %}
+    <p class="muted">
+      <time datetime="{{ now_utc|date:'c' }}">UTC: {{ now_utc|date:"d.m.Y H:i" }}</time><br>
+      <time datetime="{{ now_local|date:'c' }}">Местное: {{ now_local|date:"d.m.Y H:i" }}</time>
+    </p>
+    <hr>
+    <h2>Анкетные данные</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      <fieldset class="field-row">
+        <label class="field"><span class="field-label">Фамилия</span>{{ form.last_name }}{% for e in form.last_name.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+        <label class="field"><span class="field-label">Имя</span>{{ form.first_name }}</label>
+        <label class="field"><span class="field-label">Отчество</span>{{ form.patronymic }}</label>
+        <label class="field"><span class="field-label">Телефон (+375 (XX) XXX-XX-XX)</span>{{ form.phone }}{% for e in form.phone.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+        <label class="field"><span class="field-label">Email</span>{{ form.email }}</label>
+        <label class="field"><span class="field-label">Адрес</span>{{ form.address }}</label>
+        <label class="field"><span class="field-label">Город</span>{{ form.city }}</label>
+        <label class="field"><span class="field-label">Дата рождения</span>{{ form.birth_date }}{% for e in form.birth_date.errors %}<span class="errorlist">{{ e }}</span>{% endfor %}</label>
+      </fieldset>
+      <button type="submit" class="btn btn-gold" style="width:100%;">Сохранить</button>
+    </form>
+  </section>
 
   <section class="card">
-    <div class="flex-between">
+    <header class="flex-between">
       <h2>Мои последние заказы</h2>
       <a href="{% url 'my_orders' %}" class="btn btn-sm">Все заказы</a>
-    </div>
-    <div class="table-wrap">
+    </header>
+    <figure class="table-wrap">
       <table>
         <thead><tr><th scope="col">#</th><th scope="col">Товары</th><th scope="col">Сумма</th><th scope="col">Статус</th></tr></thead>
         <tbody>
@@ -65,7 +59,7 @@
           {% endfor %}
         </tbody>
       </table>
-    </div>
+    </figure>
   </section>
-</div>
+</section>
 {% endblock %}

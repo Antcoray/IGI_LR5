@@ -2,7 +2,7 @@
 {% block title %}Аналитика {{ year }} — АвтоПремиум{% endblock %}
 {% block content %}
 
-<div class="flex-between mb-2">
+<header class="flex-between mb-2">
   <h1>Аналитика продаж</h1>
   <form method="get" class="flex">
     <select name="year" onchange="this.form.submit()">
@@ -12,7 +12,7 @@
     </select>
     <span class="muted">год</span>
   </form>
-</div>
+</header>
 
 <nav class="flex mb-2" aria-label="Разделы аналитики">
   <a href="#kpi" class="btn btn-sm">KPI</a>
@@ -26,10 +26,10 @@
 </nav>
 
 <section id="kpi" class="grid grid-4 mb-2">
-  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ annual.total_orders }}</p><p class="muted">Завершённых заказов</p></div>
-  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ annual.total_revenue|floatformat:0 }}</p><p class="muted">Общая выручка (BYN)</p></div>
-  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ annual.avg_order|floatformat:0 }}</p><p class="muted">Средний чек (BYN)</p></div>
-  <div class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ annual.max_order|floatformat:0 }}</p><p class="muted">Макс. заказ (BYN)</p></div>
+  <article class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ annual.total_orders }}</p><p class="muted">Завершённых заказов</p></article>
+  <article class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ annual.total_revenue|floatformat:0 }}</p><p class="muted">Общая выручка (BYN)</p></article>
+  <article class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ annual.avg_order|floatformat:0 }}</p><p class="muted">Средний чек (BYN)</p></article>
+  <article class="card text-center"><p style="font-size:1.6rem;color:var(--gold);">{{ annual.max_order|floatformat:0 }}</p><p class="muted">Макс. заказ (BYN)</p></article>
 </section>
 
 {% if most_popular %}
@@ -42,7 +42,7 @@
 
 <section id="price-list" class="card mb-2">
   <h2>Прайс-лист по типам кузова (в наличии)</h2>
-  <div class="table-wrap">
+  <figure class="table-wrap">
     <table>
       <thead>
         <tr>
@@ -66,7 +66,7 @@
         {% endfor %}
       </tbody>
     </table>
-  </div>
+  </figure>
 </section>
 
 <section id="clients" class="card mb-2">
@@ -74,7 +74,7 @@
   {% for city, client_list in city_groups.items %}
   <details class="faq-item">
     <summary>{{ city }} <span class="badge">{{ client_list|length }}</span></summary>
-    <div class="table-wrap">
+    <figure class="table-wrap">
       <table>
         <thead>
           <tr><th scope="col">ФИО</th><th scope="col">Телефон</th><th scope="col">Email</th><th scope="col">Адрес</th><th scope="col">Дата рег.</th></tr>
@@ -91,7 +91,7 @@
           {% endfor %}
         </tbody>
       </table>
-    </div>
+    </figure>
   </details>
   {% empty %}
   <p class="muted">Клиентов нет.</p>
@@ -100,7 +100,7 @@
 
 <section id="top" class="card mb-2">
   <h2>Топ товаров по количеству продаж (все периоды)</h2>
-  <div class="table-wrap">
+  <figure class="table-wrap">
     <table>
       <thead>
         <tr><th scope="col">#</th><th scope="col">Марка</th><th scope="col">Модель</th><th scope="col">Тип</th>
@@ -124,12 +124,12 @@
 {% endfor %}
       </tbody>
     </table>
-  </div>
+  </figure>
 </section>
 
 <section id="monthly" class="card mb-2">
   <h2>Ежемесячный объём продаж {{ year }}</h2>
-  <div class="table-wrap">
+  <figure class="table-wrap">
     <table>
       <thead>
         <tr><th scope="col">Месяц</th><th scope="col">Заказов</th>
@@ -158,11 +158,11 @@
         </tr>
       </tfoot>
     </table>
-  </div>
+  </figure>
 </section>
 
 <section id="pivot" class="grid grid-3 mb-2">
-  <div class="card">
+  <article class="card">
     <h3>По типу кузова ({{ year }})</h3>
     <table>
       <thead><tr><th scope="col">Тип</th><th scope="col">Шт.</th><th scope="col">BYN</th></tr></thead>
@@ -176,8 +176,8 @@
         {% empty %}<tr><td colspan="3" class="text-center muted">—</td></tr>{% endfor %}
       </tbody>
     </table>
-  </div>
-  <div class="card">
+  </article>
+  <article class="card">
     <h3>По производителям ({{ year }})</h3>
     <table>
       <thead><tr><th scope="col">Марка</th><th scope="col">Шт.</th><th scope="col">BYN</th></tr></thead>
@@ -191,8 +191,8 @@
         {% empty %}<tr><td colspan="3" class="text-center muted">—</td></tr>{% endfor %}
       </tbody>
     </table>
-  </div>
-  <div class="card">
+  </article>
+  <article class="card">
     <h3>Топ клиентов ({{ year }})</h3>
     <table>
       <thead><tr><th scope="col">Клиент</th><th scope="col">Зак.</th><th scope="col">BYN</th></tr></thead>
@@ -206,12 +206,11 @@
         {% empty %}<tr><td colspan="3" class="text-center muted">—</td></tr>{% endfor %}
       </tbody>
     </table>
-  </div>
+  </article>
 </section>
 
-<section id="charts">
-  <h2>Графики (matplotlib, Python)</h2>
-  <div class="grid grid-2">
+<section id="charts" class="grid grid-2">
+  <h2 class="col-span-all">Графики (matplotlib, Python)</h2>
 
     {% if charts.monthly_revenue %}
     <figure class="card" style="grid-column:1/-1;">
@@ -255,7 +254,6 @@
     </figure>
     {% endif %}
 
-  </div>
 </section>
 
 <section id="forecast" class="grid grid-2 mt-2">

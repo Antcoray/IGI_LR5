@@ -15,7 +15,6 @@
 <body>
 
 <header class="site-header">
-  <div class="wrap site-nav">
     <a class="brand" href="{% url 'index' %}">🚗 АвтоПремиум</a>
     <nav aria-label="Главное меню">
       <ul class="nav-menu">
@@ -74,41 +73,28 @@
         {% endif %}
       </ul>
     </nav>
-  </div>
 </header>
 
-<main>
-  <div class="wrap">
-    {% for message in messages %}
-    <div class="alert alert-{{ message.tags }}" role="alert">
-      {{ message }}
-    </div>
-    {% endfor %}
-    {% block content %}{% endblock %}
-  </div>
+<main class="wrap">
+  {% for message in messages %}
+  <p class="alert alert-{{ message.tags }}" role="alert">{{ message }}</p>
+  {% endfor %}
+  {% block content %}{% endblock %}
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-grid">
-    <div>
-      <div class="brand" style="font-size:1.1rem;">🚗 АвтоПремиум</div>
-      <p class="muted">Официальный автосалон.<br>Более 10 лет на рынке.</p>
-    </div>
-    <nav aria-label="Навигация в подвале">
-      <p><strong>Навигация</strong></p>
-      <ul class="footer-nav">
-        <li><a href="{% url 'about' %}">О нас</a></li>
-        <li><a href="{% url 'faq' %}">FAQ</a></li>
-        <li><a href="{% url 'vacancies' %}">Вакансии</a></li>
-        <li><a href="{% url 'privacy' %}">Политика конфиденциальности</a></li>
-        <li><a href="{% static 'docs/privacy.pdf' %}" download>Скачать политику (PDF)</a></li>
-      </ul>
-    </nav>
-    <div>
-      <p class="muted">{% now "d.m.Y H:i" %}</p>
-      <p class="muted">© 2024–2026 АвтоПремиум</p>
-    </div>
-  </div>
+  <p class="muted"><strong class="brand" style="font-size:1.1rem;">🚗 АвтоПремиум</strong><br>Официальный автосалон.<br>Более 10 лет на рынке.</p>
+  <nav aria-label="Навигация в подвале">
+    <p><strong>Навигация</strong></p>
+    <ul class="footer-nav">
+      <li><a href="{% url 'about' %}">О нас</a></li>
+      <li><a href="{% url 'faq' %}">FAQ</a></li>
+      <li><a href="{% url 'vacancies' %}">Вакансии</a></li>
+      <li><a href="{% url 'privacy' %}">Политика конфиденциальности</a></li>
+      <li><a href="{% static 'docs/privacy.pdf' %}" download>Скачать политику (PDF)</a></li>
+    </ul>
+  </nav>
+  <p class="muted">{% now "d.m.Y H:i" %}<br>© 2024–2026 АвтоПремиум</p>
 </footer>
 
 <datalist id="city-datalist">
